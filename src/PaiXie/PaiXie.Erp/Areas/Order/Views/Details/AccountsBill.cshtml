@@ -1,0 +1,171 @@
+﻿@using PaiXie.Data
+@using PaiXie.Core
+@{
+    var ordbase = ViewBag.Ordbase as Ordbase;
+    var accountsBillList = ViewBag.AccountsBillList as List<OrdaccountsBill>;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+    <style>
+        a {
+            text-decoration: none;
+        }
+
+        .tagcont {
+            color: #666666;
+        }
+
+        .tableinfoa {
+            margin-top: 0px;
+        }
+
+            .tableinfoa th.title {
+                background: #436fac;
+                color: #fff;
+                text-align: left;
+                padding-left: 15px;
+                height: 30px;
+            }
+
+            .tableinfoa .red, .red {
+                color: #F00;
+            }
+
+            .tableinfoa .blue {
+                color: #00F;
+            }
+
+        .list td {
+            height: 50px;
+            text-align: center;
+        }
+
+        .list th {
+            text-align: center;
+        }
+
+        .totalnum {
+            text-align: center;
+        }
+
+        .money {
+            float: right;
+            width: 300px;
+            padding-right: 5px;
+        }
+
+            .money li {
+                float: left;
+                width: 150px;
+                text-align: right;
+                line-height: 24px;
+                height: 24px;
+            }
+
+            .money b {
+                float: left;
+                width: 85px;
+                text-align: right;
+                font-weight: normal;
+            }
+    </style>
+}
+<div class="easyui-layout" data-options="fit:true" style="overflow-y:auto;">
+    <div data-options=" region:'north',height:120" id="topdiv">
+        <ul class="tag" style="padding-top:20px">
+            <li>基本信息</li>
+            <li>商品列表</li>
+            <li class="current">收退款记录</li>
+            <li>发货记录</li>
+            <li>售后记录</li>
+            <li>订单日志</li>
+        </ul>
+        <div class="toolbar" id="toolbar" style="margin-top:-30px; padding-left:15px">
+            <a id="addCollection" class="add" href="javascript:void(0)"><span></span>添加收款</a>
+            <a id="addRefund" class="add" href="javascript:void(0)"><span></span>添加退款</a>
+            <a id="addoffer" class="add" href="javascript:void(0)"><span></span>添加优惠</a>
+            <a id="" class="add unclick" href="javascript:void(0)"><span></span>添加售后</a>
+            <a id="pendingOrder" class="" href="javascript:void(0)">挂起订单</a>
+            <a id="cancelOrder" class="" href="javascript:void(0)">取消订单</a>
+            <a id="addRemarks" class="add" href="javascript:void(0)"><span></span>添加备注</a>
+            <a id="distributionWarehouse" class="" href="javascript:void(0)">分配仓库</a>
+        </div>
+    </div>
+    <div data-options="region:'center',border:false">
+        <div class="tagcont p0lr22">
+            <input type="hidden" id="hdnIsOrderDetails" value="2" />
+            <input type="hidden" id="hdnIsHand" value="@(ordbase.IsHang)" />
+            <input type="hidden" id="hdnAbnormalAmount" value="@(ordbase.ReceivableAmount - ordbase.UncollectedeAmount - ordbase.RealAmount + ordbase.RefundAmount)" />
+            <input type="hidden" id="hdnOrderStatus" value="@(ordbase.OrderStatus)" />
+            <input type="hidden" id="hdnErpOrderCode" value="@ordbase.ErpOrderCode" />
+            <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tableinfoa list">
+                <tr>
+                    <th colspan="7" class="title">收款记录</th>
+                </tr>
+                <tr>
+                    <th>单据号</th>
+                    <th>付款备注</th>
+                    <th>付款方式</th>
+                    <th>付款金额</th>
+                    <th>交易号</th>
+                    <th>付款时间</th>
+                    <th>状态</th>
+                </tr>
+                @{
+                    int index = 0;
+                    foreach (var item in accountsBillList.Where(r => r.BillType == (int)BillType.SK).ToList()) {
+                        <tr>
+                            <td>@(item.BillNo)</td>
+                            <td>@(item.Remark)</td>
+                            <td>@(item.PaymentMethod == 0 ? "在线支付" : "现金支付")</td>
+                            <td><span class="red">￥</span>@(item.Amount)</td>
+                            <td>@(item.TradingNumber)</td>
+                            <td>@(item.PayDate.ToString("yyyy-MM-dd HH:mm:ss") == "0001-01-01 00:00:00" ? "" : item.PayDate.ToString("yyyy-MM-dd HH:mm:ss"))</td>
+                            <td>@(item.Status == 0 ? "未付款" : item.Status == 1 ? "已付未审" : "已付已审")</td>
+                        </tr>
+                        index++;
+                    }
+                    if (index == 0) {
+                        <tr><td style="height: 35px; text-align: center; color:#888;" colspan="7">没有相关记录！</td></tr>
+                    }
+                }
+
+            </table>
+            <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tableinfoa list">
+                <tr>
+                    <th colspan="7" class="title">退款记录</th>
+                </tr>
+                <tr>
+                    <th>单据号</th>
+                    <th>付款备注</th>
+                    <th>付款方式</th>
+                    <th>付款金额</th>
+                    <th>交易号</th>
+                    <th>付款时间</th>
+                    <th>状态</th>
+                </tr>
+                @{
+                    int index1 = 0;
+                    foreach (var item in accountsBillList.Where(r => r.BillType == (int)BillType.TK).ToList()) {
+                        <tr>
+                            <td>@(item.BillNo)</td>
+                            <td>@(item.Remark)</td>
+                            <td>@(item.PaymentMethod == 0 ? "在线支付" : "现金支付")</td>
+                            <td><span class="red">￥</span>@(item.Amount)</td>
+                            <td>@(item.TradingNumber)</td>
+                            <td>@(item.PayDate.ToString("yyyy-MM-dd HH:mm:ss") == "0001-01-01 00:00:00" ? "" : item.PayDate.ToString("yyyy-MM-dd HH:mm:ss"))</td>
+                            <td>@(item.Status == 0 ? "未付款" : item.Status == 1 ? "已付未审" : "已付已审")</td>
+                        </tr>
+                        index1++;
+                    }
+                    if (index1 == 0) {
+                        <tr><td style="height: 35px; text-align: center; color:#888;" colspan="7">没有相关记录！</td></tr>
+                    }
+                }
+            </table>
+        </div>
+    </div>
+</div>
+@section bottom{
+    <script src="~/Areas/Order/ViewJs/Details.js"></script>
+}

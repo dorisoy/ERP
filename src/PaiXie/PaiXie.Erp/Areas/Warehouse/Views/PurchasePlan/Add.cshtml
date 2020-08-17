@@ -1,0 +1,25 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+}
+<form id="ff" method="post" novalidate>
+    <table class="tableinfo" style="margin-top:45px">
+        <tr>
+            <th style="width:150px">计划单名称：</th>
+            <td><input style="width:200px" value="" class="easyui-textbox" type="text" id="Name" name="Name" data-options="height:30,required:true" validtype="length[0,30]" /> <span class="f12c">30个字以内</span></td>
+        </tr>
+        <tr>
+            <th></th>
+            <td>
+                <a href="javascript:void(0)" class="button-oky" id="btnSave" iconcls="icon-ok">添加</a>
+            </td>
+
+        </tr>
+    </table>
+</form>
+@section bottom{
+    <script src="~/Areas/Warehouse/ViewJs/AddPurchasePlan.js"></script>
+}
+
+

@@ -1,0 +1,23 @@
+﻿@using PaiXie.Data
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+}
+<div style=" padding:20px; line-height:24px;">
+    1、此处针对单个商品设置店铺库存更新比例<br>
+    2、如果此处不设置，店铺库存更新比例按统一设置的比例计算<br>
+    3、此处设置后，店铺库存更新优先读取本设置
+</div>
+<div style="text-align:center">
+    <a href="javascript:void(0)" class="button-cancel" id="btnCancel" iconcls="icon-ok">知道了</a>
+</div>
+@section bottom{
+    <script>
+        $(function () {
+            $("#btnCancel").click(function () {
+                parent.$('#win').window('close');
+            });
+        });
+    </script>
+}

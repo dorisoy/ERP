@@ -1,0 +1,16 @@
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Utils\bin\Debug\PaiXie.Utils.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Utils\bin\Debug\PaiXie.Utils.pdb
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Utils\bin\Debug\NPOI.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Utils\bin\Debug\ICSharpCode.SharpZipLib.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Utils\bin\Debug\NPOI.xml
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Utils\obj\Debug\PaiXie.Utils.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Utils\obj\Debug\PaiXie.Utils.pdb
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Utils\obj\Debug\PaiXie.Utils.csprojResolveAssemblyReference.cache
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Utils\bin\Debug\PaiXie.Utils.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Utils\bin\Debug\PaiXie.Utils.pdb
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Utils\bin\Debug\NPOI.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Utils\bin\Debug\ICSharpCode.SharpZipLib.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Utils\bin\Debug\NPOI.xml
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Utils\obj\Debug\PaiXie.Utils.csprojResolveAssemblyReference.cache
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Utils\obj\Debug\PaiXie.Utils.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Utils\obj\Debug\PaiXie.Utils.pdb

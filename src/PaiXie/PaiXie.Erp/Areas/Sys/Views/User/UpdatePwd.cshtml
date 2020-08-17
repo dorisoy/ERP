@@ -1,0 +1,52 @@
+﻿@using PaiXie.Data
+@{
+  
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+}
+<div style="padding:20px">
+    <form id="ff" method="post" novalidate="novalidate">
+         <fieldset>
+            <legend>修改密码</legend>
+            <table id="tblAdd" class="tableinfo">
+                <tr>
+                    <th><label for="Code">原密码：</label></th>
+                    <td>
+                        <input style="width:120px;"
+                               class="easyui-validatebox" type="password" id="oldpwd" name="oldpwd" data-options="required:true" />
+                    </td>
+
+                </tr>
+                <tr>
+                    <th><label for="Name">新密码：</label></th>
+                    <td>
+                        <input style="width:120px;" class="easyui-validatebox" type="password" id="newpwd" name="newpwd" data-options="required:true" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <th><label for="Name">确认密码：</label></th>
+                    <td>
+                        <input style="width:120px;" class="easyui-validatebox" type="password" id="cpwd" name="cpwd" validtype="equalTo[newpwd]" data-options="required:true" />
+                    </td>
+                </tr>
+
+          
+            </table>
+        </fieldset>
+
+
+     
+        <br />
+        <div class="textcenter">
+            <a href="javascript:void(0)" class="button-oky" id="btnSave" iconcls="icon-ok">确定</a>
+            <a href="javascript:void(0)" class="button-cancel" iconcls="icon-cancel" id="btnClose">取消</a>
+        </div>
+    </form>
+</div>
+@section bottom{
+
+    <script src="~/Areas/Sys/ViewJs/UpdatePwd.js"></script>
+}
+

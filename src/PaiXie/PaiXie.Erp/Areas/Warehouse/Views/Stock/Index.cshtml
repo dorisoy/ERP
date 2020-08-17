@@ -1,0 +1,38 @@
+﻿@{
+    var startDate = ViewBag.StartDate;
+    var endDate = ViewBag.EndDate;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{}
+<div class="easyui-layout" data-options="fit:true">
+    <div data-options="region:'north',height:113" id="topdiv">
+        <div class="toolbar" id="toolbar">
+            <a href="javascript:void(0)" class="refresh" id="refresh"><span></span>刷新</a>
+            <a href="javascript:void(0);" id="export"><span></span>导出</a>
+        </div>
+        <div class="searchpro" id="searchpro">
+            <form id="ff" method="post">
+                <select id="keyWordType" name="keyWordType" class="easyui-combobox" data-options="height:30,width:100,editable:false">
+                    <option value="">关键字类型</option>
+                    <option value="商品名称">商品名称</option>
+                    <option value="商品编码" selected>商品编码</option>
+                    <option value="商品SKU码">商品SKU码</option>
+                </select>
+                <input type="text" id="txtKeyWord" value="" style="width:150px;">
+                <label>统计时间：</label><input type="text" id="txtStartDate" value="@startDate" class="easyui-datebox" data-options="height:30,width:100">
+                <label style="padding-right:10px">至</label>
+                <input type="text" id="txtEndDate" value="@endDate" class="easyui-datebox" data-options="height:30,width:100">
+                <label>分类：</label><input id="category" name="category" class="easyui-combotree" data-options="url:'/Products/Category/JsonTree?ram='+Math.random(),method:'get',height:30,width:82">
+                <label>品牌：</label><select id="brand" name="brand" class="easyui-combobox" data-options="height:30,width:82"></select>
+                <input type="button" id="btnSearch" value="搜索" class="button">
+                <input type="button" id="btnReset" value="清空条件" class="button-rest">
+            </form>
+        </div>
+    </div>
+    <div data-options="region:'center',border:false" style="padding:0 22px;">
+        <table id="grid" class="easyui-datagrid" title="" data-options="singleSelect:false,collapsible:true,method:'get'"></table>
+    </div>
+</div>
+@section bottom{
+    <script src="~/Areas/Warehouse/ViewJs/StockInfoList.js"></script>
+}

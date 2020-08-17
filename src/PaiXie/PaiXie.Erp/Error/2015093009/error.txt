@@ -1,0 +1,19 @@
+2015/9/30 9:44:30
+Could not map: Url----FluentData.FluentDataException: Could not map: Url
+   在 FluentData.ExecuteQueryHandler.HandleQueryException(Exception exception)
+   在 FluentData.ExecuteQueryHandler.ExecuteQuery(Boolean useReader, Action action)
+   在 FluentData.DbCommand.QueryMany[TEntity,TList](Action`2 customMapper)
+   在 PaiXie.Data.BaseRepository`1.GetQueryMany(String sqlStr, IDbContext context, Object[] objects) 位置 e:\001\src\PaiXie\PaiXie.Data\BaseRepository\BaseRepository.cs:行号 29
+   在 PaiXie.Service.BaseService`1.GetQueryMany(String sqlStr, IDbContext context, Object[] objects) 位置 e:\001\src\PaiXie\PaiXie.Service\Base\BaseService.cs:行号 43
+   在 PaiXie.Erp.Areas.Sys.RoleController.Gettreebutton(String roleid) 位置 e:\001\src\PaiXie\PaiXie.Erp\Areas\Sys\Controllers\RoleController.cs:行号 43
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+------------------------------------------------------------------

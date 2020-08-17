@@ -1,0 +1,63 @@
+﻿@using PaiXie.Data
+@using System.Data;
+@{
+    ViewBag.Title = "title";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+  //  var dtPlatformTypes = ViewBag.dtPlatformTypes as DataTable;
+}
+@section head{
+    
+
+}
+<div data-options="region:'north'" style="height:110px">
+  
+    <div class="z-toolbar">
+
+        <a href="#" plain="true" class="easyui-linkbutton" icon="icon-reload" title="刷新" id="refresh">刷新</a>
+        <a href="#" plain="true" class="easyui-linkbutton" icon="icon-add" title="新增" id="add">新增</a>
+        <a href="#" plain="true" class="easyui-linkbutton" icon="icon-remove" title="删除" id="delete"><label id="lbldelete">删除</label>  </a>
+    </div>
+  
+    
+    <div class="searchpro" id="searchpro" style="margin-top:0px">
+        <label for="txtName">店铺名称：</label>
+        <input type="text" id="Name" name="Name" />
+        <label for="txtName">平台类型：</label>
+        <select id="ptlx" name="ptlx" class="easyui-combobox" data-options="height:30,width:150"></select>
+        <label for="txtName">平台名称：</label>
+        <select name="ptmc" id="ptmc" class="easyui-combobox" data-options="height:30,width:150">
+        
+              @*@{
+                for (int i = 0; i < dtPlatformTypes.Rows.Count; i++) {
+                    <option value="@(dtPlatformTypes.Rows[i]["Value"])">
+                        @(dtPlatformTypes.Rows[i]["Name"])
+                    </option>
+                }
+            }*@
+        </select>
+        <input type="button" class="button" id="btnSerach" value="搜索">
+        <input type="button" class="button-rest" id="btnRest" value="清空条件" onclick="javascript:location.reload();">
+    </div>     
+</div>
+<div data-options="region:'center'" class="p0lr22">
+    <input id="hid" type="hidden" value="0" />
+    <table id="grid" class="easyui-datagrid"
+           data-options="singleSelect:false,collapsible:true,method:'get'"></table>
+</div>
+@section bottom{
+<script src="~/Areas/shop/ViewJs/ShopList.js"></script>
+  <script>     
+        $(document).ready(function () {
+        //初始化数据
+            BindDictItem("ptlx", "ShopType");
+            $('#ptmc').combobox({
+                url: '/shop/shops/GetdtPlatformType',
+                valueField: 'Value',
+                textField: 'Text'
+            });
+            //选中特定值
+            $("#ptlx").combobox('setValue', 0);
+            $("#ptmc").combobox('setValue', 0);       
+       });
+</script>
+}

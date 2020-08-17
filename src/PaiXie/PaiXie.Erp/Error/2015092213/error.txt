@@ -1,0 +1,104 @@
+2015/9/22 13:53:26
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='admin' and  Password='81dc9bdb52d04dc20036dbd8313ed055' and IsEnable=1 
+------------------------------------------------------------------
+2015/9/22 13:53:51
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='admin' and  Password='202cb962ac59075b964b07152d234b70' and IsEnable=1 
+------------------------------------------------------------------
+2015/9/22 13:54:29
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='admin' and  Password='202cb962ac59075b964b07152d234b70' and IsEnable=1 
+------------------------------------------------------------------
+2015/9/22 13:54:34
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='admin' and  Password='81dc9bdb52d04dc20036dbd8313ed055' and IsEnable=1 
+------------------------------------------------------------------
+2015/9/22 13:54:34
+Incorrect parameter count in the call to native function 'isnull'----MySql.Data.MySqlClient.MySqlException (0x80004005): Incorrect parameter count in the call to native function 'isnull'
+   在 FluentData.ExecuteQueryHandler.HandleQueryException(Exception exception)
+   在 FluentData.ExecuteQueryHandler.ExecuteQuery(Boolean useReader, Action action)
+   在 FluentData.DbCommand.Execute()
+   在 PaiXie.Data.BaseRepository`1.Update(String sqlStr) 位置 e:\001\src\PaiXie\PaiXie.Data\BaseRepository\BaseRepository.cs:行号 55
+   在 PaiXie.Service.BaseService`1.Update(String sqlStr) 位置 e:\001\src\PaiXie\PaiXie.Service\Base\BaseService.cs:行号 78
+   在 PaiXie.Api.Bll.Users.UpdateUserLoginCountAndDate(String UserCode) 位置 e:\001\src\PaiXie\PaiXie.Api.Bll\Sys\Users.cs:行号 57
+   在 PaiXie.Api.Bll.Users.Login(String Code, String Pwd, String checkme) 位置 e:\001\src\PaiXie\PaiXie.Api.Bll\Sys\Users.cs:行号 47
+   在 PaiXie.Erp.Controllers.LoginController.DoAction(String UserCode, String UserPassword, String checkme) 位置 e:\001\src\PaiXie\PaiXie.Erp\Controllers\LoginController.cs:行号 25
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+------------------------------------------------------------------
+2015/9/22 13:55:28
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='a' and  Password='0cc175b9c0f1b6a831c399e269772661' and IsEnable=1 
+------------------------------------------------------------------
+2015/9/22 13:55:36
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='admin' and  Password='202cb962ac59075b964b07152d234b70' and IsEnable=1 
+------------------------------------------------------------------
+2015/9/22 13:55:38
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='admin' and  Password='202cb962ac59075b964b07152d234b70' and IsEnable=1 
+------------------------------------------------------------------
+2015/9/22 13:55:39
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='admin' and  Password='202cb962ac59075b964b07152d234b70' and IsEnable=1 
+------------------------------------------------------------------
+2015/9/22 13:55:40
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='admin' and  Password='202cb962ac59075b964b07152d234b70' and IsEnable=1 
+------------------------------------------------------------------
+2015/9/22 13:57:37
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='admin' and  Password='202cb962ac59075b964b07152d234b70' and IsEnable=1 
+------------------------------------------------------------------
+2015/9/22 13:57:37
+Incorrect parameter count in the call to native function 'isnull'----MySql.Data.MySqlClient.MySqlException (0x80004005): Incorrect parameter count in the call to native function 'isnull'
+   在 FluentData.ExecuteQueryHandler.HandleQueryException(Exception exception)
+   在 FluentData.ExecuteQueryHandler.ExecuteQuery(Boolean useReader, Action action)
+   在 FluentData.DbCommand.Execute()
+   在 PaiXie.Data.BaseRepository`1.Update(String sqlStr) 位置 e:\001\src\PaiXie\PaiXie.Data\BaseRepository\BaseRepository.cs:行号 55
+   在 PaiXie.Service.BaseService`1.Update(String sqlStr) 位置 e:\001\src\PaiXie\PaiXie.Service\Base\BaseService.cs:行号 78
+   在 PaiXie.Api.Bll.Users.UpdateUserLoginCountAndDate(String UserCode) 位置 e:\001\src\PaiXie\PaiXie.Api.Bll\Sys\Users.cs:行号 57
+   在 PaiXie.Api.Bll.Users.Login(String Code, String Pwd, String checkme) 位置 e:\001\src\PaiXie\PaiXie.Api.Bll\Sys\Users.cs:行号 47
+   在 PaiXie.Erp.Controllers.LoginController.DoAction(String UserCode, String UserPassword, String checkme) 位置 e:\001\src\PaiXie\PaiXie.Erp\Controllers\LoginController.cs:行号 25
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+------------------------------------------------------------------

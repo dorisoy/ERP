@@ -1,0 +1,27 @@
+﻿@using PaiXie.Data
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    @section head{
+
+    }
+<div data-options="region:'north'" style="height:360px">
+    <input type="hidden" value="@ViewBag.roleid" id="roleid" name="roleid" />
+    <input type="hidden" value="@ViewBag.rolecode" id="rolecode" name="rolecode" />
+
+
+   <table id="test" title=""></table>
+
+
+
+</div>
+<div data-options="region:'center'">
+    <div style="text-align:center; padding-top:10px">
+        <a href="javascript:void(0)" class="button-oky" id="btnSave" iconcls="icon-ok">确定</a>
+        <a href="javascript:void(0)" class="button-cancel" iconcls="icon-cancel" id="btnClose">取消</a>
+    </div>
+
+</div>
+    @section bottom{
+        <script src="~/Areas/SysWarehouse/ViewJs/Menu.js"></script>
+    }

@@ -1,0 +1,144 @@
+﻿<%@ CodeTemplate Language="C#" TargetLanguage="C#" Src="DataEntity.cst.cs" ResponseEncoding="UTF-8" Inherits="CodeSmith.MyTemplates.TableObjectTemplate" Description="Generate A DataTable Collection and Persis object." %>
+<%@ Assembly Name="SchemaExplorer" %>
+<%@ Assembly Name="SchemaExplorer.SqlSchemaProvider" %>
+<%@ Assembly Name="System.Data" %>
+<%@ Assembly Name="System.Design" %>
+<%@ Import Namespace="System.Collections.Generic" %>
+<%@ Import Namespace="System.Data" %>
+<%@ Import Namespace="System.IO" %>
+<%@ Import Namespace="SchemaExplorer" %>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using PaiXie.Data;
+using System.Data;
+using FluentData;
+namespace <%= Namespace %> 
+{
+ 	public class <%= GetClassName(SourceTable, false) %>Service  : BaseService<<%= GetClassName(SourceTable, false) %>> {
+    
+        #region Update
+        
+		public static int Update(<%= GetClassName(SourceTable, false) %> entity, IDbContext context = null) {
+			return <%= GetClassName(SourceTable, false) %>Repository.GetInstance().Update(entity, context);
+		}
+        
+        #endregion
+
+        #region Add
+		
+        public static int Add(<%= GetClassName(SourceTable, false) %> entity, IDbContext context = null) {
+			return <%= GetClassName(SourceTable, false) %>Repository.GetInstance().Add(entity, context);
+		}
+        
+        #endregion
+        
+        #region 获取单个实体 通过主键ID
+
+	    /// <summary>
+	    /// 获取单个实体 通过主键ID
+	    /// </summary>
+	    /// <param name="id">主键ID</param>
+	    /// <param name="context">数据库连接对象</param>
+	    /// <returns></returns>
+	    public static <%= GetClassName(SourceTable, false) %> GetQuerySingleByID(int id, IDbContext context = null) {
+		    return <%= GetClassName(SourceTable, false) %>Repository.GetInstance().GetQuerySingleByID(id, context);
+	    }
+    
+	    #endregion
+
+    	#region 删除操作  通过ID
+
+        /// <summary>
+    	/// 删除操作  通过ID
+	    /// </summary>
+	    /// <param name="id">主键ID</param>
+	    /// <param name="context">数据库对象</param>
+	    /// <returns></returns>
+	    public static int DelByID(int id, IDbContext context = null) {
+		    return <%= GetClassName(SourceTable, false) %>Repository.GetInstance().DelByID(id, context);
+	    }
+    
+        #endregion             
+	}
+}
+
+
+
+
+
+<script runat="template">
+private string _namespace = "PaiXie.Service";
+[Category("Output")]
+public string Namespace
+{
+	get { return _namespace; }
+	set { _namespace = value; }
+}
+private string _outputDirectory = string.Empty;
+
+[Editor(typeof(System.Windows.Forms.Design.FolderNameEditor), typeof(System.Drawing.Design.UITypeEditor))] 
+[Category("Output")]
+public string OutputDirectory 
+{
+    get
+    {
+		if(string.IsNullOrEmpty(_outputDirectory))
+			_outputDirectory = @"D:\vss_local\Service\" + Namespace;
+        return _outputDirectory;
+    }
+    set
+    {
+        _outputDirectory = value;
+    } 
+}
+
+private TableSchemaCollection _tables;
+[Category("Output")]
+public TableSchemaCollection SourceTables
+{
+	get 
+	{
+		return _tables;
+	}
+	set
+	{
+		_tables = value;
+	}
+}
+private TableSchema SourceTable;
+public override void Render(System.IO.TextWriter writer) 
+{
+	if(!Directory.Exists(OutputDirectory))
+		Directory.CreateDirectory(OutputDirectory);
+    
+    
+
+	foreach(TableSchema sourceTable in SourceTables)
+	{
+		SourceTable = sourceTable;
+		string fileName = System.IO.Path.Combine(OutputDirectory,GetClassName(SourceTable,false)+"Service.cs");
+        
+        if(File.Exists(fileName))
+        {
+            File.Delete(fileName);
+        }
+        
+  		System.IO.StreamWriter fileWriter = null; 
+  		try 
+		{ 
+			fileWriter = new System.IO.StreamWriter(fileName, true); 
+			base.Render(fileWriter); 
+		}
+		catch
+		{
+		}
+		finally 
+		{ 
+			if (fileWriter != null) 
+			fileWriter.Close(); 
+		}
+	}
+} 
+</script>

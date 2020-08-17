@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "title";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+
+}
+<div data-options="region:'north'" style="height:55px">
+    <div class="toolbar">
+        <a href="javascript:void(0);" class="refresh" title="刷新" id="refresh"><span></span>刷新</a>
+        <a href="javascript:void(0);" class="add" title="添加物流" id="add"><span></span>添加物流</a>
+  
+    </div>
+   
+      
+            <input type="hidden"   id="btnSerach" value="模糊搜索">
+      
+
+
+
+     
+  
+</div>
+<div data-options="region:'center'" class="p0lr22">
+    <input id="hid" type="hidden" value="0" />
+    <table id="grid" class="easyui-datagrid"
+           data-options="singleSelect:true,collapsible:true,method:'get'"></table>
+
+
+
+</div>
+@section bottom{
+<script src="~/Areas/Sys/ViewJs/logistics_list.js"></script>
+}
+

@@ -1,0 +1,434 @@
+﻿@using PaiXie.Data
+@{
+    var Sysuser = ViewBag.Sysuser as Warehouse;
+    var Syscodelist = ViewBag.Syscodelist as List<Brand>;
+     var ddlsheng = "0";
+     var ddlshi = "0";
+    var ddlqu = "0";
+    var deladd = "";
+    if (Sysuser != null) {
+        try {
+            string[] ins = Sysuser.Address.Split(',');
+            ddlsheng = ins[0];
+            ddlshi = ins[1];
+            ddlqu = ins[2];
+            deladd = ins[3];
+        }
+        catch { }
+    }
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+@*<script type="text/javascript" src="http://api.map.baidu.com/api?v=1.3"></script>*@
+<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+
+<link href="~/Content/css/pro.css" rel="stylesheet" />
+<style type="text/css">
+    .gray {
+        color: Gray;
+    }
+    .detailAddress, .isEnable th{
+        padding:0px;
+    }
+    .detailAddress, .isEnable td{
+        padding:0px;
+    }
+</style>
+
+<script type="text/javascript">
+    $(function() {
+        $("#dadd").addClass("gray").val("请输入详细地址").bind({
+            "focus":function() {
+                if($(this).val() == "请输入详细地址"){
+                    $(this).val("").removeClass("gray");
+                }
+            },"blur":function() {
+                if($(this).val() == ""){
+                    $(this).val("请输入详细地址").addClass("gray");
+                }
+            }
+        });
+    });
+</script>
+}
+<div class="easyui-layout" data-options="fit:true" >
+    <div data-options=" region:'north',height:63" id="topdiv">
+        <div class="toolbar" id="toolbar">
+            <a href="javascript:void(0);" class="back" id="back"><span></span>返回</a>
+            <a href="javascript:void(0);" class="toolbarsave" id="toolbarsave"><span></span>保存</a>
+        </div>
+    </div>
+    <div data-options="region:'center',border:false" class="p0lr22">
+        <form id="ff" method="post" novalidate="novalidate">
+            <input type="hidden" value="@Sysuser.ID" id="ID" name="ID" />
+            <input type="hidden" value="@Sysuser.Code" id="Code" name="Code" />
+                <table id="tblAdd" class="tableinfo">
+                    <tr>
+                        <th style="width:120px;"><label for="Name" >仓库名称：</label></th>
+                        <td>
+                            <input style="width:150px;"
+                                   @( Sysuser.ID > 0 ? Html.Raw("readonly=\"readonly\"") : Html.Raw(""))
+                                   value="@Sysuser.Name" class="easyui-validatebox" type="text" id="Name" name="Name" data-options="required:true,height:30,validType:'length[1,20]'" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><label for="Name">仓库管理员密码：</label></th>
+                        <td>
+                            <input style="width:150px;"
+                                   value="" class="easyui-validatebox" type="password" id="txtpwd" name="txtpwd" maxlength="20" data-options="required:@(Sysuser.ID > 0 ? "false" : "true"),height:30,validType:'safepass'" onpaste="return false" oncontextmenu="return false" oncopy="return false" oncut="return false" />
+                   
+                            @{ if (Sysuser.ID > 0) {
+                                @Html.Raw(" <label style=\"font-size:12px;color:#999;\">不修改密码，无需填写！</label> ")
+                            }
+                            }                        
+                           </td>
+                    </tr>
+                    <tr>
+                        <th><label for="Description">备注信息：</label></th>
+                        <td>
+                            <textarea style="height:50px; width:400px; border:1px solid #dddddd;" id="Remark" name="Remark">@Sysuser.Remark</textarea>
+                        </td>
+                    </tr>
+                    <tr class="isEnable">
+                        <th><label for="IsEnable">是否可用：</label></th>
+                        <td>
+                            <input type="checkbox"  @if (Sysuser.ID == 0 || Sysuser.IsEnable==1) {
+                                                     string c=   "checked";  
+                                                         @(c) 
+                                                    }
+                                    value="@(Sysuser.ID == 0? 1: Sysuser.IsEnable)" 
+                                   
+                                   id="IsEnable" name="IsEnable" />
+                              </td>
+                      
+                    </tr>
+                    <tr>
+                        <th valign="top"><label for="IsEnable">授权品牌：</label></th>
+                        <td>
+                            <input id="allroles" name="allroles" type="checkbox" value="1" onclick="checkAllBox(this);" /><label for="allroles">全部品牌</label>
+                            <br />
+                            @foreach (Brand item in Syscodelist) {
+                                var ischecked = "";
+                                //if (item.Selected) {
+                                //    ischecked = "checked='checked'";
+                                //}
+                                <input name="sqpp" type="checkbox" value="@item.ID" @ischecked />
+                                @item.Name
+
+                            }
+                            <input type="hidden" id="Librand" name="Librand" value="@Sysuser.Librand" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><label for="IsEnable">仓库地址：</label></th>
+                        <td>
+                            <select id="SelectF" class="easyui-combobox" data-options="valueField:'Value',textField:'Text',url:'/Warehouse/Warehouse/GetAreaJson',width:200,height:30,modal:true,editable:false"></select>
+                            <select id="SelectW" class="easyui-combobox" data-options="valueField:'Value',textField:'Text',url:'/Warehouse/Warehouse/GetAreaJson?grade=1&pid=@ddlsheng',width:200,height:30,modal:true,editable:false"></select>
+                            <select id="SelectL" class="easyui-combobox" data-options="valueField:'Value',textField:'Text',url:'/Warehouse/Warehouse/GetAreaJson?grade=2&pid=@ddlshi',width:200,height:30,modal:true,editable:false"></select>
+
+                            <input style="width:120px;" value="" class="easyui-validatebox" type="hidden" id="ssq" name="ssq" />
+
+
+                            <input id="Address" name="Address" value="@Sysuser.Address" type="hidden" />
+
+                        </td>
+                    </tr>
+                    <tr class="detailAddress">
+                        <th>&nbsp;</th>
+                        <td>
+                            <input data-options="height:30" style="width:400px;" value="@deladd" class="easyui-validatebox" type="text" id="dadd" name="dadd" onblur="searchByStationName();" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>&nbsp;</th>
+                        <td>
+                            @*<div style="height:10px;"></div>*@
+                            @*经度：*@
+                            <input id="Longitude" name="Longitude" value="@Sysuser.Longitude" type="hidden" />
+                            @*纬度：*@
+                            <input id="Latitude" name="Latitude" value="@Sysuser.Latitude" type="hidden" />
+                            <input id="result_" type="hidden" />
+                            <div id="container" style="width: 600px;height: 300px;border: 1px solid gray;overflow:hidden;"></div>
+                        </td>
+                    </tr>
+                    <tr style="height:80px;">
+                        <th>&nbsp;</th>
+                        <td>
+                            <a href="javascript:void(0)" class="button-oky" id="btnSave" iconcls="icon-ok">确定</a>
+                            <a href="javascript:void(0)" class="button-cancel" iconcls="icon-cancel" id="btnClose">取消</a>
+                        </td>
+                    </tr>
+                </table>         
+        </form>
+    </div>  
+</div>      
+@section bottom{
+ 
+<script src="~/Areas/Warehouse/ViewJs/Editwarehouse.js"></script>
+    <script>
+        $(document).ready(function () {   
+            if('@deladd' !='')
+            {
+                $('#dadd').val('@deladd');
+                $('#dadd').removeClass("gray");
+                initMap();
+                var point = new BMap.Point(map_x, map_y);
+                curMarker.setPoint(point);
+            }
+            var the006Value = $('#Librand').val();
+            var statuses006 = the006Value.split(",");
+            var box006 = document.getElementsByName("sqpp");
+            for (var M = 0; M < statuses006.length; M++) {
+                for (var N = 0; N < box006.length; N++) {
+                    if (box006[N].value == statuses006[M]) {
+                        box006[N].checked = true;
+                    }
+                }
+            }
+        });
+function checkAllBox(obj){
+    var answer = document.getElementsByName("allroles");
+    if (obj.checked == true) {
+        checkAll();
+        //for(var i=0;i<answer.length;i++){
+        //    answer[i].checked = true;
+        //}
+    } else {
+        uncheckAll();
+        //for(var i=0;i<answer.length;i++){
+        //    answer[i].checked = false;
+        //}
+    }
+}
+    function checkData(){ 
+        var answer= document.getElementsByName("answer");
+        var flag = false;
+        for(var i=0;i<income.length;i++){
+            if(income[i].checked == true){
+                flag = true;
+                break;
+            }
+        }
+        if(!flag){
+            alert("请至少选择一项");
+        }
+        return flag;
+    }
+  
+
+        //全选
+        function checkAll() {
+            $('input[name="sqpp"]').attr("checked", "checked");
+        }
+        //反选
+        function uncheckAll() {
+            $('input[name="sqpp"]').each(function () {
+                this.checked = !this.checked;
+            })
+        }
+        //获取选中的项
+        function getCheck() {
+  
+            var str = document.getElementsByName("sqpp");
+      var objarray=str.length;
+      var chestr="";
+      for (i=0;i<objarray;i++)
+      {
+          if (str[i].checked == true)
+          {
+              chestr+=str[i].value+",";
+          }
+      }if(chestr == "")
+      {
+        //  alert("请先选择一个爱好～！");
+      }
+      else
+      {
+           
+         // chestr=chestr.substring(1,chestr-1);
+         //alert("您先择的是："+chestr);
+      }
+  
+     // alert(chestr);
+
+      $('#Librand').val(chestr);
+         //   alert($('#Librand').val());
+        //  return check;
+        }
+    </script>
+
+<script type="text/javascript">
+
+   
+
+    $(document).ready(function () {
+              //Start:设置combox的选择事件
+              $('#SelectF').combobox({
+                  onSelect: function () {
+                      var url = '/Warehouse/Warehouse/GetAreaJson?grade=1&pid=' + $('#SelectF').combobox('getValue');
+                      $('#SelectW').combobox('reload', url);
+                      $('#SelectW').combobox('select', 0);
+                      $('#SelectL').combobox('select', 0);
+                      $('#ssq').val($('#SelectF').combobox('getText'));
+                  }
+              });
+              $('#SelectW').combobox({
+                  onSelect: function () {
+                      var url = '/Warehouse/Warehouse/GetAreaJson?grade=2&pid=' + $('#SelectW').combobox('getValue');
+                      $('#SelectL').combobox('reload', url);
+                      $('#SelectL').combobox('select', 0);
+                      $('#ssq').val($('#SelectF').combobox('getText') + $('#SelectW').combobox('getText'));
+                  }
+              });
+              $('#SelectL').combobox({
+                  onSelect: function () {
+                      $('#ssq').val($('#SelectF').combobox('getText') + $('#SelectW').combobox('getText') + $('#SelectL').combobox('getText'));
+                  }
+              });
+              //End:设置combox的选择事件
+            
+              //$("#SelectW").combobox('setValue', 0);
+              //$("#SelectL").combobox('setValue', 0);
+
+        //   alert($('#SelectF').combobox('getText'));
+
+          
+             
+              $("#SelectF").combobox('setValue', @ddlsheng);
+              $("#SelectW").combobox('setValue', @ddlshi);
+              $("#SelectL").combobox('setValue', @ddlqu);
+
+
+
+
+          });
+
+
+   
+</script>
+
+
+<script type="text/javascript">
+    // 当前经纬度
+    @{string xstr = "116.405347";
+      if (string.IsNullOrEmpty(Sysuser.Longitude)) {
+             // xstr = "";
+          }
+      else {
+          xstr = Sysuser.Longitude;
+      }
+
+      }
+
+    var map_x = @xstr;
+
+    @{string ystr = "39.931867";
+          if (string.IsNullOrEmpty(Sysuser.Latitude)) {
+            //  ystr = "";
+          }
+          else {
+              ystr = Sysuser.Latitude;
+          }
+
+      }
+
+    var map_y =@ystr;
+    //创建和初始化地图函数：
+    function initMap(){
+        createMap();//创建地图
+        setMapEvent();//设置地图事件
+        addMapControl();//向地图添加控件
+        addMarker();//向地图中添加marker
+    }
+    //创建地图函数：
+    function createMap(){
+        var map = new BMap.Map("container");//在百度地图容器中创建一个地图
+        var point = new BMap.Point(map_x,map_y);//定义一个中心点坐标
+        map.centerAndZoom(point, 14);//设定地图的中心点和坐标并将地图显示在地图容器中
+        //  map.centerAndZoom("福建厦门同安西柯下尾", 14);
+        window.map = map;//将map变量存储在全局
+     //   map.addEventListener("click", getXy);
+    }
+    //地图事件设置函数：
+    function setMapEvent(){
+       map.enableDragging();//启用地图拖拽事件，默认启用(可不写)
+        //   map.disableDragging();   //禁止拖拽 
+        map.enableScrollWheelZoom();//启用地图滚轮放大缩小
+        map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
+        map.enableKeyboard();//启用键盘上下左右键移动地图
+    }
+    //地图控件添加函数：
+    function addMapControl(){
+        //向地图中添加缩放控件
+        var ctrl_nav = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_SMALL});
+        map.addControl(ctrl_nav);
+        //向地图中添加缩略图控件
+        var ctrl_ove = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:0});
+        map.addControl(ctrl_ove);
+        //向地图中添加比例尺控件
+        var ctrl_sca = new BMap.ScaleControl({anchor:BMAP_ANCHOR_TOP_RIGHT});
+        map.addControl(ctrl_sca);
+        //map.addEventListener("dragend", function showInfo() {
+        //    var cp = map.getCenter();
+        //    document.getElementById("result_").value = cp.lng + "," + cp.lat;
+        //    document.getElementById("Longitude").value = cp.lng;
+        //    document.getElementById("Latitude").value = cp.lat;    
+        //    var point = new BMap.Point(cp.lng, cp.lat);
+        //    curMarker.setPoint(point);
+        //});
+    }
+    //标注点数组
+    var myMarker = {title:"",content:"",point:''+map_x+'|'+map_y,isOpen:0,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}};
+    var curMarker = null;
+    //创建marker
+    function addMarker(){
+        var json = myMarker;
+        var p0 = json.point.split("|")[0];
+        var p1 = json.point.split("|")[1];
+        var point = new BMap.Point(p0,p1);
+        var iconImg = createIcon(json.icon);
+        var marker = new BMap.Marker(point, { icon: iconImg });
+        marker.enableDragging();
+        marker.addEventListener("dragend", getXy);
+        map.addOverlay(marker);
+        curMarker = marker;
+    }
+    //创建InfoWindow
+    function createInfoWindow(i){
+        var json = markerArr[i];
+        var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title + "</b><div class='iw_poi_content'>"+json.content+"</div>");
+        return iw;
+    }
+    //创建一个Icon
+    function createIcon(json){
+        var icon = new BMap.Icon("http://app.baidu.com/map/images/us_mk_icon.png", new BMap.Size(json.w,json.h),{imageOffset: new BMap.Size(-json.l,-json.t),infoWindowOffset:new BMap.Size(json.lb+5,1),offset:new BMap.Size(json.x,json.h)})
+        return icon;
+    }
+    function getXy(e){
+        document.getElementById("result_").value = e.point.lng + "," + e.point.lat;
+        document.getElementById("Longitude").value = e.point.lng;
+        document.getElementById("Latitude").value = e.point.lat;    
+        curMarker.setPoint(e.point);
+    }
+    initMap();//创建和初始化地图
+    var localSearch = new BMap.LocalSearch(map);
+    localSearch.enableAutoViewport(); //允许自动调节窗体大小
+    function searchByStationName() {
+        map.clearOverlays();//清空原来的标注
+        var keyword =document.getElementById("ssq").value+ document.getElementById("dadd").value;// '厦门思明区软件园二期观日路50号';
+        localSearch.setSearchCompleteCallback(function (searchResult) {
+            var poi = searchResult.getPoi(0);
+            document.getElementById("result_").value = poi.point.lng + "," + poi.point.lat;
+            document.getElementById("Longitude").value = poi.point.lng;
+            document.getElementById("Latitude").value = poi.point.lat;    
+            map_x = poi.point.lng;
+            map_y = poi.point.lat;
+            initMap();
+            var point = new BMap.Point(poi.point.lng, poi.point.lat);
+            curMarker.setPoint(point);
+        });
+        localSearch.search(keyword);
+    }
+</script>
+}
+   

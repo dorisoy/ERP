@@ -1,0 +1,20 @@
+2015/9/28 9:46:31
+System.TypeInitializationException: “PaiXie.Cache.RedisManager”的类型初始值设定项引发异常。 ---> System.IO.FileNotFoundException: 未能加载文件或程序集“ServiceStack.Common, Version=3.9.70.0, Culture=neutral, PublicKeyToken=null”或它的某一个依赖项。系统找不到指定的文件。
+   在 ServiceStack.Redis.PooledRedisClientManager..ctor(IEnumerable`1 readWriteHosts, IEnumerable`1 readOnlyHosts, RedisClientManagerConfig config, Int64 initalDb, Nullable`1 poolSizeMultiplier, Nullable`1 poolTimeOutSeconds)
+   在 ServiceStack.Redis.PooledRedisClientManager..ctor(IEnumerable`1 readWriteHosts, IEnumerable`1 readOnlyHosts, RedisClientManagerConfig config)
+   在 PaiXie.Cache.RedisManager.CreateManager() 位置 e:\001\src\PaiXie\PaiXie.Cache\RedisManager.cs:行号 35
+   在 PaiXie.Cache.RedisManager..cctor() 位置 e:\001\src\PaiXie\PaiXie.Cache\RedisManager.cs:行号 23
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 PaiXie.Cache.RedisManager.GetClient()
+   在 PaiXie.Cache.CacheHelper.Add[T](String CacheKey, T data) 位置 e:\001\src\PaiXie\PaiXie.Cache\CacheHelper.cs:行号 56
+------------------------------------------------------------------
+2015/9/28 9:48:12
+System.TypeInitializationException: “PaiXie.Cache.RedisManager”的类型初始值设定项引发异常。 ---> System.IO.FileNotFoundException: 未能加载文件或程序集“ServiceStack.Common, Version=3.9.70.0, Culture=neutral, PublicKeyToken=null”或它的某一个依赖项。系统找不到指定的文件。
+   在 ServiceStack.Redis.PooledRedisClientManager..ctor(IEnumerable`1 readWriteHosts, IEnumerable`1 readOnlyHosts, RedisClientManagerConfig config, Int64 initalDb, Nullable`1 poolSizeMultiplier, Nullable`1 poolTimeOutSeconds)
+   在 ServiceStack.Redis.PooledRedisClientManager..ctor(IEnumerable`1 readWriteHosts, IEnumerable`1 readOnlyHosts, RedisClientManagerConfig config)
+   在 PaiXie.Cache.RedisManager.CreateManager() 位置 e:\001\src\PaiXie\PaiXie.Cache\RedisManager.cs:行号 35
+   在 PaiXie.Cache.RedisManager..cctor() 位置 e:\001\src\PaiXie\PaiXie.Cache\RedisManager.cs:行号 23
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 PaiXie.Cache.RedisManager.GetClient()
+   在 PaiXie.Cache.CacheHelper.Add[T](String CacheKey, T data) 位置 e:\001\src\PaiXie\PaiXie.Cache\CacheHelper.cs:行号 56
+------------------------------------------------------------------

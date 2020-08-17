@@ -1,0 +1,78 @@
+﻿@using PaiXie.Core;
+@{
+    var id = ViewBag.ID;
+    var printBatchCode = ViewBag.PrintBatchCode;
+    var deliveryExpressID = ViewBag.DeliveryExpressID;
+    ViewBag.Title = "打印快递单";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section head{
+    <style>
+        .tableinfo td {
+            height: 60px;
+            line-height: 60px;
+            text-align: center;
+        }
+        .tableinfo td .button {
+            border: 0px;
+            background: #436fac;
+            color: #fff;
+            height: 30px;
+            width: 90px;
+            cursor: pointer;
+        }
+    </style>
+    <script src="~/Scripts/PrintActivex.js"></script>
+    <object id="LODOP_OB" classid="clsid:2105C259-1E0C-4534-8141-A753534CB4CA" width=0 height=0>
+        <embed id="LODOP_EM" wmode="transparent" type="application/x-print-lodop" width=0 height=0>
+    </object>
+}
+<form id="ff" method="post" novalidate="novalidate">
+    <input type="hidden" id="hdnID" name="ID" value="@id" />
+    <input type="hidden" id="hdnPrintBatchCode" name="PrintBatchCode" value="@printBatchCode" />
+    <div id="showLodop" style="display:none;"></div>
+    <table id="tblAdd" class="tableinfo" style="margin-top: 15px;">
+        @*<tr>
+        <td>
+            <label>快递单模版：</label><select id="expressTemplate" name="expressTemplate" class="easyui-combobox" data-options="editable:false,width:190,height:30"></select>
+        </td>
+    </tr>*@
+        <tr>
+            <td>
+                <label>请选择打印机：</label><input id="printerName" name="printerName" class="easyui-combobox" style="width: 190px;" data-options="valueField:'value', textField:'text',editable:false, width:190,height:30,panelHeight:130">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" id="btnPrint" class="button" value="直接打印" />&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="button" id="btnPreview" class="button" value="预览" />
+            </td>
+        </tr>
+    </table>
+</form>
+@section bottom{
+<script>
+    $(function () {
+        var id = $("#hdnID").val();
+        var printBatchCode = $("#hdnPrintBatchCode").val();
+        var deliveryExpressID = '@deliveryExpressID';
+        var LODOP = getLodop(document.getElementById('LODOP_OB'), document.getElementById('LODOP_EM'), "showLODOP");
+        var printTemplateID = 0;
+        var printTemplateType = '@((int)PrintTemplateType.快递单)';
+        var defaultPrinterName = getDefaultPrinterName(deliveryExpressID, printTemplateID, printTemplateType);
+        //绑定打印机，并选中默认打印机
+        bindPrinterName(LODOP, "printerName", defaultPrinterName);
+        //直接打印
+        $('#btnPrint').click(function () {
+            var printerName = $("#printerName").combobox("getValue");
+            print(id, printBatchCode, deliveryExpressID, printTemplateID, LODOP, printerName, printTemplateType, 0);
+        });
+        //预览
+        $('#btnPreview').click(function () {
+            var printerName = $("#printerName").combobox("getValue");
+            print(id, printBatchCode, deliveryExpressID, printTemplateID, LODOP, printerName, printTemplateType, 1);
+        });
+    });
+</script>
+}

@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "设置计划商品供应商";
+    var productsSkuID = ViewBag.ProductsSkuID;
+    var planItemID = ViewBag.PlanItemID;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+
+}
+<div data-options="region:'center',border:false" style="padding:30px">
+    <input type="hidden" id="hdnProductsSkuID" value="@productsSkuID" />
+    <input type="hidden" id="hdnPlanItemID" value="@planItemID" />
+    <table id="grid" class="easyui-datagrid" title="" data-options="singleSelect:false,collapsible:true,method:'get'"></table>
+</div>
+
+@section bottom{
+<script src="~/Areas/Purchase/ViewJs/EditPlanItemSupplier.js"></script>
+}

@@ -1,0 +1,83 @@
+﻿@using PaiXie.Data
+@using PaiXie.Api.Bll
+@{
+    var ordbase = ViewBag.Ordbase as Ordbase;
+    var area = ViewBag.Area as AreaManager.Area;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+}
+<form id="ff" method="post" novalidate="novalidate">
+    <table class="tableinfo" style=" margin-top:20px">
+        <tr>
+            <th align="right" style="width:130px">
+                收货人姓名：
+            </th>
+            <td>
+                <input style="width:165px;" value="@ordbase.BuyName" class="easyui-validatebox" type="text" id="txtBuyName" name="BuyName" data-options="required:true,validType:'length[1,30]'" />
+            </td>
+        </tr>
+        <tr>
+            <th align="right" style="width:130px">
+                收货人电话：
+            </th>
+            <td>
+                <input style="width:165px;" value="@ordbase.BuyTel" class="easyui-validatebox" type="text" id="txtBuyTel" name="BuyTel" />
+            </td>
+        </tr>
+        <tr>
+            <th align="right" style="width:130px">
+                收货人手机：
+            </th>
+            <td>
+                <input style="width:165px;" value="@ordbase.BuyMtel" class="easyui-validatebox" type="text" id="txtBuyMtel" name="BuyMtel" />
+            </td>
+        </tr>
+        <tr>
+            <th align="right" style="width:130px">
+                收货人地址：
+            </th>
+            <td>
+                <select id="ProvinceID" name="ProvinceID" class="easyui-combobox" data-options="valueField:'Value',textField:'Text',url:'/Warehouse/Warehouse/GetAreaJson',editable:false,width:120,height:30,modal:true"></select>
+                <select id="CityID" name="CityID" class="easyui-combobox" data-options="valueField:'Value',textField:'Text',url:'/Warehouse/Warehouse/GetAreaJson?grade=1&pid=@area.ProvinceID',editable:false,width:120,height:30,modal:true"></select>
+                <select id="DistrictID" name="DistrictID" class="easyui-combobox" data-options="valueField:'Value',textField:'Text',url:'/Warehouse/Warehouse/GetAreaJson?grade=2&pid=@area.CityID ',editable:false,width:120,height:30,modal:true"></select>
+                <input type="hidden" id="Province" name="Province" value="@area.Province" />
+                <input type="hidden" id="City" name="City" value="@area.City" />
+                <input type="hidden" id="District" name="District" value="@area.County" />
+                <input type="hidden" id="hdnOrdbaseID" name="ID" value="@ordbase.ID" />
+            </td>
+        </tr>
+        <tr>
+            <th align="right" style="width:130px">
+                &nbsp;
+            </th>
+            <td>
+                <input style="width:250px;" value="@ordbase.BuyAddressDetail" class="easyui-validatebox" type="text" id="txtBuyAddressDetail" name="BuyAddressDetail" data-options="required:true,validType:'length[1,30]'" />
+            </td>
+        </tr>
+        <tr>
+            <th align="right" style="width:130px">
+                邮政编码：
+            </th>
+            <td>
+                <input style="width:165px;" value="@ordbase.BuyPostCode" class="easyui-validatebox" type="text" id="txtBuyPostCode" name="BuyPostCode" data-options="validType:'length[1,30]'" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align:center; padding-top:10px">
+                <a href="javascript:void(0)" class="button-oky" id="btnSave" iconcls="icon-ok">确定</a>
+                <a href="javascript:void(0)" class="button-cancel" id="btnCancel" iconcls="icon-ok">取消</a>
+            </td>
+        </tr>
+    </table>
+</form>
+@section bottom{
+    <script src="~/Areas/Order/ViewJs/EditReceiverInfo.js"></script>
+    <script>
+        $(function () {
+            $("#ProvinceID").combobox('setValue', '@area.ProvinceID');
+            $("#CityID").combobox('setValue', '@area.CityID');
+            $("#DistrictID").combobox('setValue', '@area.CountyID');
+        });
+    </script>
+}

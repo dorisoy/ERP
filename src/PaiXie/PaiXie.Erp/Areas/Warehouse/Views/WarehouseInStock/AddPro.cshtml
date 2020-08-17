@@ -1,0 +1,86 @@
+﻿@using PaiXie.Data
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    @section head{
+    }
+<style>
+    .setlist {
+        width: 650px;
+        height: 155px;
+        margin: 10px auto 0 auto;
+        overflow: hidden;
+        position: relative;
+    }
+        .setlist table table td {
+            height: auto;
+            border: 0px;
+            white-space: normal;
+            text-align: left;
+        }
+    .inputextbox {
+        text-align: center;
+        width: 100px;
+    }
+    .infoshow li {
+        font-size: 14px;
+        line-height: 32px;
+        height: 36px;
+    }
+    .infoshow .red {
+        color: #F00;
+        padding-left: 0.5em;
+    }
+    .infotitle {
+        line-height: 30px;
+    }
+</style>
+<form id="ff" method="post" novalidate>
+    <table class="tableinfo" style="margin-top:25px; width:auto; margin-left:22px;">
+        <tr>
+            <th style="width:auto">请输入商品SKU码：</th>
+            <td><input   style="width:200px" value="" class="easyui-textbox" type="text" id="Code" name="Code" data-options="height:30,required:true" /></td>
+            <td><a href="javascript:void(0)" class="button-okb" id="btnSearch" iconcls="icon-ok" style="height:28px; line-height:28px">查找</a></td>
+        </tr>
+    </table>
+</form>
+<form id="ffpost" action="">
+    <input type="hidden" id="BillNo" name="BillNo" value="@ViewBag.BillNo" />
+    <div class="p0lr22 infotitle ndis" id="infotitle"></div>
+    <ul class="infoshow p0lr22 ndis" id="infoshow">
+        <li></li>
+        <li>
+            <span class="red">*</span>采购价￥：<input value="" class="easyui-numberbox" type="text" id="PurchasePrice" name="PurchasePrice" data-options="required:true,validType:'number',precision:3,height:30, width:100" />
+            <span style="padding-left:4em"></span>
+            生产日期：<input value="" class="easyui-datebox" type="text" id="ProductionDate" name="ProductionDate" data-options="height:30,width:100" />
+        </li>
+        <li>
+            选择入库库区：
+            <input id="ReservoirArea" class="easyui-combobox" value="0" name="ReservoirArea"
+                   data-options="height:30,panelHeight:69,width:120">
+        </li>
+    </ul>
+    <input name="ffcode" id="ffcode" type="hidden" value="">
+    <div class="p0lr22 setlist ndis" id="setlist">
+        <table id="grid" class="easyui-datagrid" title="" data-options="singleSelect:false,collapsible:true,method:'get'"></table>
+    </div>
+</form>
+<div class="ndis" style=" text-align:center; padding-top:10px" id="buttonbox">
+    <a href="javascript:void(0)" class="button-oky" id="btnSave" iconcls="icon-ok">添加</a>
+    <a href="javascript:void(0)" class="button-cancel" id="btnCancel" iconcls="icon-ok">取消</a>
+</div>
+@section bottom{
+<script src="~/Areas/Warehouse/ViewJs/AddPro.js"></script>
+    <script>
+        //库区列表
+        $(document).ready(function () {
+            $('#ReservoirArea').combobox({
+                url: '/Warehouse/Location/GetDictTopLocation?ram=' + Math.random(),
+                valueField: 'Value',
+                textField: 'Text'
+            });
+            //选中特定值
+            $("#ReservoirArea").combobox('setValue', 0);
+              });
+    </script>
+}

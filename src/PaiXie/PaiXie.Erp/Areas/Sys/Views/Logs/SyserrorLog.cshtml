@@ -1,0 +1,36 @@
+﻿@{
+    var startDate = PaiXie.Utils.ZDateTime.DayOfMonth(DateTime.Now, true).ToString("yyyy-MM-dd") + " 00:00:00";
+    var endDate = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+    ViewBag.Title = "系统错误日志";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+
+}
+<div data-options="region:'north'" style="height:115px">
+    <div class="toolbar">
+        <a href="javascript:void(0);" class="refresh" title="刷新" id="refresh"><span></span>刷新</a>
+    </div>
+    <div class="searchpro" id="searchpro">
+        <select id="keyWordType" name="keyWordType" class="easyui-combobox" data-options="height:30,width:100,editable:false">
+            <option value="">关键字类型</option>
+            <option value="错误地址">错误地址</option>
+            <option value="错误信息">错误信息</option>
+            <option value="错误详情">错误详情</option>
+        </select>
+        <input type="text" id="txtKeyWord" value="" style="width:150px;">
+        <label>创建时间：</label>
+        <input type="text" id="txtStartDate" value="@startDate" class="easyui-datetimebox" data-options="height:30,width:150, required: true, editable:false">
+        <label style="padding-right:10px">至</label>
+        <input type="text" id="txtEndDate" value="@endDate" class="easyui-datetimebox" data-options="height:30,width:150,required: true, editable:false">
+        <input type="button" id="btnSearch" value="搜索" class="button">
+        <input type="button" id="btnReset" value="清空条件" class="button-rest">
+    </div>
+</div>
+<div data-options="region:'center'" class="p0lr22">
+    <table id="grid" class="easyui-datagrid"
+           data-options="singleSelect:true,collapsible:true,method:'get'"></table>
+</div>
+@section bottom{
+    <script src="~/Areas/Sys/ViewJs/SyserrorLog.js"></script>
+}

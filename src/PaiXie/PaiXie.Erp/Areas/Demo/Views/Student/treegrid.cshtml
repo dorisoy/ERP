@@ -1,0 +1,152 @@
+﻿@{
+    ViewBag.Title = "title";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+
+}
+
+
+<h1>TreeGrid</h1>
+<div>
+    <p id="ss"></p>
+    <a id="consle" href="#">consle</a>
+    <input  type="button" onclick="set_power_status();" value="选中" />
+
+    <input type="button"  id="GetListValue" value="获取值" />
+</div>
+<table id="test" title="Folder Browser" style="width:400px;height:300px"></table>   
+
+
+
+@section bottom{
+
+    <script type="text/javascript">
+
+        $("#GetListValue").click(function () {
+            var idList = "";
+            $("input:checked").each(function () {
+                var id = $(this).attr("id");
+                id = id.replace('check_', '');
+                idList += id + ',';
+            })
+            if (idList != "")
+            {
+                idList = idList.replace('check_', '');
+            }
+               
+            
+            $("#ss").text(idList);
+        });
+
+
+
+        $(function () {
+            $('#test').treegrid({
+                url: "/demo/student/Gettreegrid",
+                idField: 'id',
+                treeField: 'name',
+                animate: "true",
+                rownumbers: "true",
+                pagination: true,
+
+                columns: [[
+                    {
+                        //" + (row.checked == 1 ? 'checked' : '') + " 
+                        title: 'Task Name', field: 'name', formatter: function (value, rowData, rowIndex) {
+                            return "<input  " + (rowData.checked == 1 ? 'checked' : '') + "   onclick=\"set_power_status('check_" + rowData.id + "');\" type=\"checkbox\" id=\"check_" + rowData.id + "\">" + " " + rowData.name;
+                        }, width: 180
+                    },
+                    { field: 'size', title: 'Persons', width: 60, align: 'right' },
+                     { field: 'checked', title: 'checked', width: 60, align: 'right' },
+                    { field: 'date', title: 'Begin Date', width: 80 }
+                ]]
+            });
+          //  init();
+            //$("#consle").bind("click", consleclick)
+        });
+
+        function set_power_status(id) {
+        //    alert(id);
+            show(id.replace('check_', ''));
+
+
+            ////var idList = "";
+            ////$("input:checked").each(function () {
+            ////    var id = $(this).attr("id");
+            ////    //  if (idList.indexOf(id) > -1)
+
+              
+            ////        idList += id + ',';
+            ////})
+            ////$("#ss").text(idList);
+         //   alert(idList);
+        }
+
+        function consleclick() {
+            var node = $('#test').treegrid('expandAll', 2);
+        }
+    </script>
+
+<script type="text/javascript">
+    function show(checkid){
+        var s = '#check_'+checkid;
+      //  alert( $(s).attr("id"));
+      //   alert($(s)[0].checked);
+        /*选子节点*/
+        var nodes = $("#test").treegrid("getChildren",checkid);
+        for(i=0;i<nodes.length;i++){
+            $(('#check_'+nodes[i].id))[0].checked = $(s)[0].checked;
+
+        }
+        //选上级节点
+        if(!$(s)[0].checked){
+            var parent = $("#test").treegrid("getParent",checkid);
+            $(('#check_'+parent.id))[0].checked  = false;
+            while(parent){
+                parent = $("#test").treegrid("getParent",parent.id);
+                $(('#check_'+parent.id))[0].checked  = false;
+            }
+        }else{
+            var parent = $("#test").treegrid("getParent",checkid);
+            var flag= true;
+            var sons = parent.sondata.split(',');
+            for(j=0;j<sons.length;j++){
+                if(!$(('#check_'+sons[j]))[0].checked){
+                    flag = false;
+                    break;
+                }
+            }
+            if(flag)
+                $(('#check_'+parent.id))[0].checked  = true;
+            while(flag){
+                parent = $("#test").treegrid("getParent",parent.id);
+                if(parent){
+                    sons = parent.sondata.split(',');
+                    for(j=0;j<sons.length;j++){
+                        if(!$(('#check_'+sons[j]))[0].checked){
+                            flag = false;
+                            break;
+                        }
+                    }
+                }
+                if(flag)
+                    $(('#check_'+parent.id))[0].checked  = true;
+            }
+        }
+    }
+
+ 
+    function init() {
+     //   alert(1);
+        //去掉结点前面的文件及文件夹小图标
+        $(".tree-icon,.tree-file").removeClass("tree-icon tree-file");
+        $(".tree-icon,.tree-folder").removeClass("tree-icon tree-folder tree-folder-open tree-folder-closed");
+    }
+
+
+
+</script>
+
+ 
+}

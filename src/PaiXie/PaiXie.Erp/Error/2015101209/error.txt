@@ -1,0 +1,138 @@
+2015/10/12 9:30:55
+未找到视图“Show”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: 
+~/Areas/Products/Views/Products/Show.aspx
+~/Areas/Products/Views/Products/Show.ascx
+~/Areas/Products/Views/Shared/Show.aspx
+~/Areas/Products/Views/Shared/Show.ascx
+~/Views/Products/Show.aspx
+~/Views/Products/Show.ascx
+~/Views/Shared/Show.aspx
+~/Views/Shared/Show.ascx
+~/Areas/Products/Views/Products/Show.cshtml
+~/Areas/Products/Views/Products/Show.vbhtml
+~/Areas/Products/Views/Shared/Show.cshtml
+~/Areas/Products/Views/Shared/Show.vbhtml
+~/Views/Products/Show.cshtml
+~/Views/Products/Show.vbhtml
+~/Views/Shared/Show.cshtml
+~/Views/Shared/Show.vbhtml----System.InvalidOperationException: 未找到视图“Show”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: 
+~/Areas/Products/Views/Products/Show.aspx
+~/Areas/Products/Views/Products/Show.ascx
+~/Areas/Products/Views/Shared/Show.aspx
+~/Areas/Products/Views/Shared/Show.ascx
+~/Views/Products/Show.aspx
+~/Views/Products/Show.ascx
+~/Views/Shared/Show.aspx
+~/Views/Shared/Show.ascx
+~/Areas/Products/Views/Products/Show.cshtml
+~/Areas/Products/Views/Products/Show.vbhtml
+~/Areas/Products/Views/Shared/Show.cshtml
+~/Areas/Products/Views/Shared/Show.vbhtml
+~/Views/Products/Show.cshtml
+~/Views/Products/Show.vbhtml
+~/Views/Shared/Show.cshtml
+~/Views/Shared/Show.vbhtml
+   在 System.Web.Mvc.ViewResult.FindView(ControllerContext context)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<>c__DisplayClass1c.<InvokeActionResultWithFilters>b__19()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<>c__DisplayClass1c.<InvokeActionResultWithFilters>b__19()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+------------------------------------------------------------------
+2015/10/12 9:49:59
+未找到视图“Import”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: 
+~/Areas/Products/Views/Products/Import.aspx
+~/Areas/Products/Views/Products/Import.ascx
+~/Areas/Products/Views/Shared/Import.aspx
+~/Areas/Products/Views/Shared/Import.ascx
+~/Views/Products/Import.aspx
+~/Views/Products/Import.ascx
+~/Views/Shared/Import.aspx
+~/Views/Shared/Import.ascx
+~/Areas/Products/Views/Products/Import.cshtml
+~/Areas/Products/Views/Products/Import.vbhtml
+~/Areas/Products/Views/Shared/Import.cshtml
+~/Areas/Products/Views/Shared/Import.vbhtml
+~/Views/Products/Import.cshtml
+~/Views/Products/Import.vbhtml
+~/Views/Shared/Import.cshtml
+~/Views/Shared/Import.vbhtml----System.InvalidOperationException: 未找到视图“Import”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: 
+~/Areas/Products/Views/Products/Import.aspx
+~/Areas/Products/Views/Products/Import.ascx
+~/Areas/Products/Views/Shared/Import.aspx
+~/Areas/Products/Views/Shared/Import.ascx
+~/Views/Products/Import.aspx
+~/Views/Products/Import.ascx
+~/Views/Shared/Import.aspx
+~/Views/Shared/Import.ascx
+~/Areas/Products/Views/Products/Import.cshtml
+~/Areas/Products/Views/Products/Import.vbhtml
+~/Areas/Products/Views/Shared/Import.cshtml
+~/Areas/Products/Views/Shared/Import.vbhtml
+~/Views/Products/Import.cshtml
+~/Views/Products/Import.vbhtml
+~/Views/Shared/Import.cshtml
+~/Views/Shared/Import.vbhtml
+   在 System.Web.Mvc.ViewResult.FindView(ControllerContext context)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<>c__DisplayClass1c.<InvokeActionResultWithFilters>b__19()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<>c__DisplayClass1c.<InvokeActionResultWithFilters>b__19()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+------------------------------------------------------------------
+2015/10/12 9:50:02
+未找到视图“Down”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: 
+~/Areas/Products/Views/Products/Down.aspx
+~/Areas/Products/Views/Products/Down.ascx
+~/Areas/Products/Views/Shared/Down.aspx
+~/Areas/Products/Views/Shared/Down.ascx
+~/Views/Products/Down.aspx
+~/Views/Products/Down.ascx
+~/Views/Shared/Down.aspx
+~/Views/Shared/Down.ascx
+~/Areas/Products/Views/Products/Down.cshtml
+~/Areas/Products/Views/Products/Down.vbhtml
+~/Areas/Products/Views/Shared/Down.cshtml
+~/Areas/Products/Views/Shared/Down.vbhtml
+~/Views/Products/Down.cshtml
+~/Views/Products/Down.vbhtml
+~/Views/Shared/Down.cshtml
+~/Views/Shared/Down.vbhtml----System.InvalidOperationException: 未找到视图“Down”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: 
+~/Areas/Products/Views/Products/Down.aspx
+~/Areas/Products/Views/Products/Down.ascx
+~/Areas/Products/Views/Shared/Down.aspx
+~/Areas/Products/Views/Shared/Down.ascx
+~/Views/Products/Down.aspx
+~/Views/Products/Down.ascx
+~/Views/Shared/Down.aspx
+~/Views/Shared/Down.ascx
+~/Areas/Products/Views/Products/Down.cshtml
+~/Areas/Products/Views/Products/Down.vbhtml
+~/Areas/Products/Views/Shared/Down.cshtml
+~/Areas/Products/Views/Shared/Down.vbhtml
+~/Views/Products/Down.cshtml
+~/Views/Products/Down.vbhtml
+~/Views/Shared/Down.cshtml
+~/Views/Shared/Down.vbhtml
+   在 System.Web.Mvc.ViewResult.FindView(ControllerContext context)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<>c__DisplayClass1c.<InvokeActionResultWithFilters>b__19()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<>c__DisplayClass1c.<InvokeActionResultWithFilters>b__19()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+------------------------------------------------------------------

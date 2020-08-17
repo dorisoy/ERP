@@ -1,0 +1,190 @@
+2015/9/25 14:23:56
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''0' AS part1 from sys_role  a
+	LEFT JOIN  sys_user b ON a.CreatePerson=b.Code
+' at line 1----MySql.Data.MySqlClient.MySqlException (0x80004005): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''0' AS part1 from sys_role  a
+	LEFT JOIN  sys_user b ON a.CreatePerson=b.Code
+' at line 1
+   在 FluentData.ExecuteQueryHandler.HandleQueryException(Exception exception)
+   在 FluentData.ExecuteQueryHandler.ExecuteQuery(Boolean useReader, Action action)
+   在 FluentData.DbCommand.QueryMany[TEntity,TList](Action`2 customMapper)
+   在 PaiXie.Data.BaseRepository`1.GetQueryManyForPage(SelectBuilder data, Int32& count) 位置 e:\001\src\PaiXie\PaiXie.Data\BaseRepository\BaseRepository.cs:行号 77
+   在 PaiXie.Service.BaseService`1.GetQueryManyForPage(SelectBuilder data, Int32& count) 位置 e:\001\src\PaiXie\PaiXie.Service\Base\BaseService.cs:行号 48
+   在 PaiXie.Erp.Areas.Sys.RoleController.search(Int32 uid) 位置 e:\001\src\PaiXie\PaiXie.Erp\Areas\Sys\Controllers\RoleController.cs:行号 45
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+------------------------------------------------------------------
+2015/9/25 14:24:05
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''0' AS part1 from sys_role  a
+	LEFT JOIN  sys_user b ON a.CreatePerson=b.Code
+' at line 1----MySql.Data.MySqlClient.MySqlException (0x80004005): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''0' AS part1 from sys_role  a
+	LEFT JOIN  sys_user b ON a.CreatePerson=b.Code
+' at line 1
+   在 FluentData.ExecuteQueryHandler.HandleQueryException(Exception exception)
+   在 FluentData.ExecuteQueryHandler.ExecuteQuery(Boolean useReader, Action action)
+   在 FluentData.DbCommand.QueryMany[TEntity,TList](Action`2 customMapper)
+   在 PaiXie.Data.BaseRepository`1.GetQueryManyForPage(SelectBuilder data, Int32& count) 位置 e:\001\src\PaiXie\PaiXie.Data\BaseRepository\BaseRepository.cs:行号 77
+   在 PaiXie.Service.BaseService`1.GetQueryManyForPage(SelectBuilder data, Int32& count) 位置 e:\001\src\PaiXie\PaiXie.Service\Base\BaseService.cs:行号 48
+   在 PaiXie.Erp.Areas.Sys.RoleController.search(Int32 uid) 位置 e:\001\src\PaiXie\PaiXie.Erp\Areas\Sys\Controllers\RoleController.cs:行号 45
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+------------------------------------------------------------------
+2015/9/25 14:24:47
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''0' AS part1 from sys_role  a
+	LEFT JOIN  sys_user b ON a.CreatePerson=b.Code
+' at line 1----MySql.Data.MySqlClient.MySqlException (0x80004005): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''0' AS part1 from sys_role  a
+	LEFT JOIN  sys_user b ON a.CreatePerson=b.Code
+' at line 1
+   在 FluentData.ExecuteQueryHandler.HandleQueryException(Exception exception)
+   在 FluentData.ExecuteQueryHandler.ExecuteQuery(Boolean useReader, Action action)
+   在 FluentData.DbCommand.QueryMany[TEntity,TList](Action`2 customMapper)
+   在 PaiXie.Data.BaseRepository`1.GetQueryManyForPage(SelectBuilder data, Int32& count) 位置 e:\001\src\PaiXie\PaiXie.Data\BaseRepository\BaseRepository.cs:行号 77
+   在 PaiXie.Service.BaseService`1.GetQueryManyForPage(SelectBuilder data, Int32& count) 位置 e:\001\src\PaiXie\PaiXie.Service\Base\BaseService.cs:行号 48
+   在 PaiXie.Erp.Areas.Sys.RoleController.search() 位置 e:\001\src\PaiXie\PaiXie.Erp\Areas\Sys\Controllers\RoleController.cs:行号 45
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+------------------------------------------------------------------
+2015/9/25 14:24:53
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''0' AS part1 from sys_role  a
+	LEFT JOIN  sys_user b ON a.CreatePerson=b.Code
+' at line 1----MySql.Data.MySqlClient.MySqlException (0x80004005): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''0' AS part1 from sys_role  a
+	LEFT JOIN  sys_user b ON a.CreatePerson=b.Code
+' at line 1
+   在 FluentData.ExecuteQueryHandler.HandleQueryException(Exception exception)
+   在 FluentData.ExecuteQueryHandler.ExecuteQuery(Boolean useReader, Action action)
+   在 FluentData.DbCommand.QueryMany[TEntity,TList](Action`2 customMapper)
+   在 PaiXie.Data.BaseRepository`1.GetQueryManyForPage(SelectBuilder data, Int32& count) 位置 e:\001\src\PaiXie\PaiXie.Data\BaseRepository\BaseRepository.cs:行号 77
+   在 PaiXie.Service.BaseService`1.GetQueryManyForPage(SelectBuilder data, Int32& count) 位置 e:\001\src\PaiXie\PaiXie.Service\Base\BaseService.cs:行号 48
+   在 PaiXie.Erp.Areas.Sys.RoleController.search() 位置 e:\001\src\PaiXie\PaiXie.Erp\Areas\Sys\Controllers\RoleController.cs:行号 45
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+------------------------------------------------------------------
+2015/9/25 14:25:02
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''0' AS part1 from sys_role  a
+	LEFT JOIN  sys_user b ON a.CreatePerson=b.Code
+' at line 1----MySql.Data.MySqlClient.MySqlException (0x80004005): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''0' AS part1 from sys_role  a
+	LEFT JOIN  sys_user b ON a.CreatePerson=b.Code
+' at line 1
+   在 FluentData.ExecuteQueryHandler.HandleQueryException(Exception exception)
+   在 FluentData.ExecuteQueryHandler.ExecuteQuery(Boolean useReader, Action action)
+   在 FluentData.DbCommand.QueryMany[TEntity,TList](Action`2 customMapper)
+   在 PaiXie.Data.BaseRepository`1.GetQueryManyForPage(SelectBuilder data, Int32& count) 位置 e:\001\src\PaiXie\PaiXie.Data\BaseRepository\BaseRepository.cs:行号 77
+   在 PaiXie.Service.BaseService`1.GetQueryManyForPage(SelectBuilder data, Int32& count) 位置 e:\001\src\PaiXie\PaiXie.Service\Base\BaseService.cs:行号 48
+   在 PaiXie.Erp.Areas.Sys.RoleController.search() 位置 e:\001\src\PaiXie\PaiXie.Erp\Areas\Sys\Controllers\RoleController.cs:行号 45
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+------------------------------------------------------------------
+2015/9/25 14:35:07
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''0' AS part1 from sys_role  a
+	LEFT JOIN  sys_user b ON a.CreatePerson=b.Code
+' at line 1----MySql.Data.MySqlClient.MySqlException (0x80004005): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''0' AS part1 from sys_role  a
+	LEFT JOIN  sys_user b ON a.CreatePerson=b.Code
+' at line 1
+   在 FluentData.ExecuteQueryHandler.HandleQueryException(Exception exception)
+   在 FluentData.ExecuteQueryHandler.ExecuteQuery(Boolean useReader, Action action)
+   在 FluentData.DbCommand.QueryMany[TEntity,TList](Action`2 customMapper)
+   在 PaiXie.Data.BaseRepository`1.GetQueryManyForPage(SelectBuilder data, Int32& count) 位置 e:\001\src\PaiXie\PaiXie.Data\BaseRepository\BaseRepository.cs:行号 77
+   在 PaiXie.Service.BaseService`1.GetQueryManyForPage(SelectBuilder data, Int32& count) 位置 e:\001\src\PaiXie\PaiXie.Service\Base\BaseService.cs:行号 48
+   在 PaiXie.Erp.Areas.Sys.RoleController.search() 位置 e:\001\src\PaiXie\PaiXie.Erp\Areas\Sys\Controllers\RoleController.cs:行号 45
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+------------------------------------------------------------------
+2015/9/25 14:35:34
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''0' AS part1 from sys_role  a
+	LEFT JOIN  sys_user b ON a.CreatePerson=b.Code
+' at line 1----MySql.Data.MySqlClient.MySqlException (0x80004005): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''0' AS part1 from sys_role  a
+	LEFT JOIN  sys_user b ON a.CreatePerson=b.Code
+' at line 1
+   在 FluentData.ExecuteQueryHandler.HandleQueryException(Exception exception)
+   在 FluentData.ExecuteQueryHandler.ExecuteQuery(Boolean useReader, Action action)
+   在 FluentData.DbCommand.QueryMany[TEntity,TList](Action`2 customMapper)
+   在 PaiXie.Data.BaseRepository`1.GetQueryManyForPage(SelectBuilder data, Int32& count) 位置 e:\001\src\PaiXie\PaiXie.Data\BaseRepository\BaseRepository.cs:行号 77
+   在 PaiXie.Service.BaseService`1.GetQueryManyForPage(SelectBuilder data, Int32& count) 位置 e:\001\src\PaiXie\PaiXie.Service\Base\BaseService.cs:行号 48
+   在 PaiXie.Erp.Areas.Sys.RoleController.search() 位置 e:\001\src\PaiXie\PaiXie.Erp\Areas\Sys\Controllers\RoleController.cs:行号 45
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+------------------------------------------------------------------
+2015/9/25 14:50:07
+select 	a.*,b.Name AS cname,c.Name AS uname,,'0' AS part1 from sys_role  a
+	LEFT JOIN  sys_user b ON a.CreatePerson=b.Code
+	
+	LEFT JOIN  sys_user c ON a.UpdatePerson=c.Code limit 0, 5
+------------------------------------------------------------------
+2015/9/25 14:50:07
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''0' AS part1 from sys_role  a
+	LEFT JOIN  sys_user b ON a.CreatePerson=b.Code
+' at line 1----MySql.Data.MySqlClient.MySqlException (0x80004005): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''0' AS part1 from sys_role  a
+	LEFT JOIN  sys_user b ON a.CreatePerson=b.Code
+' at line 1
+   在 FluentData.ExecuteQueryHandler.HandleQueryException(Exception exception)
+   在 FluentData.ExecuteQueryHandler.ExecuteQuery(Boolean useReader, Action action)
+   在 FluentData.DbCommand.QueryMany[TEntity,TList](Action`2 customMapper)
+   在 PaiXie.Data.BaseRepository`1.GetQueryManyForPage(SelectBuilder data, Int32& count) 位置 e:\001\src\PaiXie\PaiXie.Data\BaseRepository\BaseRepository.cs:行号 79
+   在 PaiXie.Service.BaseService`1.GetQueryManyForPage(SelectBuilder data, Int32& count) 位置 e:\001\src\PaiXie\PaiXie.Service\Base\BaseService.cs:行号 48
+   在 PaiXie.Erp.Areas.Sys.RoleController.search() 位置 e:\001\src\PaiXie\PaiXie.Erp\Areas\Sys\Controllers\RoleController.cs:行号 45
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+------------------------------------------------------------------

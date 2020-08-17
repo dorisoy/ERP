@@ -1,0 +1,168 @@
+﻿@using PaiXie.Data
+@{
+    var accountBill = ViewBag.AccountBill as OrdaccountsBill;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+}
+<form id="ff" method="post" novalidate="novalidate">
+    <table class="tableinfo" style=" margin-top:0px">
+        <tr>
+            <td align="right" style="width:100px">
+                付款金额：
+            </td>
+            <td>
+                <span class="red">@(accountBill.Amount)</span>
+            </td>
+        </tr>
+        <tr>
+            <td align="right" style="width:100px">
+                付款方式：
+            </td>
+            <td>
+                <input type="radio" name="PaymentMethod" id="PaymentMethod1" value="0"><label for="PaymentMethod1">在线支付</label>
+                <input type="radio" name="PaymentMethod" id="PaymentMethod2" value="1"><label for="PaymentMethod2">现金支付</label>
+                <input type="hidden" id="hdnPaymentMethod" value="@(accountBill.PaymentMethod)" />
+                <input type="hidden" id="hdnBillNo" name="BillNo" value="@(accountBill.BillNo)" />
+            </td>
+        </tr>
+        <tr class="online">
+            <td align="right" style="width:100px">
+                付款账号：
+            </td>
+            <td>
+                <input style="width:250px" value="@(accountBill.PaymentAccount)" class="easyui-validatebox" type="text" id="txtPaymentAccount" name="PaymentAccount" />
+            </td>
+        </tr>
+        <tr class="online">
+            <td align="right" style="width:100px">
+                收款账号：
+            </td>
+            <td>
+                <input style="width:250px" value="@(accountBill.ReceivableAccount)" class="easyui-validatebox" type="text" id="txtReceivableAccount" name="ReceivableAccount" />
+            </td>
+        </tr>
+        <tr class="online">
+            <td align="right" style="width:100px">
+                <span class="red">*</span>交易号：
+            </td>
+            <td>
+                <input style="width:250px" value="@(accountBill.TradingNumber)" class="easyui-validatebox" type="text" id="txtTradingNumber" name="TradingNumber" />
+            </td>
+        </tr>
+        <tr>
+            <td align="right" style="width:100px">
+                <span class="red">*</span>付款时间：
+            </td>
+            <td>
+                <input type="text" id="txtPayDate" name="PayDate" value="@(accountBill.PayDate.ToString("yyyy-MM-dd HH:mm:ss") == "0001-01-01 00:00:00" ? "" : accountBill.PayDate.ToString("yyyy-MM-dd HH:mm:ss"))" class="easyui-datetimebox" data-options="height:30,width:150, editable:false">
+            </td>
+        </tr>
+        <tr>
+            <td align="right" style="width:100px">
+                付款备注：
+            </td>
+            <td>
+                <input style="width:300px" value="@(accountBill.Remark)" class="easyui-textbox" type="text" id="txtRemark" name="Remark" data-options="height:80,multiline:true" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align:center; padding-top:10px">
+                <a href="javascript:void(0)" class="button-oky" id="btnSave" iconcls="icon-ok">确定</a>
+                <a href="javascript:void(0)" class="button-cancel" id="btnCancel" iconcls="icon-ok">取消</a>
+            </td>
+        </tr>
+    </table>
+</form>
+@section bottom{
+    <script>
+        $(function () {
+            $("#btnSave").click(function () {
+                btnSave();
+            });
+
+            $("#btnCancel").click(function () {
+                parent.$('#localWin').window('close');
+            });
+
+            $('input[name="PaymentMethod"]').click(function () {
+                if ($(this).val() == 0) {
+                    $(".online").show();
+                }
+                else {
+                    $(".online").hide();
+                }
+            });
+
+            if ($("#hdnPaymentMethod").val() == 0) {
+                $("#PaymentMethod1").click();
+            }
+            else {
+                $("#PaymentMethod2").click();
+            }
+        });
+
+        String.prototype.len = function () { return this.replace("[^\x00-\xff]/g", "aa").length; }
+
+        function btnSave() {
+            $('#ff').form('submit', {
+                url: "/Finance/AccountsBill/SavePayInfo",
+                type: "POST",
+                dataType: "json",
+                onSubmit: function () {
+                    var isValid = true;
+                    if ($('input[name="PaymentMethod"]:checked ').val() == "0")
+                    {
+                        if($("#txtPaymentAccount").val().len()>100)
+                        {
+                            $.MsgBox.Alert("提示", "付款账号长度不能超过100！");
+                            isValid = false;
+                        }
+                        if ($("#txtReceivableAccount").val().len() > 100) {
+                            $.MsgBox.Alert("提示", "收款账号长度不能超过100！");
+                            isValid = false;
+                        }
+                        if ($("#txtTradingNumber").val().len() > 100) {
+                            $.MsgBox.Alert("提示", "交易号长度不能超过100！");
+                            isValid = false;
+                        }
+                        if ($("#txtRemark").val().len() > 100) {
+                            $.MsgBox.Alert("提示", "备注长度不能超过500！");
+                            isValid = false;
+                        }
+                        if ($("#txtTradingNumber").val().len() == 0) {
+                            $.MsgBox.Alert("提示", "请填写交易号！");
+                            isValid = false;
+                        }
+                    }
+                    else
+                    {
+                        $("#txtPaymentAccount").val('');
+                        $("#txtReceivableAccount").val('');
+                        $("#txtTradingNumber").val('');
+                        $("#txtRemark").val('');
+                    }
+                    if ($("#txtPayDate").datebox("getValue") == "") {
+                        $.MsgBox.Alert("提示", "请选择付款时间！");
+                        isValid = false;
+                    }
+
+                    return isValid;
+                },
+                success: function (r) {
+                    var map = $.parseJSON(r);
+                    if (map.result == 1) {
+                        parent.$('#localWin').window('close');
+                        parent.$('#refreshCurrentPage').click();
+                    }
+                    else {
+                        $.MsgBox.Alert("提示", map.message);
+                    }
+                },
+                error: function () {
+                    $.MsgBox.Alert("提示", "付款失败！");
+                }
+            });
+        }
+    </script>
+}

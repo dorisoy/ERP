@@ -1,0 +1,83 @@
+﻿@{
+    ViewBag.Title = "title";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+}
+<div data-options="region:'north'" style="height:150px">
+    Footer Rows in DataGrid
+</div>
+<div data-options="region:'center'">
+    <h2>Footer Rows in DataGrid</h2>
+    <p>The summary informations can be displayed in footer rows.</p>
+    <div style="margin:20px 0;"></div>
+    <table class="easyui-datagrid" title="Footer Rows in DataGrid" style="width:700px;height:220px"
+           data-options="
+				url: '/demo/student/Getfootgrid',
+				method: 'get',
+				fitColumns: true,
+				singleSelect: true,
+				rownumbers: true,
+				showFooter: true
+			">
+        <thead>
+            <tr>
+                <th data-options="field:'itemid',width:80">Item ID</th>
+                <th data-options="field:'productid',width:120">Product ID</th>
+                <th data-options="field:'listprice',width:80,align:'right'">List Price</th>
+                <th data-options="field:'unitcost',width:80,align:'right'">Unit Cost</th>
+                <th data-options="field:'attr1',width:250">Attribute</th>
+                <th data-options="field:'status',width:60,align:'center'">Status</th>
+            </tr>
+        </thead>
+    </table>
+
+
+
+    <h2>Merge Cells for DataGrid</h2>
+    <p>Cells in DataGrid body can be merged.</p>
+    <div style="margin:20px 0;"></div>
+    <table class="easyui-datagrid" title="Merge Cells for DataGrid" style="width:700px;height:250px"
+           data-options="
+				rownumbers: true,
+				singleSelect: true,
+				iconCls: 'icon-save',
+				url: '/demo/student/GetMergegrid',
+				method: 'get',
+				onLoadSuccess: onLoadSuccess
+			">
+        <thead>
+            <tr>
+                <th data-options="field:'productid',width:100">Product</th>
+                <th data-options="field:'itemid',width:80">Item ID</th>
+                <th data-options="field:'listprice',width:80,align:'right'">List Price</th>
+                <th data-options="field:'unitcost',width:80,align:'right'">Unit Cost</th>
+                <th data-options="field:'attr1',width:240">Attribute</th>
+                <th data-options="field:'status',width:60,align:'center'">Status</th>
+            </tr>
+        </thead>
+    </table>
+    <script type="text/javascript">
+        function onLoadSuccess(data) {
+            var merges = [{
+                index: 2,
+                rowspan: 2
+            }, {
+                index: 5,
+                rowspan: 2
+            }, {
+                index: 7,
+                rowspan: 2
+            }];
+            for (var i = 0; i < merges.length; i++) {
+                $(this).datagrid('mergeCells', {
+                    index: merges[i].index,
+                    field: 'productid',
+                    rowspan: merges[i].rowspan
+                });
+            }
+        }
+    </script>
+</div>
+@section bottom{
+}

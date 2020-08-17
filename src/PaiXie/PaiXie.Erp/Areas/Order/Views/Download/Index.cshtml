@@ -1,0 +1,72 @@
+﻿@{
+    var startDate = ViewBag.StartDate;
+    var endDate = ViewBag.EndDate;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+    <script src="~/Content/jquery-easyui/jquery.timers-1.2.js"></script>
+}
+<div class="easyui-layout" data-options="fit:true">
+    <div data-options="region:'north',height:190" id="topdiv">
+        <div class="toolbar" id="toolbar">
+            <a href="#" class="refresh" id="refresh"><span></span>刷新</a>
+            <a href="#" id="autogeneration"><span></span>自动生成设置</a>
+            <a href="#" id="expressSet"><span></span>快递设置</a>
+            <a href="#" id="batchGenerate"><span></span>批量生成</a>
+            <a href="#" id="batchDelete"><span></span>批量删除</a>
+            <a href="javascript:void(0);" id="refreshCurrentPage" style="display:none;"><span></span>刷新当前页</a>
+        </div>
+        <div class="searchpro">
+            <select id="keyWordType" name="keyWordType" class="easyui-combobox" data-options="height:30,width:100,editable:false">
+                <option value="">关键字类型</option>
+                <option value="外部订单号" selected>外部订单号</option>
+                <option value="商品编码">商品编码</option>
+                <option value="商品货号">商品货号</option>
+                <option value="商品SKU码">商品SKU码</option>
+            </select>
+            <input type="text" id="txtKeyWord" value="" style="width:150px;">
+            <label>货到付款：</label>
+            <select id="isCod" name="isCod" class="easyui-combobox" data-options="height:30,width:100">
+                <option value="-1" selected>不限</option>
+                <option value="1">是</option>
+                <option value="0">否</option>
+            </select>
+            <label>需要发票：</label>
+            <select id="isNeedInvoice" name="isNeedInvoice" class="easyui-combobox" data-options="height:30,width:100">
+                <option value="-1" selected>不限</option>
+                <option value="1">是</option>
+                <option value="0">否</option>
+            </select>
+            <label>留言备注：</label>
+            <select id="isRemark" name="isRemark" class="easyui-combobox" data-options="height:30,width:100">
+                <option value="-1" selected>不限</option>
+                <option value="1">有</option>
+                <option value="0">无</option>
+            </select>
+            <input type="button" id="btnSearch" value="搜索" class="button">
+            <input type="button" id="btnReset" value="清空条件" class="button-rest">
+        </div>
+        <div class="searchpro">
+            <label>选择网店：</label>
+            <select id="shop" name="shop" class="easyui-combobox" style="width:150px;" data-options="height:30"></select>
+            <label>下单时间：</label>
+            <select id="dateType" name="dateType" class="easyui-combobox" data-options="height:30,width:100">
+                <option value="1">下单时间</option>
+                <option value="2">付款时间</option>
+            </select>
+            <input type="text" id="txtStartDate" value="@startDate" class="easyui-datetimebox" data-options="height:30,width:150, required: true, editable:false">
+            <label style="padding-right:10px">至</label>
+            <input type="text" id="txtEndDate" value="@endDate" class="easyui-datetimebox" data-options="height:30,width:150,required: true, editable:false">
+            <input type="button" id="btnDownload" value="下载订单" class="button"><label id="spanProcessBar"></label>
+        </div>
+        <div class="p0lr22" style="line-height: 24px; color: #666;">
+            提示：上次共下载订单 <label id="lblNum" style="color:red;">0</label> 单。<label id="lblDate"></label>
+        </div>
+    </div>
+    <div data-options="region:'center',border:false" class="p0lr22">
+        <table id="grid" class="easyui-datagrid" title="" data-options="singleSelect:false,collapsible:true,method:'get'"></table>
+    </div>
+</div>
+@section bottom{
+    <script src="~/Areas/Order/ViewJs/DownloadInfoList.js"></script>
+}

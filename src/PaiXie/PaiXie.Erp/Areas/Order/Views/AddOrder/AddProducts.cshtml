@@ -1,0 +1,63 @@
+﻿@using PaiXie.Data
+@{
+    var ordbase = ViewBag.Ordbase as Ordbase;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+    <style>
+        .setlist {
+            width: 650px;
+            /*height: 245px;*/
+            margin: 10px auto 0 auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+            .setlist table table td {
+                height: auto;
+                border: 0px;
+                white-space: normal;
+                text-align: left;
+            }
+
+        .red {
+            color: #F00;
+        }
+
+        .inputextbox {
+            text-align: center;
+        }
+    </style>
+}
+<div style="height:380px; overflow-y:auto; padding-bottom:10px;">
+    <form id="ffpost" action="">
+        <table class="tableinfo" style="width: auto; margin-left: 22px;">
+            <tr>
+                <th style="width:auto">添加商品类型：</th>
+                <td>
+                    <input type="radio" name="AddType" id="AddType1" value="0" checked="checked"><label for="AddType1">销售商品</label>
+                    <input type="radio" name="AddType" id="AddType2" value="1"><label for="AddType2">赠品</label>
+                </td>
+            </tr>
+            <tr>
+                <th style="width:auto">请输入商品编码：</th>
+                <td><input type="text" style="display:none;" /><input style="width:200px" value="" class="easyui-validatebox" type="text" id="txtCode" name="Code" /></td>
+                <td><a href="javascript:void(0)" class="button-okb" id="btnSearch" iconcls="icon-ok" style="height:28px; line-height:28px">查找</a>&nbsp;<span style="color:red" id="msg"></span></td>
+            </tr>
+        </table>
+        <div class="p0lr22 infotitle ndis" id="infotitle"></div>
+        <input id="hdnErpOrderCode" name="ErpOrderCode" type="hidden" value="@ordbase.ErpOrderCode">
+        <input id="hdnID" name="ID" type="hidden" value="@ordbase.ID">
+        <input id="hdnProductsID" name="ProductsID" type="hidden" value="">
+        <div class="p0lr22 setlist ndis" id="setlist">
+            <table id="grid" class="easyui-datagrid" title="" data-options="singleSelect:true,collapsible:true,method:'get'"></table>
+        </div>
+    </form>
+    <div class="ndis" style=" text-align:center; padding-top:10px" id="buttonbox">
+        <a href="javascript:void(0)" class="button-oky" id="btnSave" iconcls="icon-ok">添加</a>
+        <a href="javascript:void(0)" class="button-cancel" id="btnClose" iconcls="icon-ok">关闭</a>
+    </div>
+</div>
+@section bottom{
+    <script src="~/Areas/Order/ViewJs/AddProducts.js"></script>
+}

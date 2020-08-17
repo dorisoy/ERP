@@ -1,0 +1,35 @@
+﻿@using PaiXie.Data
+@{
+    var erpOrderCode = ViewBag.ErpOrderCode;
+    var logisticsID = ViewBag.LogisticsID;
+    var logisticsList = ViewBag.LogisticsList as List<Logistics>;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+}
+<form id="ff" method="post" novalidate="novalidate">
+    <table class="tableinfo" style=" margin-top:20px">
+        <tr>
+            <th align="right" style="width:100px">
+                选择发货物流：
+            </th>
+            <td>
+                <select id="logisticsID" name="logisticsID" class="easyui-combobox" data-options="height:30,width:150">
+                    <option value="0">请选择</option>
+                    @foreach (var logistics in logisticsList) {
+                        <option value="@(logistics.ID)" @(logistics.ID == logisticsID ? "selected" : "")>@(logistics.Name)</option>
+                    }
+                </select>
+                <input type="hidden" name="erpOrderCode" value="@erpOrderCode" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align:center; padding-top:10px">
+                <a href="javascript:void(0)" class="button-oky" id="btnSave" iconcls="icon-ok">确定</a>
+            </td>
+        </tr>
+    </table>
+</form>
+@section bottom{
+    <script src="~/Areas/Order/ViewJs/ChangeExpress.js"></script>
+}

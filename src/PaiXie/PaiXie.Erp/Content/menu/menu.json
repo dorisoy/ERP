@@ -1,0 +1,40 @@
+﻿{
+"menus": [
+{
+"menuid": "1", "icon": "icon-pro", "menuname": "Demo",
+"menus": [{ "menuid": "11", "menuname": "添加列表", "icon": "icon-empty", "url": "/demo/student" },
+{ "menuid": "12", "menuname": "列表编辑", "icon": "icon-empty", "url": "/demo/student/EditDataGrid" },
+{ "menuid": "13", "menuname": "字典类别", "icon": "icon-empty", "url": "/demo/student/tree" },
+{ "menuid": "14", "menuname": "树形列表", "icon": "icon-empty", "url": "/demo/student/treegrid" },
+{ "menuid": "15", "menuname": "控件列表", "icon": "icon-empty", "url": "/demo/student/PopShow" },
+{ "menuid": "16", "menuname": "上传文件", "icon": "icon-empty", "url": "/demo/student/Upload" }
+]
+},
+
+
+ {
+"menuid": "2", "icon": "icon-add", "menuname": "基础设置",
+"menus": [{ "menuid": "21", "menuname": "用户列表", "icon": "icon-cut", "url": "/sys/user/index" },
+{ "menuid": "22", "menuname": "角色权限", "icon": "icon-cut", "url": "/sys/role/index" },
+{ "menuid": "23", "menuname": "日志管理", "icon": "icon-cut", "url": "/sys/logs/index" },
+{ "menuid": "24", "menuname": "字典管理", "icon": "icon-cut", "url": "/sys/dict/index" },
+{ "menuid": "25", "menuname": "物流管理", "icon": "icon-cut", "url": "/sys/whouse/index" }
+
+
+]
+},
+{
+"menuid": "3", "icon": "icon-pro", "menuname": "商品管理",
+"menus": [{ "menuid": "31", "menuname": "商品列表", "icon": "icon-empty", "url": "/Products/Products/index" },
+{ "menuid": "32", "menuname": "商品品牌", "icon": "icon-empty", "url": "/Products/Brand/index" },
+{ "menuid": "33", "menuname": "商品分类", "icon": "icon-empty", "url": "/Products/Category/index" },
+]
+}
+
+
+
+
+
+
+]
+}

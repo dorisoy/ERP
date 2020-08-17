@@ -1,0 +1,271 @@
+﻿@using PaiXie.Data;
+@{
+    var warehouseConfig = ViewBag.WarehouseConfig as WarehouseConfig;
+    var isSame = warehouseConfig.IsSame == 1 ? "checked" : "";
+    ViewBag.Title = "地址管理";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+    <style>
+        .divTitle {
+            height: 40px;
+            line-height: 40px;
+            padding-left: 10px;
+            background-color: #f2f2f2;
+        }
+        .tabInfo td {
+            height: 40px;
+            line-height: 40px;
+        }
+    </style>
+}
+<div class="easyui-layout" data-options="fit:true">
+    <div data-options="region:'north',height:63" id="topdiv">
+        <div class="toolbar" id="toolbar">
+            <a href="javascript:void(0);" class="refresh" id="refresh"><span></span>刷新</a>
+            <a href="javascript:void(0);" class="toolbarsave" id="toolbarsave"><span></span>保存地址</a>
+        </div>
+    </div>
+    <div data-options="region:'center',border:false" class="p0lr22">
+        <form id="ff" method="post" novalidate="novalidate">
+            <div class="divTitle">
+                <b>发货地址：</b><span class="f12c" style="color:#aaa8a8;">(订单发货时快递单上打印的寄件人信息)</span>
+            </div>
+            <table id="tblSendInfo" class="tabInfo" style="margin-top:10px">
+                <tr>
+                    <td align="right" style="width:80px;">发货人：</td>
+                    <td>
+                        <input type="text" id="SendPerson" name="SendPerson" class="easyui-validatebox" style="width:200px;" data-options="required:true,validType:'length[1,50]'" value="@warehouseConfig.SendPerson">
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">手机/电话：</td>
+                    <td>
+                        <input type="text" id="SendTel" name="SendTel" class="easyui-validatebox" data-options="required:true,validType:'phoneRex',height:30" value="@warehouseConfig.SendTel">
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">地址：</td>
+                    <td>
+                        <select id="SendProvinceID" name="SendProvinceID" class="easyui-combobox" data-options="valueField:'Value',textField:'Text',url:'/Warehouse/Warehouse/GetAreaJson',editable:false,width:120,height:30,modal:true"></select>
+                        <select id="SendCityID" name="SendCityID" class="easyui-combobox" data-options="valueField:'Value',textField:'Text',url:'/Warehouse/Warehouse/GetAreaJson?grade=1&pid=@warehouseConfig.SendProvinceID',editable:false,width:120,height:30,modal:true"></select>
+                        <select id="SendDistrictID" name="SendDistrictID" class="easyui-combobox" data-options="valueField:'Value',textField:'Text',url:'/Warehouse/Warehouse/GetAreaJson?grade=2&pid=@warehouseConfig.SendCityID',editable:false,width:120,height:30,modal:true"></select>
+                        <input type="hidden" id="SendProvince" name="SendProvince" value="" />
+                        <input type="hidden" id="SendCity" name="SendCity" value="" />
+                        <input type="hidden" id="SendDistrict" name="SendDistrict" value="" />
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">街道地址：</td>
+                    <td>
+                        <input type="text" id="SendAddressDetail" name="SendAddressDetail" class="easyui-validatebox" style="width: 360px;" data-options="required:true,validType:'length[1,100]'" value="@warehouseConfig.SendAddressDetail" />
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">邮编：</td>
+                    <td>
+                        <input type="text" id="SendPostCode" name="SendPostCode" class="easyui-validatebox" style="width:100px;" data-options="required:true,validType:['code','length[1,20]']" value="@warehouseConfig.SendPostCode" readonly="readonly" />
+                    </td>
+                </tr>
+            </table>
+            <div class="divTitle">
+                <b>售后地址：</b><span class="f12c" style="color:#aaa8a8;">(退货时商品退回地址)</span>&nbsp;&nbsp;<input type="checkbox" id="chkIsSame" name="IsSame" @isSame value="1" /><label for="chkIsSame">与发货地址一致</label>
+            </div>
+            <table id="tblRecevieInfo" class="tabInfo" style=" margin-top:10px">
+                <tr>
+                    <td align="right" style="width:80px;">收货人：</td>
+                    <td>
+                        <input type="text" id="ReceivePerson" name="ReceivePerson" class="easyui-validatebox" style="width:200px;" data-options="required:true,validType:'length[1,50]'" value="@warehouseConfig.ReceivePerson">
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">手机/电话：</td>
+                    <td>
+                        <input type="text" id="ReceiveTel" name="ReceiveTel" class="easyui-validatebox" data-options="required:true,validType:'phoneRex',height:30" value="@warehouseConfig.ReceiveTel">
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">地址：</td>
+                    <td>
+                        <select id="ReceiveProvinceID" name="ReceiveProvinceID" class="easyui-combobox" data-options="valueField:'Value',textField:'Text',url:'/Warehouse/Warehouse/GetAreaJson',editable:false,width:120,height:30,modal:true"></select>
+                        <select id="ReceiveCityID" name="ReceiveCityID" class="easyui-combobox" data-options="valueField:'Value',textField:'Text',url:'/Warehouse/Warehouse/GetAreaJson?grade=1&pid=@warehouseConfig.ReceiveProvinceID',editable:false,width:120,height:30,modal:true"></select>
+                        <select id="ReceiveDistrictID" name="ReceiveDistrictID" class="easyui-combobox" data-options="valueField:'Value',textField:'Text',url:'/Warehouse/Warehouse/GetAreaJson?grade=2&pid=@warehouseConfig.ReceiveCityID',editable:false,width:120,height:30,modal:true"></select>
+                        <input type="hidden" id="ReceiveProvince" name="ReceiveProvince" value="" />
+                        <input type="hidden" id="ReceiveCity" name="ReceiveCity" value="" />
+                        <input type="hidden" id="ReceiveDistrict" name="ReceiveDistrict" value="" />
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">街道地址：</td>
+                    <td>
+                        <input type="text" id="ReceiveAddressDetail" name="ReceiveAddressDetail" class="easyui-validatebox" style="width: 360px;" data-options="required:true,validType:'length[1,100]'" value="@warehouseConfig.ReceiveAddressDetail" />
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">邮编：</td>
+                    <td>
+                        <input type="text" id="ReceivePostCode" name="ReceivePostCode" class="easyui-validatebox" style="width:100px;" data-options="required:true,validType:['code','length[1,20]']" value="@warehouseConfig.ReceivePostCode" readonly="readonly" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+@section bottom{
+    <script>
+    $(document).ready(function () {
+        $("#refresh").click(function () {
+            window.location.reload(true);
+        });
+        $("#toolbarsave").click(function () {
+            save();
+        });
+        $("#chkIsSame").click(function () {
+            if ($(this).attr("checked")) {
+                $("#tblRecevieInfo").hide();
+            } else {
+                $("#tblRecevieInfo").show();
+            }
+        });
+        if ($("#chkIsSame").attr("checked")) {
+            $("#tblRecevieInfo").hide();
+        }
+
+        //寄件地址
+        //Start:设置combox的选择事件
+        $('#SendProvinceID').combobox({
+            onSelect: function () {
+                var url = '/Warehouse/Warehouse/GetAreaJson?grade=1&pid=' + $('#SendProvinceID').combobox('getValue');
+                $('#SendCityID').combobox('reload', url);
+                $('#SendCityID').combobox('select', 0);
+                $('#SendDistrictID').combobox('select', 0);
+                $('#SendProvince').val($('#SendProvinceID').combobox('getText'));
+                $('#SendCity').val('');
+                $('#SendDistrict').val('');
+            }
+        });
+        $('#SendCityID').combobox({
+            onSelect: function () {
+                var url = '/Warehouse/Warehouse/GetAreaJson?grade=2&pid=' + $('#SendCityID').combobox('getValue');
+                $('#SendDistrictID').combobox('reload', url);
+                $('#SendDistrictID').combobox('select', 0);
+                $('#SendDistrict').val('');
+                $('#SendCity').val($('#SendCityID').combobox('getText'));
+            }
+        });
+        $('#SendDistrictID').combobox({
+            onSelect: function () {
+                $('#SendDistrict').val($('#SendDistrictID').combobox('getText'));
+                var postCode = getPostCode($('#SendDistrictID').combobox('getValue'));
+                $('#SendPostCode').val(postCode);
+            }
+        });
+        //End:设置combox的选择事件
+        $("#SendProvinceID").combobox('select', '@warehouseConfig.SendProvinceID');
+        $("#SendCityID").combobox('select', '@warehouseConfig.SendCityID');
+        $("#SendDistrictID").combobox('select', '@warehouseConfig.SendDistrictID');
+        $("#SendProvince").val('@warehouseConfig.SendProvince');
+        $("#SendCity").val('@warehouseConfig.SendCity');
+        $("#SendDistrict").val('@warehouseConfig.SendDistrict');
+
+        //售后地址
+        //Start:设置combox的选择事件
+        $('#ReceiveProvinceID').combobox({
+            onSelect: function () {
+                var url = '/Warehouse/Warehouse/GetAreaJson?grade=1&pid=' + $('#ReceiveProvinceID').combobox('getValue');
+                $('#ReceiveCityID').combobox('reload', url);
+                $('#ReceiveCityID').combobox('select', 0);
+                $('#ReceiveDistrictID').combobox('select', 0);
+                $('#ReceiveProvince').val($('#ReceiveProvinceID').combobox('getText'));
+                $('#ReceiveCity').val('');
+                $('#ReceiveDistrict').val('');
+            }
+        });
+        $('#ReceiveCityID').combobox({
+            onSelect: function () {
+                var url = '/Warehouse/Warehouse/GetAreaJson?grade=2&pid=' + $('#ReceiveCityID').combobox('getValue');
+                $('#ReceiveDistrictID').combobox('reload', url);
+                $('#ReceiveDistrictID').combobox('select', 0);
+                $('#ReceiveCity').val($('#ReceiveCityID').combobox('getText'));
+                $('#ReceiveDistrict').val('');
+            }
+        });
+        $('#ReceiveDistrictID').combobox({
+            onSelect: function () {
+                $('#ReceiveDistrict').val($('#ReceiveDistrictID').combobox('getText'));
+                var postCode = getPostCode($('#ReceiveDistrictID').combobox('getValue'));
+                $('#ReceivePostCode').val(postCode);
+            }
+        });
+        //End:设置combox的选择事件
+        $("#ReceiveProvinceID").combobox('select', '@warehouseConfig.ReceiveProvinceID');
+        $("#ReceiveCityID").combobox('select', '@warehouseConfig.ReceiveCityID');
+        $("#ReceiveDistrictID").combobox('select', '@warehouseConfig.ReceiveDistrictID');
+        $("#ReceiveProvince").val('@warehouseConfig.ReceiveProvince');
+        $("#ReceiveCity").val('@warehouseConfig.ReceiveCity');
+        $("#ReceiveDistrict").val('@warehouseConfig.ReceiveDistrict');
+    });
+    function save() {
+        if ($("#chkIsSame").attr("checked")) {
+            $("#ReceivePerson").val($("#SendPerson").val());
+            $("#ReceiveTel").val($("#SendTel").val());
+            $("#ReceiveProvinceID").combobox('select', $("#SendProvinceID").combobox("getValue"));
+            $("#ReceiveCityID").combobox('select', $("#SendCityID").combobox("getValue"));
+            $("#ReceiveDistrictID").combobox('select', $("#SendDistrictID").combobox("getValue"));
+            $("#ReceiveAddressDetail").val($("#SendAddressDetail").val());
+            $("#ReceivePostCode").val($("#SendPostCode").val());
+        }
+        $('#ff').form('submit', {
+            url: "/Warehouse/Address/Save",
+            type: "POST",//使用get方法访问后台
+            dataType: "json",
+            onSubmit: function () {
+                var isValid = $(this).form('validate');
+                if (isValid) {
+                    var SendDistrictID = $("#SendDistrictID").combobox("getValue");
+                    var ReceiveDistrictID = $("#ReceiveDistrictID").combobox("getValue");
+                    if (SendDistrictID == "0") {
+                        $.MsgBox.Alert("提示", "发货地址不完善！");
+                        isValid = false;
+                    } else if (ReceiveDistrictID == "0") {
+                        $.MsgBox.Alert("提示", "售后地址不完善！");
+                        isValid = false;
+                    }
+                }
+                return isValid;	// 返回false终止表单提交
+            },
+            success: function (r) {
+                var map = $.parseJSON(r);
+                if (map.result == 1) {
+                    $.MsgBox.Alert("提示", "保存成功！", 1000);
+                }
+                else {
+                    $.MsgBox.Alert("提示", map.message);
+                }
+            },
+            error: function () {
+                $.MsgBox.Alert("提示", "保存失败！");
+            }
+        });
+    }
+    function getPostCode(sysareaID) {
+        var postCode = '';
+        if (sysareaID > 0) {
+            $.ajax({
+                url: "/Warehouse/Address/GetPostCode?sysareaID=" + sysareaID,
+                type: "GET",
+                dataType: "text",
+                async: false,
+                cache: false,
+                success: function (r) {
+                    postCode = r;
+                },
+                error: function () {
+                    $.MsgBox.Alert("提示", "获取邮编失败！");
+                }
+            });
+        }
+        return postCode;
+    }
+    </script>
+}

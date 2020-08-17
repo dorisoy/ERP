@@ -1,0 +1,38 @@
+﻿
+
+DotNetZip(Ionic.Zip.dll) 是一个短小易用的用来操作 zip 文件的 .NET 类库，支持.NET的任何语言，可很方便的创建，读取，和更新zip文件。而且还可以使用在.NETCompact Framework中。
+
+下面是一些简单的例子：
+
+1.加密压缩：
+
+using (ZipFile zip = new ZipFile())   
+{   
+    zip.Password = sPassword; //set pwd
+    zip.AddDirectory(sZipDir);   
+    zip.Save(sSavePath + @"\" + sSaveName);   
+}
+2.向压缩文件中添加：
+
+using (ZipFile zip = new ZipFile("Backup.zip"))
+  {
+    zip.Password= "123456!";
+    zip.AddFile("ReadMe.txt");
+    zip.AddFile("7440-N49th.png");
+    zip.AddFile("2005_Annual_Report.pdf");        
+    zip.Save();
+  }
+3.解压缩到制定目录：
+
+using (ZipFile zip = ZipFile.Read("D:\\test\\2007.zip"))
+{
+    foreach (ZipEntry e in zip)
+    {
+        Console.WriteLine("file name:{0}", e.FileName);
+        Console.WriteLine(e.Comment);
+        e.Extract("D:\\test\\pwdata", true);  // overwrite == true
+    }
+}
+ 
+
+其他详细的使用请参考：http://www.codeplex.com/DotNetZip

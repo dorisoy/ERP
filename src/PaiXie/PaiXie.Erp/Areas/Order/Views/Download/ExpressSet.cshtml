@@ -1,0 +1,83 @@
+﻿@using PaiXie.Data
+@using PaiXie.Core.Enum
+@{
+    var shopID = ViewBag.ShopID;
+    var shopName = ViewBag.ShopName;
+    var logisticsList = ViewBag.LogisticsList as List<Logistics>;
+    var expressSetList = ViewBag.ExpressSetList as List<ShopExpressSet>;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+    <style>
+        .divTitle {
+            height: 40px;
+            line-height: 40px;
+            padding-left: 10px;
+            font-family: \5FAE\8F6F\96C5\9ED1;
+        }
+
+        .ExpressType {
+            width: 100%;
+            margin: 0px 10px 20px 0px;
+        }
+
+            .ExpressType table {
+                width: 100%;
+            }
+
+                .ExpressType table th {
+                    height: 40px;
+                    background-color: #436fac;
+                    font-weight: normal;
+                    text-align: center;
+                    color: #fff;
+                }
+
+                .ExpressType table td {
+                    height: 49px;
+                    background-color: #fff;
+                    border-bottom: 1px dotted #ccc;
+                    text-align: center;
+                    color: #666;
+                }
+    </style>
+}
+<div data-options="region:'center',border:false" class="p0lr22">
+    <form id="ff" method="post" novalidate="novalidate">
+        <div class="divTitle">
+            <span style="color:red;">店铺名称：</span>@(shopName)
+        </div>
+        <input id="hdnShopID" name="ShopID" type="hidden" value="@shopID">
+        <div data-options="region:'center',border:false" class="ExpressType">
+            <table border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                    <th width="50%">外部订单号快递类型</th>
+                    <th width="50%">系统订单匹配发货物流</th>
+                </tr>
+                @foreach (int shippingType in Enum.GetValues(typeof(OrdShippingType))) {
+                    <tr>
+                        <td width="50%">
+                            @(Enum.GetName(typeof(OrdShippingType), shippingType))
+                            <input type="hidden" name="ShippingType" value="@(shippingType)" />
+                        </td>
+                        <td width="50%">
+                            <select name="LogisticsID" class="easyui-combobox" data-options="height:30,width:150">
+                                <option value="0">请选择</option>
+                                @foreach (var logistics in logisticsList) {
+                                    <option value="@(logistics.ID)" @(expressSetList.Where(e => e.LogisticsID == logistics.ID && e.ShippingType == shippingType).Count() ==1 ? "selected" : "")>@(logistics.Name)</option>
+                                }
+                            </select>
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+        <div style="clear:both; padding-left:150px;">
+            <a href="javascript:void(0)" class="button-oky" id="btnSave" iconcls="icon-ok">确认</a>
+            <a href="javascript:void(0)" class="button-cancel" id="btnCancel" iconcls="icon-ok">取消</a>
+        </div>
+    </form>
+</div>
+@section bottom{
+    <script src="~/Areas/Order/ViewJs/ExpressSet.js"></script>
+}

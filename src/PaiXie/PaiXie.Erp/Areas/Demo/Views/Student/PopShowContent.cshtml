@@ -1,0 +1,37 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>View1</title>
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    
+</head>
+<body>
+    <div>
+        传进来的参数：@ViewBag.Param
+        <br />
+        要返回的值
+        <input id="txtmsg" type="text"  />
+        <a href="javascript:void(0)" class="easyui-linkbutton" id="btnSelectCustomer2" iconcls="icon-search">确认</a>
+
+    </div>
+    <script>
+    $("#btnSelectCustomer2").click(function () {
+        alert($('#txtmsg').val());
+        parent.$('#win').window('close');
+        //  alert(parent.frames["frmWorkArea"].$('#Customer_Name').val());
+      //  var tbIframe = parent.$("#frmWorkArea iframe:first-child");
+        parent.$("#frmWorkArea15").contents().find("div").css("background-color", "#BADA55");
+        // tbIframe.$('#Customer_Name').val($('#txtmsg').val());
+        parent.$("#frmWorkArea15").contents().find('#Customer_Name').val($('#txtmsg').val());
+    });
+
+</script>
+
+</body>
+</html>

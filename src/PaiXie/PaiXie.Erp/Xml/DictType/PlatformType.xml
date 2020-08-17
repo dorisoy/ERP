@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  SELECT  CODE AS VALUE , TEXT  FROM sys_code WHERE   codetype='dplx' AND IsEnable=1 ORDER BY seq
+</root>

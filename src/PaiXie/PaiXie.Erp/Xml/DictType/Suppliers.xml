@@ -1,0 +1,2 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>SELECT  ID AS VALUE ,Name AS  TEXT FROM suppliers WHERE IsEnable=1 ORDER BY ID DESC</root>

@@ -1,0 +1,153 @@
+﻿@using  PaiXie.Data
+@{
+    var student = ViewBag.student as student;
+}
+
+@{
+    ViewBag.Title = "title";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+}
+    <div class="z-toolbar">
+        <a id="a_save" href="javascript:btnWordSave();" type="submit" plain="true" class="easyui-linkbutton" icon="icon-save" title="保存">保存</a>
+        <a id="a_undo" href="javascript:btnWordundo();" plain="true" class="easyui-linkbutton" icon="icon-undo" title="撤消">撤消</a>
+       </div>
+
+  
+
+    <div id="master" class="container_12" data-bind="inputwidth:0.9">
+     
+        <form id="formWord" method="post">
+            <input id="ID" name="ID" value="@student.ID" type="hidden" />
+            <div class="grid_1 lbl">姓名</div>
+            <div class="grid_3 val">
+                @*三个小数点验证*@
+                <input type="text" class="z-txt easyui-numberbox" data-options="required:true,validType:'number',precision:3" id="SstuNmae" name="SstuNmae" value="@student.SstuNmae" />
+            </div>
+
+            <div class="grid_1 lbl">入学日期</div>
+            <div class="grid_3 val"><input type="text" id="CreTime" name="CreTime" value="@student.CreTime" class="z-txt easyui-datebox" required="true" /></div>
+            <div class="grid_1 lbl">成绩</div>
+            <div class="grid_3 val "><input type="text" id="Score" name="Score" value="@student.Score" class="z-txt easyui-validatebox" /></div>
+
+            <div class="clear"></div>
+
+      
+        </form>
+
+          
+            <div class="clear"></div>
+
+
+        <div>
+            <script src="~/Content/ckeditor/ckeditor.js"></script>
+            <input id="ckEditor1" name="ckEditor1" type="text" />
+            <p>
+            </p>
+
+            <a href="#" class="easyui-linkbutton" iconcls="icon-save" id="btnSave">保存</a>
+
+            <script type="text/javascript">
+            //editor.document.getBody().getText(); //取得纯文本
+            //editor.document.getBody().getHtml(); //取得html文本
+            var editor = CKEDITOR.replace('ckEditor1',
+    {
+        toolbar: "Full",
+        filebrowserUploadUrl: '@Url.Content("~/Content/ckeditor/app/Upload.aspx?type=File")',  //开启文件上传（此项会同时开启图片和FLASH上传）
+        filebrowserImageUploadUrl: '@Url.Content("~/Content/ckeditor/app/Upload.aspx?type=Images")',  // 开启图片上传
+        filebrowserFlashUploadUrl: '@Url.Content("~/Content/ckeditor/app/Upload.aspx?type=Flash")'  //开启FLASH上传
+    });
+            $("#btnSave").click(function () {
+           //   alert(editor.document.getBody().getHtml());
+               // return;
+              $.post("/News/UpdateNewsByID/",
+                {
+                    id:"1",
+                    FckEditor1: editor.document.getBody().getHtml(),
+                },
+                function (data, status) {
+                 //   alert("Data: " + data + "\nStatus: " + status);
+                 //   alert("1");
+                    if (data == "OK")
+                    {
+                        alert("保持成功！");
+                        BindViewInfo();
+                    }
+
+                });
+            });
+            $(function () {
+                BindViewInfo();
+            });
+            function BindViewInfo() {
+                $.post("/News/GetNewsByID/",
+               {
+                   ID: "1"
+               },
+               function (data, status) {
+                //   alert("Data: " + data + "\nStatus: " + status);
+                   if (status == "success") {
+                       editor.setData(data);
+                   }
+                   else {
+                       alert("加载失败！");
+                   }
+
+               });
+            }
+            </script>
+
+        </div>
+     
+    </div>
+ 
+  
+
+<div id="tt" class="easyui-tabs">
+    <div title="材料明细">
+     
+        <div id="gridtb">
+            <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-search',plain:true" data-bind="click:addRowClick,linkbuttonDisable:readonly">选择在库材料</a>
+            <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-remove',plain:true" data-bind="click:removeRowClick,linkbuttonDisable:readonly">删除材料</a>
+        </div>
+    </div>
+    <div title="表单信息" class="hide" style="padding-top:2px;">
+     </div>
+</div> @section bottom{ 
+<script>
+    function btnWordundo() {
+        location.href = '/demo/student/Index';
+    }
+    function btnWordSave() {
+        $.messager.progress();	// 显示进度条
+        $('#formWord').form('submit', {
+            url: "/demo/student/save",
+            dataType: "text",
+            onSubmit: function(){
+                var isValid = $(this).form('validate');
+                if (!isValid){
+                   // $.messager.progress('close');	// 如果表单是无效的则隐藏进度条
+                }
+                return isValid;	// 返回false终止表单提交
+            },
+            success: function (data) {
+             
+              //  $.messager.progress('close');	// 如果提交成功则隐藏进度条
+                if (data == "OK")
+                {
+                    location.href = '/demo/student/Index';
+                }
+                else
+                {
+                    $.messager.alert('Info', data, 'info');
+                }
+                 
+            },
+            error: function () {
+                $.messager.alert('Info', "保存失败", 'info');                    
+                        }
+        });
+    }
+</script>
+}

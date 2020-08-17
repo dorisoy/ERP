@@ -1,0 +1,355 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>电商ERP管理系统</title>   
+    <link rel="icon" href="~/Content/images/favicon.ico" type="image/x-icon" />
+    <link rel="bookmark" href="~/Content/images/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="~/Content/images/favicon.ico" type="image/x-icon" />   
+    @Scripts.Render("~/Scripts/jquery-1.8.2.min.js")
+    @Scripts.Render("~/Scripts/hjs")
+    @Scripts.Render("~/Content/jquery-easyui/jquery.easyui.min.js")
+    @Styles.Render("~/Content/jquery-easyui/themes/icon")
+    @Styles.Render("~/Content/jquery-easyui/themes/gray/easyui")
+    @Scripts.Render("~/Content/jquery-easyui/locale/easyui-lang-zh_CN")
+    @Styles.Render("~/Content/css/default")
+   
+    <script type="text/javascript">
+        $(function () {
+            $.fn.jqLoading({ height: 100, width: 200, text: "努力加载中...." });
+        });
+    </script>
+    @Html.Raw(ViewBag.js)
+    <script>
+        //初始化左侧
+        function InitLeftMenu1() {
+            $(".easyui-accordion1").empty();
+            var menulist = "";
+            $.each(_menus.menus, function (i, n) {
+                menulist += '<div iconCls="' + n.icon + '"    title="' + n.menuname + '"   style="overflow:auto;">';
+                menulist += '<ul >';
+                $.each(n.menus, function (j, o) {
+                    menulist += '<li><div ><a  style=" text-decoration:none;"  id="' + o.menuid + '"  re="' + o.icon + '"  ref="' + o.menuid + '" class="MenuLink"   href="javascript:void(0)"  src="' + o.url + '" rel="' + o.url + '" ><span class="nav">  <span class="' + o.icon + '" style=" width:16px; height:16px;">&nbsp;&nbsp;&nbsp;&nbsp;</span> ' + o.menuname + '</span></a></div></li> ';
+                })
+                menulist += '</ul></div>';
+            })
+            $(".easyui-accordion1").append(menulist);
+            //导航菜单绑定初始化
+            $(".easyui-accordion1").accordion();
+        }
+        $(function () {
+            InitLeftMenu1();
+        });
+        $(function () {
+
+            //绑定菜单按钮的点击事件
+            BindMenuClickEvent();
+
+            //Tab页签的实现
+            $("#worktab").tabs({});
+            $("#worktab").tabs({
+                tools: [{
+                    iconCls: 'icon-no',
+                    handler: function () {
+
+                        $.messager.confirm("提示", "确认关闭所有选项卡?", function (r) {
+                            if (r) {
+                                location.reload();
+                            }
+
+
+                        });
+
+
+
+
+                    }
+                }]
+            });
+
+            $("#worktab").tabs({
+                onContextMenu: function (e, title, index) {
+                   // return confirm('您确认想要关闭 ' + title);
+                }
+            });
+
+        });
+
+        function reloadx() {
+        
+            var current_tab = $('#worktab').tabs('getSelected');
+            var iframe = $(current_tab.panel('options').content);
+            var src = iframe.attr('src');
+            var id = iframe.attr('id');
+            var str = '  <iframe id="' + id + '" data-options="fit:true" frameborder="0" style="  width: 100%; height: 100%; overflow: hidden;" src="' + src + '"></iframe>   '
+
+            $('#worktab').tabs('update', {
+                tab: current_tab,
+                options: {
+                    content: str,
+                }
+            });
+        }
+        //绑定菜单按钮的点击事件  MenuLink
+        function BindMenuClickEvent() {
+            $(".MenuLink").click(function () {
+				$('.MenuLinkSelected').removeClass('MenuLinkSelected');
+				$(this).parent().parent().addClass('MenuLinkSelected');
+			
+                //获取按钮里面的src属性
+                var src = $(this).attr("src") + "?ram=" + Math.random();
+                //将主框架的iframe跳转到菜单指向的地址
+                //$("#frmWorkArea").attr("src", src);
+                //得到节点的名字来放去Title
+               
+                var re = $(this).attr("re");
+                var mid = $(this).attr("id");
+               
+                //拼接一个Iframe标签
+                var str = '  <iframe id="frmWorkArea'+mid+'" data-options="fit:true" frameborder="0" style="  width: 100%; height: 100%; overflow: hidden;" src="' + $(this).attr("src") + '"></iframe>   '
+                //   var str = '  <div id="frmWorkArea" scrolling="no" data-options="fit:true" frameborder="0" style="  width: 100%; height: 100%; overflow: hidden;" src="' + $(this).attr("src") + '"></div>   '
+              //  var stitle = "<a href='javascript:reload(" + str + ");'>refresh</a>" + $(this).html();
+                //   alert(str);
+                
+                var title = '<span class="refresh-menu" onclick = "reloadx();" ></span>' + $(this).html();
+                //首先判断用户是否已经单击了此项，如果单击了直接获取焦点，负责打开
+                var isExist = $("#worktab").tabs('exists', title);
+                if (!isExist) {
+
+                    $('#worktab').tabs('add', { title: title, content: str, closable: true })
+                    //添加tab的节点，调用easyUITab标签的方法
+                    //$("#worktab").tabs('add', {
+                    //    title: title,
+                    //    content: str,
+                    //    fit : true,
+                    //    //  iconCls: re,
+                    //    closable: true
+                    //})
+
+                    ;
+
+
+                }
+                else {
+                    //如果存在则获取焦点
+                    $("#worktab").tabs('select', title);
+                }
+            });
+        }
+		$(document).ready(function(){
+			$('#logo').click(function(){
+				if ($('.tabs .tabs-first .tabs-title').text()=='我的桌面'){
+					$('.tabs .tabs-first a.tabs-inner').click();
+				}
+			
+			});
+
+
+			$('#worktab').bind('dblclick', function () {
+			    //var current_tab = $('#worktab').tabs('getSelected');
+			    //var iframe = $(current_tab.panel('options').content);
+			    //       var src = iframe.attr('src');
+			    //       var id = iframe.attr('id');
+			    //   var str = '  <iframe id="' + id + '" data-options="fit:true" frameborder="0" style="  width: 100%; height: 100%; overflow: hidden;" src="' + src + '"></iframe>   '
+
+			    //$('#worktab').tabs('update', {
+			    //    tab: current_tab,
+			    //    options: {
+			    //        content: str,
+			    //    }
+			    //});
+
+
+
+
+			})
+
+
+		    //绑定tabs的右键菜单
+			$("#worktab").tabs({
+
+			    onContextMenu: function (e, title) {
+			        e.preventDefault();
+			        $('#tabsMenu').menu('show', {
+			            left: e.pageX,
+			            top: e.pageY
+			        }).data("tabTitle", title);
+			    }
+			});
+
+		    //实例化menu的onClick事件
+			$("#tabsMenu").menu({
+               
+			    onClick: function (item) {
+			        CloseTab(this, item.name);
+			    }
+			});
+		});
+		//几个关闭事件的实现
+		function CloseTab(menu, type) {
+		    var curTabTitle = $(menu).data("tabTitle");
+		    var tabs = $("#worktab");
+
+		    if(type === "Other")
+		    {
+                  $.messager.confirm("提示", "确认关闭其他所有选项卡?", function (r) {
+                      if (r) {
+                          var allTabs = tabs.tabs("tabs");
+                          var closeTabsTitle = [];
+
+                          $.each(allTabs, function () {
+                              var opt = $(this).panel("options");
+                              if (opt.closable && opt.title != curTabTitle && type === "Other") {
+
+
+                                  closeTabsTitle.push(opt.title);
+                                  //  alert(opt.title);
+                                  $("#worktab").tabs('select', opt.title);
+
+
+                              } else if (opt.closable && type === "All") {
+
+                                  closeTabsTitle.push(opt.title);
+
+
+
+                              }
+                          });
+
+                          for (var i = 0; i < closeTabsTitle.length; i++) {
+                              tabs.tabs("close", closeTabsTitle[i]);
+                          }
+		                }
+		               
+		    });
+		    }
+		    else
+		        if (type === "All") {
+		            $.messager.confirm("提示", "确认关闭所有选项卡?", function (r) {
+		                if (r) {
+		                    var allTabs = tabs.tabs("tabs");
+		                    var closeTabsTitle = [];
+
+		                    $.each(allTabs, function () {
+		                        var opt = $(this).panel("options");
+		                        if (opt.closable && opt.title != curTabTitle && type === "Other") {
+
+
+		                            closeTabsTitle.push(opt.title);
+		                            //  alert(opt.title);
+		                            $("#worktab").tabs('select', opt.title);
+
+
+		                        } else if (opt.closable && type === "All") {
+
+		                            closeTabsTitle.push(opt.title);
+
+
+
+		                        }
+		                    });
+
+		                    for (var i = 0; i < closeTabsTitle.length; i++) {
+		                        tabs.tabs("close", closeTabsTitle[i]);
+		                    }
+		                }
+		              
+		            });
+		        }
+
+		        else
+		
+		    if (type === "close") {
+		        tabs.tabs("close", curTabTitle);
+		        return;
+		    }
+		
+		 
+		}
+        function confirm1() {
+            $.messager.confirm('提示', '确认退出?', function (r) {
+                if (r) {
+                    window.location.href = "/Login/Logout";
+                }
+            });
+        }
+    </script>
+</head>
+<body class="easyui-layout"  >
+    <div data-options="region:'north'" style="height:80px;">
+        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="320" align="center" valign="middle"><img id="logo" src="~/Content/images/logo.png" alt="" /> </td>
+                <td></td>
+                <td align="right" class="north-top">
+                  
+                    欢迎：<a href="#" onclick="UpdatePwd();"> @ViewBag.username </a> <span class="line"></span> <a href="#" onclick="confirm1();">退出</a></td>
+            </tr>
+        </table>
+
+    </div>
+    <div data-options="region:'west',title:'',split:true,collapsible:true" style="width:194px;">
+
+        <div class="easyui-accordion1" data-options="fit:true,border:false">
+        </div>
+    </div>
+    <div data-options="region:'center',border:false" style="padding:10px 0 0 10px; background-color:#f3f7f9; overflow:hidden;">
+        <div class="easyui-tabs" data-options="fit:true,tabHeight:39" id="worktab">
+            <div title="我的桌面" data-options="iconCls:'icon-help',closable:false,fit:true" style="padding:0px">
+                DeskTop
+
+
+
+
+            </div>
+        </div>
+
+    </div>
+    <div id="win"></div>
+    <div id="tabsMenu" class="easyui-menu" style="width:120px;">
+        <div name="close">关闭</div>
+        <div name="Other">关闭其他</div>
+        <div name="All">关闭所有</div>
+    </div>  
+</body>
+<script type="text/javascript">
+    $(function () {
+        $.fn.jqLoading("destroy");
+        $('.tool').css({ 'height': $('.layout-panel-west').height() + 'px' })
+    });
+    function UpdatePwd() {
+        var src = "/sys/user/UpdateUserInfo?ram=" + Math.random();
+        var str = '  <iframe id="frmWorkArea_xgmm" data-options="fit:true" frameborder="0" style="  width: 100%; height: 100%; overflow: hidden;" src="' + src + '"></iframe>   '
+
+        var isExist = $("#worktab").tabs('exists', '账号信息');
+        if (!isExist) {
+
+            $('#worktab').tabs('add', { title: '账号信息', content: str, closable: true })
+            //添加tab的节点，调用easyUITab标签的方法
+            //$("#worktab").tabs('add', {
+            //    title: title,
+            //    content: str,
+            //    fit : true,
+            //    //  iconCls: re,
+            //    closable: true
+            //})
+
+            ;
+
+
+        }
+        else {
+            //如果存在则获取焦点
+            $("#worktab").tabs('select', '账号信息');
+        }
+
+
+
+
+      //  UpdatePwdwin("修改密码", "/sys/user/Updatepwd?ram=" + Math.random(), 700, 500, true, false, false);
+    }
+</script>
+</html>

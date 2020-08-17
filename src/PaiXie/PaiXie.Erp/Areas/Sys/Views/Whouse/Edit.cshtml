@@ -1,0 +1,64 @@
+﻿@using PaiXie.Data
+@{
+    var Sysuser = ViewBag.Sysuser as Logistics;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    @section head{
+
+    }
+
+    <div  style="padding:20px" >     
+        <form id="ff" method="post" novalidate="novalidate">
+            <input type="hidden" value="@Sysuser.ID" id="ID" name="ID" />
+     
+                <table id="tblAdd" class="tableinfo">
+              
+                    <tr>
+                        <th><label for="Name">物流名称：</label></th>
+                        <td>
+                            <input style="width:120px;" value="@Sysuser.Name" class="easyui-validatebox" type="text" id="Name" name="Name" data-options="required:true,validType:'length[1,20]'" />
+                        </td>
+                    </tr>
+                    <tr>
+    <th><label for="Code">物流代码：</label></th>
+    <td>
+        <input style="width:120px;" value="@Sysuser.Code" class="easyui-validatebox" type="text" id="Code" name="Code" data-options="validType:['length[1,10]','code']" />
+    </td>
+</tr>
+
+                    <tr>
+                        <th><label for="Code">官方地址：</label></th>
+                        <td>
+                            <input style="width:220px;"
+                                   value="@Sysuser.WebUrl" class="easyui-validatebox" type="text" id="WebUrl" name="WebUrl" />
+                        </td></tr>
+
+<tr>
+                        <th><label for="IsEnable">是否可用：</label></th>
+                        <td>
+                            <input type="checkbox"  @if (Sysuser.ID == 0 || Sysuser.IsEnable==1) {
+                                                     string c=   "checked";  
+                                                         @(c) 
+                                                    }
+                                    value="@(Sysuser.ID == 0? 1: Sysuser.IsEnable)" 
+                                   
+                                   id="IsEnable" name="IsEnable" />
+                              </td>
+                   
+                    </tr>
+
+                </table>
+                 
+            <br />
+			<div class="textcenter">
+				<a href="javascript:void(0)" class="button-oky" id="btnSave" iconcls="icon-ok">确定</a>
+				<a href="javascript:void(0)" class="button-cancel" iconcls="icon-cancel" id="btnClose">取消</a>
+			</div>
+
+        </form>
+    </div>       
+@section bottom{
+ 
+<script src="~/Areas/Sys/ViewJs/Editlogistics.js"></script>
+}
+   

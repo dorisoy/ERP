@@ -1,0 +1,70 @@
+﻿@{
+    var startDate = ViewBag.StartDate;
+    var endDate = ViewBag.EndDate;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+    <style>
+        .searchpro .no {
+            width: auto;
+            height: auto;
+            margin: 10px 3px 0 0;
+        }
+
+        .searchpro .pr10 {
+            padding-right: 10px;
+        }
+    </style>
+}
+<div class="easyui-layout" data-options="fit:true">
+    <div data-options="region:'north',height:150" id="topdiv">
+        <div class="toolbar" id="toolbar">
+            <a href="#" class="refresh" id="refresh"><span></span>刷新</a>
+            <a href="javascript:void(0);" id="refreshCurrentPage" style="display:none;"><span></span>刷新当前页</a>
+        </div>
+        <div class="searchpro">
+            <select id="keyWordType" name="keyWordType" class="easyui-combobox" data-options="height:30,width:100,editable:false">
+                <option value="">关键字类型</option>
+                <option value="订单编号" selected>订单编号</option>
+                <option value="外部订单号">外部订单号</option>
+                <option value="单据号">单据号</option>
+                <option value="售后单号">售后单号</option>
+                <option value="交易号">交易号</option>
+            </select>
+            <input type="text" id="txtKeyWord" value="" style="width:150px;">
+            <label>付款方式：</label>
+            <select id="paymentMethod" class="easyui-combobox" data-options="height:30,width:80">
+                <option value="-1" selected>不限</option>
+                <option value="0">在线支付</option>
+                <option value="1">现金支付</option>
+            </select>
+            <label>类型：</label>
+            <select id="billType" class="easyui-combobox" data-options="height:30,width:80">
+                <option value="0" selected>不限</option>
+                <option value="1">收款</option>
+                <option value="-1">退款</option>
+            </select>
+            <select id="dateType" name="dateType" class="easyui-combobox" data-options="height:30,width:100">
+                <option value="1">创建时间</option>
+                <option value="2">付款时间</option>
+            </select>
+            <input type="text" id="txtStartDate" value="@startDate" class="easyui-datebox" data-options="height:30,width:100, required: true, editable:false">
+            <label style="padding-right:10px">至</label>
+            <input type="text" id="txtEndDate" value="@endDate" class="easyui-datebox" data-options="height:30,width:100,required: true, editable:false">
+            <input type="button" id="btnSearch" value="搜索" class="button">
+            <input type="button" id="btnReset" value="清空条件" class="button-rest">
+        </div>
+        <div class="searchpro">
+            <input type="checkbox" name="status" id="chkStatus1" class="no" value="0" checked><label for="chkStatus1" class="pr10">未付</label>
+            <input type="checkbox" name="status" id="chkStatus2" class="no" value="1" checked><label for="chkStatus2" class="pr10">已付未审</label>
+            <input type="checkbox" name="status" id="chkStatus3" class="no" value="2" checked><label for="chkStatus3" class="pr10">已付已审</label>
+        </div>
+    </div>
+    <div data-options="region:'center',border:false" class="p0lr22">
+        <table id="grid" class="easyui-datagrid" title="" data-options="singleSelect:false,collapsible:true,method:'get'"></table>
+    </div>
+</div>
+@section bottom{
+    <script src="~/Areas/Finance/ViewJs/AccountsBillList.js"></script>
+}
+

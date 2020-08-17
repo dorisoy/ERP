@@ -1,0 +1,39 @@
+﻿@{
+    var status = ViewBag.Status;
+    ViewBag.Title = "表格导入";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+
+    <style>
+        .datagrid-row {
+            height: 80px;
+        }
+    </style>
+}
+<div data-options="region:'north',height:112" id="topdiv">
+    <div class="toolbar" id="toolbar">
+        <input type="hidden" id="hdnStatus" value="@status" />
+        <a href="javascript:void(0);" class="back" id="back"><span></span>返回</a>&nbsp;
+        <a href="~/Upload/Products/导入商品模板.xlsx" class="down" id="down">下载导入商品模版</a>
+    </div>
+    <div class="p0lr22" style="line-height:32px;">
+        <div class="col-sm-7" style="display:inline-block;">
+            <input type="file" id="fileExcel" name="fileExcel" value="浏览" />
+            <input type="checkbox" id="chkIsUpdate" name="isUpdate" value="1" /><label for="chkIsUpdate">如果与已有商品编码或商品SKU码重复，则更新商品资料和属性。</label>
+            <button id="btnConfirm" type="button" class="button-okb">确认</button>
+            <span id="spanProcessBar"></span>
+            <input type="text" name="upexcel" style="width: 1px;height: 1px;border: none;" class="" value="上传" />
+        </div>
+        <div id="message" style="display: inline-block; height: 20px;">&nbsp;</div>
+    </div>
+</div>
+
+<div data-options="region:'center',border:false" class="p0lr22">
+    <table id="grid" class="easyui-datagrid"
+           data-options="singleSelect:false,collapsible:true,method:'get'"></table>
+</div>
+@section bottom{
+    <script src="~/Scripts/ajaxfileupload.js"></script>
+    <script src="~/Areas/Products/ViewJs/ImportProducts.js"></script>
+}

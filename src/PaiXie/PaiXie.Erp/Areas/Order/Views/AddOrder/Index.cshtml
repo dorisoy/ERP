@@ -1,0 +1,603 @@
+﻿@using PaiXie.Data
+@using PaiXie.Api.Bll
+@{
+    var ordbase = ViewBag.Ordbase as Ordbase;
+    var area = ViewBag.Area as AreaManager.Area;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+    <style>
+        a {
+            text-decoration: none;
+        }
+
+        .list {
+            padding: 10px 0;
+        }
+
+            .list h2 {
+                font-size: 14px;
+                line-height: 40px;
+                height: 40px;
+                padding-left: 10px;
+                margin: 0;
+                background-color: #dddddd;
+            }
+
+            .list .ndel,
+            .list .num,
+            .list .nadd {
+                display: inline-block;
+                line-height: 24px;
+                height: 24px;
+                text-align: center;
+            }
+
+            .list .num {
+                width: 60px;
+                border: 0px;
+            }
+
+            .list .ndel,
+            .list .nadd {
+                width: 24px;
+                height: 24px;
+                line-height: 24px;
+                color: #333333;
+                border: 1px solid #ccc;
+                cursor: pointer;
+                font-family: \5FAE\8F6F\96C5\9ED1;
+                font-size: 16px;
+            }
+
+            .list .ndel {
+                font-size: 20px;
+                line-height: 20px;
+            }
+
+        .money {
+            float: right;
+            width: 200px;
+            padding-right: 10px;
+            padding-top: 10px;
+            margin-bottom: 20px;
+        }
+
+            .money li {
+                line-height: 30px;
+                height: 30px;
+                overflow: hidden;
+                text-align: right;
+                padding-right: 5px;
+            }
+
+            .money b {
+                float: left;
+                width: 100px;
+                font-weight: normal;
+            }
+
+            .money .red, .list .red,
+            .money .total b {
+                color: #F00;
+            }
+
+            .money .total {
+                border-top: 1px solid #ccc;
+                font-size: 14px;
+            }
+
+                .money .total b {
+                    font-size: 14px;
+                }
+
+        .tdbg {
+            background-color: #efefef;
+        }
+    </style>
+}
+<div class="easyui-layout" data-options="fit:true" style="overflow-y:auto;">
+    <div data-options=" region:'north',height:63" id="topdiv">
+        <div class="toolbar" id="toolbar">
+            <a href="#" id="add" class="add"><span></span>添加商品</a>
+            <a href="#" id="addDiscount">添加优惠</a>
+            <a href="#" id="scratchOrder">暂存订单</a>
+            <a href="#" id="generateOrder">生成订单</a>
+        </div>
+    </div>
+    <div data-options="region:'center',border:false" class="p0lr22" id="ssss">
+        <input type="hidden" id="refreshPermit" value="0" onchange="mytextare();">
+        <form id="ff" method="post" novalidate style="padding:0 10px; margin:0;">
+            <input type="hidden" name="save" id="savetype" value="1">
+            <input type="hidden" id="hdnID" name="ID" value="@(ordbase.ID)">
+            <input type="hidden" id="hdnErpOrderCode" name="ErpOrderCode" value="@(ordbase.ErpOrderCode)">
+            <table border="0" cellpadding="0" cellspacing="0" class="tableinfo" style="width:100%">
+                <tr>
+                    <th class="tdbg" style="width:150px"><span class="red">*</span>收件人姓名：</th>
+                    <td class="tdbg"><input value="@(ordbase.BuyName)" class="easyui-textbox" type="text" id="txtBuyName" name="BuyName" data-options="width:200,height:30,required:true" /></td>
+                    <th class="tdbg" style="width:150px"><span class="red">*</span>收件人电话：</th>
+                    <td class="tdbg"><input value="@(ordbase.BuyMtel)" class="easyui-textbox" type="text" id="txtBuyMtel" name="BuyMtel" data-options="width:200,height:30,required:true" validtype="tel"></td>
+                    <th class="tdbg" style="width:150px">邮政编码：</th>
+                    <td class="tdbg"><input value="@(ordbase.BuyPostCode)" class="easyui-textbox" type="text" id="txtBuyPostCode" name="BuyPostCode" data-options="width:200,height:30" validtype="zipcode"></td>
+                </tr>
+                <tr>
+                    <th class="tdbg"><span class="red">*</span>收件人地址：</th>
+                    <td class="tdbg" colspan="5">
+                        <select id="ProvinceID" name="ProvinceID" class="easyui-combobox" data-options="valueField:'Value',textField:'Text',url:'/Warehouse/Warehouse/GetAreaJson',editable:false,width:120,height:30,modal:true"></select>
+                        <select id="CityID" name="CityID" class="easyui-combobox" data-options="valueField:'Value',textField:'Text',url:'/Warehouse/Warehouse/GetAreaJson?grade=1&pid=@area.ProvinceID',editable:false,width:120,height:30,modal:true"></select>
+                        <select id="DistrictID" name="DistrictID" class="easyui-combobox" data-options="valueField:'Value',textField:'Text',url:'/Warehouse/Warehouse/GetAreaJson?grade=2&pid=@area.CityID ',editable:false,width:120,height:30,modal:true"></select>
+                        <input type="hidden" id="Province" name="Province" value="@area.Province" />
+                        <input type="hidden" id="City" name="City" value="@area.City" />
+                        <input type="hidden" id="District" name="District" value="@area.County" />
+                        <input value="@(ordbase.BuyAddressDetail)" class="easyui-textbox" type="text" id="txtBuyAddressDetail" name="BuyAddressDetail" data-options="width:400,height:30,required:true" />
+                    </td>
+                </tr>
+            </table>
+            <div style="width:100%;height:10px;"></div>
+            <table border="0" cellpadding="0" cellspacing="0" class="tableinfo" style="width:100%">
+                <tr>
+                    <th class="tdbg" style="width:150px"><span class="red">*</span>付款方式：</th>
+                    <td class="tdbg">
+                        <select id="PaymentMethod" class="easyui-combobox" name="PaymentMethod" data-options="height:30,width:98,editable:false"></select>
+                        <input value="@(ordbase.BuyCodFee.ToString() == "0" ? "" : ordbase.BuyCodFee.ToString())" rel="" class="easyui-textbox" type="text" id="txtBuyCodFee" name="BuyCodFee" data-options="width:98,height:30" validtype="shinum" />
+                    </td>
+                    <th class="tdbg" style="width:150px"><span class="red">*</span>物流：</th>
+                    <td class="tdbg">
+                        <select id="LogisticsID" class="easyui-combobox" name="LogisticsID" data-options="height:30,width:200,editable:false"></select>
+                    </td>
+                    <th class="tdbg" style="width:150px"><span class="red">*</span>运费：</th>
+                    <td class="tdbg"><input value="@(ordbase.Freight)" class="easyui-textbox" type="text" id="txtFreight" name="Freight" data-options="width:200,height:30,required:true" validtype="shinum" /></td>
+                </tr>
+                <tr>
+                    <th class="tdbg"><span class="red">*</span>选择店铺：</th>
+                    <td class="tdbg">
+                        <select id="shop" class="easyui-combobox" name="ShopID" data-options="height:30,width:200"></select>
+                    </td>
+                    <th class="tdbg">外部订单号：</th>
+                    <td class="tdbg"><input value="@(ordbase.OutOrderCode)" class="easyui-textbox" type="text" id="txtOutOrderCode" name="OutOrderCode" data-options="width:200,height:30" /></td>
+                    <th class="tdbg">要求到货时间：</th>
+                    <td class="tdbg"><input type="text" id="txtExpectedDeliDate" name="ExpectedDeliDate" value="@(ordbase.ExpectedDeliDate.ToString("yyyy-MM-dd HH:mm:ss") == "0001-01-01 00:00:00" ? "" : ordbase.ExpectedDeliDate.ToString("yyyy-MM-dd HH:mm:ss"))" class="easyui-datebox" data-options="height:30,width:200,editable:false"></td>
+                </tr>
+                <tr>
+                    <th class="tdbg">配送方式：</th>
+                    <td class="tdbg">
+                        <select id="DeliveryMethod" name="DeliveryMethod" class="easyui-combobox" data-options="height:30,width:98,editable:false">
+                            <option value="0">送货上门</option>
+                            <option value="1">客户自提</option>
+                        </select>
+                        <select id="SinceSome" class="easyui-combobox" name="SinceSome" data-options="height:30,width:98">
+                            <option value="0">选择自提点</option>
+                            <option value="自提点1">自提点1</option>
+                            <option value="自提点2">自提点2</option>
+                        </select>
+                    </td>
+                    <th class="tdbg">发票抬头：</th>
+                    <td class="tdbg"><input value="@(ordbase.InvoiceName)" class="easyui-textbox" type="text" id="txtInvoiceName" name="InvoiceName" data-options="width:200,height:30" /></td>
+                    <th class="tdbg">卖家备注：</th>
+                    <td class="tdbg"><input value="@(ordbase.SellerRemark)" class="easyui-textbox" type="text" id="txtSellerRemark" name="SellerRemark" data-options="width:200,height:30" /></td>
+                </tr>
+            </table>
+            <div id="prolist" class="list">
+                <input type="hidden" value="" id="prolisthtml">
+                <h2>商品列表</h2>
+                <table id="gridProducts" class="easyui-datagrid" title="" data-options="singleSelect:false,collapsible:true,method:'get'"></table>
+            </div>
+            <div id="offerlist" class="list">
+                <input type="hidden" id="offerhidden" value="0">
+                <h2>优惠信息</h2>
+                <table id="gridDiscount" class="easyui-datagrid" title="" data-options="singleSelect:false,collapsible:true,method:'get'"></table>
+            </div>
+            <ul class="money">
+                <li><b>商品金额:</b><span class="red">￥</span><span id="MGoodsAmount"></span></li>
+                <li><b>优惠金额:</b><span class="red">￥</span><span id="Moffer"></span></li>
+                <li><b>运费:</b><span class="red">￥</span><span id="Mshipment"></span></li>
+                <li class="total"><b>应收金额:</b><span class="red">￥</span><span id="MAmount"></span></li>
+            </ul>
+        </form>
+    </div>
+</div>
+@section bottom{
+    <script>
+        $.extend($.fn.validatebox.defaults.rules, {
+            shinum: {
+                validator: function (value) {
+                    return !isNaN(value);
+                },
+                message: '是数字格式'
+            },
+            zipcode: {
+                validator: function (value) {
+                    var reg = /^[1-9]\d{5}$/;
+                    return reg.test(value);
+                },
+                message: '邮编必须是非0开始的6位数字.'
+            },
+            tel: {
+                validator: function (value) {
+                    var reg = /^0\d{2,3}-\d{7,8}(-\d{1,3})?$|^\d{11}$/;
+                    return reg.test(value);
+                },
+                message: '11位手机号码/区号-固话号码'
+            }
+        })
+
+        $(document).ready(function () {
+            $('#add').click(function () {
+                showLocalWindow("订单添加商品", "/Order/AddOrder/AddProducts?erpOrderCode=" + $("#hdnErpOrderCode").val(), 720, 450, true, false, false);
+            });
+            $('#addDiscount').click(function () {
+                if ($(this).hasClass('unclick')) return false;
+                $('#offerhidden').val(0);
+                showLocalWindow('添加订单优惠', "/Order/AddOrder/AddDiscount?erpOrderCode=" + $("#hdnErpOrderCode").val(), 620, 450, true, false, false);
+            });
+            $('#scratchOrder').click(function () {
+                $('#savetype').val(1);
+                submitOrder();
+            });
+            $('#generateOrder').click(function () {
+                if ($(this).hasClass('unclick')) return false;
+                $('#savetype').val(2);
+                submitOrder();
+            });
+
+            $('#ProvinceID').combobox({
+                onSelect: function () {
+                    var url = '/Warehouse/Warehouse/GetAreaJson?grade=1&pid=' + $('#ProvinceID').combobox('getValue');
+                    $('#CityID').combobox('reload', url);
+                    $('#CityID').combobox('select', 0);
+                    $('#DistrictID').combobox('select', 0);
+                    $('#Province').val($('#ProvinceID').combobox('getText'));
+                    $('#City').val('');
+                    $('#District').val('');
+                }
+            });
+            $('#CityID').combobox({
+                onSelect: function () {
+                    var url = '/Warehouse/Warehouse/GetAreaJson?grade=2&pid=' + $('#CityID').combobox('getValue');
+                    $('#DistrictID').combobox('reload', url);
+                    $('#DistrictID').combobox('select', 0);
+                    $('#District').val('');
+                    $('#City').val($('#CityID').combobox('getText'));
+                }
+            });
+            $('#DistrictID').combobox({
+                onSelect: function () {
+                    $('#District').val($('#DistrictID').combobox('getText'));
+                }
+            });
+
+            $("#ProvinceID").combobox('setValue', '@area.ProvinceID');
+            $("#CityID").combobox('setValue', '@area.CityID');
+            $("#DistrictID").combobox('setValue', '@area.CountyID');
+
+            $('#PaymentMethod').combobox({
+                url: '/Order/AddOrder/GetPaymentMethod',
+                valueField: 'Value',
+                textField: 'Text'
+            });
+            $('#txtBuyCodFee').next().hide();
+            $('#PaymentMethod').combobox({
+                onChange: function () {
+                    if ($('#PaymentMethod').combobox('getValue') == 10) {
+                        $('#txtBuyCodFee').next().show();
+                        $("input", $("#txtBuyCodFee").next("span")).blur();
+                    } else {
+                        $('#txtBuyCodFee').next().hide();
+                    }
+                }
+            });
+            $("#PaymentMethod").combobox('setValue', '@(ordbase.PaymentMethod)');
+
+            $("input", $("#txtBuyCodFee").next("span")).focus(function () {
+                if ($(this).val() == "服务费") {
+                    $(this).val('');
+                }
+            }).blur(function () {
+                if ($(this).val() == "") {
+                    $(this).val('服务费');
+                }
+            });
+
+            $('#LogisticsID').combobox({
+                url: '/Order/AddOrder/GetLogisticsJson',
+                valueField: 'Value',
+                textField: 'Text'
+            });
+            $("#LogisticsID").combobox('setValue', '@(ordbase.LogisticsID)');
+
+            BindDictItem("shop", "shop");
+            $("#shop").combobox('setValue', '@(ordbase.ShopID)');
+
+            $('#SinceSome').next().hide();
+            $('#DeliveryMethod').combobox({
+                onChange: function () {
+                    if ($('#DeliveryMethod').combobox('getValue') == 1) {
+                        $('#SinceSome').next().show();
+                        if (Number($("#txtFreight").textbox('getValue')) > 0) $('#txtFreight').attr('rel', $("#txtFreight").textbox('getValue'));
+                        $("#txtFreight").textbox('setValue', 0);
+                    } else {
+                        $('#SinceSome').next().hide();
+                        if (Number($('#txtFreight').attr('rel')) > 0) $("#txtFreight").textbox('setValue', $('#txtFreight').attr('rel'));
+                    }
+                    $('#Mshipment').text(Number($('#txtFreight').next().find('input:eq(0)').val()).toFixed(2));
+                    mytextare();
+                }
+            });
+            $("#DeliveryMethod").combobox('setValue', '@(ordbase.DeliveryMethod)');
+
+            //增减数量
+            $('.ndel').live('click', function () {
+                var $td = $(this).parent();
+                var num = Number($td.find('.num').val()) - 1;
+                num = num > 0 ? num : 1;
+                $td.find('.num').val(num);
+                var orditemID = $td.find('.orditemID').val();
+                updateProductsNum(orditemID, num, 0);
+            });
+            $('.nadd').live('click', function () {
+                var $td = $(this).parent();
+                var num = Number($td.find('.num').val()) + 1;
+                $td.find('.num').val(num);
+                var orditemID = $td.find('.orditemID').val();
+                updateProductsNum(orditemID, num, 1);
+            });
+
+            $('#txtFreight').next().find('input:eq(0)').change(function () {
+
+                setTimeout(mytextare, 0);
+            });
+
+            initTable();
+        });
+
+        //总价运算
+        function mytextare() {
+            var GoodsAmount = 0;
+            var OfferAmount = 0;
+            var Freight = Number($('#txtFreight').val());
+            if (isNaN(Freight))
+            {
+                Freight = 0;
+            }
+            var MAmount = 0
+            var productsRow = $("#gridProducts").datagrid("getRows");
+            if (productsRow.length == 0) {
+                $('#prolist').hide();
+                $("#addDiscount,#generateOrder").addClass("unclick");
+            }
+            else {
+                $('#prolist').show();
+                $("#gridProducts").datagrid("resize");
+                $('#addDiscount,#generateOrder').removeClass('unclick');
+                for (var i = 0; i < productsRow.length; i++) {
+                    GoodsAmount += Number(productsRow[i].SellingPrice) * Number(productsRow[i].ProductsNum);
+                }
+
+            }
+            var discountRow = $("#gridDiscount").datagrid("getRows");
+            if (discountRow.length == 0) {
+                $('#offerlist').hide();
+            }
+            else {
+                $('#offerlist').show();
+                $("#gridDiscount").datagrid("resize");
+                for (var i = 0; i < discountRow.length; i++) {
+                    OfferAmount += Number(discountRow[i].Amount);
+                }
+            }
+            MAmount = GoodsAmount - OfferAmount + Freight;
+
+            $('#MGoodsAmount').text(GoodsAmount.toFixed(3));
+            $('#Moffer').text(OfferAmount.toFixed(3));
+            $('#Mshipment').text(Freight.toFixed(3));
+            $('#MAmount').text(MAmount.toFixed(3));
+        };
+
+        //绑定列表
+        function initTable() {
+            $('#gridProducts').datagrid({
+                url: '/Order/AddOrder/ShowOrditem?ram=' + Math.random(),
+                fitColumns: true,
+                queryParams: { erpOrderCode: $("#hdnErpOrderCode").val() },  //异步查询的参数
+                onSelect: function (rowIndex, rowData) {
+                },
+                onUnselect: function (rowIndex, rowData) {
+                },
+                columns: [[
+                    { title: '商品编码', field: 'ProductsCode', width: 150, align: 'center', sortable: true },
+                    { title: '商品名称', field: 'ProductsName', width: 350, align: 'center', sortable: true },
+                    { title: '属性', field: 'ProductsSkuSaleprop', width: 200, align: 'center', sortable: true },
+                    { title: 'SKU码', field: 'ProductsSkuCode', width: 150, align: 'center', sortable: true },
+                    {
+                        title: '销售单价', field: 'SellingPrice', width: 100, align: 'center',
+                        formatter: function (value, row) {
+                            return "<span class='red'>￥</span>" + value.toFixed(3);
+                        },
+                        sortable: true
+                    },
+                    {
+                        title: '优惠金额', field: 'DiscountAmount', width: 100, align: 'center',
+                        formatter: function (value, row) {
+                            return "<span class='red'>￥</span>" + (value * row.ProductsNum).toFixed(3);
+                        },
+                        sortable: true
+                    },
+                    {
+                        title: '销售数量', field: 'ProductsNum', width: 200, align: 'center',
+                        formatter: function (value, row) {
+                            return "<span class='ndel'>-</span><input class='num' value='" + value + "' readonly><span class='nadd'>+</span><input class='orditemID' type='hidden' value='" + row.ID + "'/>";
+                        },
+                        sortable: true
+                    },
+                    {
+                        title: '操作', field: 'Permit', width: 150, align: 'center',
+                        formatter: function (value, row) {
+                            return "<a href='#' onclick='deleteItem(" + row.ID + ")'><span class='red'>X</span> 删除</a>";
+                        },
+                        sortable: true
+                    }
+                ]],
+                onLoadSuccess: function (data) {
+                    DataGridNoData(this);
+                    $(this).prev().find('div.datagrid-body').unbind('mouseover').unbind('click');
+                    $('#gridDiscount').datagrid({
+                        url: '/Order/AddOrder/ShowDiscount?ram=' + Math.random(),
+                        fitColumns: true,
+                        queryParams: { erpOrderCode: $("#hdnErpOrderCode").val() },  //异步查询的参数
+                        onSelect: function (rowIndex, rowData) {
+                        },
+                        onUnselect: function (rowIndex, rowData) {
+                        },
+                        columns: [[
+                            { title: '优惠备注', field: 'Remark', width: 350, align: 'center', sortable: true },
+                            {
+                                title: '优惠金额', field: 'Amount', width: 150, align: 'center',
+                                formatter: function (value, row) {
+                                    return "<span class='red'>￥</span>" + value.toFixed(3);
+                                },
+                                sortable: true
+                            },
+                            { title: '关联商品', field: 'LibProductsSkuCode', width: 300, align: 'center', sortable: true },
+                            {
+                                title: '操作', field: 'Permit', width: 150, align: 'center',
+                                formatter: function (value, row) {
+                                    return "<a href='#' onclick='deleteDiscount(" + row.ID + ")'><span class='red'>X</span> 删除</a>";
+                                },
+                                sortable: true
+                            }
+                        ]],
+                        onLoadSuccess: function (data) {
+                            $(this).prev().find('div.datagrid-body').unbind('mouseover').unbind('click');
+                            mytextare();
+                            DataGridNoData(this);
+                        }
+                    });
+                }
+            });
+        }
+
+        //更新数量
+        function updateProductsNum(id, num, type) {
+            $.ajax({
+                url: "/Order/AddOrder/UpdateProductsNum?orditemID=" + id + "&productsNum=" + num + "&type=" + type,
+                type: "GET",
+                cache: false,
+                success: function (r) {
+                    var map = $.parseJSON(r);
+                    if (map.result == 1) {
+                        //var rows = $("#gridProducts").datagrid("getRows");
+                        //for (var i = 0; i < rows.length; i++) {
+                        //    $('#gridProducts').datagrid('refreshRow', i);
+                        //}
+                    } else {
+                        $.MsgBox.Alert("提示", map.message);
+                    }
+                    initTable();
+                },
+                error: function () {
+                    $.MsgBox.Alert("提示", "删除失败！");
+                }
+            });
+        }
+
+        //删除商品
+        function deleteItem(id) {
+            $.ajax({
+                url: "/Order/AddOrder/DeleteItem?orditemID=" + id,
+                type: "GET",
+                cache: false,
+                success: function (r) {
+                    var map = $.parseJSON(r);
+                    if (map.result == 1) {
+                        initTable();
+                    } else {
+                        $.MsgBox.Alert("提示", map.message);
+                    }
+                },
+                error: function () {
+                    $.MsgBox.Alert("提示", "删除失败！");
+                }
+            });
+        }
+
+        //删除优惠
+        function deleteDiscount(id) {
+            $.ajax({
+                url: "/Order/AddOrder/DeleteDiscount?discountID=" + id,
+                type: "GET",
+                cache: false,
+                success: function (r) {
+                    var map = $.parseJSON(r);
+                    if (map.result == 1) {
+                        initTable();
+                    } else {
+                        $.MsgBox.Alert("提示", map.message);
+                    }
+                },
+                error: function () {
+                    $.MsgBox.Alert("提示", "删除失败！");
+                }
+            });
+        }
+
+        //提交订单
+        function submitOrder() {
+            var url = "";
+            if ($('#savetype').val() == 1) {
+                url = "/Order/AddOrder/ScratchOrder"
+            }
+            else {
+                url = "/Order/AddOrder/Generate"
+            }
+            $('#ff').form('submit', {
+                url: url,
+                type: "POST",
+                dataType: "json",
+                onSubmit: function () {
+                    if ($("#txtBuyCodFee").val() == "服务费") $("#txtBuyCodFee").val(0);
+                    var isValid = $(this).form('validate');
+                    if (isValid) {
+                        if ($("#DistrictID").combobox("getValue") == "0") {
+                            isValid = false;
+                            $.MsgBox.Alert("提示", "发货地址不完善！");
+                        }
+                        if ($("#PaymentMethod").combobox("getValue") == "-1") {
+                            isValid = false;
+                            $.MsgBox.Alert("提示", "请选择支付方式！");
+                        }
+                        if ($("#LogisticsID").combobox("getValue") == "0") {
+                            isValid = false;
+                            $.MsgBox.Alert("提示", "请选择物流！");
+                        }
+                        if ($("#shop").combobox("getValue") == "0") {
+                            isValid = false;
+                            $.MsgBox.Alert("提示", "请选择店铺！");
+                        }
+
+                    }
+                    return isValid;	// 返回false终止表单提交
+                },
+                success: function (r) {
+                    var map = $.parseJSON(r);
+                    if (map.result == 1) {
+                        if ($('#savetype').val() == 1) {
+                            $.MsgBox.Alert("提示", "保存成功！", 1000);
+                            $("#hdnID").val(map.id);
+                            $("#hdnErpOrderCode").val(map.erpOrderCode);
+                        }
+                        else {
+                            $.MsgBox.Alert("提示", "生成成功！");
+                            setInterval(function () { location.href = "/Order/Uncommitted/Index"; }, 1500);
+                        }
+                    }
+                    else {
+                        $.MsgBox.Alert("提示", map.message);
+                    }
+                },
+                error: function () {
+                    $.MsgBox.Alert("提示", "保存失败！");
+                }
+            });
+        }
+    </script>
+}

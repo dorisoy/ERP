@@ -1,0 +1,22 @@
+2015/9/28 11:13:13
+未将对象引用设置到对象的实例。----System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ASP._Page_Areas_Sys_Views_dict_CodeType_cshtml.Execute() 位置 e:\001\src\PaiXie\PaiXie.Erp\Areas\Sys\Views\Dict\CodeType.cshtml:行号 4
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   在 System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+------------------------------------------------------------------
+2015/9/28 11:13:16
+未将对象引用设置到对象的实例。----System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ASP._Page_Areas_Sys_Views_dict_CodeType_cshtml.Execute() 位置 e:\001\src\PaiXie\PaiXie.Erp\Areas\Sys\Views\Dict\CodeType.cshtml:行号 4
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   在 System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+------------------------------------------------------------------

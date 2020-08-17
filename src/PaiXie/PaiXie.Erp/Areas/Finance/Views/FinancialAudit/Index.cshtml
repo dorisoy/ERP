@@ -1,0 +1,55 @@
+﻿@{
+    ViewBag.Title = "财务审核";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+
+    <style>
+        .datagrid-row {
+        }
+    </style>
+}
+<div class="easyui-layout" data-options="fit:true">
+    <div data-options="region:'north',height:113" id="topdiv">
+        <div class="toolbar" id="toolbar">
+            <input id="refreshCurrentPage" name="refreshCurrentPage" type="hidden" />
+            <a href="javascript:void(0);" class="refresh" id="refresh"><span></span>刷新</a>
+            </div>
+        <div class="searchpro" id="searchpro">
+            <label>单据编号：</label> 
+              <input type="text" id="txtbillno" value="" style="width:150px;">
+            <label>审核状态：</label> 
+            <select id="status" name="status" class="easyui-combobox" data-options="height:30,width:100">
+                <option value="0">不限</option>
+                <option value="2">待审核</option>
+                <option value="3">已审核</option>
+            </select>
+            <label>确认时间：</label> 
+            <input value="" class="easyui-datebox" type="text" id="startDate" name="startDate" data-options="height:30,width:100" />
+
+            <label>至</label> 
+            <input value="" class="easyui-datebox" type="text" id="endDate" name="endDate" data-options="height:30,width:100" />
+
+             <input type="button"      id="btnSearch" value="搜索" class="button">
+            <input type="reset" id="btnReset" value="清空条件" class="button-rest">
+        </div>
+    </div>
+    <div data-options="region:'center',border:false" class="p0lr22">
+        <div id="tt" class="easyui-tabs" data-options="fit:true,border:false,plain:true">
+            <input type="hidden" id="status" value="1" />
+            <div title="入库审核" data-options="region:'center',border:false" id="instockdiv">
+                <table id="grid" class="easyui-datagrid" title="" data-options="singleSelect:false,collapsible:true,method:'get'"></table>
+            </div>
+            <div title="出库审核" id="outstockdiv">
+                <table id="gridout" class="easyui-datagrid" title="" data-options="singleSelect:false,collapsible:true,method:'get'"></table>
+            </div>
+            <div title="盘点审核" id="pddiv">
+                <table id="gridpd" class="easyui-datagrid" title="" data-options="singleSelect:false,collapsible:true,method:'get'"></table>
+            </div>
+        </div>
+    </div>
+</div>
+@section bottom{
+ 
+<script src="~/Areas/Finance/ViewJs/FinancialAuditList.js"></script>
+}

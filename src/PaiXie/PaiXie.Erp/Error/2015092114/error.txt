@@ -1,0 +1,6 @@
+2015/9/21 14:07:01
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='admin' and  Password='81dc9bdb52d04dc20036dbd8313ed055' and IsEnable=1 
+------------------------------------------------------------------

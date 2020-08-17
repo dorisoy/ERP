@@ -1,0 +1,64 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{}
+<div class="easyui-layout" data-options="fit:true">
+    <div data-options="region:'north',height:190" id="topdiv">
+        <div class="toolbar" id="toolbar">
+            <a href="#" class="refresh" id="refresh"><span></span>刷新</a>
+        </div>
+        <div class="searchpro">
+            <select id="keyWordType" name="keyWordType" class="easyui-combobox" data-options="height:30,width:100,editable:false">
+                <option value="">关键字类型</option>
+                <option value="订单编号" selected>订单编号</option>
+                <option value="外部订单号">外部订单号</option>
+                <option value="商品编码">商品编码</option>
+                <option value="商品货号">商品货号</option>
+                <option value="商品SKU码">商品SKU码</option>
+                <option value="收件人姓名">收件人姓名</option>
+                <option value="收件人手机">收件人手机</option>
+            </select>
+            <input type="text" id="txtKeyWord" value="" style="width:150px;">
+            <label>货到付款：</label>
+            <select id="isCod" name="isCod" class="easyui-combobox" data-options="height:30,width:100">
+                <option value="-1" selected>不限</option>
+                <option value="1">是</option>
+                <option value="0">否</option>
+            </select>
+            <label>需要发票：</label>
+            <select id="isNeedInvoice" name="isNeedInvoice" class="easyui-combobox" data-options="height:30,width:100">
+                <option value="-1" selected>不限</option>
+                <option value="1">是</option>
+                <option value="0">否</option>
+            </select>
+            <label>留言备注：</label>
+            <select id="isRemark" name="isRemark" class="easyui-combobox" data-options="height:30,width:100">
+                <option value="-1" selected>不限</option>
+                <option value="1">有</option>
+                <option value="0">无</option>
+            </select>
+            <input type="button" id="btnSearch" value="搜索" class="button">
+            <input type="button" id="btnReset" value="清空条件" class="button-rest">
+        </div>
+        <div class="searchpro">
+            <label>店铺名称：</label>
+            <select id="shop" name="shop" class="easyui-combobox" style="width:150px;" data-options="height:30"></select>
+            <label>订单状态：</label>
+            <select id="orderStatus" name="orderStatus" class="easyui-combobox" data-options="height:30,width:100">
+                <option value="-1" selected>不限</option>
+                <option value="1">是</option>
+                <option value="0">否</option>
+            </select>
+        </div>
+        <div class="p0lr22" style="line-height: 24px; color: #666;">
+            <span style="color:red;">提示：</span><a href="javascript:void(0);" style="text-decoration:none;" onclick="searchRefund();">有 <label id="lblApplyRefundCount" style="color:red;">0</label> 单申请退款</a>
+        </div>
+    </div>
+    <div data-options="region:'center',border:false" class="p0lr22">
+        <table id="grid" class="easyui-datagrid" title="" data-options="singleSelect:false,collapsible:true,method:'get'"></table>
+    </div>
+</div>
+@section bottom{
+    <script src="~/Areas/Order/ViewJs/OrderCommon.js"></script>
+    <script src="~/Areas/Order/ViewJs/Order.js"></script>
+}

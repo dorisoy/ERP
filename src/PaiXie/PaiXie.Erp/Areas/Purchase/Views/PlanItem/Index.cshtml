@@ -1,0 +1,53 @@
+﻿@using PaiXie.Data
+@using PaiXie.Core
+@{
+    var warehouseName = ViewBag.WarehouseName;
+    WarehousePurchasePlan warehousePurchasePlan = ViewBag.WarehousePurchasePlan as WarehousePurchasePlan;
+    ViewBag.Title = "计划单商品列表";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+
+}
+<div class="easyui-layout" data-options="fit:true">
+    <div data-options="region:'north',height:148" id="topdiv">
+        <div class="toolbar" id="toolbar">
+            <a href="javascript:void(0);" class="back" id="back"><span></span>返回</a>
+            <a href="javascript:void(0);" id="add" class="add"><span></span>添加商品</a>
+            <a href="javascript:void(0);" id="import">导入商品</a>
+            <a href="javascript:void(0);" id="generation">生成采购单</a>
+            <a href="javascript:void(0);" id="del" class="del unclick"><span></span>删除</a>
+            <a href="javascript:void(0);" id="refreshCurrentPage" style="display:none;"><span></span>刷新当前页</a>
+        </div>
+        <div class="searchpro" id="searchpro">
+            <input type="hidden" value="@warehousePurchasePlan.ID" id="hdnPlanID" name="planID" />
+            <input type="hidden" value="@warehousePurchasePlan.BillNo" id="hdnBillNo" name="billNo" />
+            <input type="hidden" value="@warehousePurchasePlan.Status" id="hdnStatus" name="status" />
+            <input type="hidden" value="@warehousePurchasePlan.PurchaseOrderCount" id="hdnPurchaseOrderCount" name="purchaseOrderCount" />
+            <input type="hidden" value="@warehousePurchasePlan.WarehouseCode" id="hdnWarehouseCode" name="warehouseCode" />
+            <select id="keyWordType" name="keyWordType" class="easyui-combobox" data-options="height:30,width:100,editable:false">
+                <option value="">关键字类型</option>
+                <option value="商品名称">商品名称</option>
+                <option value="商品编码" selected>商品编码</option>
+                <option value="商品货号">商品货号</option>
+                <option value="商品SKU码">商品SKU码</option>
+            </select>
+            <input type="text" id="txtKeyWord" value="" style="width:150px;">
+            <input type="submit" id="btnSearch" value="搜索" class="button">
+            <input type="reset" id="btnReset" value="清空条件" class="button-rest">
+        </div>
+        <div class="reservoirifo p0lr22">
+            <span>采购计划单号: @warehousePurchasePlan.BillNo</span>
+            <span>计划单名称: @warehousePurchasePlan.Name</span>
+            <span>计划采购数量: <label id="lblNum">@warehousePurchasePlan.Num</label></span>
+            <span>仓库名称: @warehouseName</span>
+            <span><input type="checkbox" id="noSupplier" name="noSupplier" value=""><label for="noSupplier">只显示未关联供应商的商品</label></span>
+        </div>
+    </div>
+    <div data-options="region:'center',border:false" class="p0lr22">
+        <table id="grid" class="easyui-datagrid" title="" data-options="singleSelect:false,collapsible:true,method:'get'"></table>
+    </div>
+</div>
+@section bottom{
+    <script src="~/Areas/Purchase/ViewJs/PlanItemInfoList.js"></script>
+}

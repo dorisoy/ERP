@@ -1,0 +1,174 @@
+﻿@using PaiXie.Data
+@{
+    var ordbase = ViewBag.Ordbase as Ordbase;
+    var orditemList = ViewBag.OrditemList as List<Orditem>;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+    <style>
+        .setlist {
+            width: 650px;
+            height: 205px;
+            margin: 10px auto 0 auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+            .setlist table table td {
+                height: auto;
+                border: 0px;
+                white-space: normal;
+                text-align: left;
+            }
+
+        .inputextbox {
+            text-align: center;
+            width: 60px;
+        }
+
+        .infotitle {
+            line-height: 30px;
+        }
+    </style>
+}
+<div style="height:380px; overflow-y:auto; padding-bottom:10px;">
+    <form id="ff" method="post" novalidate>
+        <input type="hidden" name="OrdbaseID" value="@(ordbase.ID)" />
+        <input type="hidden" name="ErpOrderCode" value="@(ordbase.ErpOrderCode)" />
+        <table class="tableinfo" style="margin-top:25px; width:auto; margin-left:22px;">
+            <tr>
+                <th style="width:auto">优惠备注：</th>
+                <td>
+                    <input style="width:400px" value="" class="easyui-textbox" type="text" id="txtRemark" name="Remark" data-options="height:30" />
+                </td>
+            </tr>
+            <tr>
+                <th style="width:auto"><span class="red">*</span>优惠类型：</th>
+                <td>
+                    <input type="radio" value="0" checked id="type1" name="type" )><label for="type1">直减金额</label>
+                    @if (ordbase.OrderStatus != (int)PaiXie.Core.OrdBaseStatus.未生成) {
+                        <input type="radio" value="1" id="type2" name="type"><label for="type2">订单包邮</label>
+                        <input type="hidden" id="txtFreight" value="@(ordbase.Freight)" />
+                    }
+                </td>
+            </tr>
+            <tr id="type1tr">
+                <th style="width:auto"><span class="red">*</span><span></span>优惠金额：</th>
+                <td><input value="" class="easyui-numberbox" type="text" id="txtAmount" name="Amount" min="0" max="9999999.999" missingmessage="只能输入0~9999999.999之间的数字" data-options="required:true,validType:'number',precision:3,height:30,width:100" /> <span>元</span></td>
+            </tr>
+            <tr class="ndis" id="type2tr">
+                <th style="width:auto"><span></span>优惠运费：</th>
+                <td><span class="red">@ordbase.Freight</span><span>元</span></td>
+            </tr>
+            <tr id="Relatedliset">
+                <th valign="top" style="width:auto"><span class="red">*</span>关联商品：</th>
+                <td>
+                    <input type="checkbox" id="Related0"><label for="Related0">全部商品</label>
+                    <div style="padding-left:1em; max-height:150px; overflow-y:auto">
+                        @{
+                            var index = 0;
+                            foreach (var orditem in orditemList) {
+                                <input type="checkbox" id="Related_@index" name="ProductsSkuID" value="@(orditem.ProductsSkuID)" code="@(orditem.ProductsSkuCode)"><label for="Related_@index">@orditem.ProductsName &nbsp;&nbsp; @orditem.ProductsSkuCode</label><br>
+                            }
+                            index++;
+                        }
+                        <input type="hidden" id="hdnLibProductsSkuCode" name="LibProductsSkuCode" value="" />
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <div style="text-align:center; padding-top:10px" id="buttonbox">
+        <a href="javascript:void(0)" class="button-oky" id="btnSave" iconcls="icon-ok">添加</a>
+        <a href="javascript:void(0)" class="button-cancel" id="btnCancel" iconcls="icon-ok">关闭</a>
+    </div>
+</div>
+@section bottom{
+    <script>
+        var type = 1;
+        $(document).ready(function () {
+            $('#type1').click(function () {
+                type = 1;
+                $('#type1tr,#Relatedliset').show();
+                $('#type2tr,#type3tr').hide();
+            });
+            $('#type2').click(function () {
+                type = 2;
+                $('#type2tr').show();
+                $('#type1tr,#Relatedliset').hide();
+            });
+
+            $('#Related0').click(function () {
+                var checked = false;
+                if ($(this).attr('checked')) checked = true;
+                $(this).parent().find('div input').each(function (index, element) {
+                    $(element).attr('checked', checked);
+                });
+            });
+            $('#Relatedliset div input').click(function () {
+                $('#Related0').attr('checked', $('#Relatedliset div input:checked').length == $('#Relatedliset div input').length);
+            });
+
+            $("#btnSave").click(function () {
+                btnSave();
+            });
+
+            $("#btnCancel").click(function () {
+                parent.$('#localWin').window('close');
+            });
+
+        });
+
+        function btnSave() {
+            $('#ff').form('submit', {
+                url: "/Order/AddOrder/SaveDiscount",
+                type: "POST",
+                dataType: "json",
+                onSubmit: function () {
+                    var isValid = true;
+                    if (type == 1) {
+                        isValid = $(this).form('validate');
+                        if (isValid) {
+                            var productsSkuCode = "";
+                            $('input[name="ProductsSkuID"]:checked').each(function () {
+                                productsSkuCode += $(this).attr("code") + ",";
+                            });
+                            if (isValid && productsSkuCode == "") {
+                                isValid = false;
+                                $.MsgBox.Alert("提示", "请选择关联商品！");
+                            }
+                            else {
+                                $("#hdnLibProductsSkuCode").val(productsSkuCode.substring(0, productsSkuCode.length - 1));
+                            }
+                        }
+                    }
+                    else
+                    {
+                        $("#txtAmount").numberbox('setValue', $("#txtFreight").val());
+                    }
+                    return isValid;
+                },
+                success: function (r) {
+                    var map = $.parseJSON(r);
+                    if (map.result == 1) {
+                        parent.$('#localWin').window('close');
+                        if (parent.$("#hdnIsOrderDetails").val() == "1") {
+                            parent.window.location.reload();
+                        }
+                        else if (parent.$("#hdnIsOrderDetails").val() == "2")
+                        { }
+                        else
+                        {
+                            parent.initTable();
+                        }
+                    } else {
+                        $.MsgBox.Alert('提示', map.message);
+                    }
+                },
+                error: function () {
+                    parent.$.messager.alert('提示', '操作失败,请重试或刷新！');
+                }
+            });
+        }
+    </script>
+}

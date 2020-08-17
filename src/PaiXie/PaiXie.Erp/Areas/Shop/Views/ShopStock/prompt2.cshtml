@@ -1,0 +1,29 @@
+﻿@using PaiXie.Data
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+}
+<div style=" padding:20px; line-height:24px;">
+    1、独享库存是指给某个店铺专门分配的只能由它独自使用的库存<br>
+    2、公共库存＝可用库存－独享库存<br>
+    3、如果店铺有独享库存但不使用公共库存，更新库存＝独享库存<br>
+    4、如果店铺有独享库存且可以使用公共库存，更新库存公式如下：
+    <div style="padding-left:2em;">
+        <b>更新库存＝独享库存 + 公共库存 * 分配比例%</b><br>
+        <span style="color:#666">(销售订单优先使用独享库存)</span>
+    </div>
+</div>
+<div style="text-align:center">
+    <a href="javascript:void(0)" class="button-cancel" id="btnCancel" iconcls="icon-ok">知道了</a>
+</div>
+@section bottom{
+    <script>
+        $(function () {
+            $("#btnCancel").click(function () {
+                parent.$('#win').window('close');
+            });
+        });
+    </script>
+}
+

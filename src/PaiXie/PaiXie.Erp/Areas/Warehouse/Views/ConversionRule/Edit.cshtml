@@ -1,0 +1,126 @@
+﻿@using PaiXie.Data
+@{
+    var rule = ViewBag.Rule as WarehouseConversionRule;
+    var leftRuleItemList = ViewBag.LeftRuleItemList as List<WarehouseConversionRuleItem>;
+    var rightRuleItemList = ViewBag.rightRuleItemList as List<WarehouseConversionRuleItem>;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+    <style>
+        .Transformation {
+            float: left;
+            width: 42%;
+        }
+
+            .Transformation div {
+                text-align: right;
+                padding-top: 10px;
+            }
+
+            .Transformation table {
+                width: 100%;
+            }
+
+                .Transformation table th {
+                    height: 40px;
+                    background-color: #436fac;
+                    font-weight: normal;
+                    text-align: center;
+                    color: #fff;
+                }
+
+                .Transformation table td {
+                    height: 49px;
+                    background-color: #fff;
+                    border-bottom: 1px dotted #ccc;
+                    text-align: center;
+                    color: #666;
+                }
+
+        .TransformationIocn {
+            float: left;
+            width: 16%;
+            text-align: center;
+            padding-top: 25px;
+        }
+
+        a.red {
+            color: #ff0000;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    </style>
+}
+<form id="ff" method="post">
+    <div data-options="region:'north'" style="height:172px;">
+        <div class="toolbar" id="toolbar">
+            <a id="back" class="back" href="javascript:history.go(-1)"><span></span>返回</a>
+        </div>
+        <div class="searchpro" id="searchpro">
+            <label>请输入规则名称：</label><input type="text" id="txtName" name="Name" value="@(rule.Name)" style="width:250px" class="easyui-textbox" data-options="height:30,required:true" validtype="length[0,20]">
+            <span class="f12c">20个字以内</span>
+            <input type="hidden" name="RuleID" value="@(rule.ID)" />
+        </div>
+        <div class="infotitle p0lr22" style=" height:25px">请输入互相转换的商品:</div>
+        <div class="p0lr22">
+            <div class="Transformation">
+                <table border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <th width="50%">SKU码</th>
+                        <th width="25%">数量</th>
+                        <th width="25%">操作</th>
+                    </tr>
+                </table>
+            </div>
+            <div class="TransformationIocn"></div>
+            <div class="Transformation">
+                <table border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <th width="50%">SKU码</th>
+                        <th width="25%">数量</th>
+                        <th width="25%">操作</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+    </div>
+    <div data-options="region:'south'" style="height:70px;">
+        <div style="text-align:center; padding-top:15px">
+            <a iconcls="icon-ok" id="btnSave" class="button-oky" href="javascript:void(0)">保存</a>
+            <a iconcls="icon-ok" id="btnCancel" class="button-cancel" href="javascript:void(0)">取消</a>
+        </div>
+    </div>
+    <div data-options="region:'center'" class="p0lr22">
+        <div class="Transformation">
+            <table border="0" cellpadding="0" cellspacing="0" id="TransformationLeft">
+                @foreach (var item in leftRuleItemList) {
+                    <tr>
+                        <td width="50%">@(item.ProductsSkuCode)<input type="hidden" name="ProductsSkuCode" value="@(item.ProductsSkuCode)"></td>
+                        <td width="25%">@(item.Num)<input type="hidden" name="Num" value="@(item.Num)"></td>
+                        <td width="25%"><input type="hidden" name="ConversionWay" value="@(item.ConversionWay)"><a href="javascript:void(0)" class="red jsdel">×</a></td>
+                    </tr>
+                }
+            </table>
+            <div><a href="javascript:void(0)" id="btnSelectCustomer">+添加商品</a></div>
+        </div>
+        <div class="TransformationIocn"><img src="~/Content/images/Transformation.jpg" style="position:fixed; top:180px; left:50%; margin-left:-49px;"></div>
+        <div class="Transformation">
+            <table border="0" cellpadding="0" cellspacing="0" id="TransformationRight">
+                @foreach (var item in rightRuleItemList) {
+                    <tr>
+                        <td width="50%">@(item.ProductsSkuCode)<input type="hidden" name="ProductsSkuCode" value="@(item.ProductsSkuCode)"></td>
+                        <td width="25%">@(item.Num)<input type="hidden" name="Num" value="@(item.Num)"></td>
+                        <td width="25%"><input type="hidden" name="ConversionWay" value="@(item.ConversionWay)"><a href="javascript:void(0)" class="red jsdel">×</a></td>
+                    </tr>
+                }
+            </table>
+            <div><a href="javascript:void(0)" id="btnSelectCustomerRight">+添加商品</a></div>
+        </div>
+    </div>
+</form>
+@section bottom{
+    <script src="~/Areas/Warehouse/ViewJs/EditConversionRule.js"></script>
+}

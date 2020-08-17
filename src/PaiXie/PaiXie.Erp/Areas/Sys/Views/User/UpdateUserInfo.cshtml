@@ -1,0 +1,87 @@
+﻿@using PaiXie.Data
+@{
+    var Sysuser = ViewBag.Sysuser as Sysuser;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+}
+<div style="padding:20px">
+    <form id="ff" method="post" novalidate="novalidate">
+         <fieldset>
+            <legend>账号信息</legend>
+            <table id="tblAdd" class="tableinfo">
+                <tr>
+                    <th style="width:100px;"><label for="Code">用户名：</label></th>
+                    <td>
+                      @Sysuser.Code   </td>
+
+                </tr>
+                <tr>
+                    <th><label for="Name">密码：</label></th>
+                    <td>
+                       ****** &nbsp;&nbsp; <a href="#" style="text-decoration:none;" id="updatepwd">修改</a> </td>
+                </tr>
+
+            
+          
+            </table>
+        </fieldset>
+
+        <fieldset>
+            <legend>用户资料</legend>
+            <table id="tblAdd" class="tableinfo">
+                <tr>
+                    <th  style="width:100px;"><label for="Code">姓名：</label></th>
+                    <td>
+                    <label id="lblname" >@Sysuser.Name </label>    &nbsp;&nbsp; <a href="#" style="text-decoration:none;" id="updatename">修改</a>
+                    </td>
+ 
+
+                </tr>
+                <tr>
+                    <th><label for="Name">登录次数：</label></th>
+                    <td>
+                     @Sysuser.LoginCount </td>
+                </tr>
+                <tr>
+                    <th><label for="Name">最后登录时间：</label></th>
+                    <td>
+                        @Sysuser.LastLoginDate
+                    </td>
+                </tr>
+          
+
+            </table>
+        </fieldset>
+
+
+     
+        <br />
+        @*<div class="textcenter">
+            <a href="javascript:void(0)" class="button-oky" id="btnSave" iconcls="icon-ok">确定</a>
+            <a href="javascript:void(0)" class="button-cancel" iconcls="icon-cancel" id="btnClose">取消</a>
+        </div>*@
+    </form>
+</div>
+@section bottom{
+
+    <script src="~/Areas/Sys/ViewJs/UpdateUserInfo.js"></script>
+    <script>
+        $("#updatepwd").click(function () {
+            showLocalWindow("修改密码", "/sys/user/Updatepwd?ram=" + Math.random(), 700, 500, true, false, false);
+
+        });
+
+
+        $("#updatename").click(function () {
+            showLocalWindow("修改资料", "/sys/user/UpdateName?ram=" + Math.random(), 700, 300, true, false, false);
+
+        });
+     
+
+        
+
+
+    </script>
+}
+

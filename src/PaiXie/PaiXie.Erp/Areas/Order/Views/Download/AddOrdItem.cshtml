@@ -1,0 +1,52 @@
+﻿@using PaiXie.Data;
+@{
+    var ordouterItem = ViewBag.OrdouterItem as OrdouterItem;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+    <style>
+        .setlist {
+            width: 650px;
+            height: 245px;
+            margin: 10px auto 0 auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+            .setlist table table td {
+                height: auto;
+                border: 0px;
+                white-space: normal;
+                text-align: left;
+            }
+
+        .inputextbox {
+            text-align: center;
+        }
+    </style>
+}
+<table class="tableinfo" style="margin-top:10px; width:auto; margin-left:22px;">
+    <tr>
+        <th style="width:auto">商品编码：</th>
+        <td><input style="width:120px" value="" class="easyui-validatebox" type="text" id="txtProductsCode" name="ProductsCode" /></td>
+        <th style="width: auto; padding-left:10px;">商品SKU码：</th>
+        <td><input style="width:120px" value="@ordouterItem.ProductsSkuCode" class="easyui-validatebox" type="text" id="txtProductsSkuCode" name="ProductsSkuCode" /></td>
+        <td><a href="javascript:void(0)" class="button-okb" id="btnSearch" iconcls="icon-ok" style="height:28px; line-height:28px">查找</a>&nbsp;<span style="color:red" id="msg"></span></td>
+    </tr>
+</table>
+<div class="p0lr22 infotitle ndis" id="infotitle"></div>
+<form id="ffpost" action="">
+    <input id="hdnOrdouterItemID" name="OrdouterItemID" type="hidden" value="@ordouterItem.ID">
+    <input id="hdnErpOrderCode" name="ErpOrderCode" type="hidden" value="@ordouterItem.ErpOrderCode">
+    <input id="hdnProductsID" name="ProductsID" type="hidden" value="0">
+    <div class="p0lr22 setlist ndis" id="setlist">
+        <table id="grid" class="easyui-datagrid" title="" data-options="singleSelect:false,collapsible:true,method:'get'"></table>
+    </div>
+</form>
+<div class="ndis" style=" text-align:center; padding-top:10px" id="buttonbox">
+    <a href="javascript:void(0)" class="button-oky" id="btnSave" iconcls="icon-ok">添加</a>
+    <a href="javascript:void(0)" class="button-cancel" id="btnClose" iconcls="icon-ok">取消</a>
+</div>
+@section bottom{
+    <script src="~/Areas/Order/ViewJs/AddOrdItem.js"></script>
+}

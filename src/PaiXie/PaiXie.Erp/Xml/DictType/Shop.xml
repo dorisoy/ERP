@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  SELECT  ID AS VALUE ,Name AS  TEXT FROM shop where IsEnable=1 AND AppKey!='' AND AppSecret!='' AND AppSession!=''
+</root>

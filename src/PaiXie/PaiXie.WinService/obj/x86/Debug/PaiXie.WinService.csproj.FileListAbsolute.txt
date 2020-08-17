@@ -1,0 +1,89 @@
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.WinService\bin\Debug\PaiXie.WinService.exe.config
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.WinService\bin\Debug\PaiXie.WinService.exe
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.WinService\bin\Debug\PaiXie.WinService.pdb
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.WinService\bin\Debug\FluentData.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.WinService\bin\Debug\Microsoft.CSharp.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.WinService\bin\Debug\MySql.Data.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.WinService\bin\Debug\PaiXie.Api.Bll.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.WinService\bin\Debug\PaiXie.Core.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.WinService\bin\Debug\PaiXie.Data.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.WinService\bin\Debug\PaiXie.Service.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.WinService\bin\Debug\PaiXie.Utils.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.WinService\bin\Debug\System.Configuration.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.WinService\bin\Debug\System.Configuration.Install.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.WinService\bin\Debug\System.Data.DataSetExtensions.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.WinService\bin\Debug\System.Data.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.WinService\bin\Debug\System.Data.Entity.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.WinService\bin\Debug\System.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.WinService\bin\Debug\System.Management.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.WinService\bin\Debug\System.ServiceProcess.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.WinService\bin\Debug\System.Web.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.WinService\bin\Debug\System.Web.Extensions.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.WinService\bin\Debug\System.Windows.Forms.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.WinService\bin\Debug\System.Xml.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.WinService\bin\Debug\System.Xml.Linq.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.WinService\bin\Debug\Newtonsoft.Json.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.WinService\bin\Debug\PaiXie.Cache.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.WinService\bin\Debug\SecretHelp.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.WinService\bin\Debug\NPOI.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.WinService\bin\Debug\ServiceStack.Redis.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.WinService\bin\Debug\ServiceStack.Interfaces.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.WinService\bin\Debug\ServiceStack.Text.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.WinService\bin\Debug\ICSharpCode.SharpZipLib.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.WinService\bin\Debug\PaiXie.Api.Bll.pdb
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.WinService\bin\Debug\PaiXie.Core.pdb
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.WinService\bin\Debug\PaiXie.Data.pdb
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.WinService\bin\Debug\PaiXie.Service.pdb
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.WinService\bin\Debug\PaiXie.Utils.pdb
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.WinService\bin\Debug\PaiXie.Cache.pdb
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.WinService\bin\Debug\NPOI.xml
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.WinService\obj\x86\Debug\PaiXie.WinService.csprojResolveAssemblyReference.cache
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.WinService\obj\x86\Debug\PaiXie.WinService.ProjectInstaller.resources
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.WinService\obj\x86\Debug\PaiXie.WinService.csproj.GenerateResource.Cache
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.WinService\obj\x86\Debug\PaiXie.WinService.exe
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.WinService\obj\x86\Debug\PaiXie.WinService.pdb
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.WinService\obj\x86\Debug\PaiXie.WinService.TimingService.resources
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.WinService\bin\Debug\PaiXie.WinService.exe.config
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.WinService\bin\Debug\PaiXie.WinService.exe
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.WinService\bin\Debug\PaiXie.WinService.pdb
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.WinService\bin\Debug\FluentData.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.WinService\bin\Debug\Microsoft.CSharp.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.WinService\bin\Debug\PaiXie.Api.Bll.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.WinService\bin\Debug\PaiXie.Core.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.WinService\bin\Debug\PaiXie.Data.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.WinService\bin\Debug\PaiXie.Service.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.WinService\bin\Debug\PaiXie.Utils.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.WinService\bin\Debug\System.Configuration.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.WinService\bin\Debug\System.Configuration.Install.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.WinService\bin\Debug\System.Data.DataSetExtensions.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.WinService\bin\Debug\System.Data.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.WinService\bin\Debug\System.Data.Entity.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.WinService\bin\Debug\System.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.WinService\bin\Debug\System.Management.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.WinService\bin\Debug\System.ServiceProcess.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.WinService\bin\Debug\System.Web.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.WinService\bin\Debug\System.Web.Extensions.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.WinService\bin\Debug\System.Windows.Forms.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.WinService\bin\Debug\System.Xml.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.WinService\bin\Debug\System.Xml.Linq.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.WinService\bin\Debug\Newtonsoft.Json.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.WinService\bin\Debug\PaiXie.Cache.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.WinService\bin\Debug\SecretHelp.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.WinService\bin\Debug\NPOI.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.WinService\bin\Debug\ServiceStack.Interfaces.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.WinService\bin\Debug\ServiceStack.Redis.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.WinService\bin\Debug\ServiceStack.Text.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.WinService\bin\Debug\ICSharpCode.SharpZipLib.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.WinService\bin\Debug\PaiXie.Api.Bll.pdb
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.WinService\bin\Debug\PaiXie.Core.pdb
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.WinService\bin\Debug\PaiXie.Data.pdb
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.WinService\bin\Debug\PaiXie.Service.pdb
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.WinService\bin\Debug\PaiXie.Utils.pdb
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.WinService\bin\Debug\PaiXie.Cache.pdb
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.WinService\bin\Debug\NPOI.xml
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.WinService\obj\x86\Debug\PaiXie.WinService.csprojResolveAssemblyReference.cache
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.WinService\obj\x86\Debug\PaiXie.WinService.ProjectInstaller.resources
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.WinService\obj\x86\Debug\PaiXie.WinService.TimingService.resources
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.WinService\obj\x86\Debug\PaiXie.WinService.csproj.GenerateResource.Cache
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.WinService\obj\x86\Debug\PaiXie.WinService.exe
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.WinService\obj\x86\Debug\PaiXie.WinService.pdb

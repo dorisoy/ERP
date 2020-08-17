@@ -1,0 +1,40 @@
+﻿@{
+    var outboundIDs = ViewBag.OutboundIDs;
+    ViewBag.Title = "安排打印";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section head{
+   <style>
+       .tableinfo td {
+           height: 20px;
+           line-height: 20px;
+       }
+    </style>
+}
+<form id="ff" method="post" novalidate="novalidate">
+    <input type="hidden" value="@outboundIDs" id="hdnOutboundIDs" name="OutboundIDs" />
+    <table id="tblAdd" class="tableinfo" style="margin-top:15px;">
+        <tr>
+            <td width="16px;" valign="top"></td>
+            <td>
+                <span style="color:#ff0000;">您安排的出库单发货物流不一致！</span>
+                <br />强烈建议您筛选出同一个发货物流的出库单在同一批次安排打印
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align:center;">
+                <label>请选择打印快递：</label><select id="express" class="easyui-combobox" name="express" data-options="editable:false,height:30,panelHeight:100,width:152"></select>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align:center;">
+                <a href="javascript:void(0)" class="button-oky" id="btnSave" iconcls="icon-ok">安排打印</a>
+                <a href="javascript:void(0)" class="button-cancel" iconcls="icon-cancel" id="btnClose">取消</a>
+            </td>
+        </tr>
+    </table>
+</form>
+@section bottom{
+    <script src="~/Areas/Warehouse/ViewJs/ArrangePrint.js"></script>
+}

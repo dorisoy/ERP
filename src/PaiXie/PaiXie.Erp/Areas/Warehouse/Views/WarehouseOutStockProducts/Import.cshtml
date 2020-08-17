@@ -1,0 +1,58 @@
+﻿@{
+    var outInStockID = ViewBag.OutInStockID;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+    <script src="~/Scripts/uploadify/jquery.uploadify.js"></script>
+    <style>
+        .uploadify {
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .uploadify-button {
+            width: 100%;
+        }
+
+        .uploadify:hover .uploadify-button {
+            opacity: 0.8;
+            -moz-opacity: 0.8;
+            -khtml-opacity: 0.8;
+            filter: alpha(Opacity=80);
+        }
+
+        .uploadify-button-text {
+            display: none;
+        }
+
+        .uploadify-queue-item {
+            width: 0px;
+            height: 0px;
+            overflow: hidden;
+        }
+
+        .swfupload {
+            left: 0px;
+            top: 0px;
+        }
+
+        .down {
+            text-decoration: none;
+        }
+    </style>
+}
+
+<div style="text-align:center; padding-top:35px;">
+
+    <input type="hidden" id="hdnOutInStockID" value="@outInStockID" />
+    @*解决Firefox掉Session*@
+    <input type="hidden" id="hdnSessionID" value="@Session.SessionID" />
+    <input type="hidden" id="hdnAuthID" value="@(Request.Cookies[FormsAuthentication.FormsCookieName] == null ? string.Empty : Request.Cookies[FormsAuthentication.FormsCookieName].Value)" />
+    <input id="file_upload" name="file_upload" type="file" multiple><span id="spanProcessBar"></span>
+    <br /><br />
+    <a href="~/Upload/OutStock/导入出库单商品模板.xlsx" id="down" class="down">点击下载导入出库单商品模板</a>
+</div>
+
+@section bottom{
+    <script src="~/Areas/Warehouse/ViewJs/ImportOutStockProducts.js"></script>
+}

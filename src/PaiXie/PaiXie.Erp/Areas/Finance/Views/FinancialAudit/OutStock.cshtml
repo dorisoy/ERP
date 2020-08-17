@@ -1,0 +1,51 @@
+﻿@{
+    ViewBag.Title = "出库单明细";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+
+    <style>
+        .datagrid-row {
+        }
+    </style>
+}
+<div class="easyui-layout" data-options="fit:true">
+    <div data-options="region:'north',height:140" id="topdiv">
+        <div class="toolbar" id="toolbar">
+            <input name="hdnOutInStockID" id="hdnOutInStockID" type="hidden" value="@ViewBag.OutInStockID" />
+            <input id="refreshCurrentPage" name="refreshCurrentPage" type="hidden" />
+            <a href="javascript:void(0);" class="back" id="back"><span></span>返回</a>
+
+              <a href="javascript:void(0);" class="refresh" id="refresh"><span></span>刷新</a>
+            </div>
+        <div class="searchpro" id="searchpro">
+            <select id="keyWordType" name="keyWordType" class="easyui-combobox" data-options="height:30,width:100,editable:false">
+                <option value="">关键字类型</option>
+                <option value="商品名称">商品名称</option>
+                <option value="库位编码" >库位编码</option>
+                <option value="批次">批次</option>
+                <option value="商品SKU码">商品SKU码</option>
+            </select>
+            <input type="text" id="txtKeyWord" value="" style="width:150px;">
+
+             <input type="button"      id="btnSearch" value="搜索" class="button">
+            <input type="reset" id="btnReset" value="清空条件" class="button-rest">
+        </div>
+        <div class="reservoirifo p0lr22">
+            <span>出库单号: @ViewBag.billno</span>
+            <span>出库数量: @ViewBag.num</span>
+            <span>出库金额: @(ViewBag.totalPrice) 元</span>
+                </div>
+    </div>
+    <div data-options="region:'center',border:false" style="padding:0 22px;">
+        <table id="grid" class="easyui-datagrid" title="" data-options="singleSelect:false,collapsible:true,method:'get'"></table>
+    </div>
+     
+</div>
+@section bottom{
+ 
+
+<script src="~/Areas/Finance/ViewJs/OutStock.js"></script>
+
+
+}

@@ -1,0 +1,127 @@
+2015/9/28 10:13:33
+未找到视图“index”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: 
+~/Areas/Sys/Views/whouse/index.aspx
+~/Areas/Sys/Views/whouse/index.ascx
+~/Areas/Sys/Views/Shared/index.aspx
+~/Areas/Sys/Views/Shared/index.ascx
+~/Views/whouse/index.aspx
+~/Views/whouse/index.ascx
+~/Views/Shared/index.aspx
+~/Views/Shared/index.ascx
+~/Areas/Sys/Views/whouse/index.cshtml
+~/Areas/Sys/Views/whouse/index.vbhtml
+~/Areas/Sys/Views/Shared/index.cshtml
+~/Areas/Sys/Views/Shared/index.vbhtml
+~/Views/whouse/index.cshtml
+~/Views/whouse/index.vbhtml
+~/Views/Shared/index.cshtml
+~/Views/Shared/index.vbhtml----System.InvalidOperationException: 未找到视图“index”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: 
+~/Areas/Sys/Views/whouse/index.aspx
+~/Areas/Sys/Views/whouse/index.ascx
+~/Areas/Sys/Views/Shared/index.aspx
+~/Areas/Sys/Views/Shared/index.ascx
+~/Views/whouse/index.aspx
+~/Views/whouse/index.ascx
+~/Views/Shared/index.aspx
+~/Views/Shared/index.ascx
+~/Areas/Sys/Views/whouse/index.cshtml
+~/Areas/Sys/Views/whouse/index.vbhtml
+~/Areas/Sys/Views/Shared/index.cshtml
+~/Areas/Sys/Views/Shared/index.vbhtml
+~/Views/whouse/index.cshtml
+~/Views/whouse/index.vbhtml
+~/Views/Shared/index.cshtml
+~/Views/Shared/index.vbhtml
+   在 System.Web.Mvc.ViewResult.FindView(ControllerContext context)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+------------------------------------------------------------------
+2015/9/28 10:27:14
+未将对象引用设置到对象的实例。----System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ASP._Page_Areas_Sys_Views_dict_CodeType_cshtml.Execute() 位置 e:\001\src\PaiXie\PaiXie.Erp\Areas\Sys\Views\Dict\CodeType.cshtml:行号 4
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   在 System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+------------------------------------------------------------------
+2015/9/28 10:53:22
+未将对象引用设置到对象的实例。----System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ASP._Page_Areas_Sys_Views_dict_CodeType_cshtml.Execute() 位置 e:\001\src\PaiXie\PaiXie.Erp\Areas\Sys\Views\Dict\CodeType.cshtml:行号 4
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   在 System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+------------------------------------------------------------------
+2015/9/28 10:53:31
+未将对象引用设置到对象的实例。----System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ASP._Page_Areas_Sys_Views_dict_CodeType_cshtml.Execute() 位置 e:\001\src\PaiXie\PaiXie.Erp\Areas\Sys\Views\Dict\CodeType.cshtml:行号 4
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   在 System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+------------------------------------------------------------------
+2015/9/28 10:53:37
+未将对象引用设置到对象的实例。----System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ASP._Page_Areas_Sys_Views_dict_CodeType_cshtml.Execute() 位置 e:\001\src\PaiXie\PaiXie.Erp\Areas\Sys\Views\Dict\CodeType.cshtml:行号 4
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   在 System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+------------------------------------------------------------------
+2015/9/28 10:56:04
+未将对象引用设置到对象的实例。----System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ASP._Page_Areas_Sys_Views_dict_CodeType_cshtml.Execute() 位置 e:\001\src\PaiXie\PaiXie.Erp\Areas\Sys\Views\Dict\CodeType.cshtml:行号 4
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   在 System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+------------------------------------------------------------------
+2015/9/28 10:58:09
+索引超出了数组界限。----System.IndexOutOfRangeException: 索引超出了数组界限。
+   在 PaiXie.Erp.EasyUITree.CreateUrl(DataTable dt, JsonTree jt) 位置 e:\001\src\PaiXie\PaiXie.Erp\Models\JsonTree.cs:行号 75
+   在 PaiXie.Erp.EasyUITree.initTree(DataTable dt) 位置 e:\001\src\PaiXie\PaiXie.Erp\Models\JsonTree.cs:行号 38
+   在 PaiXie.Erp.Areas.Sys.DictController.JsonTreeSyscodeType() 位置 e:\001\src\PaiXie\PaiXie.Erp\Areas\Sys\Controllers\DictController.cs:行号 27
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+------------------------------------------------------------------
+2015/9/28 10:58:09
+索引超出了数组界限。----System.IndexOutOfRangeException: 索引超出了数组界限。
+   在 PaiXie.Erp.EasyUITree.CreateUrl(DataTable dt, JsonTree jt) 位置 e:\001\src\PaiXie\PaiXie.Erp\Models\JsonTree.cs:行号 75
+   在 PaiXie.Erp.EasyUITree.initTree(DataTable dt) 位置 e:\001\src\PaiXie\PaiXie.Erp\Models\JsonTree.cs:行号 46
+   在 PaiXie.Erp.Areas.Sys.DictController.JsonTreeSyscodeType() 位置 e:\001\src\PaiXie\PaiXie.Erp\Areas\Sys\Controllers\DictController.cs:行号 27
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+------------------------------------------------------------------

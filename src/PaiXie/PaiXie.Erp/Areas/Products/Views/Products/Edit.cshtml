@@ -1,0 +1,235 @@
+﻿@using PaiXie.Data
+@using PaiXie.Core
+@{
+    var productsInfo = ViewBag.ProductsInfo as ProductsInfo;
+    var branID = productsInfo.Products.BrandID;
+    var measurementUnitID = productsInfo.Products.MeasurementUnitID == null ? "0" : productsInfo.Products.MeasurementUnitID;
+    var isSale = (productsInfo.Products.SaleType & (int)SaleType.销售) > 0 ? "checked" : "";
+    var isMaterial = (productsInfo.Products.SaleType & (int)SaleType.物料) > 0 ? "checked" : "";
+    if (productsInfo.Products.ID == 0) {
+        isSale = "checked";
+        isMaterial = "checked";
+    }
+    var status = ViewBag.Status;
+    ViewBag.Title = "编辑商品";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+    <script src="~/Scripts/uploadify/jquery.uploadify.js"></script> 
+    <link href="~/Content/css/pro.css" rel="stylesheet" />
+}
+<div class="easyui-layout" data-options="fit:true">
+    <div data-options="region:'north',height:62" id="topdiv">
+        <div class="toolbar" id="toolbar">
+            <input type="hidden" id="hdnStatus" value="@status" />
+            <a href="javascript:void(0);" class="back" id="back"><span></span>返回</a>
+            <a href="javascript:void(0);" class="toolbarsave" id="toolbarsave"><span></span>保存</a>
+        </div>
+    </div>
+    <div data-options="region:'center',border:false" class="p0lr22">
+        <form id="ff" method="post" novalidate="novalidate">
+            <div class="tagcont">
+                <table border="0" cellpadding="0" cellspacing="0" class="protable">
+                    <tr>
+                        <th><span class="red">*</span>商品名称：</th>
+                        <td>
+                            <input type="text" id="Name" name="Name" class="easyui-validatebox" style="width:300px;" data-options="required:true,validType:'length[1,30]'" value="@productsInfo.Products.Name">
+                            <input type="hidden" id="hdnProID" name="ProID" value="@productsInfo.Products.ID">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><span class="red">*</span>商品货号：</th>
+                        <td><input type="text" id="No" name="No" class="easyui-validatebox" style="width:150px;" data-options="required:true,validType:['code','length[1,20]']" value="@productsInfo.Products.No"></td>
+                    </tr>
+                    <tr>
+                        <th><span class="red">*</span>类型：</th>
+                        <td>
+                            <input type="checkbox" id="SaleType1" name="SaleType" value="1" @Html.Raw(isSale)><label for="SaleType1">销售</label>
+                            <input type="checkbox" id="SaleType2" name="SaleType" value="2" @Html.Raw(isMaterial)><label for="SaleType2">物料</label>
+                            <span class="f12c pl10">勾选“销售”，表示可以直接上架销售；勾选物料，表示可以直接采购</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th valign="top">商品图片：</th>
+                        <td>
+                            <span class="f12c">最多6张，格式:png、jpg. 建议尺寸:120*120，文件要小于5M</span>
+                            <a id="IsHasUrl" href="javascript:void(0);" style="text-decoration: none; color: #265cff; ">已有图片地址？</a>
+                            <br />
+                            <span id="noUrl">
+                                @*解决Firefox掉Session*@
+                                <input type="hidden" id="hdnSessionID" value="@Session.SessionID" />
+                                <input type="hidden" id="hdnAuthID" value="@(Request.Cookies[FormsAuthentication.FormsCookieName] == null ? string.Empty : Request.Cookies[FormsAuthentication.FormsCookieName].Value)" />
+                                <input id="file_upload" name="file_upload" type="file" multiple>
+                                <div class="clear"></div>
+                                <ul class="imglist ndis" id="jsimglist">
+                                    @if (!string.IsNullOrEmpty(productsInfo.Products.SmallPic)) {
+                                        string[] arrPic = productsInfo.Products.SmallPic.Split(',');
+                                        foreach (var pic in arrPic) {
+                                            <li><a class="img60"><dfn></dfn><img src="@pic"></a><input type="hidden" name="SmallPic" value="@pic"></li>
+                                        }
+                                    }
+                                    <li class="text">1/6</li>
+                                </ul>
+                            </span>
+                            <span id="hasUrl" style="display:none;">
+                                <input type="text" id="PicUrl" name="PicUrl" class="easyui-validatebox" style="width:240px;" data-options="validType:'length[0,1200]'">
+                            </span>
+                            <input type="hidden" id="UrlType" name="UrlType" value="0" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><span class="red">*</span>成本价：</th>
+                        <td><input type="text" id="ProCostPrice" name="ProCostPrice" value="@productsInfo.Products.CostPrice" class="easyui-numberbox" style="width:100px;" min="0" max="9999999.999" missingmessage="只能输入0~9999999.999之间的数字" data-options="required:true,validType:'number',precision:3,height:30"></td>
+                    </tr>
+                    <tr>
+                        <th>销售价：</th>
+                        <td><input type="text" id="ProSellingPrice" name="ProSellingPrice" value="@productsInfo.Products.SellingPrice" class="easyui-numberbox" style="width:100px;" min="0" max="9999999.999" missingmessage="只能输入0~9999999.999之间的数字" data-options="required:true,validType:'number',precision:3,height:30"> <span class="f12c">元</span></td>
+                    </tr>
+                    <tr>
+                        <th><span class="red">*</span>税率：</th>
+                        <td><input type="text" id="TaxRate" name="TaxRate" value="@(productsInfo.Products.TaxRate * 100)" class="easyui-numberbox" style="width:50px;" min="0" max="9999999.999" missingmessage="只能输入0~9999999.999之间的数字" data-options="required:true,validType:'number',precision:3,height:30"> <span class="f12c">%</span></td>
+                    </tr>
+                    <tr>
+                        <th>单位：</th>
+                        <td>
+                            <select id="MeasurementUnitID" name="MeasurementUnitID" class="easyui-combobox" style="width:141px;" data-options="height:30"></select>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            重量：
+                            <input type="text" id="ProWeight" name="ProWeight" value="@productsInfo.Products.Weight" class="easyui-numberbox" style="width:60px;" min="0" max="9999999.999" missingmessage="只能输入0~9999999.999之间的数字" data-options="validType:'number',precision:3,height:30"> <span class="f12c">G</span>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            保质期：
+                            <input type="text" id="ShelfLife" name="ShelfLife" value="@productsInfo.Products.ShelfLife" class="easyui-numberbox" style="width:60px;" min="0" max="9999999" missingmessage="只能输入0~9999999之间的数字" data-options="validType:'number',height:30"> <span class="f12c">天</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>分类：</th>
+                        <td>
+                            <input id="CategoryID" name="CategoryID" value="@productsInfo.Products.CategoryID" class="easyui-combotree" data-options="url:'/Products/Category/JsonTree',method:'get',height:30">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            品牌：<select id="BrandID" name="BrandID" class="easyui-combobox" style="width:141px;" data-options="height:30"></select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><span class="red">*</span>商品编码：</th>
+                        <td>
+                            <input type="text" id="ProCode" name="ProCode" value="@productsInfo.Products.Code" class="easyui-validatebox" style="width:150px;" data-options="required:true,validType:['code','length[0,20]']">
+                            <span class="f12c">商品的唯一标识，不能重复，当商品没有销售属性时，商品编码即商品SKU码。</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>商品条码：</th>
+                        <td>
+                            <input type="text" id="ProBarCode" name="ProBarCode" value="@productsInfo.Products.BarCode" class="easyui-validatebox" style="width:150px;" data-options="validType:['code','length[0,20]']">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="red f12">&nbsp;</th>
+                        <td><a href="javascript:void(0);" id="btnAddProductsSku" style="text-decoration: none; color: #265cff;">增加商品属性</a></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <table border="0" cellpadding="0" cellspacing="0" id="productsSkuList">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+
+                                        <td class="bg bgf" align="center"><span class="red">*</span>商品属性<s class="prompt" id="prompt1"></s></td>
+                                        <td class="bg" align="center"><span class="red">*</span>商品SKU码<s class="prompt" id="prompt2"></s></td>
+                                        <td class="bg" align="center">商品条码<s class="prompt" id="prompt3"></s></td>
+                                        <td class="bg" align="center">销售价&nbsp;<input type="checkbox" id="chkSameSellingPrice" name="SameSellingPrice" /><label for="chkSameSellingPrice">相同</label></td>
+                                        <td class="bg bgl" align="center"><span class="red">*</span>成本价&nbsp;<input type="checkbox" id="chkSameCostPrice" name="SameCostPrice" /><label for="chkSameCostPrice">相同</label></td>
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @{
+                                        var tempIndex = 0;
+                                        foreach (var item in productsInfo.ProductsSkuList) {
+                                            tempIndex++;
+                                            <tr id="@("dataTr_" + tempIndex)" class="dataTr">
+                                                <th><input type="hidden" id="@("ID_" + tempIndex)" name="ID" value="@item.ID"></th>
+                                                <td><input type="text" id="@("txtSaleprop_" + tempIndex)" name="Saleprop" value="@item.Saleprop" class="easyui-validatebox" style="width:190px;" data-options="required:true,validType:'length[1,50]'"></td>
+                                                <td><input type="text" id="@("txtCode_" + tempIndex)" name="Code" value="@item.Code" class="easyui-validatebox" style="width:150px;" data-options="required:true,validType:['code','length[1,50]']"></td>
+                                                <td><input type="text" id="@("txtBarCode_" + tempIndex)" name="BarCode" value="@item.BarCode" class="easyui-validatebox" style="width:150px;" data-options="validType:['code','length[0,50]']"></td>
+                                                <td><input type="text" id="@("txtSellingPrice_" + tempIndex)" name="SellingPrice" value="@item.SellingPrice" class="easyui-numberbox" style="width:150px;" min="0" max="9999999.999" missingmessage="只能输入0~9999999.999之间的数字" data-options="required:true,validType:'number',precision:3,height:30"></td>
+                                                <td><input type="text" id="@("txtCostPrice_" + tempIndex)" name="CostPrice" value="@item.CostPrice" class="easyui-numberbox" style="width:150px;" min="0" max="9999999.999" missingmessage="只能输入0~9999999.999之间的数字" data-options="required:true,validType:'number',precision:3,height:30"></td>
+                                                <td>
+                                                    @if (productsInfo.ProductsSkuList.Count() > 1) {
+                                                        <a href="javascript:void(0);" class='red' onclick="deleteProductsSku(@tempIndex)" title="删除SKU">×</a>
+                                                    }
+                                                    else {
+                                                        <font class='gray' title="只有一条不能删除SKU">×</font>
+                                                    }
+                                                </td>
+                                            </tr>
+                                        }
+                                    }
+                                    <tr id="sampleTr">
+                                        <th class="red f12">示例：</th>
+                                        <td><input type="text" id="txtSampleSaleprop" class="easyui-validatebox" style="width:190px;" value="红色，41码" disabled></td>
+                                        <td><input type="text" id="txtSampleCode" class="easyui-validatebox" style="width:150px;" value="45812234" disabled></td>
+                                        <td><input type="text" id="txtSampleBarcode" class="easyui-validatebox" style="width:150px;" value="6922570300820" disabled></td>
+                                        <td><input type="text" id="txtSampleSellingPrice" class="easyui-validatebox" style="width:150px;" value="120.000" disabled></td>
+                                        <td><input type="text" id="txtSampleCostPrice" class="easyui-validatebox" style="width:150px;" value="86.000" disabled></td>
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="red f12"><a href="javascript:void(0);" id="btnShowRemark" style="color: #265cff; text-decoration:none;">编辑商品详情</a><br /></th>
+                        <td>
+                            &nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="red f12">&nbsp;</th>
+                        <td>
+                            <script src="~/Content/ckeditor/ckeditor.js"></script>
+                            <div id="divRemark" style="display:none;">
+                                <input type="text" id="ckEditor1" name="ckEditor1" />
+                                <input type="hidden" id="Remark" name="Remark" value="@productsInfo.Products.Remark">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center">
+                            <a href="javascript:void(0)" class="button-oky" id="btnSave" iconcls="icon-ok">保存</a>&nbsp;&nbsp;
+                            <a href="javascript:void(0)" class="button-cancel" iconcls="icon-cancel" id="btnClose">取消</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            &nbsp;
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </form>
+    </div>
+</div>
+    @section bottom{
+        <script src="~/Areas/Products/ViewJs/EditProducts.js"></script>
+        <script>
+            var editor;
+            $(document).ready(function () {
+                //初始化数据
+                BindDictItem("BrandID", "Brand");
+                //选中特定值
+                $("#BrandID").combobox('setValue', '@branID');
+                BindDictItem("MeasurementUnitID", "Unit");
+                $("#MeasurementUnitID").combobox('setValue', '@measurementUnitID');
+
+                editor = CKEDITOR.replace('ckEditor1',
+        {
+            toolbar: "Full",
+            filebrowserUploadUrl: '@Url.Content("~/Content/ckeditor/app/Upload.aspx?type=File")',  //开启文件上传（此项会同时开启图片和FLASH上传）
+            filebrowserImageUploadUrl: '@Url.Content("~/Content/ckeditor/app/Upload.aspx?type=Images")',  // 开启图片上传
+            filebrowserFlashUploadUrl: '@Url.Content("~/Content/ckeditor/app/Upload.aspx?type=Flash")'  //开启FLASH上传
+        });
+                editor.setData('@Html.Raw(productsInfo.Products.Remark)');
+            });
+        </script>
+    }
+

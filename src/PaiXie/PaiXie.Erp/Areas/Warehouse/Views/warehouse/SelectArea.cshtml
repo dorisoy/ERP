@@ -1,0 +1,277 @@
+﻿@using PaiXie.Data;
+@{
+    var selectAreaWebInfo = ViewBag.SelectAreaWebInfo as SelectAreaWebInfo;
+    ViewBag.Title = "选择地区";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section head{
+    <style>
+        #grid {
+            margin: 10px auto;
+            width:99%;
+            border-left: 1px solid #ccc;
+            border-top: 1px solid #ccc;
+        }
+        #grid td {
+            height: 50px;
+            line-height: 50px;
+            border-right: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+        }
+        .provinceList {
+            margin: 0px 0px 0px 10px;
+            padding: 0px;
+            width: 700px;
+            list-style: none;
+        }
+        .province {
+            float: left;
+            display: block;
+            width: 85px;
+            height: 30px;
+            line-height: 30px;
+            padding: 0px 5px;
+            border: 1px solid #fff;
+        }
+        .cityList {
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+            display: none;
+            width: 370px;
+            height: 120px;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            background-color: #f2f2f2;
+        }
+        .city {
+            float: left;
+            display: block;
+            white-space: nowrap;
+            width: auto;
+            height: 30px;
+            line-height: 30px;
+            padding:0px 5px;
+        }
+        .no {
+            vertical-align: -3px;
+        }
+        .onProvince {
+            border: 1px solid #ccc;
+            background-color: #f2f2f2;
+        }
+    </style>
+}
+<form id="ff" method="post" novalidate>
+    <div class="proinfo" style="padding:15px;">
+        <p style="padding-left:3em; text-indent:-3em">
+            <b style="font-weight:normal; color:#F00">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>
+            仓库名称：@ViewBag.wname
+
+            <br>授权品牌：@ViewBag.Librand
+        </p>
+    </div>
+    <input type="hidden" value="@ViewBag.wid" id="wid" name="wid" />
+    <div style="margin:10px 0px 0px 5px;">
+        设置仓库配送地区：  (已选择 <span style="color:red; font-weight:bold;" id="checkedTotalCount">0</span> 个地区)
+    </div>
+
+
+
+
+    <table id="grid" cellpadding="0" cellspacing="0" border="0">
+        @{
+            int index = 0;
+            foreach (var largeArea in selectAreaWebInfo.LargeAreaList) {
+                <tr>
+                    <td style="width:110px;" align="center">@largeArea.Name</td>
+                    <td>
+                        <ul id="provinceList_@index" class="provinceList">
+                            @{
+                                foreach (var province in largeArea.ProvinceList) {
+                                    var isCheckedProvince = province.IsChecked ? "checked" : "";
+                                    <li id="province_@province.ID" class="province" provinceid="@province.ID">
+                                        <input type="checkbox" id="chkProvince_@province.ID" name="chkProvince" class="no" value="@province.ID" provincealiasname="@province.AliasName" @Html.Raw(isCheckedProvince) /><label for="chkProvince_@province.ID">@(province.AliasName)(<span style="color:red; font-weight:bold;" id="provinceCheckedCityCount_@province.ID">0</span>)</label>
+                                        <ul id="cityList_@province.ID" class="cityList">
+                                            @{
+                                                foreach (var city in province.CityList) {
+                                                    var isCheckedCity = province.IsChecked || city.IsChecked ? "checked" : "";
+                                                    <li id="city_@city.ID" class="city">
+                                                        <input type="checkbox" id="chkCity_@city.ID" name="chkCity" class="no" provinceid="@province.ID" cityname="@city.Name" value="@city.ID" @Html.Raw(isCheckedCity) /><label for="chkCity_@city.ID">@city.Name</label>
+                                                    </li>
+                                                }
+                                            }
+                                        </ul>
+                                    </li>
+                                }
+                             }
+                        </ul>
+                    </td>
+                </tr>
+                index++;
+            }
+        }
+    </table>
+    <div style="text-align:center;">
+        <a href="javascript:void(0);" class="button-oky" id="btnSave" iconcls="icon-ok">确定</a>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="javascript:void(0);" class="button-cancel" id="btnClose" iconcls="icon-ok">取消</a>
+        <input type="hidden" id="hdnCheckedIDs" value="" />
+    </div>
+</form>
+@section bottom{
+    <script>
+        $(document).ready(function () {
+            //取消
+            $("#btnClose").click(function () {
+                parent.$('#localWin').window('close');
+            });
+            //确定
+            $("#btnSave").click(function () {
+            
+                var checkedIDs = [];
+                var checkedNames = [];
+                //遍历省份，如果省份选中，就不用遍历该省份下面的市级地区
+                $("input[name='chkProvince']").each(function (index, element) {
+                    var provinceID = $(element).val();
+                    var provinceAliasName = $(element).attr("provincealiasname");
+                   if ($(element).attr("checked")) {
+                        checkedIDs.push(provinceID);
+                        checkedNames.push(provinceAliasName);
+
+
+
+                       //遍历选中的市级地区
+                        $("#cityList_" + provinceID + " input[name='chkCity']:checked").each(function (index, element) {
+                            var cityID = $(element).val();
+                            var cityName = $(element).attr("cityname");
+                            checkedIDs.push(cityID);
+                            checkedNames.push(cityName);
+                        });
+
+
+                   } else {
+                        //遍历选中的市级地区
+                        $("#cityList_" + provinceID + " input[name='chkCity']:checked").each(function (index, element) {
+                            var cityID = $(element).val();
+                            var cityName = $(element).attr("cityname");
+                            checkedIDs.push(cityID);
+                            checkedNames.push(cityName);
+                        });
+                  }
+                });
+                if (checkedIDs.length > 0 || checkedNames.length > 0) {
+
+                 
+                    $.ajax({
+                        url: "/Warehouse/Warehouse/Setwarea?wid=" + $("#wid").val() + "&mids=" + checkedIDs.join(","),
+                        type: "GET",
+                        cache: false,
+                        success: function (r) {
+                            var map = $.parseJSON(r);
+                            if (map.result == 1) {
+                                $("#btnClose").click();
+                            }
+                            else //showMsg("提示", "设置失败！", true);
+                                $.MsgBox.Alert("提示", "设置失败！", 1000);
+                        },
+                        error: function () {
+                            // showMsg("提示", "设置失败！", true);
+                            $.MsgBox.Alert("提示", "设置失败！", 1000);
+                        }
+                    });
+
+
+
+
+                   
+                 
+                } else {
+                    $.MsgBox.Alert("提示", "请选择地区！");
+                }
+            });
+            //绑定省级地区选择事件
+            $("input[name='chkProvince']").each(function (index, element) {
+                $(element).click(function () {
+                    var provinceID = $(element).val();
+                    if ($(element).attr("checked")) {
+                        //选中该省份下的所有市
+                        $("#cityList_" + provinceID + " input[name='chkCity']").each(function (index, element) {
+                            $(element).attr("checked", true);
+                        });
+                    } else {
+                        //取消该省份下所有市的选中
+                        $("#cityList_" + provinceID + " input[name='chkCity']").each(function (index, element) {
+                            $(element).attr("checked", false);
+                        });
+                    }
+                    $("#provinceCheckedCityCount_" + provinceID).html(getCheckedCount(provinceID));
+                    $("#checkedTotalCount").html(getCheckedCount(undefined));
+                })
+            });
+            //绑定市级地区选择事件
+            $("input[name='chkCity']").each(function (index, element) {
+                $(element).click(function () {
+                    var provinceID = $(element).attr("provinceid");
+                    if ($(element).attr("checked")) {
+                        //判断是否所有市都已选中，是的话把省份选中
+                        var isAllChecked = true;
+                        $("#cityList_" + provinceID + " input[name='chkCity']").each(function (index, element) {
+                            if (!$(element).attr("checked")) {
+                                isAllChecked = false;
+                                return;
+                            }
+                        });
+                        $("#chkProvince_" + provinceID).attr("checked", isAllChecked);
+                    } else {
+                        //取消省份的选中
+                        $("#chkProvince_" + provinceID).attr("checked", false);
+                    }
+                    $("#provinceCheckedCityCount_" + provinceID).html(getCheckedCount(provinceID));
+                    $("#checkedTotalCount").html(getCheckedCount(undefined));
+                });
+
+            });
+
+            //绑定鼠省级地区标经过事件，并计算每个省份的选中数量
+            $(".province").each(function (index, element) {
+                var provinceID = $(element).attr("provinceid");
+                $(element).on('mouseover', function () {
+                    $(element).addClass("onProvince");
+                    //position()获取当前元素基于父容器的位置             
+                    var positiontop = $(element).position().top;
+                    var positionleft = $(element).position().left;
+                    if (positionleft < 600) {
+                        if (positiontop < 480) {
+                            $("#cityList_" + provinceID).css({ position: "absolute", 'top': positiontop + 30, 'left': positionleft, 'z-index': 999999999 });
+                        } else {
+                            $("#cityList_" + provinceID).css({ position: "absolute", 'bottom': 620 - (positiontop + 43), 'left': positionleft, 'z-index': 999999999 });
+                        }
+                    } else {
+                        $("#cityList_" + provinceID).css({ position: "absolute", 'top': positiontop + 30, 'right': 900 - (positionleft + 99), 'z-index': 999999999 });
+                    }
+                    $("#cityList_" + provinceID).show();
+                });
+                $(element).on('mouseout', function () {
+                    $(element).removeClass("onProvince");
+                    $("#cityList_" + provinceID).hide();
+                });
+                $("#provinceCheckedCityCount_" + provinceID).html(getCheckedCount(provinceID));
+            });
+            $("#checkedTotalCount").html(getCheckedCount(undefined));
+
+            //获取选中地区数量
+            function getCheckedCount(provinceID) {
+                var checkCount = 0;
+                if (undefined != provinceID) {
+                    checkCount = $("#cityList_" + provinceID + " input[name='chkCity']:checked").length;
+                }
+                else {
+                    checkCount = $("input[name='chkCity']:checked").length;
+                }
+                return checkCount;
+            }
+        });
+    </script>
+}

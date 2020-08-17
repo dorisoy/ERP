@@ -1,0 +1,37 @@
+﻿@using PaiXie.Data
+@using PaiXie.Utils
+@{
+    var warehouseProductsInfo = ViewBag.WarehouseProductsInfo as WarehouseProductsInfo;
+    var smallPic = "";
+    if (ZConvert.ToString(warehouseProductsInfo.SmallPic) != "") {
+        smallPic = warehouseProductsInfo.SmallPic.Split(',')[0];
+    }
+    else {
+        smallPic = "../../Upload/Products/NoImg.jpg";
+    }
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{}
+<div data-options="region:'north',height:190">
+    <div class="toolbar" id="toolbar">
+        <a id="back" class="back" href="javascript:history.go(-1)"><span></span>返回</a>
+    </div>
+    <div class="p0lr22">
+        <div class="proinfo">
+            <div class="img70"><dfn></dfn><img src="@smallPic"></div>
+            <p><b>商品名称:</b> @(warehouseProductsInfo.Name)</p>
+            <p><b>商品货号:</b> @(warehouseProductsInfo.No)</p>
+            <p>
+                <b>商品编码:</b> @(warehouseProductsInfo.Code)
+            </p>
+            <input type="hidden" id="hdnProductsID" value="@warehouseProductsInfo.ID" />
+        </div>
+        <div class="infotitle">库存情况：<a href="#" id="noun">[名词解释]</a></div>
+    </div>
+</div>
+<div data-options="region:'center',border:false" class="p0lr22">
+    <table id="grid" class="easyui-datagrid" title="" data-options="singleSelect:false,collapsible:true,method:'get'"></table>
+</div>
+@section bottom{
+    <script src="~/Areas/Warehouse/ViewJs/ShowProductsKuc.js"></script>
+}

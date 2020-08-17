@@ -1,0 +1,214 @@
+﻿@using PaiXie.Core;
+@{
+    ViewBag.Title = "添加售后";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+<style>
+    .divOutboundSearch {
+        width: 70%;
+        margin: 15px 0px 15px 15px;
+    }
+    .divOutboundSearch .button {
+        border: 0px;
+        background: #436fac;
+        color: #fff;
+        height: 30px;
+        width: 70px;
+        cursor: pointer;
+    }
+    .divManyOutbound a {
+        text-decoration: none;
+        color: #1d72df;
+    }
+    .divManyOutbound a:hover {
+        color: #fc8b00;
+    }
+    .tbOrderRefundInfo{
+        display: none;
+        border-collapse:collapse;
+    }
+    .tbOrderRefundInfo td{
+        padding:5px 0px;
+    }
+    .title {
+        display: none;
+        width: 400px;
+        height: 30px;
+        line-height: 30px;
+        margin-left: 15px;
+    }
+    .tbItemInfo {
+        display: none;
+        width: 99%;
+        margin: 0px 0px 0px 15px;
+        border-left: 1px solid #ccc;
+        border-top: 1px solid #ccc;
+        text-align: center;
+        border-collapse:collapse;
+    }
+    .tbItemInfo th {
+        padding:10px 0px;
+        background-color: #f0f0f0;
+        border-right: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+    }
+    .tbItemInfo td {
+        padding:5px 0px;
+        border-right: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+    }
+    .tbRefundInfo{
+        display:none;
+        width: 99%;
+        margin: 0px 0px 0px 15px;
+        border:1px solid #ccc;
+        border-collapse:collapse;
+    }
+    .tbRefundInfo td{
+        padding:10px 0px;
+    }
+</style>
+
+}
+<div class="easyui-layout" data-options="fit:true">
+    <div data-options="region:'north',height:62" id="topdiv">
+        <div class="toolbar" id="toolbar">
+            <a href="javascript:void(0);" class="back" id="back"><span></span>返回</a>
+            <a href="javascript:void(0);" class="toolbarsave" id="toolbarsave"><span></span>保存</a>
+        </div>
+    </div>
+    <div data-options="region:'center',border:false" class="p0lr22">
+        <form id="ff" method="post" novalidate="novalidate">
+            <input type="hidden" id="hdnDeliveryStatus" value="@((int)WarehouseOutboundStatus.已发货)" />
+            <div id="divOutboundSearch" class="divOutboundSearch">
+                <span style="color:red;">*</span>订单编号/出库单号：<input type="text" id="txtBillNo" name="billNo" class="easyui-validatebox" style="width:250px;" data-options="height:30" autocomplete="Off" value="">&nbsp;
+                <input type="button" id="btnConfirm" name="btnConfirm" class="button" value="确认" />
+                <input type="button" id="btnReset" name="btnReset" class="button" value="重置" />
+                <input type="hidden" id="hdnOrderSource" name="OrderSource" value="" />
+                <input type="hidden" id="hdnShopID" name="ShopID" value="" />
+                <input type="hidden" id="hdnErpOrderCode" name="ErpOrderCode" value="" />
+                <input type="hidden" id="hdnOutOrderCode" name="OutOrderCode" value="" />
+                <input type="hidden" id="hdnOutboundBillNo" name="OutboundBillNo" value="" />
+                <input type="hidden" id="hdnBuyAddr" name="BuyAddr" value="" />
+                <input type="hidden" id="hdnBuyName" name="BuyName" value="" />
+                <input type="hidden" id="hdnBuyMtel" name="BuyMtel" value="" />
+                <input type="hidden" id="hdnBuyTel" name="BuyTel" value="" />
+                <span id="spanMsg" style="text-align: center; color: red;"></span>
+            </div>
+            <div id="divManyOutbound" style="display:none;">
+
+            </div>
+            <table id="tbOrderRefundInfo" class="tbOrderRefundInfo" style="width:100%;" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                    <td style="width:85px;" align="right">
+                        <lable style="color:red;">*</lable>售后类型：
+                    </td>
+                    <td style="width:150px;" align="left">
+                        <select id="orderRefundType" class="easyui-combobox" name="RefundType" data-options="height:30,width:125,editable:false"></select>
+                    </td>
+                    <td style="width:60px;" align="right">
+                        <lable style="color:red;">*</lable>责任方：
+                    </td>
+                    <td style="width:130px;" align="left">
+                        <select id="orderRefundDuty" class="easyui-combobox" name="Duty" data-options="height:30,width:125,editable:false"></select>
+                    </td>
+                    <td align="left">
+                        &nbsp;<input type="text" id="txtDutyOther" name="DutyOther" class="easyui-validatebox" style="width:100px;display:none;" data-options="height:30" />
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">
+                        <lable style="color:red;">*</lable>售后原因：
+                    </td>
+                    <td colspan="4">
+                        <select id="orderRefundReason" class="easyui-combobox" name="orderRefundReason" data-options="height:30,width:200,editable:false"></select>
+                        <input type="hidden" id="hdnReason" name="Reason" value="" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        &nbsp;
+                    </td>
+                    <td colspan="4">
+                        <textarea id="txtReasonDetail" name="ReasonDetail" class="textarea easyui-validatebox" style="width:450px; height:110px;" maxlength="2000"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="5">
+                        <div class="title">
+                            <span style="color:red;">*</span>售后商品：
+                        </div>
+                        <table id="tbItemInfo" class="tbItemInfo" style="width:99%;" cellpadding="0" cellspacing="0" border="0">
+                            <tr id="titleTr">
+                                <th width="12%">商品编码</th>
+                                <th width="20%">商品名称</th>
+                                <th width="14%">商品属性</th>
+                                <th width="14%">商品SKU码</th>
+                                <th width="8%">收款金额</th>
+                                <th width="15%">批次号</th>
+                                <th width="8%">数量</th>
+                                <th width="8%">售后数量</th>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">
+                        <lable style="color:red;">*</lable>退金额：
+                    </td>
+                    <td>
+                        <input type="text" id="txtRefundAmount" name="RefundAmount" class="easyui-numberbox" style="width:100px;" min="0" max="9999999.999" missingmessage="只能输入0~9999999.999之间的数字" data-options="required:true,validType:'number',precision:3,height:30"> 元
+                    </td>
+                    <td colspan="3" id="tdRefundFreight">
+                        <lable style="color:red;">*</lable>退运费：<input type="text" id="txtRefundFreight" name="RefundFreight" class="easyui-numberbox" style="width:100px;" min="0" max="9999999.999" missingmessage="只能输入0~9999999.999之间的数字" data-options="required:true,validType:'number',precision:3,height:30"> 元
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="5">
+                        <div class="title">
+                            <b>寄回信息</b>
+                        </div>
+                        <table id="tbRefundInfo" class="tbRefundInfo" cellpadding="0" cellspacing="0" border="0">
+                            <tr>
+                                <td align="right">寄回地址：</td>
+                                <td colspan="5" align="left">
+                                    <label id="spanAddrInfo"></label>
+                                    <input type="hidden" id="hdnReceivePerson" name="ReceivePerson" value="" />
+                                    <input type="hidden" id="hdnReceiveTel" name="ReceiveTel" value="" />
+                                    <input type="hidden" id="hdnReceiveAddress" name="ReceiveAddress" value="" />
+                                    <input type="hidden" id="hdnReceivePostCode" name="ReceivePostCode" value="" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right" width="12%">物流公司：</td>
+                                <td align="left" width="17%">
+                                    <select id="logisticsID" class="easyui-combobox" name="LogisticsID" data-options="height:30,width:152,editable:false"></select>
+                                    <input type="hidden" id="hdnExpressCompany" name="ExpressCompany" value="" />
+                                </td>
+                                <td align="right" width="14%">运单号：</td>
+                                <td align="left" width="18%">
+                                    <input type="text" id="txtWaybillNo" name="WaybillNo" class="easyui-validatebox" style="width:210px;" data-options="validType:['code','length[0,20]'],height:30" />
+                                </td>
+                                <td align="right" width="13%">寄回运费：</td>
+                                <td align="left" width="26%">
+                                    <input type="text" id="txtReturnFreight" name="ReturnFreight" class="easyui-numberbox" style="width:100px;" min="0" max="9999999.999" missingmessage="只能输入0~9999999.999之间的数字" data-options="validType:'number',precision:3,height:30">
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td colspan="4">
+                        <a href="javascript:void(0)" class="button-oky" id="btnSave" iconcls="icon-ok">保存</a>&nbsp;&nbsp;
+                        <a href="javascript:void(0)" class="button-cancel" iconcls="icon-cancel" id="btnClose">取消</a>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+@section bottom{
+    <script src="~/Areas/Warehouse/ViewJs/AddOrderRefund.js"></script>
+}

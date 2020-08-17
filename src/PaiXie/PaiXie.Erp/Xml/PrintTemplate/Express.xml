@@ -1,0 +1,315 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Temp_List>
+  <Temp Code="EMSBZ" PrinterType="0" Width="231.0" Height="127.0">
+    <![CDATA[ 
+      LODOP.ADD_PRINT_TEXT("46.6mm","133.9mm","27.5mm","6.6mm","$寄件日期");
+      LODOP.ADD_PRINT_TEXT("31.8mm","20.1mm","70.4mm","13.5mm","$寄件人地址");
+      LODOP.ADD_PRINT_TEXT("23.5mm","62.2mm","66.7mm","6.9mm","$寄件人电话");
+      LODOP.ADD_PRINT_TEXT("83.3mm","30.2mm","61.6mm","11.4mm"," $商品明细  \n                   ");
+      LODOP.SET_PRINT_STYLEA(0,"FontSize",11);
+      LODOP.ADD_PRINT_TEXT("51.6mm","27mm","64.8mm","6.6mm","$买家会员名");
+      LODOP.ADD_PRINT_TEXT("55.6mm","136.5mm","34.1mm","15.9mm","需本人签收，签收前请检查包装是否完整！");
+      LODOP.ADD_PRINT_TEXT("46.3mm","24.3mm","35.7mm","6.6mm","$收件人姓名");
+      LODOP.ADD_PRINT_TEXT("57.9mm","20.1mm","58.2mm","16.1mm","$收件人地址");
+      LODOP.ADD_PRINT_TEXT("46mm","58.5mm","65.1mm","6.6mm","$收件人电话");
+      LODOP.ADD_PRINT_TEXT("76.2mm","131.5mm","30.7mm","14.3mm","$买家留言");
+      LODOP.SET_PRINT_STYLEA(0,"FontSize",14);
+      LODOP.ADD_PRINT_TEXT("39.2mm","136.8mm","22mm","6.6mm","签名");
+      LODOP.ADD_PRINT_IMAGE("54mm","104mm","33.6mm","29.4mm","<div><div style=\"position:absolute; padding-top:40px; padding-left:15px;\">$寄件日期</div><img src=\"../../Content/images/Postmark.GIF\" width=\"102\" height=\"100\" border=\"0\"/></div>");
+      LODOP.ADD_PRINT_TEXT("24.1mm","22.8mm","40.2mm","7.1mm","$店铺名称");
+      LODOP.ADD_PRINT_TEXT("74.6mm","27mm","76.2mm","6.1mm","$系统订单号");
+    ]]>
+  </Temp>
+  
+  <Temp Code="EMSJJ" PrinterType="0" Width="231.0" Height="127.0">
+    <![CDATA[ 
+      LODOP.ADD_PRINT_TEXT("46.6mm","133.9mm","27.5mm","6.6mm","$寄件日期");
+      LODOP.ADD_PRINT_TEXT("31.8mm","20.1mm","70.4mm","13.5mm","$寄件人地址");
+      LODOP.ADD_PRINT_TEXT("23.5mm","62.2mm","66.7mm","6.9mm","$寄件人电话");
+      LODOP.ADD_PRINT_TEXT("83.3mm","30.2mm","61.6mm","11.4mm"," $商品明细  \n                   ");
+      LODOP.SET_PRINT_STYLEA(0,"FontSize",11);
+      LODOP.ADD_PRINT_TEXT("51.6mm","27mm","64.8mm","6.6mm","$买家会员名");
+      LODOP.ADD_PRINT_TEXT("55.6mm","136.5mm","34.1mm","15.9mm","需本人签收，签收前请检查包装是否完整！");
+      LODOP.ADD_PRINT_TEXT("46.3mm","24.3mm","35.7mm","6.6mm","$收件人姓名");
+      LODOP.ADD_PRINT_TEXT("57.9mm","20.1mm","58.2mm","16.1mm","$收件人地址");
+      LODOP.ADD_PRINT_TEXT("46mm","58.5mm","65.1mm","6.6mm","$收件人电话");
+      LODOP.ADD_PRINT_TEXT("76.2mm","131.5mm","30.7mm","14.3mm","$买家留言");
+      LODOP.SET_PRINT_STYLEA(0,"FontSize",14);
+      LODOP.ADD_PRINT_TEXT("39.2mm","136.8mm","22mm","6.6mm","签名");
+      LODOP.ADD_PRINT_IMAGE("54mm","104mm","33.6mm","29.4mm","<div><div style=\"position:absolute; padding-top:40px; padding-left:15px;\">$寄件日期</div><img src=\"../../Content/images/Postmark.GIF\" width=\"102\" height=\"100\" border=\"0\"/></div>");
+      LODOP.ADD_PRINT_TEXT("24.1mm","22.8mm","40.2mm","7.1mm","$店铺名称");
+      LODOP.ADD_PRINT_TEXT("74.6mm","27mm","76.2mm","6.1mm","$系统订单号");
+  ]]>
+  </Temp>
+
+  <Temp Code="JD" PrinterType="0" Width="112.7" Height="123.7">
+    <![CDATA[
+      LODOP.ADD_PRINT_BARCODE(60,41,371,63,"128A","$包裹条码");
+      LODOP.ADD_PRINT_TEXT(132,39,100,20,"收方信息");
+      LODOP.SET_PRINT_STYLEA(0,"FontName","黑体");
+      LODOP.SET_PRINT_STYLEA(0,"FontSize",8);
+      LODOP.ADD_PRINT_TEXT("41mm","10.1mm","26.5mm","5.3mm","$收件人姓名");
+      LODOP.SET_PRINT_STYLEA(0,"FontName","黑体");
+      LODOP.SET_PRINT_STYLEA(0,"FontSize",9);
+      LODOP.ADD_PRINT_TEXT("41mm","36.8mm","39.7mm","5.3mm","$收件人电话");
+      LODOP.SET_PRINT_STYLEA(0,"FontName","黑体");
+      LODOP.SET_PRINT_STYLEA(0,"FontSize",9);
+      LODOP.ADD_PRINT_TEXT("46.6mm","9.8mm","69.6mm","5.3mm","$收件人地址");
+      LODOP.SET_PRINT_STYLEA(0,"FontName","黑体");
+      LODOP.SET_PRINT_STYLEA(0,"FontSize",9);
+      LODOP.ADD_PRINT_TEXT(129,299,100,20,"$代收金额");
+      LODOP.SET_PRINT_STYLEA(0,"FontName","黑体");
+      LODOP.SET_PRINT_STYLEA(0,"FontSize",8);
+      LODOP.ADD_PRINT_TEXT("39.4mm","76.2mm","31.8mm","6.6mm","$货到付款金额(小写)");
+      LODOP.ADD_PRINT_TEXT(182,310,90,35,"包裹序列");
+      LODOP.SET_PRINT_STYLEA(0,"FontSize",14);
+      LODOP.ADD_PRINT_TEXT(224,307,100,20,"客户签字");
+      LODOP.SET_PRINT_STYLEA(0,"FontName","黑体");
+      LODOP.SET_PRINT_STYLEA(0,"FontSize",8);
+      LODOP.ADD_PRINT_TEXT(204,39,100,20,"寄方信息");
+      LODOP.SET_PRINT_STYLEA(0,"FontName","黑体");
+      LODOP.SET_PRINT_STYLEA(0,"FontSize",8);
+      LODOP.ADD_PRINT_TEXT("64.8mm","10.1mm","68.5mm","5.3mm","$寄件人地址");
+      LODOP.SET_PRINT_STYLEA(0,"FontName","黑体");
+      LODOP.SET_PRINT_STYLEA(0,"FontSize",9);
+      LODOP.ADD_PRINT_TEXT("59.3mm","39.2mm","39.7mm","5.3mm","$寄件人电话");
+      LODOP.SET_PRINT_STYLEA(0,"FontName","黑体");
+      LODOP.SET_PRINT_STYLEA(0,"FontSize",9);
+      LODOP.ADD_PRINT_TEXT("59.3mm","10.1mm","25.9mm","5.3mm","$寄件人姓名");
+      LODOP.SET_PRINT_STYLEA(0,"FontName","黑体");
+      LODOP.SET_PRINT_STYLEA(0,"FontSize",9);
+      LODOP.ADD_PRINT_TEXT(265,259,100,15,"$寄件日期");
+      LODOP.SET_PRINT_STYLEA(0,"FontName","黑体");
+      LODOP.SET_PRINT_STYLEA(0,"FontSize",8);
+      LODOP.ADD_PRINT_BARCODE(390,282,132,58,"128A","$运单条码");
+      LODOP.SET_PRINT_STYLEA(0,"FontSize",9);
+      LODOP.ADD_PRINT_TEXT(312,299,100,20,"$代收金额");
+      LODOP.SET_PRINT_STYLEA(0,"FontName","黑体");
+      LODOP.SET_PRINT_STYLEA(0,"FontSize",8);
+      LODOP.ADD_PRINT_TEXT(334,290,120,25,"$货到付款金额(小写)");
+      LODOP.ADD_PRINT_TEXT(286,138,190,20,"$运单号");
+      LODOP.SET_PRINT_STYLEA(0,"FontName","黑体");
+      LODOP.SET_PRINT_STYLEA(0,"FontSize",9);
+      LODOP.ADD_PRINT_TEXT(314,38,215,20,"$外部订单号");
+      LODOP.SET_PRINT_STYLEA(0,"FontName","黑体");
+      LODOP.SET_PRINT_STYLEA(0,"FontSize",9);
+      LODOP.ADD_PRINT_TEXT("88.9mm","10.1mm","26.5mm","5.3mm","$收件人姓名");
+      LODOP.SET_PRINT_STYLEA(0,"FontName","黑体");
+      LODOP.SET_PRINT_STYLEA(0,"FontSize",9);
+      LODOP.ADD_PRINT_TEXT("89.2mm","36.5mm","39.7mm","5.3mm","$收件人电话");
+      LODOP.SET_PRINT_STYLEA(0,"FontName","黑体");
+      LODOP.SET_PRINT_STYLEA(0,"FontSize",9);
+      LODOP.ADD_PRINT_TEXT(358,37,253,20,"备注");
+      LODOP.SET_PRINT_STYLEA(0,"FontName","黑体");
+      LODOP.SET_PRINT_STYLEA(0,"FontSize",9);
+      LODOP.ADD_PRINT_TEXT(389,36,100,20,"寄方信息");
+      LODOP.SET_PRINT_STYLEA(0,"FontName","黑体");
+      LODOP.SET_PRINT_STYLEA(0,"FontSize",8);
+      LODOP.ADD_PRINT_TEXT("106.9mm","36.2mm","39.7mm","5.3mm","$寄件人电话");
+      LODOP.SET_PRINT_STYLEA(0,"FontName","黑体");
+      LODOP.SET_PRINT_STYLEA(0,"FontSize",9);
+      LODOP.ADD_PRINT_TEXT("108mm","9mm","26.5mm","5.3mm","$寄件人姓名");
+      LODOP.SET_PRINT_STYLEA(0,"FontName","黑体");
+      LODOP.SET_PRINT_STYLEA(0,"FontSize",9);
+      LODOP.ADD_PRINT_TEXT("113.5mm","9.3mm","69.6mm","5.3mm","$寄件人地址");
+      LODOP.SET_PRINT_STYLEA(0,"FontName","黑体");
+      LODOP.SET_PRINT_STYLEA(0,"FontSize",9);
+      LODOP.ADD_PRINT_TEXT(452,259,100,15,"$寄件日期");
+      LODOP.SET_PRINT_STYLEA(0,"FontName","黑体");
+      LODOP.SET_PRINT_STYLEA(0,"FontSize",8);
+    ]]>
+  </Temp>
+
+  <Temp Code="EMS" PrinterType="0" Width="231.0" Height="127.0">
+    <![CDATA[
+      LODOP.ADD_PRINT_TEXT("17.2mm","74.1mm","25.9mm","6.6mm","$寄件日期");
+      LODOP.ADD_PRINT_TEXT("24.6mm","17.7mm","35.5mm","6.6mm","$寄件人姓名");
+      LODOP.ADD_PRINT_TEXT("31.2mm","17.5mm","85.5mm","13.5mm","$寄件人地址");
+      LODOP.ADD_PRINT_TEXT("45.2mm","17.7mm","66.7mm","6.9mm","$寄件人电话");
+      LODOP.ADD_PRINT_TEXT("59.5mm","18.5mm","84.9mm","38.6mm","$商品明细");
+      LODOP.ADD_PRINT_TEXT("102.7mm","38.1mm","25.9mm","6.6mm","$寄件人姓名");
+      LODOP.ADD_PRINT_TEXT("22.8mm","113.2mm","64.8mm","6.6mm","$买家会员名");
+      LODOP.ADD_PRINT_TEXT("81.5mm","113.8mm","64.3mm","6.6mm","$系统订单号");
+      LODOP.ADD_PRINT_TEXT("98.2mm","113.5mm","86.5mm","6.6mm","需本人签收，签收前请检查包装是否完整！");
+      LODOP.ADD_PRINT_TEXT("17.2mm","17.5mm","46.6mm","6.6mm","$店铺名称");
+      LODOP.ADD_PRINT_TEXT("29.9mm","113.2mm","35.7mm","6.6mm","$收件人姓名");
+      LODOP.ADD_PRINT_TEXT("36.8mm","113mm","82.3mm","13.5mm","$收件人地址");
+      LODOP.ADD_PRINT_TEXT("50.8mm","113.2mm","69.1mm","6.6mm","$收件人电话");
+      LODOP.ADD_PRINT_IMAGE("60.9mm","186.3mm","25.9mm","27mm","<div><div style=\"position:absolute; padding-top:40px; padding-left:15px;\">$寄件日期</div><img src=\"../../Content/images/Postmark.GIF\" width=\"102\" height=\"100\" border=\"0\"/></div>");
+      LODOP.ADD_PRINT_TEXT("91mm","113.5mm","61.1mm","6.6mm","$买家留言");
+    ]]>
+  </Temp>
+
+  <Temp Code="STO" PrinterType="0" Width="231.0" Height="127.0">
+    <![CDATA[
+      LODOP.ADD_PRINT_TEXT("17.2mm","74.1mm","25.9mm","6.6mm","$寄件日期");
+      LODOP.ADD_PRINT_TEXT("24.6mm","17.7mm","35.5mm","6.6mm","$寄件人姓名");
+      LODOP.ADD_PRINT_TEXT("31.2mm","17.5mm","85.5mm","13.5mm","$寄件人地址");
+      LODOP.ADD_PRINT_TEXT("45.2mm","17.7mm","66.7mm","6.9mm","$寄件人电话");
+      LODOP.ADD_PRINT_TEXT("59.5mm","18.5mm","84.9mm","38.6mm","$商品明细");
+      LODOP.ADD_PRINT_TEXT("102.7mm","38.1mm","25.9mm","6.6mm","$寄件人姓名");
+      LODOP.ADD_PRINT_TEXT("22.8mm","113.2mm","64.8mm","6.6mm","$买家会员名");
+      LODOP.ADD_PRINT_TEXT("81.5mm","113.8mm","64.3mm","6.6mm","$系统订单号");
+      LODOP.ADD_PRINT_TEXT("98.2mm","113.5mm","86.5mm","6.6mm","需本人签收，签收前请检查包装是否完整！");
+      LODOP.ADD_PRINT_TEXT("17.2mm","17.5mm","46.6mm","6.6mm","$店铺名称");
+      LODOP.ADD_PRINT_TEXT("29.9mm","113.2mm","35.7mm","6.6mm","$收件人姓名");
+      LODOP.ADD_PRINT_TEXT("36.8mm","113mm","82.3mm","13.5mm","$收件人地址");
+      LODOP.ADD_PRINT_TEXT("50.8mm","113.2mm","69.1mm","6.6mm","$收件人电话");
+      LODOP.ADD_PRINT_TEXT("91mm","113.5mm","61.1mm","6.6mm","$买家留言");
+    ]]>
+  </Temp>
+
+  <Temp Code="YTO" PrinterType="0" Width="231.0" Height="127.0">
+    <![CDATA[
+      LODOP.ADD_PRINT_TEXT("17.2mm","74.1mm","25.9mm","6.6mm","$寄件日期");
+      LODOP.ADD_PRINT_TEXT("24.6mm","17.7mm","35.5mm","6.6mm","$寄件人姓名");
+      LODOP.ADD_PRINT_TEXT("31.2mm","17.5mm","85.5mm","13.5mm","$寄件人地址");
+      LODOP.ADD_PRINT_TEXT("45.2mm","17.7mm","66.7mm","6.9mm","$寄件人电话");
+      LODOP.ADD_PRINT_TEXT("59.5mm","18.5mm","84.9mm","38.6mm","$商品明细");
+      LODOP.ADD_PRINT_TEXT("102.7mm","38.1mm","25.9mm","6.6mm","$寄件人姓名");
+      LODOP.ADD_PRINT_TEXT("22.8mm","113.2mm","64.8mm","6.6mm","$买家会员名");
+      LODOP.ADD_PRINT_TEXT("81.5mm","113.8mm","64.3mm","6.6mm","$系统订单号");
+      LODOP.ADD_PRINT_TEXT("98.2mm","113.5mm","86.5mm","6.6mm","需本人签收，签收前请检查包装是否完整！");
+      LODOP.ADD_PRINT_TEXT("17.2mm","17.5mm","46.6mm","6.6mm","$店铺名称");
+      LODOP.ADD_PRINT_TEXT("29.9mm","113.2mm","35.7mm","6.6mm","$收件人姓名");
+      LODOP.ADD_PRINT_TEXT("36.8mm","113mm","82.3mm","13.5mm","$收件人地址");
+      LODOP.ADD_PRINT_TEXT("50.8mm","113.2mm","69.1mm","6.6mm","$收件人电话");
+      LODOP.ADD_PRINT_TEXT("91mm","113.5mm","61.1mm","6.6mm","$买家留言");
+    ]]>
+  </Temp>
+
+  <Temp Code="ZJS" PrinterType="0" Width="230.0" Height="140.0">
+    <![CDATA[
+      LODOP.ADD_PRINT_TEXT("17.2mm","74.1mm","25.9mm","6.6mm","$寄件日期");
+      LODOP.ADD_PRINT_TEXT("24.6mm","17.7mm","35.5mm","6.6mm","$寄件人姓名");
+      LODOP.ADD_PRINT_TEXT("31.2mm","17.5mm","85.5mm","13.5mm","$寄件人地址");
+      LODOP.ADD_PRINT_TEXT("45.2mm","17.7mm","66.7mm","6.9mm","$寄件人电话");
+      LODOP.ADD_PRINT_TEXT("15.9mm","123mm","84.9mm","38.6mm","$商品明细");
+      LODOP.ADD_PRINT_TEXT("101.9mm","123.3mm","25.9mm","6.6mm","$寄件人姓名");
+      LODOP.ADD_PRINT_TEXT("67.2mm","17.5mm","64.8mm","6.6mm","$买家会员名");
+      LODOP.ADD_PRINT_TEXT("55.6mm","122.8mm","64.3mm","6.6mm","$系统订单号");
+      LODOP.ADD_PRINT_TEXT("89.7mm","123.6mm","86.5mm","6.6mm","需本人签收，签收前请检查包装是否完整！");
+      LODOP.ADD_PRINT_TEXT("17.2mm","17.5mm","46.6mm","6.6mm","$店铺名称");
+      LODOP.ADD_PRINT_TEXT("74.3mm","17.5mm","35.7mm","6.6mm","$收件人姓名");
+      LODOP.ADD_PRINT_TEXT("81.5mm","17.2mm","82.3mm","13.5mm","$收件人地址");
+      LODOP.ADD_PRINT_TEXT("95.8mm","17.2mm","69.1mm","6.6mm","$收件人电话");
+      LODOP.ADD_PRINT_TEXT("81.8mm","123.8mm","61.1mm","6.6mm","$买家留言");
+    ]]>
+  </Temp>
+
+  <Temp Code="HTKY" PrinterType="0" Width="231.0" Height="127.0">
+    <![CDATA[
+      LODOP.ADD_PRINT_TEXT("17.2mm","74.1mm","25.9mm","6.6mm","$寄件日期");
+      LODOP.ADD_PRINT_TEXT("24.6mm","17.7mm","35.5mm","6.6mm","$寄件人姓名");
+      LODOP.ADD_PRINT_TEXT("31.2mm","17.5mm","85.5mm","13.5mm","$寄件人地址");
+      LODOP.ADD_PRINT_TEXT("45.2mm","17.7mm","66.7mm","6.9mm","$寄件人电话");
+      LODOP.ADD_PRINT_TEXT("59.5mm","18.5mm","84.9mm","38.6mm","$商品明细");
+      LODOP.ADD_PRINT_TEXT("102.7mm","38.1mm","25.9mm","6.6mm","$寄件人姓名");
+      LODOP.ADD_PRINT_TEXT("22.8mm","113.2mm","64.8mm","6.6mm","$买家会员名");
+      LODOP.ADD_PRINT_TEXT("81.5mm","113.8mm","64.3mm","6.6mm","$系统订单号");
+      LODOP.ADD_PRINT_TEXT("98.2mm","113.5mm","86.5mm","6.6mm","需本人签收，签收前请检查包装是否完整！");
+      LODOP.ADD_PRINT_TEXT("17.2mm","17.5mm","46.6mm","6.6mm","$店铺名称");
+      LODOP.ADD_PRINT_TEXT("29.9mm","113.2mm","35.7mm","6.6mm","$收件人姓名");
+      LODOP.ADD_PRINT_TEXT("36.8mm","113mm","82.3mm","13.5mm","$收件人地址");
+      LODOP.ADD_PRINT_TEXT("50.8mm","113.2mm","69.1mm","6.6mm","$收件人电话");
+      LODOP.ADD_PRINT_TEXT("91mm","113.5mm","61.1mm","6.6mm","$买家留言");
+    ]]>
+  </Temp>
+
+   <Temp Code="ZTO" PrinterType="0" Width="231.0" Height="127.0">
+    <![CDATA[ 
+      LODOP.ADD_PRINT_TEXT("17.2mm","74.11mm","25.9mm","6.59mm","$寄件日期");  
+      LODOP.ADD_PRINT_TEXT("24.61mm","17.7mm","35.51mm","6.59mm","$寄件人姓名");  
+      LODOP.ADD_PRINT_TEXT("31.19mm","17.49mm","85.49mm","13.49mm","$寄件人地址"); 
+      LODOP.ADD_PRINT_TEXT("45.19mm","17.7mm","66.7mm","6.91mm","$寄件人电话");  
+      LODOP.ADD_PRINT_TEXT("59.5mm","18.49mm","84.9mm","38.6mm","$商品明细");  
+      LODOP.ADD_PRINT_TEXT("102.71mm","38.1mm","25.9mm","6.59mm","$寄件人姓名");  
+      LODOP.ADD_PRINT_TEXT("22.81mm","113.19mm","64.8mm","6.59mm","$买家会员名");  
+      LODOP.ADD_PRINT_TEXT("81.49mm","113.8mm","64.29mm","6.59mm","$系统订单号");  
+      LODOP.ADD_PRINT_TEXT("98.19mm","113.51mm","86.49mm","6.59mm","需本人签收，签收前请检查包装是否完整！");  
+      LODOP.ADD_PRINT_TEXT("17.2mm","17.49mm","46.59mm","6.59mm","$店铺名称");  
+      LODOP.ADD_PRINT_TEXT("29.9mm","113.19mm","35.69mm","6.59mm","$收件人姓名");  
+      LODOP.ADD_PRINT_TEXT("36.8mm","113mm","82.31mm","13.49mm","$收件人地址"); 
+      LODOP.ADD_PRINT_TEXT("50.8mm","113.19mm","69.11mm","6.59mm","$收件人电话");  
+      LODOP.ADD_PRINT_TEXT("90.99mm","113.51mm","61.09mm","6.59mm","$买家留言");  
+      LODOP.ADD_PRINT_TEXT("15.85mm","113.74mm","49.82mm","6.85mm","$大头笔");
+    ]]>
+  </Temp>
+
+  <Temp Code="YUNDA" PrinterType="0" Width="231.0" Height="127.0">
+    <![CDATA[
+      LODOP.ADD_PRINT_TEXT("17.2mm","74.1mm","25.9mm","6.6mm","$寄件日期");
+      LODOP.ADD_PRINT_TEXT("24.6mm","17.7mm","35.5mm","6.6mm","$寄件人姓名");
+      LODOP.ADD_PRINT_TEXT("31.2mm","17.5mm","85.5mm","13.5mm","$寄件人地址");
+      LODOP.ADD_PRINT_TEXT("45.2mm","17.7mm","66.7mm","6.9mm","$寄件人电话");
+      LODOP.ADD_PRINT_TEXT("59.5mm","18.5mm","84.9mm","38.6mm","$商品明细");
+      LODOP.ADD_PRINT_TEXT("102.7mm","38.1mm","25.9mm","6.6mm","$寄件人姓名");
+      LODOP.ADD_PRINT_TEXT("22.8mm","113.2mm","64.8mm","6.6mm","$买家会员名");
+      LODOP.ADD_PRINT_TEXT("81.5mm","113.8mm","64.3mm","6.6mm","$系统订单号");
+      LODOP.ADD_PRINT_TEXT("98.2mm","113.5mm","86.5mm","6.6mm","需本人签收，签收前请检查包装是否完整！");
+      LODOP.ADD_PRINT_TEXT("17.2mm","17.5mm","46.6mm","6.6mm","$店铺名称");
+      LODOP.ADD_PRINT_TEXT("29.9mm","113.2mm","35.7mm","6.6mm","$收件人姓名");
+      LODOP.ADD_PRINT_TEXT("36.8mm","113mm","82.3mm","13.5mm","$收件人地址");
+      LODOP.ADD_PRINT_TEXT("50.8mm","113.2mm","69.1mm","6.6mm","$收件人电话");
+      LODOP.ADD_PRINT_TEXT("91mm","113.5mm","61.1mm","6.6mm","$买家留言");
+    ]]>
+  </Temp>
+
+  <Temp Code="SF" PrinterType="0" Width="218.0" Height="141.0">
+    <![CDATA[
+      LODOP.ADD_PRINT_TEXT("17.2mm","74.1mm","25.9mm","6.6mm","$寄件日期");
+      LODOP.ADD_PRINT_TEXT("24.6mm","17.7mm","35.5mm","6.6mm","$寄件人姓名");
+      LODOP.ADD_PRINT_TEXT("31.2mm","17.5mm","85.5mm","13.5mm","$寄件人地址");
+      LODOP.ADD_PRINT_TEXT("45.2mm","17.7mm","66.7mm","6.9mm","$寄件人电话");
+      LODOP.ADD_PRINT_TEXT("15.9mm","123mm","84.9mm","38.6mm","$商品明细");
+      LODOP.ADD_PRINT_TEXT("87mm","181.8mm","25.9mm","6.6mm","$寄件人姓名");
+      LODOP.ADD_PRINT_TEXT("67.2mm","17.5mm","64.8mm","6.6mm","$买家会员名");
+      LODOP.ADD_PRINT_TEXT("55.6mm","122.8mm","64.3mm","6.6mm","$系统订单号");
+      LODOP.ADD_PRINT_TEXT("101.1mm","121.4mm","86.5mm","6.6mm","需本人签收，签收前请检查包装是否完整！");
+      LODOP.ADD_PRINT_TEXT("17.2mm","17.5mm","46.6mm","6.6mm","$店铺名称");
+      LODOP.ADD_PRINT_TEXT("74.3mm","17.5mm","35.7mm","6.6mm","$收件人姓名");
+      LODOP.ADD_PRINT_TEXT("81.5mm","17.2mm","82.3mm","13.5mm","$收件人地址");
+      LODOP.ADD_PRINT_TEXT("95.8mm","17.2mm","69.1mm","6.6mm","$收件人电话");
+      LODOP.ADD_PRINT_TEXT("91mm","113.5mm","61.1mm","6.6mm","$买家留言");
+    ]]>
+  </Temp>
+
+  <Temp Code="TTKDEX" PrinterType="0" Width="231.0" Height="127.0">
+    <![CDATA[
+      LODOP.ADD_PRINT_TEXT("17.2mm","74.1mm","25.9mm","6.6mm","$寄件日期");
+      LODOP.ADD_PRINT_TEXT("24.6mm","17.7mm","35.5mm","6.6mm","$寄件人姓名");
+      LODOP.ADD_PRINT_TEXT("31.2mm","17.5mm","85.5mm","13.5mm","$寄件人地址");
+      LODOP.ADD_PRINT_TEXT("45.2mm","17.7mm","66.7mm","6.9mm","$寄件人电话");
+      LODOP.ADD_PRINT_TEXT("59.5mm","18.5mm","84.9mm","38.6mm","$商品明细");
+      LODOP.ADD_PRINT_TEXT("102.7mm","38.1mm","25.9mm","6.6mm","$寄件人姓名");
+      LODOP.ADD_PRINT_TEXT("22.8mm","113.2mm","64.8mm","6.6mm","$买家会员名");
+      LODOP.ADD_PRINT_TEXT("81.5mm","113.8mm","64.3mm","6.6mm","$系统订单号");
+      LODOP.ADD_PRINT_TEXT("98.2mm","113.5mm","86.5mm","6.6mm","需本人签收，签收前请检查包装是否完整！");
+      LODOP.ADD_PRINT_TEXT("17.2mm","17.5mm","46.6mm","6.6mm","$店铺名称");
+      LODOP.ADD_PRINT_TEXT("29.9mm","113.2mm","35.7mm","6.6mm","$收件人姓名");
+      LODOP.ADD_PRINT_TEXT("36.8mm","113mm","82.3mm","13.5mm","$收件人地址");
+      LODOP.ADD_PRINT_TEXT("50.8mm","113.2mm","69.1mm","6.6mm","$收件人电话");
+      LODOP.ADD_PRINT_TEXT("91mm","113.5mm","61.1mm","6.6mm","$买家留言");
+    ]]>
+  </Temp>
+  
+  <!--默认的一定要放最后-->
+  <Temp Code="DEFAULT" PrinterType="0" Width="231.0" Height="127.0">
+    <![CDATA[
+      LODOP.ADD_PRINT_TEXT("17.2mm","74.1mm","25.9mm","6.6mm","$寄件日期");
+      LODOP.ADD_PRINT_TEXT("24.6mm","17.7mm","35.5mm","6.6mm","$寄件人姓名");
+      LODOP.ADD_PRINT_TEXT("31.2mm","17.5mm","85.5mm","13.5mm","$寄件人地址");
+      LODOP.ADD_PRINT_TEXT("45.2mm","17.7mm","66.7mm","6.9mm","$寄件人电话");
+      LODOP.ADD_PRINT_TEXT("59.5mm","18.5mm","84.9mm","38.6mm","$商品明细");
+      LODOP.ADD_PRINT_TEXT("102.7mm","38.1mm","25.9mm","6.6mm","$寄件人姓名");
+      LODOP.ADD_PRINT_TEXT("22.8mm","113.2mm","64.8mm","6.6mm","$买家会员名");
+      LODOP.ADD_PRINT_TEXT("81.5mm","113.8mm","64.3mm","6.6mm","$系统订单号");
+      LODOP.ADD_PRINT_TEXT("98.2mm","113.5mm","86.5mm","6.6mm","需本人签收，签收前请检查包装是否完整！");
+      LODOP.ADD_PRINT_TEXT("17.2mm","17.5mm","46.6mm","6.6mm","$店铺名称");
+      LODOP.ADD_PRINT_TEXT("29.9mm","113.2mm","35.7mm","6.6mm","$收件人姓名");
+      LODOP.ADD_PRINT_TEXT("36.8mm","113mm","82.3mm","13.5mm","$收件人地址");
+      LODOP.ADD_PRINT_TEXT("50.8mm","113.2mm","69.1mm","6.6mm","$收件人电话");
+      LODOP.ADD_PRINT_TEXT("91mm","113.5mm","61.1mm","6.6mm","$买家留言");
+    ]]>
+  </Temp>
+</Temp_List>

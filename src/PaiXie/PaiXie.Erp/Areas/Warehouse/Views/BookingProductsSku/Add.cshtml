@@ -1,0 +1,63 @@
+﻿@using PaiXie.Data
+@{
+    var warehouseProductsInfo = ViewBag.WarehouseProductsInfo as WarehouseProductsInfo;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{}
+<div class="easyui-layout" data-options="fit:true">
+
+    <style>
+        .searchpro .textbox {
+            float: left;
+            margin-right: 10px;
+        }
+
+        .presalenum {
+            border: 1px solid #dddddd;
+            background: #fff;
+            padding: 5px;
+            line-height: 18px;
+            height: 18px;
+            font-size: 14px;
+            color: #000;
+            text-align: center;
+        }
+    </style>
+    <div class="toolbar" id="toolbar">
+        <a id="back" class="back" href="/Warehouse/BookingProductsSku/index"><span></span>返回</a>
+    </div>
+    <div class="searchpro" id="searchpro">
+        <label>请输入商品编码：</label><input type="text" id="txtProductsCode" value="" style="width:250px" data-options="height:30,required:true">
+        <input type="submit" id="btnSearch" value="搜索" class="button">
+    </div>
+    <form id="formnum" method="post" style="display:none;">
+        <div class="p0lr22">
+            <table style="color:#666">
+                <tr>
+                    <td>
+                        预售商品：@(warehouseProductsInfo.Name) (商品编码：@warehouseProductsInfo.Code)
+                        <input type="hidden" id="hdnProductsID" name="ProductsID" value="@(warehouseProductsInfo.ID)"/>
+                        <input type="hidden" id="hdnPageName" value="Add" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        库存模式:
+                        <input type="radio" name="BookingModel" id="BookingModel1" value="0" checked><label for="BookingModel1">扣减</label>
+                        <input type="radio" name="BookingModel" id="BookingModel2" value="1"><label for="BookingModel2">不扣减</label>
+                        <span style="color:#999; padding-left:10px">(不扣减表示预售数量一直固定在设置的值，适用于一直使用预售模式销售并且不限数量的商品)</span>
+                    </td>
+                </tr>
+            </table>
+            <div class="infotitle" style="margin-bottom:5px;">设置预售数量:</div>
+            <table id="grid" class="easyui-datagrid" title="" data-options="singleSelect:false,collapsible:true,method:'get'"></table>
+        </div>
+        <div style="text-align:center; padding-top:15px">
+            <a iconcls="icon-ok" id="btnSave" class="button-oky" href="javascript:void(0)">保存</a>
+            <a iconcls="icon-ok" id="btnCancel" class="button-cancel" href="javascript:void(0)">取消</a>
+        </div>
+    </form>
+</div>
+@section bottom{
+    <script src="~/Areas/Warehouse/ViewJs/EditBookingProductsSku.js"></script>
+}

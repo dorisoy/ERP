@@ -1,0 +1,60 @@
+2015/10/27 10:03:57
+Could not map: BarCode----FluentData.FluentDataException: Could not map: BarCode
+   在 FluentData.ExecuteQueryHandler.HandleQueryException(Exception exception)
+   在 FluentData.ExecuteQueryHandler.ExecuteQuery(Boolean useReader, Action action)
+   在 FluentData.DbCommand.QueryMany[TEntity,TList](Action`2 customMapper)
+   在 PaiXie.Data.ProductsRepository.GetManyProductsSkuMaterialMapInfo(Int32 productsID, IDbContext context) 位置 f:\erpnet\src\PaiXie\PaiXie.Data\Repository\Products\ProductsRepository.cs:行号 374
+   在 PaiXie.Service.ProductsService.GetManyProductsSkuMaterialMapInfo(Int32 productsID, IDbContext context) 位置 f:\erpnet\src\PaiXie\PaiXie.Service\Products\ProductsService.cs:行号 201
+   在 PaiXie.Erp.Areas.Warehouse.Controllers.ProductsController.Show(Int32 id) 位置 f:\erpnet\src\PaiXie\PaiXie.Erp\Areas\Warehouse\Controllers\ProductsController.cs:行号 156
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+------------------------------------------------------------------
+2015/10/27 10:05:11
+Could not map: BarCode----FluentData.FluentDataException: Could not map: BarCode
+   在 FluentData.ExecuteQueryHandler.HandleQueryException(Exception exception)
+   在 FluentData.ExecuteQueryHandler.ExecuteQuery(Boolean useReader, Action action)
+   在 FluentData.DbCommand.QueryMany[TEntity,TList](Action`2 customMapper)
+   在 PaiXie.Data.ProductsRepository.GetManyProductsSkuMaterialMapInfo(Int32 productsID, IDbContext context) 位置 f:\erpnet\src\PaiXie\PaiXie.Data\Repository\Products\ProductsRepository.cs:行号 374
+   在 PaiXie.Service.ProductsService.GetManyProductsSkuMaterialMapInfo(Int32 productsID, IDbContext context) 位置 f:\erpnet\src\PaiXie\PaiXie.Service\Products\ProductsService.cs:行号 201
+   在 PaiXie.Erp.Areas.Warehouse.Controllers.ProductsController.Show(Int32 id) 位置 f:\erpnet\src\PaiXie\PaiXie.Erp\Areas\Warehouse\Controllers\ProductsController.cs:行号 156
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+------------------------------------------------------------------
+2015/10/27 10:06:36
+Could not map: SellingPrice----FluentData.FluentDataException: Could not map: SellingPrice
+   在 FluentData.ExecuteQueryHandler.HandleQueryException(Exception exception)
+   在 FluentData.ExecuteQueryHandler.ExecuteQuery(Boolean useReader, Action action)
+   在 FluentData.DbCommand.QueryMany[TEntity,TList](Action`2 customMapper)
+   在 PaiXie.Data.ProductsRepository.GetManyProductsSkuMaterialMapInfo(Int32 productsID, IDbContext context) 位置 f:\erpnet\src\PaiXie\PaiXie.Data\Repository\Products\ProductsRepository.cs:行号 374
+   在 PaiXie.Service.ProductsService.GetManyProductsSkuMaterialMapInfo(Int32 productsID, IDbContext context) 位置 f:\erpnet\src\PaiXie\PaiXie.Service\Products\ProductsService.cs:行号 201
+   在 PaiXie.Erp.Areas.Warehouse.Controllers.ProductsController.Show(Int32 id) 位置 f:\erpnet\src\PaiXie\PaiXie.Erp\Areas\Warehouse\Controllers\ProductsController.cs:行号 156
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+------------------------------------------------------------------

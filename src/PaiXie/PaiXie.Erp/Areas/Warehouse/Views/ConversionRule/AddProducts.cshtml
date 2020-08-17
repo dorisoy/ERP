@@ -1,0 +1,30 @@
+﻿@{
+    var location = ViewBag.Location;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{}
+<form id="ff" method="post" novalidate>
+    <table class="tableinfo" style="margin-top:25px">
+        <tr>
+            <th style="width:150px">请输入转换的商品SKU码：</th>
+            <td><input style="width:200px" value="" class="easyui-validatebox textbox" type="text" id="txtCode" data-options="height:30,required:true" />&nbsp;<span style="color:red" id="msg"></span></td>
+        </tr>
+        <tr>
+            <th>每次转换最少数量：</th>
+            <td>
+                <input style="width:100px" value="" class="easyui-numberbox" type="text" id="txtNum" data-options="height:30,required:true" min="0" max="9999999" missingmessage="只能输入0~9999999之间的数字" />
+            </td>
+        </tr>
+        <tr>
+            <th></th>
+            <td>
+                <a href="javascript:void(0)" class="button-oky" id="btnSaveProducs" iconcls="icon-ok">添加</a>
+                <input type="hidden" id="hdnLocation" value="@(location)" />
+            </td>
+
+        </tr>
+    </table>
+</form>
+@section bottom{
+    <script src="~/Areas/Warehouse/ViewJs/EditConversionRule.js"></script>
+}

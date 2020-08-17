@@ -1,0 +1,85 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+   
+    <meta name="viewport" content="width=device-width" />
+    <title>电商ERP管理系统</title>
+    <link rel="icon" href="~/Content/images/favicon.ico" type="image/x-icon" />
+    <link rel="bookmark" href="~/Content/images/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="~/Content/images/favicon.ico" type="image/x-icon" />
+    <link href="~/Content/css/page/login.css" rel="stylesheet" />
+    @Scripts.Render("~/Scripts/jquery-1.8.2.min.js")
+</head>
+<body>
+
+    <div class="second_body">
+        <div class="logo"><img src="/Content/images/login/logo.png" alt="" /></div>
+        <div class="title-zh">电商ERP管理系统</div>
+        <div class="title-en">  
+            Electric business ERP management system</div>
+        <div class="message" id="errmsg" data-bind="html:message"></div>
+        <table border="0" style="width:300px;">
+            <tr>
+                <td style="padding-bottom: 5px;width:55px;">用户名：</td>
+                <td colspan="2"><input type="text" onkeypress="EnterPress(event)" value="@ViewBag.ucode" id="txtUid"    class="login"  data-bind="value:form.usercode" /></td>
+            </tr>
+            <tr>
+                <td class="lable" style="vertical-align: middle">密&nbsp;&nbsp;&nbsp;码：</td>
+                <td colspan="2"><input type="password" onkeypress="EnterPress(event)" value="@ViewBag.upwd" id="txtPwd"    class="login"  data-bind="value:form.password" /></td>
+            </tr>
+            <tr>
+                <td style="padding-bottom: 5px;width:55px;">验证码：</td>
+                <td colspan="2"><input type="text" style="width:70px;" onkeypress="EnterPress(event)" value="" id="txtyzm" class="login" />
+                    <img src="/Login/CheckCode?ID=1" id="imgCode" alt="单击可刷新" onclick="ClickRemoveChangeCode()" />
+
+                
+                </td>
+          
+             </tr>
+            <tr>
+                <td></td>
+                <td colspan="2">
+                    <input type="checkbox" id="checkme" checked /><span>系统记住我</span>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" style="text-align:center">
+                    <input type="button" value="登录" id="login" class="login_button" />
+                    <input type="button" value="重置" id="reset" class="reset_botton" />
+                    <input type="button" value="仓库端登录(测试)" id="ss"  />
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+
+    <script type="text/javascript">
+
+    function ClickRemoveChangeCode() {
+       
+        var code = $("#imgCode").attr("src");
+        
+        $("#imgCode").attr("src", code + "1");
+    }
+
+
+    document.getElementById('txtUid').value = 'admin';
+            document.getElementById('txtPwd').value = '123';
+          
+          
+            $("#ss").click(function () {
+                document.getElementById('txtUid').value = '盛浩专用';
+                document.getElementById('txtPwd').value = '123456';
+                $("#login").click();
+           
+            });
+        </script>
+    @Scripts.Render("~/Scripts/ViewJs/js")
+</body>
+</html>

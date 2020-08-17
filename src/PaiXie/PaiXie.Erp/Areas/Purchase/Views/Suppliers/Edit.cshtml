@@ -1,0 +1,56 @@
+﻿@using PaiXie.Data
+@{
+    ViewBag.Title = "编辑供应商";
+    Suppliers suppliers = ViewBag.Suppliers as Suppliers;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section head{
+
+}
+
+<form id="ff" method="post" novalidate>
+    <input type="hidden" id="ID" name="ID" value="@suppliers.ID" />
+    <table class="tableinfo" style="margin-top:25px">
+        <tr>
+            <th style="width:150px"><span class="red">*</span>供应商名称：</th>
+            <td>
+                <input style="width:240px;" value="@suppliers.Name" class="easyui-validatebox" type="text" id="txtName" name="Name" data-options="height:30,required:true,validType:'length[1,50]'" />
+                &nbsp;<span id="errorMessage" style="color:red;"></span>
+            </td>
+        </tr>
+        <tr>
+            <th><span class="red">*</span>简称：</th>
+            <td>
+                <input style="width:100px" value="@suppliers.AliasName" class="easyui-validatebox" type="text" id="txtAliasName" name="AliasName" data-options="height:30,required:true,validType:'length[1,10]'" />
+                &nbsp;<span id="errorMessage1" style="color:red;"></span>
+            </td>
+        </tr>
+        <tr>
+            <th>联系人：</th>
+            <td><input id="txtContactPerson" class="easyui-validatebox" value="@suppliers.ContactPerson" name="ContactPerson" data-options="height:30"></td>
+        </tr>
+        <tr>
+            <th><span class="red">*</span>供应商电话：</th>
+            <td><input id="txtTel" class="easyui-validatebox" value="@suppliers.Tel" name="Tel" data-options="height:30,required:true,validType:'phoneRex'"></td>
+        </tr>
+        <tr>
+            <th>传真：</th>
+            <td><input id="txtFax" class="easyui-validatebox" value="@suppliers.Fax" name="Fax" data-options="height:30,validType:'fax'"></td>
+        </tr>
+        <tr>
+            <th>邮件：</th>
+            <td><input id="txtEmail" class="easyui-validatebox" value="@suppliers.Email" name="Email" data-options="height:30,width:240,validType:'email'"></td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align:center; padding-top:10px">
+                <a href="javascript:void(0)" class="button-oky" id="btnSave" iconcls="icon-ok">确定</a>
+                <a href="javascript:void(0)" class="button-cancel" iconcls="icon-cancel" id="btnClose">取消</a>
+            </td>
+        </tr>
+    </table>
+</form>
+
+@section bottom{
+    <script src="~/Areas/Purchase/ViewJs/EditSuppliers.js"></script>
+}

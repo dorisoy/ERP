@@ -1,0 +1,2 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>SELECT  Code AS VALUE ,Name AS  TEXT FROM warehouse WHERE IsEnable=1 ORDER BY Seq ASC,ID DESC</root>

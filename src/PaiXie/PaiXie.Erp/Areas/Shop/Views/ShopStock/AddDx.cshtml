@@ -1,0 +1,61 @@
+﻿@using PaiXie.Data
+@{
+    var obj = ViewBag.psku as List<ProductsSkuList>;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+}
+<div style="padding:20px">
+    <form id="ff" method="post" novalidate="novalidate">
+        <table>
+            <tr>
+                <td>
+                    <input type="hidden" id="ProductsID" name="ProductsID" value="@(ViewBag.ProductsID)" />
+                    <label>选择独享店铺：</label>
+                </td>
+                <td>
+                    <select id="ShopID" name="ShopID" class="easyui-combobox" data-options="height:30,width:200"></select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" height="10"></td>
+            </tr>
+            @*<tr>
+                <td>设置独享数量:</td>
+                <td><label id="lbldxnum">@ViewBag.dxnum </label></td>
+            </tr>*@
+        </table>
+        <br />
+        <table border="0">
+            <tr style="background-color: #436fac; color:white;">
+                <td height="30" width="20%" align="center">属性</td>
+                <td width="30%" align="center">商品SKU码</td>
+                <td width="30%" align="center">当前可用库存</td>
+                <td width="20%" align="center">独享数量</td>
+            </tr>
+            @{
+                foreach (var item in obj) {
+                    <tr align="center">
+                        <td height="25">
+                            <input type="hidden" name="ProductsSkuID" id="ProductsSkuID@(item.ID)" value="@(item.ID)" />
+                            @item.Saleprop
+                        </td>
+                        <td>@item.Code</td>
+                        <td>@item.kc</td>
+                        <td><input type="text" onkeyup="this.value=this.value.replace(/\D/g,'')"   ōnafterpaste="this.value=this.value.replace(/\D/g,'''')" name="dxsl" id="dxsl@(item.ID)" value="0" /></td>
+                    </tr>
+                }
+            }
+        </table>
+        <br />
+        <input type="checkbox" value="1" name="Isggkc" id="Isggkc" /> 使用公共库存
+        <br />
+        <div class="textcenter">
+            <a href="javascript:void(0)" class="button-oky" id="btnSave" iconcls="icon-ok">添加</a>
+            <a href="javascript:void(0)" class="button-cancel" iconcls="icon-cancel" id="btnClose">关闭</a>
+        </div>
+    </form>
+</div>
+@section bottom{
+    <script src="~/Areas/Shop/ViewJs/AddDx.js"></script>
+}

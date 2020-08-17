@@ -1,0 +1,73 @@
+﻿$axure.loadCurrentPage({
+  "url":"物料.html",
+  "generationDate":new Date(1442195101195.49),
+  "isCanvasEnabled":false,
+  "variables":["OnLoadVariable"],
+  "page":{
+    "packageId":"42e0b77ce453428690951c57e122b102",
+    "type":"Axure:Page",
+    "name":"物料",
+    "notes":{
+},
+    "style":{
+      "baseStyle":"627587b6038d43cca051c114ac41ad32",
+      "pageAlignment":"near",
+      "fill":{
+        "fillType":"solid",
+        "color":0xFFF2F2F2},
+      "image":null,
+      "imageHorizontalAlignment":"near",
+      "imageVerticalAlignment":"near",
+      "imageRepeat":"auto",
+      "favicon":null,
+      "sketchFactor":"0",
+      "colorStyle":"appliedColor",
+      "fontName":"应用字体",
+      "borderWidth":"0"},
+    "adaptiveStyles":{
+},
+    "interactionMap":{
+},
+    "diagram":{
+      "objects":[{
+          "id":"60812bae6ad0404fa60fd716b6208097",
+          "label":"",
+          "type":"buttonShape",
+          "styleType":"paragraph",
+          "visible":true,
+          "style":{
+            "lineSpacing":"25px",
+            "location":{
+              "x":100,
+              "y":100},
+            "size":{
+              "width":1130,
+              "height":384}},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"59a6b98bb4494a669932492419dd9ac8",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "lineSpacing":"25px",
+                "location":{
+                  "x":100,
+                  "y":100},
+                "size":{
+                  "width":1130,
+                  "height":384}},
+              "adaptiveStyles":{
+}}],
+          "images":{
+            "normal~":"resources/images/transparent.gif"}}]}},
+  "masters":{
+},
+  "objectPaths":{
+    "60812bae6ad0404fa60fd716b6208097":{
+      "scriptId":"u0"},
+    "59a6b98bb4494a669932492419dd9ac8":{
+      "scriptId":"u1"}}});

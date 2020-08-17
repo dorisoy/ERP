@@ -1,0 +1,47 @@
+﻿@{
+    var startDate = PaiXie.Utils.ZDateTime.DayOfMonth(DateTime.Now, true).ToString("yyyy-MM-dd");
+    var endDate = DateTime.Now.ToString("yyyy-MM-dd");
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{}
+<div class="easyui-layout" data-options="fit:true">
+    <div data-options="region:'north',height:113" id="topdiv">
+        <div class="toolbar" id="toolbar">
+            <a href="javascript:void(0)" class="refresh" id="refresh"><span></span>刷新</a>
+            <a href="javascript:void(0);" id="export"><span></span>导出</a>
+        </div>
+        <div class="searchpro" id="searchpro">
+            <form id="ff" method="post">
+                <select id="keyWordType" name="keyWordType" class="easyui-combobox" data-options="height:30,width:100,editable:false">
+                    <option value="">关键字类型</option>
+                    @*<option value="商品货号">商品货号</option>*@
+                    <option value="商品编码" selected>商品编码</option>
+                    <option value="商品SKU码">商品SKU码</option>
+                    <option value="单据编号">单据编号</option>
+                </select>
+                <input type="text" id="txtKeyWord" value="" style="width:150px;">
+                <label>单据类型：</label><select id="billType" class="easyui-combobox" name="billType" data-options="height:30,width:82"></select>
+                <label>出入方向：</label>
+                <select id="stockWay" class="easyui-combobox" name="stockWay" data-options="height:30,width:82">
+                    <option value="0" selected="selected">请选择</option>
+                    <option value="1">入库</option>
+                    <option value="-1">出库</option>
+                </select>
+                <label>创建时间：</label>
+                <input value="@startDate" class="easyui-datebox" type="text" id="startDate" name="startDate" data-options="height:30,width:100,editable:false" />
+                <label>至&nbsp;&nbsp;&nbsp;</label>
+                <input value="@endDate" class="easyui-datebox" type="text" id="endDate" name="endDate" data-options="height:30,width:100,editable:false" />   
+                <input type="button" id="btnSearch" value="搜索" class="button">
+                <input type="button" id="btnReset" value="清空条件" class="button-rest">
+            </form>
+        </div>
+    </div>
+    <div data-options="region:'center',border:false" style="padding:0 22px;">
+        <table id="grid" class="easyui-datagrid" title="" data-options="singleSelect:false,collapsible:true,method:'get'"></table>
+    </div>
+</div>
+@section bottom{
+    <script src="~/Areas/Warehouse/ViewJs/StockLogInfoList.js"></script>
+}
+
+

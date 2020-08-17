@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "区域管理";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+
+}
+<div data-options="region:'north',height:63" id="topdiv">
+    <input name="refreshCurrentPage" id="refreshCurrentPage" type="hidden" />
+    <div class="toolbar" id="toolbar">
+        <a href="javascript:void(0);" class="refresh" id="refresh"><span></span>刷新</a>
+        <a href="javascript:void(0);" class="add" id="add"><span></span>恢复初始设置</a>
+       </div>
+</div>
+<div data-options="region:'center'" style="padding:0 22px">
+    <table id="grid" class="easyui-datagrid"
+           data-options="singleSelect:false,collapsible:true,method:'get'"></table>
+</div>
+@section bottom{
+<script src="~/Areas/Sys/ViewJs/SetAreaList.js"></script>
+}

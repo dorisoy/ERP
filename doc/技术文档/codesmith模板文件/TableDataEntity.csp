@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<codeSmith xmlns="http://www.codesmithtools.com/schema/csp.xsd">
+  <variables>
+    <add key="ConnectionString1" value="data source=.;Initial Catalog=shouli_blank;User ID=sa;password=sa" />
+    <add key="ConnectionString2" value="User Id=root;pwd=123456;Host=127.0.0.1;Port=3306;Database=test;Character Set=utf8" />
+  </variables>
+  <propertySets>
+    <propertySet name="TableDataEntity.cs" output="TableDataEntity.cs" template="TableDataEntity.cst">
+      <property name="OutputDirectory">D:\vss_local\Model</property>
+      <property name="SourceTables">
+        <connectionString>$(ConnectionString2)</connectionString>
+        <providerType>SchemaExplorer.MySQLSchemaProvider,SchemaExplorer.MySQLSchemaProvider</providerType>
+        <tableList>
+      <table>
+        <owner />
+        <name>class</name>
+      </table>
+      <table>
+        <owner />
+        <name>student</name>
+      </table>
+    </tableList>
+      </property>
+      <property name="Namespace">Model</property>
+    </propertySet>
+  </propertySets>
+</codeSmith>

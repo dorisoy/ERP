@@ -1,0 +1,251 @@
+﻿@{
+    ViewBag.Title = "售后单详情";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+    <style>
+        .buttonList{
+            margin-top:5px;
+            height:30px;
+            line-height:30px;
+        }
+        .buttonList a{
+            display:block;
+            text-align:center;
+            float:left;
+            width:80px;
+            height:30px;
+            line-height:30px;
+            text-decoration:none;
+            cursor:pointer;
+            color:#1d72df;
+        }
+        .buttonList a:hover{
+            background-color:#f2f2f2;
+        }
+        .tbOrderRefund, .tbOrderRefundItem{
+            width: 100%;
+            margin-top:5px;
+            border-top: 1px solid #ccc;
+            border-left: 1px solid #ccc;
+        }
+        .tbOrderRefund tr.title, .tbOrderRefundItem tr.title {
+            text-align: left;
+            font-weight: bold;
+            background-color: #e4e4e4; /*436fac*/
+        }
+        .tbOrderRefund td {
+            height: 25px;
+            line-height: 25px;
+            padding: 5px;
+            border-right: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            text-align: left;
+        }
+        .tbOrderRefundItem td {
+            height: 25px;
+            line-height: 25px;
+            padding: 5px;
+            border-right: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            text-align: center;
+        }
+        .tbOrderRefund td a, .tbOrderRefundItem td a{
+            text-decoration: none;
+            color: #1d72df;
+        }
+        .tbOrderRefund td a:hover, .tbOrderRefundItem td a:hover{
+            color: #fc8b00;
+        }
+        .tbOrderRefund td.title {
+            background-color: #f2f2f2;
+            text-align: right;
+        }
+        .tbOrderRefundItem td.title {
+            background-color: #f2f2f2;
+            text-align: center;
+        }
+    </style>
+}
+<div data-options="region:'center',border:false" class="p0lr22">
+    <div class="buttonList">
+        <a href="javascript:void(0);" class="returnProduct" id="returnProduct"><span></span>退回商品</a>
+        <a href="javascript:void(0);" class="confirmReceive" id="confirmReceive"><span></span>确认收货</a>
+        <a href="javascript:void(0);" class="cancelRefund" id="cancelRefund"><span></span>取消售后</a>
+        <a href="javascript:void(0);" class="refreshCurrentPage" id="refreshCurrentPage" style="display:none;"><span></span>刷新当前页</a>
+    </div>
+    <input type="hidden" id="hdnBillNo" name="BillNo" value="@ViewBag.BillNo" />
+    <input type="hidden" id="hdnOrdRefundID" name="OrdRefundID" value="" />
+    <table id="tbOrderRefund" class="tbOrderRefund" cellpadding="0" cellspacing="0" border="0">
+        <tr class="title">
+            <td colspan="6">基本信息</td>
+        </tr>
+        <tr>
+            <td width="12%" class="title">
+                售后单号
+            </td>
+            <td width="19%">
+                <span id="spanBillNo"></span>
+            </td>
+            <td width="12%" class="title">
+                订单编号
+            </td>
+            <td width="19%">
+                <span id="spanErpOrderCode"></span>
+            </td>
+            <td width="12%" class="title">
+                出库单号
+            </td>
+            <td width="26%">
+                <span id="spanOutboundBillNo"></span>
+            </td>
+        </tr>
+        <tr>
+            <td class="title">
+                售后状态
+            </td>
+            <td>
+                <span id="spanStatus"></span>
+            </td>
+            <td class="title">
+                售后类型
+            </td>
+            <td>
+                <span id="spanRefundType"></span>
+            </td>
+            <td class="title">
+                责任方
+            </td>
+            <td>
+                <span id="spanDuty"></span>
+            </td>
+        </tr>
+        <tr>
+            <td class="title">
+                退金额
+            </td>
+            <td>
+                <span id="spanRefundAmount"></span>
+            </td>
+            <td class="title">
+                退运费
+            </td>
+            <td>
+                <span id="spanRefundFreight"></span>
+            </td>
+            <td class="title">
+                退款单据号
+            </td>
+            <td>
+                <span id="spanRefundBillNo"></span>
+            </td>
+        </tr>
+        <tr>
+            <td class="title">
+                售后原因
+            </td>
+            <td>
+                <span id="spanReason"></span>
+            </td>
+            <td class="title">
+                创建时间
+            </td>
+            <td>
+                <span id="spanCreateDate"></span>
+            </td>
+            <td class="title">
+                创建人
+            </td>
+            <td>
+                <span id="spanCreatePerson"></span>
+            </td>
+        </tr>
+        <tr>
+            <td class="title">
+                详细说明
+            </td>
+            <td colspan="5">
+                <span id="spanReasonDetail"></span>
+            </td>
+        </tr>
+        <tr class="title trRefundInfo">
+            <td colspan="6">退货信息</td>
+        </tr>
+        <tr class="trRefundInfo">
+            <td class="title">
+                收货人姓名
+            </td>
+            <td>
+                <span id="spanReceivePerson"></span>
+            </td>
+            <td class="title">
+                收货人手机/电话
+            </td>
+            <td>
+                <span id="spanReceiveTel"></span>
+            </td>
+            <td class="title">
+                收货人地址
+            </td>
+            <td>
+                <span id="spanReceiveAddress"></span>
+            </td>
+        </tr>
+        <tr class="trRefundInfo">
+            <td class="title">
+                物流公司
+            </td>
+            <td>
+                <span id="spanExpressCompany"></span>
+            </td>
+            <td class="title">
+                运单号
+            </td>
+            <td>
+                <span id="spanWaybillNo"></span>
+            </td>
+            <td class="title">
+                寄回运费
+            </td>
+            <td>
+                <span id="spanReturnFreight"></span>
+            </td>
+        </tr>
+        <tr class="trRefundInfo">
+            <td class="title">
+                寄回时间
+            </td>
+            <td>
+                <span id="spanSendBackDate"></span>
+            </td>
+            <td class="title">
+                收货时间
+            </td>
+            <td>
+                <span id="spanReceiveDate"></span>
+            </td>
+            <td class="title">
+                收货备注
+            </td>
+            <td>
+                <span id="spanReceiveRemark"></span>
+            </td>
+        </tr>
+    </table>
+    <table id="tbOrderRefundItem" class="tbOrderRefundItem" cellpadding="0" cellspacing="0" border="0">
+        <tr class="title">
+            <td colspan="10" style="text-align:left;">退货商品</td>
+        </tr>
+        <tr class="secondTr">
+            <td width="10%" class="title">商品编码</td>
+            <td width="15%" class="title">商品名称</td>
+            <td width="12%" class="title">商品属性</td>
+            <td width="12%" class="title">商品SKU码</td>
+            <td width="12%" class="title">批次号</td>
+            <td width="7%" class="title">售后数量</td>
+        </tr>
+    </table>
+</div>
+@section bottom{
+    <script src="~/Areas/OrderRefund/ViewJs/OrderRefundDetails.js"></script>
+}

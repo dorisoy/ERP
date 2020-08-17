@@ -1,0 +1,99 @@
+﻿@using PaiXie.Data
+@using PaiXie.Core
+@using PaiXie.Utils
+    @{
+    var products = ViewBag.Products as Products;
+    var productsSkuMaterialMapList = ViewBag.ProductsSkuMaterialMapList as List<ProductsSkuMaterialMapInfo>;
+    var isSale = (products.SaleType & (int)SaleType.销售) > 0 ? "checkmark.gif" : "checknomark.gif";
+    var isMaterial = (products.SaleType & (int)SaleType.物料) > 0 ? "checkmark.gif" : "checknomark.gif";
+    var unit = ViewBag.Unit;
+    var smallPic = "";
+    if (ZConvert.ToString(products.SmallPic) != "") {
+        smallPic = products.SmallPic.Split(',')[0];
+    }
+    else {
+        smallPic = "../../Upload/Products/NoImg.jpg";
+    }
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+    @section head{
+        <style>
+            .tagcont {
+                color: #666666;
+            }
+        </style>
+    }
+
+    <div class="toolbar" id="toolbar">
+        <a id="back" class="back" href="javascript:history.go(-1)"><span></span>返回</a>
+    </div>
+    <ul class="tag">
+        <li class="current">商品资料</li>
+        <li>商品详情</li>
+    </ul>
+    <div class="tagcont p0lr22">
+        <div class="proinfo">
+            <div class="img70"><dfn></dfn><img src="@smallPic"></div>
+            <p><b>商品名称:</b>@(products.Name)</p>
+            <p><b>商品货号:</b>@(products.No)</p>
+            <p>
+                <b>商品编码:</b> @(products.Code)
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <b>商品条码:</b>@(products.BarCode)
+            </p>
+            <input type="hidden" id="hdnProductsID" value="@(products.ID)" />
+        </div>
+        <table border="0" cellpadding="0" cellspacing="0" class="tableinfoa">
+            <tr>
+                <th>类型</th>
+                <td>
+                    <img src="~/Content/images/@(isSale)">销售
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <img src="~/Content/images//@(isMaterial)">物料
+                </td>
+                <th>成本价</th>
+                <td>@(products.CostPrice)</td>
+            </tr>
+            <tr>
+                <th>销售价</th>
+                <td>@(products.SellingPrice)</td>
+                <th>税率</th>
+                <td>@(products.TaxRate*100)%</td>
+            </tr>
+            <tr>
+                <th>单位</th>
+                <td>@(unit)</td>
+                <th>重量</th>
+                <td>@(products.Weight)g</td>
+            </tr>
+            <tr>
+                <th>保质期</th>
+                <td>@(products.ShelfLife)天</td>
+                <th></th>
+                <td></td>
+            </tr>
+        </table>
+        <table id="grid" class="easyui-datagrid" title="" data-options="singleSelect:false,collapsible:true,method:'get'"></table>
+    </div>
+    <div class="tagcont p0lr22 ndis">
+        <script src="~/Content/ckeditor/ckeditor.js"></script>
+        <div id="divRemark">
+            <input type="text" id="ckEditor1" name="ckEditor1" />
+            <input type="hidden" id="Remark" name="Remark" value="">
+        </div>
+    </div>
+
+    @section bottom{
+        <script src="~/Areas/Warehouse/ViewJs/ShowProducts.js"></script>
+        <script>
+            var editor;
+            $(document).ready(function () {
+                editor = CKEDITOR.replace('ckEditor1');
+                editor.setData('@Html.Raw(products.Remark)');
+                CKEDITOR.on('instanceReady', function (ev) {
+                    editor = ev.editor;
+                    editor.setReadOnly(true);
+                });
+            });
+        </script>
+    }

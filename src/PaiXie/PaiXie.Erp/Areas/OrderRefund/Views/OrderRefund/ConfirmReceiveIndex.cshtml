@@ -1,0 +1,261 @@
+﻿@using PaiXie.Data;
+@using PaiXie.Core;
+@{
+    var ordRefund = ViewBag.Ordrefund as Ordrefund;
+    var ordRefundItemList = ViewBag.OrdRefundItemList as List<OrdrefundItem>;
+    ViewBag.Title = "确认收货";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+    <style>
+        .tbOrderRefund{
+            width: 99%;
+            margin:10px auto;
+        } 
+        .tbOrderRefundItem{
+            width: 100%;
+            border-top: 1px solid #ccc;
+            border-left: 1px solid #ccc;
+            text-align:center;
+        }
+        .red{
+            color:red;
+        }
+       .tbOrderRefund td {
+            height: 25px;
+            line-height: 25px;
+            padding: 5px;
+        }
+        .tbOrderRefundItem td {
+            height: 25px;
+            line-height: 25px;
+            padding: 5px;
+            border-right: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            text-align: center;
+        }
+        .tbOrderRefundItem tr.title {
+            font-weight: bold;
+            background-color: #f2f2f2; /*436fac*/
+        }
+    </style>
+}
+<form id="ff" method="post" novalidate="novalidate">
+    <div style="height:490px;overflow-y:auto;">
+        <input type="hidden" value="@ordRefund.ID" id="hdnOrdRefundID" name="OrdRefundID" />
+        <input type="hidden" value="@ordRefund.ErpOrderCode" id="hdnErpOrderCode" name="ErpOrderCode" />
+        <table id="tbOrderRefund" class="tbOrderRefund" cellpadding="0" cellspacing="0" border="0">
+            <tr>
+                <td style="width:75px;" align="right">
+                    <label class="red">*</label>收货状态：
+                </td>
+                <td style="width:152px;" align="left">
+                    <input type="radio" id="status0" name="Status" value="@((int)OrdRefundStatus.已完成)" @(ordRefund.Status == (int)OrdRefundStatus.等待卖家收货 ? "checked" : "") /><label for="status0">收货正常</label>
+                    <input type="radio" id="status1" name="Status" value="@((int)OrdRefundStatus.收货异常)" @(ordRefund.Status == (int)OrdRefundStatus.收货异常 ? "checked" : "") /><label for="status1">收货异常</label>
+                </td>
+                <td style="width:75px;">&nbsp;</td>
+                <td style="width:152px;">&nbsp;</td>
+                <td style="width:75px;">&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td align="right">收货备注：</td>
+                <td colspan="5" align="left">
+                    <input type="text" id="txtReceiveRemark" name="ReceiveRemark" class="easyui-validatebox" style="width:450px;" data-options="validType:'length[0,50]',height:30" value="@ordRefund.ReceiveRemark" />
+                </td>
+            </tr>
+            <tr id="trReceiveDuty">
+                <td align="right">
+                    <label class="red">*</label>责任方：
+                </td>
+                <td align="left">
+                    <select id="orderRefundDuty" class="easyui-combobox" name="Duty" data-options="height:30,width:152,editable:false"></select>
+                </td>
+                <td colspan="4" align="left">
+                    &nbsp;<input type="text" id="txtDutyOther" name="DutyOther" class="easyui-validatebox" style="width:100px;display:none;" data-options="height:30" value="@ordRefund.DutyOther" />
+                </td>
+            </tr>
+            <tr id="trReceiveItem">
+                <td colspan="6">
+                    <div>收到的商品</div>
+                    <table id="tbOrderRefundItem" class="tbOrderRefundItem" cellpadding="0" cellspacing="0" border="0">
+                        <tr class="title">
+                            <td width="12%">商品编码</td>
+                            <td width="18%">商品名称</td>
+                            <td width="15%">商品属性</td>
+                            <td width="15%">商品SKU码</td>
+                            <td width="20%">批次号</td>
+                            <td width="10%">售后数量</td>
+                            <td width="10%">收货数量</td>
+                        </tr>
+                        @if (ordRefundItemList.Count > 0) {
+                        var tempIndex = 1;
+                        foreach (var ordRefundItem in ordRefundItemList) {
+                        <tr class="dataTr">
+                            <td>
+                                @ordRefundItem.ProductsCode
+                                <input type="hidden" id="hdnProductsID" name="ProductsID" value="@ordRefundItem.ProductsID" />
+                                <input type="hidden" id="hdnProductsCode" name="ProductsCode" value="@ordRefundItem.ProductsCode" />
+                                <input type="hidden" id="hdnProductsNo" name="ProductsNo" value="@ordRefundItem.ProductsNo" />
+                                <input type="hidden" id="hdnOrdRefundItemID" name="OrdRefundItemID" value="@ordRefundItem.ID" />
+                                <input type="hidden" id="hdnOrdItemID" name="OrdItemID" value="@ordRefundItem.OrdItemID" />
+                            </td>
+                            <td>
+                                @ordRefundItem.ProductsName
+                                <input type="hidden" id="hdnProductsName" name="ProductsName" value="@ordRefundItem.ProductsName" />
+                            </td>
+                            <td>
+                                @ordRefundItem.ProductsSkuSaleprop
+                                <input type="hidden" id="hdnProductsSkuSaleprop" name="ProductsSkuSaleprop" value="@ordRefundItem.ProductsSkuSaleprop" />
+                            </td>
+                            <td>
+                                @ordRefundItem.ProductsSkuCode
+                                <input type="hidden" id="hdnProductsSkuID" name="ProductsSkuID" value="@ordRefundItem.ProductsSkuID" />
+                                <input type="hidden" id="hdnProductsSkuCode" name="ProductsSkuCode" value="@ordRefundItem.ProductsSkuCode" />
+                            </td>
+                            <td>
+                                @ordRefundItem.ProductsBatchCode
+                                <input type="hidden" id="hdnProductsBatchCode" name="ProductsBatchCode" value="@ordRefundItem.ProductsBatchCode" />
+                                <input type="hidden" id="hdnProductsBatchID" name="ProductsBatchID" value="@ordRefundItem.ProductsBatchID" />
+                            </td>
+                            <td><span id="spanRefundNum_@tempIndex">@ordRefundItem.RefundNum</span></td>
+                            <td>
+                                <input type="text" id="txtReceiveNum_@tempIndex" name="ReceiveNum" class="inputextbox easyui-validatebox" data-options="required:true,height:30" value="@ordRefundItem.RefundNum" onkeyup="checkInputNum(@tempIndex);" style="width:65px; text-align:center;" autocomplete="Off" />
+                            </td>
+                        </tr>
+                        tempIndex++;
+                        }
+                        }
+                        else {
+                        <tr class="dataTr">
+                            <td colspan="7">没有数据</td>
+                        </tr>
+                        }
+                    </table>
+                </td>
+            </tr>
+            <tr style="height:60px;" id="trLogistics">
+                <td align="right">
+                    <lable style="color:red;">*</lable>退金额：
+                </td>
+                <td align="left">
+                    <input type="text" id="txtRefundAmount" name="RefundAmount" class="easyui-numberbox" style="width:100px;" min="0" max="9999999.999" missingmessage="只能输入0~9999999.999之间的数字" data-options="required:true,validType:'number',precision:3,height:30" value="@ordRefund.RefundAmount"> 元
+                </td>
+                <td align="right">
+                    <lable style="color:red;">*</lable>退运费：
+                </td>
+                <td align="left">
+                    <input type="text" id="txtRefundFreight" name="RefundFreight" class="easyui-numberbox" style="width:100px;" min="0" max="9999999.999" missingmessage="只能输入0~9999999.999之间的数字" data-options="required:true,validType:'number',precision:3,height:30" value="@ordRefund.RefundFreight"> 元
+                </td>
+                <td align="right">
+                    <lable style="color:red;">*</lable>寄回运费：
+                </td>
+                <td align="left">
+                    <input type="text" id="txtReturnFreight" name="ReturnFreight" class="easyui-numberbox" style="width:100px;" min="0" max="9999999.999" missingmessage="只能输入0~9999999.999之间的数字" data-options="required:true,validType:'number',precision:3,height:30" value="@ordRefund.ReturnFreight">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="6" style="text-align:center;">
+                    <a href=" javascript:void(0);" class="button-oky" id="btnSave" iconcls="icon-ok">确定</a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0);" class="button-cancel" iconcls="icon-cancel" id="btnClose">取消</a>
+                </td>
+            </tr>
+            <tr id="trMessage">
+                <td colspan="6">
+                    <div style="width: 100%; height: 125px; text-align: left; line-height: 24px; border: 1px solid #ccc; background-color: #f2f2f2; ">
+                        &nbsp;&nbsp;<label class="red">提示：</label>
+                        <br />&nbsp;&nbsp;1、确认收货时生成退款单。
+                        <br />&nbsp;&nbsp;2、当责任方是买家时，退款单金额＝退金额+退运费。
+                        <br />&nbsp;&nbsp;3、当责任方非买家时，退款单金额＝退金额+退运费+寄回运费。
+                        <br />&nbsp;&nbsp;4、确认收货时，退回的商品自动放入中转仓。
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</form>
+@section bottom{
+    <script type="text/javascript">
+        $(function () {
+            $("#btnClose").click(function () {
+                parent.$('#localWin').window('close');
+            });
+            $("#btnSave").click(btnSave);
+            //绑定售后责任方下拉列表
+            $('#orderRefundDuty').combobox({
+                url: '/OrderRefund/OrderRefund/GetOrderRefundDutyJson?hasSelectedDefault=1',
+                valueField: 'Value',
+                textField: 'Name',
+                onLoadSuccess: function () { //数据加载完毕事件
+                    $("#orderRefundDuty").combobox('select', '@ordRefund.Duty');
+                },
+                onChange: function (n, o) {
+                    if (n == 4) {
+                        $('#txtDutyOther').show();
+                    } else {
+                        $("#txtDutyOther").hide();
+                    }
+                }
+            });
+            checkStatus();
+            $("input[name='Status']").click(checkStatus);
+            $(".dataTr").mouseover(function () {
+                $(this).css("background", "#e2e2e2");
+            }).mouseout(function () {
+                $(this).css("background", "#fff");
+            });
+        });
+        //根据状态控制显示隐藏
+        function checkStatus() {
+            var radioStatusID = $("input[name='status']:checked").attr("id");
+            switch (radioStatusID) {
+                case "status0":
+                    $("#trReceiveDuty").show();
+                    $("#trReceiveItem").show();
+                    $("#trLogistics").show();
+                    $("#trMessage").show();
+                    break;
+                case "status1":
+                    $("#trReceiveDuty").hide();
+                    $("#trReceiveItem").hide();
+                    $("#trLogistics").hide();
+                    $("#trMessage").hide();
+                    break;
+            }
+    }
+        function checkInputNum(index) {
+        var num = $("#txtReceiveNum_" + index).val().replace(/\D/g, '');
+        $("#txtReceiveNum_" + index).val(num);
+        var canReceiveNum = Number($("#spanRefundNum_" + index).html());
+        if (Number($("#txtReceiveNum_" + index).val()) > canReceiveNum) {
+            $("#txtReceiveNum_" + index).val("");
+            $.MsgBox.Alert("提示", "超过了售后数量！");
+        }
+        }
+        //保存
+        function btnSave() {
+            $('#ff').form('submit', {
+                url: "/OrderRefund/OrderRefund/ConfirmReceive",
+                type: "POST",
+                dataType: "json",
+                onSubmit: function () {
+                    var isValid = $(this).form('validate');
+                    return isValid;	// 返回false终止表单提交
+                },
+                success: function (r) {
+                    var map = $.parseJSON(r);
+                    if (map.result == 1) {
+                        parent.$("#refreshCurrentPage").click();
+                        $("#btnClose").click();
+                    }
+                    else {
+                        $.MsgBox.Alert("提示", map.message);
+                    }
+                },
+                error: function () {
+                    $.MsgBox.Alert("提示", "确认收货失败！");
+                }
+            });
+        }
+    </script>
+}

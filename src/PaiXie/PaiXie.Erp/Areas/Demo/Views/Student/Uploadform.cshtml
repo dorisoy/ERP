@@ -1,0 +1,28 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Uploadform</title>
+</head>
+<body>
+    <div>
+        <form action="/demo/student/Uploadform/" method="post" enctype="multipart/form-data">
+            <div>
+                请选择文件:&nbsp;&nbsp;
+                <input type="file" id="fileImage" name="fileImage" />&nbsp;&nbsp;
+              
+                    <input type="submit" value="上传" />
+                &nbsp;&nbsp;
+                <label style="color:red;">@ViewBag.Result</label>
+                &nbsp;&nbsp;
+                <label style="color:red;">@ViewBag.filename</label>
+            </div>
+        </form> 
+    </div>
+</body>
+</html>

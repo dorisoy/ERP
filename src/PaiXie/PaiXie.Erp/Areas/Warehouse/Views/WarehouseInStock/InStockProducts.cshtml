@@ -1,0 +1,441 @@
+﻿@using PaiXie.Data
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    @section head{
+    }
+
+
+<div class="easyui-layout" data-options="fit:true">
+    <input type="hidden" value="@ViewBag.BillNo" name="BillNo" id="BillNo" />
+    <input type="hidden" value="@ViewBag.OutInStockID" name="OutInStockID" id="hdnOutInStockID" />
+    <div data-options="region:'north',height:148" id="topdiv">
+        <div class="toolbar" id="toolbar">
+            <a href="/Warehouse/WarehouseInStock/Index" class="back" id="back"><span></span>返回</a>
+            @{
+                if (ViewBag.del != "1") {
+                    @Html.Raw("<a href=\"javascript:void(0)\" id=\"add\" class=\"add\"><span></span>添加商品</a>")
+                    @Html.Raw("  <a href=\"javascript:void(0)\" id=\"import\">导入商品</a>")
+                    @Html.Raw("<a href=\"javascript:void(0)\" id=\"del\"  class=\"del unclick\"><span></span>删除</a>")
+                }
+            }
+          </div>
+        <input type="hidden" id="refreshPermit" value="0" onchange="mytextare();">
+        <div class="searchpro" id="searchpro">
+            <input type="hidden" value="0" id="ID" name="ID" />
+            <input type="hidden" value="0" id="status" name="status" />
+            <select id="keyWordType" name="keyWordType" class="easyui-combobox" data-options="height:30,width:100,editable:false">
+                <option value="">关键字类型</option>
+                <option value="商品名称">商品名称</option>
+                <option value="商品编码" selected>商品编码</option>
+                <option value="商品货号">商品货号</option>
+                <option value="商品SKU码">商品SKU码</option>
+                <option value="库位编码">库位编码</option>
+            </select>
+            <input type="text" id="txtKeyWord" value="" style="width:150px;">
+            <input type="submit" id="btnSearch" value="搜索" class="button">
+            <input type="reset" id="btnReset" value="清空条件" class="button-rest">
+        </div>
+        <div class="reservoirifo p0lr22">
+            <span>入库单号: @ViewBag.BillNo</span>
+            <span>采购单: @ViewBag.SourceNo </span>
+            <span id="rksl">入库数量: @(ViewBag.ProductsNum == null ? 0 : ViewBag.ProductsNum)</span>
+        </div>
+    </div>
+    <div data-options="region:'center',border:false" class="p0lr22">
+        <table id="grid" class="easyui-datagrid" title="" data-options="singleSelect:false,collapsible:true,method:'get'"></table>
+    </div>
+</div>  
+@section bottom{
+
+<script>
+    var oldvalue = 0;
+    function mytextare() {
+        var newValue = $('#refreshPermit').val();
+        if (newValue == oldvalue) {
+            return;
+        } else {
+            BindSerarchLickEvent(1);
+            oldvalue = newValue;
+        }
+    };
+    function updateActions(index) {
+        $('#grid').datagrid('updateRow', {
+            index: index,
+            row: {}
+        });
+    }
+    function editrow(index) {
+        $('#grid').datagrid('beginEdit', index);
+    }
+    function saverow(index, id) {
+        var edCostPrice = $('#grid').datagrid('getEditor', { index: index, field: 'CostPrice' });
+        var edProductionDate = $('#grid').datagrid('getEditor', { index: index, field: 'ProductionDate' });
+        var edLocationcode = $('#grid').datagrid('getEditor', { index: index, field: 'Locationcode' });
+        var edProductsNum = $('#grid').datagrid('getEditor', { index: index, field: 'ProductsNum' });
+        var costPrice = $(edCostPrice.target).numberbox('getValue');
+        var productionDate = $(edProductionDate.target).datebox('getValue');
+        var locationcode = $(edLocationcode.target).val();
+        var productsNum = $(edProductsNum.target).numberbox('getValue');
+        if (costPrice == '') {
+            $.MsgBox.Alert("提示", "采购价不能为空！", function () {
+                $(edCostPrice.target).next('span').find('input').focus();
+                $(edCostPrice.target).next('span').find('input').select();
+            });
+            return false;
+        }
+        if (costPrice <= 0) {
+            $.MsgBox.Alert("提示", "采购价必须大于0！", function () {
+                $(edCostPrice.target).next('span').find('input').focus();
+                $(edCostPrice.target).next('span').find('input').select();
+            });
+            return false;
+        }
+        if (productionDate == '') {
+            $.MsgBox.Alert("提示", "生产日期不能为空！", function () {
+                $(edLocationcode.target).next('span').find('input').focus();
+                $(edLocationcode.target).next('span').find('input').select();
+            });
+            return false;
+        }
+        if (locationcode == '') {
+            $.MsgBox.Alert("提示", "库位编码不能为空！", function () {
+                $(edLocationcode.target).next('span').find('input').focus();
+                $(edLocationcode.target).next('span').find('input').select();
+            });
+            return false;
+        }
+        if (productsNum == '') {
+            $.MsgBox.Alert("提示", "入库数量不能为空！", function () {
+                $(edProductsNum.target).next('span').find('input').focus();
+                $(edProductsNum.target).next('span').find('input').select();
+            });
+            return false;
+        }
+        if (productsNum <= 0) {
+            $.MsgBox.Alert("提示", "入库数量必须大于0", function () {
+                $(edProductsNum.target).next('span').find('input').focus();
+                $(edProductsNum.target).next('span').find('input').select();
+            });
+            return false;
+        }
+        $.ajax({
+            url: "/Warehouse/WarehouseInStock/rowsave?ram=" + Math.random(),
+            type: "POST",
+            data: { id: id, costPrice: costPrice, productionDate: productionDate, locationcode: locationcode, productsNum: productsNum },
+            async: false,
+            cache: false,
+            success: function (r) {
+                var map = $.parseJSON(r);
+                if (map.result == 1) {
+                    //  initTable();
+                    $('#grid').datagrid('endEdit', index);
+                }
+                else {
+                    $.MsgBox.Alert("提示", map.message);
+                }
+            },
+            error: function () {
+                $.MsgBox.Alert("提示", "操作失败！");
+            }
+        });
+    }
+        //搜索
+        $('#btnSearch').click(function () {
+            BindSerarchLickEvent(1);
+        });
+        //初始化
+        $(function () {
+            initTable('', 1);
+            $('.datagrid-header-inner .datagrid-header-check input[type="checkbox"]').click(function () {
+                if ($(this).attr('checked') == 'checked' || $(this).attr('checked') == true) {
+                    $('#del').removeClass('unclick');
+                } else {
+                    $('#del').addClass('unclick');
+                }
+            });
+
+            $('#btnReset').click(function () {
+                window.location.reload(true);
+            });
+            //添加
+            $('#add').click(function () {
+                showLocalWindow("添加入库商品", "/Warehouse/WarehouseInStock/AddPro?BillNo=" + $('#BillNo').val(), 700, 500, true, false, false);
+            });
+            //导入
+            $('#import').click(function () {
+                showLocalWindow("导入商品", "/Warehouse/WarehouseInStock/Import?outInStockID=" + $('#hdnOutInStockID').val(), 400, 180, true, false, false);
+            });
+            //删除
+            $("#del").click(function () {
+                if ($(this).hasClass('unclick')) return false;
+                var rows = $('#grid').datagrid("getSelections");
+                if (rows.length > 0) {
+                    var ids = [];
+                    for (var i = 0; i < rows.length; i++) {
+                        ids.push(rows[i].ID);
+                    }
+                    parent.$.messager.confirm('提示', "确认删除这 " + ids.length + " 件商品吗？", function (r) {
+                        if (r) {
+                            $.ajax({
+                                url: "/Warehouse/WarehouseInStock/DelwarehouseOutInStockItem?outInStockID=" + $("#hdnOutInStockID").val() + "&ids=" + ids.join(','),
+                                type: "GET",
+                                cache: false,
+                                success: function (r) {
+                                    var map = $.parseJSON(r);
+                                    if (map.result == 1) {
+                                        parent.$.messager.alert("提示", "操作成功！", "");
+                                        $('#del').addClass('unclick');
+
+                                        var grid = $('#grid');
+                                        var options = grid.datagrid("getPager").data("pagination").options;
+                                        var currPageNumber = options.pageNumber;
+                                        BindSerarchLickEvent(currPageNumber);
+
+                                    } else {
+                                        parent.$.messager.alert("提示", map.message, "error");
+                                    }
+                                },
+                                error: function () {
+                                    parent.$.messager.alert("提示", "删除失败！", "error");
+                                }
+                            });
+                        }
+                    });
+                }
+                else {
+                    parent.$.messager.alert("提示", "请选择商品！", "error");
+                }
+            });
+            //相同生产日期
+            $('#jsProductionDate').live('click', function () {
+                parent.$.messager.confirm('提示', "操作后当前列表所显示SKU的生产日期将修改为与第一行一致？", function (r) {
+                    if (r) {
+                        var rows = $('#grid').datagrid("getRows");
+                        var ids = [];
+                        for (var i = 0; i < rows.length; i++) {
+                            ids.push(rows[i].ID);
+                        }
+                        $('.datagrid-btable [field="ProductionDate"]').each(function (index, element) {
+                            $(element).find('div').text(rows[0].ProductionDate);
+                        });
+
+
+                        $.ajax({
+                            url: "/Warehouse/WarehouseInStock/Updatescdate?ids=" + ids.join(',') + '&scdate=' + rows[0].ProductionDate,
+                            type: "GET",
+
+                            cache: false,
+                            success: function (r) {
+                                var map = $.parseJSON(r);
+                                if (map.result == 1) {
+                                    var grid = $('#grid');
+                                    var options = grid.datagrid("getPager").data("pagination").options;
+                                    var currPageNumber = options.pageNumber;
+                                    BindSerarchLickEvent(currPageNumber);
+
+                                }
+                                else
+                                    $.MsgBox.Alert("提示", map.message);
+                            },
+                            error: function () {
+
+                                $.MsgBox.Alert("提示", "删除失败！");
+                            }
+                        });
+
+
+
+                    }
+                });
+            });
+            //相同库位编码
+            $('#jsLibrary').live('click', function () {
+                parent.$.messager.confirm('提示', "操作后当前列表所显示SKU的库位编码将修改为与第一行一致？", function (r) {
+                    if (r) {
+                        var rows = $('#grid').datagrid("getRows");
+                        var ids = [];
+                        for (var i = 0; i < rows.length; i++) {
+                            ids.push(rows[i].ID);
+                        }
+                        $('.datagrid-btable [field="Library"]').each(function (index, element) {
+                            $(element).find('div').text(rows[0].Library);
+                        });
+
+                        if (rows[0].Locationcode == "") {
+                            $.MsgBox.Alert("提示", "第一行的库位编码不能为空！");
+                            return;
+                        }
+                        $.ajax({
+                            url: "/Warehouse/WarehouseInStock/UpdateLocation?ids=" + ids.join(',') + '&Library=' + rows[0].Locationcode,
+                            type: "GET",
+
+                            cache: false,
+                            success: function (r) {
+                                var map = $.parseJSON(r);
+                                if (map.result == 1) {
+
+                                    var grid = $('#grid');
+                                    var options = grid.datagrid("getPager").data("pagination").options;
+                                    var currPageNumber = options.pageNumber;
+                                    BindSerarchLickEvent(currPageNumber);
+
+                                }
+                                else
+                                    $.MsgBox.Alert("提示", map.message);
+                            },
+                            error: function () {
+
+                                $.MsgBox.Alert("提示", "删除失败！");
+                            }
+                        });
+
+                    }
+                });
+            });
+        });
+        //加载列表
+        function initTable(queryData, pageNumber) {
+            $('#grid').datagrid({
+                url: '/Warehouse/WarehouseInStock/InStockProsearch?BillNo=' + $('#BillNo').val() + '&ram=' + Math.random(),
+                height: '100%',
+                width: '100%',
+                nowrap: false,
+                autoRowHeight: false,
+                queryParams: queryData,  //异步查询的参数
+                pageNumber: pageNumber,
+                striped: true,
+                collapsible: true,
+                pagination: true,
+                fitColumns: true,
+                fit: true, //datagrid自适应宽度
+                fitColumn: false, //列自适应宽度
+                border: false,
+                pageSize: 15,
+                pageList: [15, 20, 30],
+                rownumbers: false,
+                remoteSort: false,
+                onSelect: function (rowIndex, rowData) {
+                    $('#del').removeClass('unclick');
+                },
+                onUnselect: function (rowIndex, rowData) {
+                    var rows = $('#grid').datagrid("getSelections");
+                    if (rows.length <= 0) {
+                        $('#del').addClass('unclick');
+                    }
+                },
+                columns: [[
+                    { field: 'ck', width: 52, checkbox: true },   //选择
+                    { title: '', field: 'ID', hidden: true },
+                    { title: '商品编码', field: 'ProductsCode', width: 150, align: 'center', sortable: true },
+                    { title: '商品名称', field: 'ProductsName', width: 350, align: 'center', sortable: true },
+                    { title: '属性', field: 'ProductsSkuSaleprop', width: 150, align: 'center', sortable: true },
+                    { title: 'SKU码', field: 'ProductsSkuCode', width: 150, align: 'center', sortable: true },
+                    { title: '采购数量', field: 'PurchaseNum', width: 150, align: 'center', sortable: true },
+                    { title: '已入数量', field: 'AlreadyNum', width: 150, align: 'center', sortable: true },
+                    {
+                        title: '采购价', field: 'CostPrice', width: 150, align: 'center',
+                        formatter: function (value, row) {
+                            return value.toFixed(3);
+                        },
+                        editor: {
+                            type: 'numberbox',
+                            options: {
+                                height: 30,
+                                precision: 3 //小数点位数
+                            }
+                        },
+                        sortable: true
+                    },
+                   {
+                       title: '生产日期  @{ if (ViewBag.del != "1") {  @Html.Raw("<br><span style=\"color:#ffff00; cursor:pointer\" id=\"jsProductionDate\">[相同]</span> ")      } }       ', field: 'ProductionDate',
+                       formatter: function (value, row) {
+                           return /\d{4}-\d{1,2}-\d{1,2}/g.exec(value);
+                       }, width: 150, align: 'center',
+                       editor: {
+                           type: 'datebox',
+                           options: {
+                               height: 30
+                           }
+                       },
+                       sortable: false
+                   },
+                    {
+                        title: ' 库位编码 @{ if (ViewBag.del != "1") {  @Html.Raw("   <br><span style=\"color:#ffff00; cursor:pointer\" id=\"jsLibrary\">[相同]</span>")      } }   ', field: 'Locationcode', width: 150, align: 'center',
+                        editor: {
+                            type: 'textbox',
+                            options: {
+                                height: 30
+                            }
+                        },
+                        sortable: false
+                    },
+                   {
+                       title: '入库数量', field: 'ProductsNum', width: 150, align: 'center',
+                       editor: {
+                           type: 'numberbox',
+                           options: {
+                               height: 30
+                           }
+                       },
+                       sortable: true
+                   },
+
+                    {
+                        title: '操作', field: 'action', width: 150, align: 'center',
+                        formatter: function (value, row, index) {
+                            if (row.editing) {
+                                var s = '<a href="javascript:void(0);" onclick="saverow(' + index + ',' + row.ID + ')">保存</a> ';
+                                return s;
+                            } else {
+                                var e = '<a href="javascript:void(0);" onclick="editrow(' + index + ')">编辑</a> ';
+                                return e;
+                            }
+                        },
+                        sortable: true
+                    }
+                ]],
+                onBeforeEdit: function (index, row) {
+                    row.editing = true;
+                    updateActions(index);
+                },
+                onAfterEdit: function (index, row) {
+                    row.editing = false;
+                    updateActions(index);
+                },
+                onCancelEdit: function (index, row) {
+                    row.editing = false;
+                    updateActions(index);
+                },
+                onLoadSuccess: function (data) {
+                    @{
+                    if (string.IsNullOrEmpty(ViewBag.SourceNo)) {
+                      @Html.Raw("$(\"#grid\").datagrid('hideColumn', 'PurchaseNum');") 
+                      @Html.Raw("$(\"#grid\").datagrid('hideColumn', 'AlreadyNum');")
+                    }
+                }
+
+
+                    @{
+                    if (ViewBag.del == "1") {
+                    @Html.Raw("$(\"#grid\").datagrid('hideColumn', 'action');")           
+            
+                    }
+                }
+                }
+            });
+        }
+
+        //绑定搜索按钮的的点击事件
+        function BindSerarchLickEvent(pageNumber) {
+            //得到用户输入的参数
+            var queryData = {
+                keyWordType: $("#keyWordType").combobox('getValue'),
+                keyWord: $("#txtKeyWord").val()
+            }
+            //将值传递给
+            initTable(queryData, pageNumber);
+        }
+</script>
+
+}

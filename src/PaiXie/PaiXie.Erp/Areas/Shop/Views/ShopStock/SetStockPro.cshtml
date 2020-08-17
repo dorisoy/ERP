@@ -1,0 +1,147 @@
+﻿@using PaiXie.Data
+@{
+    var list = ViewBag.list as shopComancationList;
+    var Remark = list.Remark;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var Products = ViewBag.objProducts as Products;
+}
+@section head{
+}
+<style>
+    .prompt {
+        cursor: pointer;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .list th {
+        border-bottom: 1px solid #dddddd;
+        height: 40px;
+        background-color: #436fac;
+        color: #fff;
+        text-align: center;
+        font-weight: normal;
+    }
+
+    .list td {
+        border-bottom: 1px dotted #cccccc;
+        height: 50px;
+        padding: 0 5px;
+        text-align: center;
+    }
+</style>
+<div class="toolbar" id="toolbar">
+    <a href="javascript:history.go(-1)" class="back" id="back"><span></span>返回</a>
+</div>
+<div class="p0lr22">
+    <div style="padding:20px;padding-top:5px;">
+        <input type="hidden" name="refresh" id="refresh" />
+        <div class="proinfo">
+            <div class="img70"><dfn></dfn><img src="@Products.SmallPic" width="100" height="100"></div>
+            <p><b>商品名称:</b> @Products.Name</p>
+            <p><b>商品货号:</b> @Products.No</p>
+            <p> <b>商品编码:</b> @Products.Code </p>
+        </div>
+        <br />
+        <span>
+        </span>
+        <form id="ff" method="post" novalidate="novalidate">
+            <input type="hidden" value="@Products.ID" name="ProductsID" id="ProductsID" />
+            <input type="checkbox" name="IsSetKc" id="IsSetKc" />设置店铺库存比例：<s id="prompt1" class="prompt"></s>(<span style="color:#F00">
+                更新到店铺的库存＝可用库存*分配比例
+            </span>)<br />
+            <table class="tableinfo" id="tbinfo">
+                <tr>
+                    @{
+                        for (int i = 0; i < list.ShopName.Length; i++) {
+                            <input type="hidden" name="ShopName" id="ShopName@(i)" value="@list.ShopName[i]" />
+                            <input type="hidden" name="ShopID" id="ShopID@(i)" value="@list.ShopID[i]" />
+                            <th style="width:120px"><label>@list.ShopName[i]</label>：</th>
+                            <td>
+                                <input class="easyui-textbox" data-options="height:30,width:100" name="Ranges" type="text" id="Ranges@(i)" value="@list.Ranges[i]" />
+                                @("%")
+                            </td>
+                        }
+                    }
+                </tr>
+                <tr>
+                    <td colspan="6" style="padding-left:2em">
+                        当可用库存*分配比例大于0且小于1时，更新库存为
+                        <select name="Remark" id="Remark" class="easyui-combobox" data-options="height:30,width:50">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>
+                        <div class="textcenter">
+                            <a href="javascript:void(0)" class="button-oky" id="btnSave" iconcls="icon-ok">保存</a>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            @*<br />*@
+            @*设置独享库存：*@
+            @*<s id="prompt2" class="prompt" style="display:none;"></s>
+            <a href="javascript:void(0);" id="adddx" style="display:none;">  [+添加独享]</a>*@
+            @*<br />*@
+            @*<table id="grid" class="easyui-datagrid" style="display:none;"
+                   data-options="singleSelect:true,collapsible:true,method:'get'"></table>
+            <br />*@
+        </form>
+    </div>
+</div>
+@section bottom{
+    <script src="~/Areas/Shop/ViewJs/EditShopStockPro.js"></script>
+    <script>
+        $(document).ready(function () {
+            @{
+                if (ViewBag.IsSz == 0) {
+                    
+                    
+                    @Html.Raw( "$(\"#IsSetKc\").attr(\"checked\",'true');  $(\"#tbinfo\").show();  ")
+                }
+                else {
+                       @Html.Raw("  $(\"[name='checkbox']\").removeAttr(\"checked\");   $(\"#tbinfo\").hide();  ")
+            
+                }
+            }
+            
+            
+           
+
+        
+
+
+
+            $("#Remark").combobox('setValue', @Remark);
+            $('#prompt1').click(function(){
+                showMyWindow("说明", "/Shop/ShopStock/prompt1", 400, 210, true, false, false);
+                return false;
+            });
+            $('#prompt2').click(function(){
+                showMyWindow("说明", "/Shop/ShopStock/prompt2", 400, 290, true, false, false);
+                return false;
+            });
+        });
+
+
+       
+
+        $(function(){
+            $('#IsSetKc').click(function(){
+                if($('input[name="IsSetKc"]').prop("checked"))
+                {
+                    $("#tbinfo").show();
+                }
+                else
+                    $("#tbinfo").hide();
+            });
+        })
+
+    </script>
+}

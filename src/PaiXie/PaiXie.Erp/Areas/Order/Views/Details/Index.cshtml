@@ -1,0 +1,245 @@
+﻿@using PaiXie.Data
+@using PaiXie.Core
+@using PaiXie.Service
+@{
+    var ordbase = ViewBag.Ordbase as Ordbase;
+    var ordremarkList = ViewBag.OrdremarkList as List<Ordremark>;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+    <style>
+        a {
+            text-decoration: none;
+        }
+
+        .tagcont {
+            color: #666666;
+        }
+
+        .tableinfoa {
+            margin-top: 0px;
+        }
+
+            .tableinfoa th.title {
+                background: #436fac;
+                color: #fff;
+                text-align: left;
+                padding-left: 15px;
+                height: 30px;
+            }
+
+            .tableinfoa .red, .red {
+                color: #F00;
+            }
+
+            .tableinfoa .blue {
+                color: #00F;
+            }
+
+        .list td {
+            height: 50px;
+            text-align: center;
+        }
+
+        .list th {
+            text-align: center;
+        }
+
+        .totalnum {
+            text-align: center;
+        }
+
+        .money {
+            float: right;
+            width: 300px;
+            padding-right: 5px;
+        }
+
+            .money li {
+                float: left;
+                width: 150px;
+                text-align: right;
+                line-height: 24px;
+                height: 24px;
+            }
+
+            .money b {
+                float: left;
+                width: 85px;
+                text-align: right;
+                font-weight: normal;
+            }
+    </style>
+}
+<div class="easyui-layout" data-options="fit:true" style="overflow-y:auto;">
+    <div data-options=" region:'north',height:120" id="topdiv">
+        <ul class="tag" style="padding-top:20px">
+            <li class="current">基本信息</li>
+            <li>商品列表</li>
+            <li>收退款记录</li>
+            <li>发货记录</li>
+            <li>售后记录</li>
+            <li>订单日志</li>
+        </ul>
+        <div class="toolbar" id="toolbar" style="margin-top:-30px; padding-left:15px">
+            <a id="addCollection" class="add" href="javascript:void(0)"><span></span>添加收款</a>
+            <a id="addRefund" class="add" href="javascript:void(0)"><span></span>添加退款</a>
+            <a id="addoffer" class="add" href="javascript:void(0)"><span></span>添加优惠</a>
+            <a id="" class="add unclick" href="javascript:void(0)"><span></span>添加售后</a>
+            <a id="pendingOrder" class="" href="javascript:void(0)">挂起订单</a>
+            <a id="cancelOrder" class="" href="javascript:void(0)">取消订单</a>
+            <a id="addRemarks" class="add" href="javascript:void(0)"><span></span>添加备注</a>
+            <a id="distributionWarehouse" class="" href="javascript:void(0)">分配仓库</a>
+        </div>
+    </div>
+    <div data-options="region:'center',border:false">
+        <div class="tagcont p0lr22">
+            <input type="hidden" id="hdnIsOrderDetails" value="1" />
+            <input type="hidden" id="hdnIsHand" value="@(ordbase.IsHang)" />
+            <input type="hidden" id="hdnAbnormalAmount" value="@(ordbase.ReceivableAmount - ordbase.UncollectedeAmount - ordbase.RealAmount + ordbase.RefundAmount)" />
+            <input type="hidden" id="hdnOrderStatus" value="@(ordbase.OrderStatus)" />
+            <input type="hidden" id="hdnErpOrderCode" value="@ordbase.ErpOrderCode" />
+            <table border="0" cellpadding="0" cellspacing="0" class="tableinfoa" style="margin-top:0px">
+                <tr>
+                    <th colspan="6" class="title">订单信息</th>
+                </tr>
+                <tr>
+                    <th>订单编号</th>
+                    <td>@(ordbase.ErpOrderCode)</td>
+                    <th>外部订单号</th>
+                    <td>@(string.IsNullOrEmpty(ordbase.ErpOrderCode) ? "" : ordbase.ErpOrderCode)</td>
+                    <th>订单状态</th>
+                    <td>@(Enum.Parse(typeof(OrdBaseStatus), ordbase.OrderStatus.ToString())) <span class="blue" id="rejected">@(ordbase.IsReject == 0 ? "" : "[驳回]")</span> <span class="red" id="pending">@(ordbase.IsHang == 0 ? "" : "[挂起]")</span></td>
+                </tr>
+                <tr>
+                    <th>订单类型</th>
+                    <td>@(ordbase.OrderType == 0 ? "自发订单" : "代发订单")</td>
+                    <th>店铺名称</th>
+                    <td>@(ShopService.GetSingleShop(ordbase.ShopID).Name)</td>
+                    <th>付款状态</th>
+                    <td>
+                        @(ordbase.IsCod == 1 ? "未付款" : "已付款")
+                        @*<a href="#" class="red">[申请退款]</a>
+                        <a href="#" class="blue">[关闭申请]</a>*@
+                    </td>
+                </tr>
+                <tr>
+                    <th>创建类型</th>
+                    <td>@(Enum.Parse(typeof(OrdCreateType), ordbase.CreateType.ToString())) </td>
+                    <th>创建时间</th>
+                    <td>@(ordbase.CreateType == 1 ? ordbase.CreateDate : ordbase.Created)</td>
+                    <th>付款时间</th>
+                    <td>@(ordbase.IsCod == 1 ? "" : ordbase.CreateType == 1 ? ordbase.CreateDate.ToString() : ordbase.PayDate.ToString())</td>
+                </tr>
+                <tr>
+                    <th colspan="6" class="title">订单金额</th>
+                </tr>
+                <tr>
+                    <th>商品金额</th>
+                    <td>￥@(ordbase.ProductsAmount)</td>
+                    <th>运费</th>
+                    <td>￥@(ordbase.Freight)</td>
+                    <th>优惠金额</th>
+                    <td>￥@(ordbase.OrderDiscount)</td>
+                </tr>
+                <tr>
+                    <th>税金</th>
+                    <td>￥@(ordbase.TaxRevenue)</td>
+                    <th>订单总额</th>
+                    <td class="red">￥@(ordbase.ReceivableAmount)</td>
+                    <th>已收金额</th>
+                    <td>￥@(ordbase.RealAmount)</td>
+                </tr>
+                <tr>
+                    <th>未收金额</th>
+                    <td>￥@(ordbase.UncollectedeAmount)</td>
+                    <th>应退金额</th>
+                    <td>￥@(ordbase.RefundAmount)</td>
+                    <th>异常金额</th>
+                    <td>￥@(ordbase.ReceivableAmount - ordbase.UncollectedeAmount - ordbase.RealAmount + ordbase.RefundAmount)</td>
+                </tr>
+                <tr>
+                    <th colspan="6" class="title">买家/收货信息</th>
+                </tr>
+                <tr>
+                    <th>收货人姓名</th>
+                    <td>@(ordbase.BuyName)</td>
+                    <th>收货人电话</th>
+                    <td>@(ordbase.BuyMtel + (string.IsNullOrEmpty(ordbase.BuyTel) ? "" : "/" + ordbase.BuyTel))</td>
+                    <th>收货人地址</th>
+                    <td>@(ordbase.BuyAddr)</td>
+                </tr>
+                <tr>
+                    <th>昵称</th>
+                    <td>@(ordbase.BuyNickName)</td>
+                    <th>要求到货时间</th>
+                    <td>@(ordbase.ExpectedDeliDate.ToString("yyyy-MM-dd HH:mm:ss") == "0001-01-01 00:00:00" ? "" : ordbase.ExpectedDeliDate.ToString())</td>
+                    <th>物流公司</th>
+                    <td>@(ordbase.LogisticsID > 0 ? LogisticsService.GetLogistics(ordbase.LogisticsID).Name : "")</td>
+                </tr>
+                <tr>
+                    <th colspan="6" class="title">发票信息</th>
+                </tr>
+                <tr>
+                    <th>是否开发票</th>
+                    <td>@(ordbase.IsNeedInvoice == 1 ? "是" : "否")</td>
+                    <th>发票抬头</th>
+                    <td colspan="3">@(ordbase.InvoiceName)</td>
+                </tr>
+                <tr>
+                    <th colspan="6" class="title">买家/收货信息</th>
+                </tr>
+                <tr>
+                    <th>买家留言</th>
+                    <td colspan="2">@(ordbase.BuyMessage)</td>
+                    <th>卖家备注</th>
+                    <td>@(ordbase.SellerRemark)</td>
+                </tr>
+                <tr>
+                    <th>系统备注</th>
+                    <td colspan="5" style="padding-top:10px; padding-bottom:10px">
+                        @foreach (var ordremar in ordremarkList) {
+                            @ordremar.CreateDate<span class="red">[@ordremar.UserName]</span>@("：" + ordremar.Content)<br>;
+                        }
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+@section bottom{
+    <script src="~/Areas/Order/ViewJs/Details.js"></script>
+    <script>
+        $(document).ready(function () {
+            //提示说明 [Rejected] [pending]
+            $('#rejected').tooltip({
+                position: 'top',
+                content: '@(ordbase.RejectRemark)',
+                onShow: function () {
+                    $(this).tooltip('tip').css({
+                        width: "150px",
+                        backgroundColor: '#ffffea',
+                        borderColor: '#fdcb99',
+                        color: '#666666',
+                        padding: '10px',
+                        borderRadius: '0px'
+                    });
+                }
+            });
+            $('#pending').tooltip({
+                position: 'top',
+                content: '@(ordbase.HangRemark)',
+                onShow: function () {
+                    $(this).tooltip('tip').css({
+                        width: "150px",
+                        backgroundColor: '#ffffea',
+                        borderColor: '#fdcb99',
+                        color: '#666666',
+                        padding: '10px',
+                        borderRadius: '0px'
+                    });
+                }
+            });
+        });
+    </script>
+}

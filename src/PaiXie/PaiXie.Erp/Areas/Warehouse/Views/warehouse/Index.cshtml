@@ -1,0 +1,37 @@
+﻿@{
+    ViewBag.Title = "title";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+    
+
+}
+<div data-options="region:'north'" style="height:55px">
+    <div class="z-toolbar">
+        <a href="#" plain="true" class="easyui-linkbutton" icon="icon-reload" title="刷新" id="refresh">刷新</a>
+        <a href="#" plain="true" class="easyui-linkbutton" icon="icon-add" title="新增" id="add">新增</a>
+        @*<a href="#" plain="true" class="easyui-linkbutton" icon="icon-remove" title="删除" id="delete">删除</a>*@
+    </div>
+    @*<div class="searchx" style="display:none;" >
+        <fieldset style="border:0px;">
+            <legend>详细信息模糊搜索</legend>
+            <div id="toolbar">
+                <label for="txtName">仓库代码：</label>
+                <input type="text" id="Code" name="Code" />
+				<input type="button" class="button" id="btnSerach" value="模糊搜索">
+				<input type="button" class="button-rest" id="btnRest" value="重置" onclick="javascript:location.reload();">
+            </div>
+        </fieldset>
+    </div>*@
+</div>
+<div data-options="region:'center'" class="p0lr22">
+    <input id="hid" type="hidden" value="0" />
+    <table id="grid" class="easyui-datagrid"
+           data-options="singleSelect:true,collapsible:true,method:'get'"></table>
+
+
+    <a target="_blank"></a>
+</div>
+@section bottom{
+<script src="~/Areas/Warehouse/ViewJs/WarehouseInfoList.js"></script>
+}

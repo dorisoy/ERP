@@ -1,0 +1,54 @@
+﻿@{
+    var sourceProductsSkuID = ViewBag.SourceProductsSkuID;
+    ViewBag.Title = "设置关联物料";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+<style>
+    .setlist {
+        width: 650px;
+        height: 235px;
+        margin: 20px auto 0 auto;
+    }
+
+        .setlist table table td {
+            height: auto;
+            border: 0px;
+            white-space: normal;
+            text-align: left;
+        }
+</style>
+}
+
+<form id="ff" method="post" novalidate>
+    <table class="tableinfo" style="margin-top:25px">
+        <tr>
+            <th style="width:150px">请输入物料的商品SKU码：</th>
+            <td>
+                <input style="width:200px" value="" class="easyui-validatebox" type="text" id="txtProductsSkuCode" name="ProductsSkuCode" data-options="height:30,required:true" />
+                &nbsp;<span id="errorMessage" style="color:red;"></span>
+            </td>
+        </tr>
+        <tr>
+            <th>请输入商品与物料的比例：</th>
+            <td>
+                <input style="width:65px" value="1" class="easyui-numberbox" type="text" id="proportion1" name="proportion1" disabled data-options="height:30" />
+                :
+                <input style="width:65px" value="" class="easyui-numberbox" type="text" id="txtFromNum" name="FromNum" data-options="height:30,required:true,min:1" />
+            </td>
+        </tr>
+        <tr>
+            <th></th>
+            <td><a href="javascript:void(0)" class="button-oky" id="btnSave" iconcls="icon-ok">添加</a></td>
+        </tr>
+    </table>
+    <input type="hidden" id="hdnFromProductsSkuID" name="FromProductsSkuID" value="0" />
+    <input type="hidden" id="hdnSourceProductsSkuID" name="SourceProductsSkuID" value="@sourceProductsSkuID" />
+</form>
+<div class="setlist" id="setlist">
+    <table id="grid" class="easyui-datagrid" title="" data-options="singleSelect:false,collapsible:true,method:'get'"></table>
+</div>
+       @section bottom{
+           <script src="~/Areas/Products/ViewJs/SetProductsMaterialMap.js"></script>
+}
+

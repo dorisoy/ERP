@@ -1,0 +1,113 @@
+﻿@{
+    ViewBag.Title = "待打印出库单";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section head{
+    <style>
+        .searchpro .no {
+            width: auto;
+            height: auto;
+            margin: 10px 3px 0 0;
+        }
+        .searchpro .pr10 {
+            padding-right: 10px;
+        }
+        .printMenu {
+            width: 150px;
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+        }
+        .printMenu li {
+            float: left;
+            padding: 0px 5px;
+        }
+        .printMenu li a {
+            display: block;
+            text-align: center;
+            width: 30px;
+            height: 30px;
+            color: #000;
+            line-height: 30px;
+            background-color: #ccc;
+        }
+        .printMenu li a.hasPrint {
+            display: block;
+            text-align: center;
+            width: 30px;
+            height: 30px;
+            color: #fff;
+            line-height: 30px;
+            background-color: #008000;
+        }
+    </style>
+}
+<div class="easyui-layout" data-options="fit:true">
+    <div data-options="region:'north',height:152" id="topdiv">
+        <div class="toolbar" id="toolbar">
+            <a href="javascript:void(0);" class="refresh" id="refresh"><span></span>刷新</a>
+            <a href="javascript:void(0);" class="unclick" id="getWaybillNo"><span></span>获取运单号</a>
+            <a href="javascript:void(0);" id="printPickOrder"><span></span>打印拣货单</a>
+            <a href="javascript:void(0);" id="printDeliveryOrder"><span></span>打印发货单</a>
+            <a href="javascript:void(0);" id="printExpressOrder"><span></span>打印快递单</a>
+            <a href="javascript:void(0);" class="unclick" id="setWaybillNo"><span></span>保存运单号</a>
+            <a href="javascript:void(0);" id="printFinish"><span></span>打印完毕</a>
+            <a href="javascript:void(0);" id="refreshCurrentPage" style="display:none;"><span></span>刷新当前页</a>
+        </div>
+        <div class="searchpro" id="searchpro">
+            <select id="keyWordType" name="keyWordType" class="easyui-combobox" data-options="height:30,width:100,editable:false">
+                <option value="">关键字类型</option>
+                <option value="订单编号" selected>订单编号</option>
+                <option value="外部订单号">外部订单号</option>
+                <option value="出库单号">出库单号</option>
+                <option value="商品编码">商品编码</option>
+                <option value="商品货号">商品货号</option>
+                <option value="商品SKU码">商品SKU码</option>
+                <option value="收件人姓名">收件人姓名</option>
+                <option value="收件人手机">收件人手机</option>
+            </select>
+            <input type="text" id="txtKeyWord" value="" style="width:150px;">
+            <label>发货快递：</label><select id="express" class="easyui-combobox" name="express" data-options="height:30,width:152,editable:false"></select>
+            <label>需要发票：</label>
+            <select id="isNeedInvoice" class="easyui-combobox" name="isNeedInvoice" data-options="height:30,width:82,editable:false">
+                <option value="-1">请选择</option>
+                <option value="1">是</option>
+                <option value="0">否</option>
+            </select>
+            <label>留言备注：</label>
+            <select id="messageRemark" class="easyui-combobox" name="messageRemark" data-options="height:30,width:82,editable:false">
+                <option value="-1">请选择</option>
+                <option value="1">有</option>
+                <option value="0">无</option>
+            </select>
+            <label>货到付款：</label>
+            <select id="isCod" class="easyui-combobox" name="isCod" data-options="height:30,width:82,editable:false">
+                <option value="-1">请选择</option>
+                <option value="1">是</option>
+                <option value="0">否</option>
+            </select>
+        </div>
+        <div class="searchpro">
+            <label>店铺名称：</label><select id="shop" name="shop" class="easyui-combobox" style="width:150px;" data-options="height:30"></select>
+            <input type="submit" id="btnSearch" value="搜索" class="button">
+            <input type="reset" id="btnReset" value="清空条件" class="button-rest">
+            <label>打印批次：</label><select id="printBatch" name="printBatch" class="easyui-combobox" style="width:150px;" data-options="height:30,editable:false"></select>
+            <label>更换发货快递：</label><select id="changeDeliveryExpress" class="easyui-combobox" name="changeDeliveryExpress" data-options="height:30,width:152,editable:false"></select>
+        </div>
+    </div>
+    <div data-options="region:'center',border:false" class="p0lr22" style="overflow-y:hidden;">
+        <div style="height: 36px; line-height: 36px; " id="applyRefundDiv">
+            <span style="color:red;">提示：</span><a href="javascript:void(0);" style="text-decoration:none;" onclick="searchRefund();">有 <label id="lblApplyRefundCount" style="color:red;">0</label> 单申请退款</a>
+        </div>
+        <div id="datagrid0" data-options="closable:true" style="position: relative; height: 93%; ">
+            <table id="grid" class="easyui-datagrid" title="" data-options="singleSelect:false,collapsible:true,method:'get'"></table>
+        </div>
+    </div>
+</div>
+
+@section bottom{
+    <script src="~/Areas/Warehouse/ViewJs/WaybillNoInfo.js"></script>
+    <script src="~/Areas/Warehouse/ViewJs/OutboundCommon.js"></script>
+    <script src="~/Areas/Warehouse/ViewJs/WaitPrintOutboundInfoList.js"></script>
+}

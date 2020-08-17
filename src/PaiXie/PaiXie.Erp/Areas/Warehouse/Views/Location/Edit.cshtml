@@ -1,0 +1,88 @@
+﻿@using PaiXie.Data
+@using PaiXie.Core
+@{
+    var WarehouseLocation = ViewBag.WarehouseLocation as WarehouseLocation;
+    var isFh = WarehouseLocation.TypeID == (int)LocationType.发货区 ? "checked" : "";
+    var isBy = WarehouseLocation.TypeID == (int)LocationType.备用区 ? "checked" : "";
+    //添加默认选中发货区
+    if (WarehouseLocation.ID == 0){ 
+        isFh = "checked";
+        isBy = "";
+    }
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+
+}
+<div data-options="region:'north',height:62" id="topdiv">
+    <div class="toolbar" id="toolbar">
+        <a href="javascript:void(0);" class="back" id="back"><span></span>返回</a>
+    </div>
+</div>
+<form id="ff" method="post" novalidate="novalidate">
+    <input type="hidden" value="@WarehouseLocation.ID" id="hdnID" name="ID" />
+    <div class="tagcont">
+        <table border="0" cellpadding="0" cellspacing="0" class="tableinfo" style="margin-left:0px">
+            <tr>
+                <th style="width:150px">请输入库区名称：</th>
+                <td>
+                    <input type="text" name="Name" id="txtName" value="@WarehouseLocation.Name" class="easyui-validatebox" data-options="validType:'length[0,15]'">
+                </td>
+                <th>库区代码：</th>
+                <td>
+                    <input type="text" name="Code" id="txtCode" value="@WarehouseLocation.Code" class="easyui-validatebox" data-options="required:true,validType:['code','length[1,4]']">
+                    <span class="f12c">(用于自动生成库位编码)</span>
+                    &nbsp;<span id="errorMessage" style="color:red;"></span>
+                </td>
+            </tr>
+            <tr>
+                <th>库区类型：</th>
+                <td colspan="3">
+                    <input type="radio" name="TypeID" id="TypeID1" value="@((int)LocationType.发货区)" @Html.Raw(isFh)><label for="TypeID1">发货</label>
+                    <input type="radio" name="TypeID" id="TypeID2" value="@((int)LocationType.备用区)" @Html.Raw(isBy)><label for="TypeID2">备用</label>
+                    <span class="f12c">发货类型库区内的商品库存为可销售库存；备用类型库区的库存不计入可销售库存</span>
+                </td>
+            </tr>
+            <tr>
+                @if (WarehouseLocation.ID>0)
+                {
+                <th><span class="red">提示：</span>库区代码修</th>
+                <td colspan="3">改后，库区中原有库位的库位代码不会变动</td>
+                }else{
+                <th><span class="red">提示：</span>您可以直</th>
+                <td colspan="3">接点击保存，然后再进入管理页面手动添加库位，也可以使用下面的库位结构快速创建库位。</td>
+                }
+            </tr>
+            @if (WarehouseLocation.ID == 0) { 
+            <tr>
+                <th>选择库区结构：</th>
+                <td colspan="3">
+                    <select id="WarehouseAreaStruct" class="easyui-combobox" name="WarehouseAreaStruct" style=" width:143px; height:30px"></select>
+                </td>
+            </tr>
+            <tr class="ndis">
+                <th></th>
+                <td colspan="3">
+                    <b>位：</b>
+                    每排 <input type="text" id="txtCode" value="" style="width:100px" class="easyui-numberbox" data-options="height:30"> 位
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    代码：<input type="text" name="code" id="txtCode" value="" style="width:100px" class="easyui-validatebox" data-options="height:30">
+                    <span class="f12c">(用于自动生成库位编码)</span>
+                </td>
+            </tr>
+            }
+            <tr id="lastTr">
+                <th></th>
+                <td colspan="3">
+                    <a href="javascript:void(0)" class="button-oky" id="btnSave" iconcls="icon-ok">保存</a>&nbsp;&nbsp;
+                    <a href="javascript:void(0)" class="button-cancel" iconcls="icon-cancel" id="btnClose">取消</a>
+                    <span id="loading" class="ndis"></span>
+                </td>
+            </tr>
+        </table>
+    </div>
+</form>
+@section bottom{
+    <script src="~/Areas/Warehouse/ViewJs/EditLocation.js"></script>
+}
+

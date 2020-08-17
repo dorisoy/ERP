@@ -1,0 +1,58 @@
+﻿@using PaiXie.Data
+@using PaiXie.Core
+@{
+    var StocktakingItem = ViewBag.StocktakingItem as WarehouseStocktakingItem;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+    <style>
+        .tipbox {
+            background: #fffef5;
+            color: #666666;
+            padding: 0px 10px 5px 55px;
+            text-indent: -3em;
+            line-height: 24px;
+            margin: 30px 20px 10px 20px;
+        }
+
+        .red {
+            color: #F00;
+        }
+    </style>
+}
+<div style="height:330px; overflow-y:auto; padding-bottom:10px;">
+    <form id="ff" method="post" novalidate>
+        <div class="tipbox">
+            <span class="red">提示：</span>1、当盘点数量小于商品的不可用数量（占用数量+冻结数量）时会显示异常。<br>
+            2、盘点异常时需要 <span class="red">重新导入盘点数量</span> 或 <span class="red">取消占用单据</span>。
+        </div>
+        <div class="p0lr22 infotitle" id="infotitle">
+            占用记录：(当前不可用数量 <span class="red">@(StocktakingItem.ZyNum + StocktakingItem.DjNum)</span>，盘点数量 <span class="red">@(StocktakingItem.PdNum)</span>)
+            <input type="hidden" id="hdnProductsID" value="@(StocktakingItem.ProductsSkuID)" />
+            <input type="hidden" id="hdnLocationID" value="@(StocktakingItem.LocationID)" />
+        </div>
+        <div class="p0lr22" style="padding-top:10px;">
+            <table id="grid" class="easyui-datagrid" title="" data-options="singleSelect:true,collapsible:true,method:'get'"></table>
+        </div>
+    </form>
+</div>
+@section bottom{
+    <script>
+        $(document).ready(function () {
+            $('#grid').datagrid({
+                url: '/Warehouse/StocktakingItem/SearchAbnormalInfo?ram=' + Math.random(),
+                fitColumns: true,
+                queryParams: { locationID: $("#hdnLocationID").val(), productsSkuID: $("#hdnProductsID").val() },
+                columns: [[
+                    { title: '占用单据', field: 'BillNo', width: 300, align: 'center', sortable: true },
+                    { title: '单据类型', field: 'BillTypeName', width: 150, align: 'center', sortable: true },
+                    { title: '占用数量', field: 'Num', width: 150, align: 'center', sortable: true },
+                    { title: '状态', field: 'StatusName', width: 150, align: 'center', sortable: true }
+                ]],
+                onLoadSuccess: function (data) {
+                    DataGridNoData(this);
+                }
+            });
+        });
+    </script>
+}

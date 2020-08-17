@@ -1,0 +1,12 @@
+﻿
+/*IE hack for fix ie boxmodel chrome 122 (pading:0 3px)*/
+.z-txt
+{
+    width:122px\0;      /*IE8 IE9*/
+    _height: 18px;      /*IE6*/
+    _line-height:18px;  /*IE6*/
+}          
+:root .z-txt{width:128px\0;}    /*IE9 Only*/
+
+.datagrid-row-over td{*background:#D0E5F5;}  /*IE6 IE7 解决IE7下tr背景色不变化，被td背景盖住*/
+.datagrid-row-selected td{*background:#FBEC88;}

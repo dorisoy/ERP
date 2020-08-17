@@ -1,0 +1,197 @@
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\PaiXie.Erp.dll.config
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\PaiXie.Erp.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\PaiXie.Erp.pdb
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\Antlr3.Runtime.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\EntityFramework.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\FluentData.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\Microsoft.CSharp.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\Microsoft.Practices.ServiceLocation.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\Microsoft.Practices.Unity.Configuration.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\Microsoft.Practices.Unity.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\Microsoft.Web.Infrastructure.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\Newtonsoft.Json.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\NPOI.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\PaiXie.Api.Bll.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\PaiXie.Cache.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\PaiXie.Core.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\PaiXie.Data.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\PaiXie.Excel.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\PaiXie.Excel.Npoi.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\PaiXie.Excel.Shared.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\PaiXie.Service.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\PaiXie.Utils.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\ServiceStack.Common.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\System.ComponentModel.DataAnnotations.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\System.Configuration.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\System.Data.DataSetExtensions.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\System.Data.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\System.Data.Entity.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\System.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\System.Drawing.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\System.EnterpriseServices.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\System.Net.Http.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\System.Net.Http.Formatting.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\System.Net.Http.WebRequest.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\System.Web.Abstractions.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\System.Web.ApplicationServices.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\System.Web.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\System.Web.DynamicData.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\System.Web.Entity.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\System.Web.Extensions.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\System.Web.Http.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\System.Web.Http.WebHost.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\System.Web.Mvc.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\System.Web.Optimization.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\System.Web.Providers.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\System.Web.Razor.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\System.Web.Routing.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\System.Web.Services.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\System.Web.WebPages.Deployment.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\System.Web.WebPages.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\System.Web.WebPages.Razor.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\System.Xml.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\System.Xml.Linq.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\WebGrease.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\ServiceStack.Redis.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\ServiceStack.Interfaces.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\ServiceStack.Text.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\SecretHelp.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\ICSharpCode.SharpZipLib.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\NPOI.OOXML.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\NPOI.OpenXmlFormats.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\NPOI.OpenXml4Net.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\PaiXie.Api.Bll.pdb
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\PaiXie.Cache.pdb
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\PaiXie.Core.pdb
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\PaiXie.Data.pdb
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\PaiXie.Service.pdb
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\PaiXie.Utils.pdb
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\NPOI.xml
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\EntityFramework.xml
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\Newtonsoft.Json.xml
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\System.Net.Http.xml
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\System.Net.Http.Formatting.xml
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\System.Net.Http.WebRequest.xml
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\System.Web.Http.xml
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\System.Web.Http.WebHost.xml
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\System.Web.Mvc.xml
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\System.Web.Razor.xml
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\System.Web.WebPages.xml
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\System.Web.WebPages.Deployment.xml
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\System.Web.WebPages.Razor.xml
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\NPOI.OOXML.xml
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\NPOI.OpenXml4Net.xml
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\zh-Hans\EntityFramework.resources.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\zh-Hans\System.Net.Http.resources.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\zh-Hans\System.Net.Http.Formatting.resources.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\zh-Hans\System.Net.Http.WebRequest.resources.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\zh-Hans\System.Web.Http.resources.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\zh-Hans\System.Web.Http.WebHost.resources.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\zh-Hans\System.Web.Mvc.resources.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\zh-Hans\System.Web.Optimization.resources.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\zh-Hans\System.Web.Providers.resources.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\zh-Hans\System.Web.Razor.resources.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\zh-Hans\System.Web.WebPages.resources.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\zh-Hans\System.Web.WebPages.Deployment.resources.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\bin\zh-Hans\System.Web.WebPages.Razor.resources.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\obj\Debug\PaiXie.Erp.csprojResolveAssemblyReference.cache
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\obj\Debug\PaiXie.Erp.dll
+E:\新建文件夹 (3)\src\PaiXie\PaiXie.Erp\obj\Debug\PaiXie.Erp.pdb
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\PaiXie.Erp.dll.config
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\PaiXie.Erp.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\PaiXie.Erp.pdb
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\Antlr3.Runtime.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\EntityFramework.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\FluentData.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\Microsoft.CSharp.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\Microsoft.Practices.ServiceLocation.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\Microsoft.Practices.Unity.Configuration.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\Microsoft.Practices.Unity.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\Microsoft.Web.Infrastructure.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\Newtonsoft.Json.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\NPOI.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\PaiXie.Api.Bll.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\PaiXie.Cache.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\PaiXie.Core.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\PaiXie.Data.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\PaiXie.Excel.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\PaiXie.Excel.Npoi.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\PaiXie.Excel.Shared.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\PaiXie.Service.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\PaiXie.Utils.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\ServiceStack.Common.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\System.ComponentModel.DataAnnotations.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\System.Configuration.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\System.Data.DataSetExtensions.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\System.Data.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\System.Data.Entity.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\System.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\System.Drawing.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\System.EnterpriseServices.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\System.Net.Http.Formatting.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\System.Web.Abstractions.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\System.Web.ApplicationServices.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\System.Web.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\System.Web.DynamicData.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\System.Web.Entity.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\System.Web.Extensions.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\System.Web.Http.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\System.Web.Http.WebHost.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\System.Web.Mvc.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\System.Web.Optimization.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\System.Web.Providers.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\System.Web.Razor.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\System.Web.Routing.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\System.Web.Services.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\System.Web.WebPages.Deployment.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\System.Web.WebPages.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\System.Web.WebPages.Razor.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\System.Xml.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\System.Xml.Linq.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\WebGrease.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\ServiceStack.Interfaces.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\ServiceStack.Redis.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\ServiceStack.Text.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\SecretHelp.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\ICSharpCode.SharpZipLib.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\NPOI.OOXML.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\System.Net.Http.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\NPOI.OpenXmlFormats.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\NPOI.OpenXml4Net.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\PaiXie.Api.Bll.pdb
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\PaiXie.Cache.pdb
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\PaiXie.Core.pdb
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\PaiXie.Data.pdb
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\PaiXie.Service.pdb
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\PaiXie.Utils.pdb
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\NPOI.xml
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\EntityFramework.xml
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\Newtonsoft.Json.xml
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\System.Net.Http.Formatting.xml
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\System.Web.Http.xml
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\System.Web.Http.WebHost.xml
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\System.Web.Mvc.xml
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\System.Web.Razor.xml
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\System.Web.WebPages.xml
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\System.Web.WebPages.Deployment.xml
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\System.Web.WebPages.Razor.xml
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\NPOI.OOXML.xml
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\System.Net.Http.xml
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\NPOI.OpenXml4Net.xml
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\zh-Hans\EntityFramework.resources.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\zh-Hans\System.Net.Http.Formatting.resources.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\zh-Hans\System.Web.Http.resources.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\zh-Hans\System.Web.Http.WebHost.resources.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\zh-Hans\System.Web.Mvc.resources.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\zh-Hans\System.Web.Optimization.resources.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\zh-Hans\System.Web.Providers.resources.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\zh-Hans\System.Web.Razor.resources.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\zh-Hans\System.Web.WebPages.resources.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\zh-Hans\System.Web.WebPages.Deployment.resources.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\zh-Hans\System.Web.WebPages.Razor.resources.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\bin\zh-Hans\System.Net.Http.resources.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\obj\Debug\PaiXie.Erp.csprojResolveAssemblyReference.cache
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\obj\Debug\PaiXie.Erp.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie\PaiXie.Erp\obj\Debug\PaiXie.Erp.pdb

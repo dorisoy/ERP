@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{069E8377-64FC-483E-AA84-6580C14A33F6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PaiXie.Service</RootNamespace>
+    <AssemblyName>PaiXie.Service</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FluentData">
+      <HintPath>..\SharedDlls\FluentData.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SharedDlls\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\BaseService.cs" />
+    <Compile Include="Finance\SuppliersSettlementService.cs" />
+    <Compile Include="Finance\FinanceLogService.cs" />
+    <Compile Include="OrderRefund\OrdrefundItemService.cs" />
+    <Compile Include="OrderRefund\OrdrefundReasonService.cs" />
+    <Compile Include="OrderRefund\OrdrefundService.cs" />
+    <Compile Include="Order\OrdaccountsBillService.cs" />
+    <Compile Include="Order\OrdbaseService.cs" />
+    <Compile Include="Order\OrddiscountService.cs" />
+    <Compile Include="Order\OrditemService.cs" />
+    <Compile Include="Order\OrdlogService.cs" />
+    <Compile Include="Order\OrdoccupyService.cs" />
+    <Compile Include="Order\OrdouterItemService.cs" />
+    <Compile Include="Order\OrdouterService.cs" />
+    <Compile Include="Order\OrdremarkService.cs" />
+    <Compile Include="Order\SendShopService.cs" />
+    <Compile Include="Products\CategoryService.cs" />
+    <Compile Include="Products\BrandService.cs" />
+    <Compile Include="Products\ProductsImportErrorService.cs" />
+    <Compile Include="Products\ProductsMaterialMapService.cs" />
+    <Compile Include="Products\ProductsService.cs" />
+    <Compile Include="Products\ProductsSkuService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Shop\ShopAllocationService.cs" />
+    <Compile Include="Shop\ShopAutogenerationService.cs" />
+    <Compile Include="Shop\ShopComancationService.cs" />
+    <Compile Include="Shop\ShopExpressSetService.cs" />
+    <Compile Include="Shop\ShopUpdateProductsService.cs" />
+    <Compile Include="Shop\ShopProductsService.cs" />
+    <Compile Include="Shop\ShopService.cs" />
+    <Compile Include="Shop\ShopStockUpdateService.cs" />
+    <Compile Include="Shop\ShopTaskService.cs" />
+    <Compile Include="Suppliers\SuppliersItemService.cs" />
+    <Compile Include="Suppliers\SuppliersService.cs" />
+    <Compile Include="Sys\LogisticsAreaMapService.cs" />
+    <Compile Include="Sys\LogisticsService.cs" />
+    <Compile Include="Sys\SysareaService.cs" />
+    <Compile Include="Sys\SysbuttonService.cs" />
+    <Compile Include="Sys\SyscodeService.cs" />
+    <Compile Include="Sys\SyscodeTypeService.cs" />
+    <Compile Include="Sys\SyscolListService.cs" />
+    <Compile Include="Sys\SyscolPermissionsService.cs" />
+    <Compile Include="Sys\SyserrorLogService.cs" />
+    <Compile Include="Sys\SysloginHistoryService.cs" />
+    <Compile Include="Sys\SyslogService.cs" />
+    <Compile Include="Sys\SysmenuButtonMapService.cs" />
+    <Compile Include="Sys\SysmenuService.cs" />
+    <Compile Include="Sys\SysroleColumnmapService.cs" />
+    <Compile Include="Sys\SysroleMenuButtonMapService.cs" />
+    <Compile Include="Sys\SysroleMenuMapService.cs" />
+    <Compile Include="Sys\SysroleService.cs" />
+    <Compile Include="Sys\SysuserRoleMapService.cs" />
+    <Compile Include="Sys\SysuserService.cs" />
+    <Compile Include="Sys\SysbillNoService.cs" />
+    <Compile Include="Warehouse\WarehouseAreaMapService.cs" />
+    <Compile Include="Warehouse\WarehouseAreaStructService.cs" />
+    <Compile Include="Warehouse\WarehouseBookingProductsSkuService.cs" />
+    <Compile Include="Warehouse\WarehouseConfigService.cs" />
+    <Compile Include="Warehouse\WarehouseConversionItemLogService.cs" />
+    <Compile Include="Warehouse\WarehouseConversionLogService.cs" />
+    <Compile Include="Warehouse\WarehouseConversionRuleItemService.cs" />
+    <Compile Include="Warehouse\WarehouseConversionRuleService.cs" />
+    <Compile Include="Warehouse\WarehouseExpressPriceService.cs" />
+    <Compile Include="Warehouse\WarehouseExpressService.cs" />
+    <Compile Include="Warehouse\WarehouseInventoryWarnService.cs" />
+    <Compile Include="Warehouse\WarehouseLocationProductsService.cs" />
+    <Compile Include="Warehouse\WarehouseLocationService.cs" />
+    <Compile Include="Warehouse\WarehouseMoveLocationItemService.cs" />
+    <Compile Include="Warehouse\WarehouseMoveLocationService.cs" />
+    <Compile Include="Warehouse\WarehouseOutboundPickItemService.cs" />
+    <Compile Include="Warehouse\WarehouseOutboundPrintBatchService.cs" />
+    <Compile Include="Warehouse\WarehouseOutboundService.cs" />
+    <Compile Include="Warehouse\WarehouseOutInStockItemService.cs" />
+    <Compile Include="Warehouse\WarehouseOutInStockLogService.cs" />
+    <Compile Include="Warehouse\WarehouseOutInStockService.cs" />
+    <Compile Include="Warehouse\WarehousePrintTemplateService.cs" />
+    <Compile Include="Warehouse\WarehouseProductsBatchService.cs" />
+    <Compile Include="Warehouse\WarehouseProductsService.cs" />
+    <Compile Include="Warehouse\WarehouseProductsSkuService.cs" />
+    <Compile Include="Warehouse\WarehousePurchaseItemService.cs" />
+    <Compile Include="Warehouse\WarehousePurchasePlanItemService.cs" />
+    <Compile Include="Warehouse\WarehousePurchasePlanService.cs" />
+    <Compile Include="Warehouse\WarehousePurchaseService.cs" />
+    <Compile Include="Warehouse\WarehouseService.cs" />
+    <Compile Include="Warehouse\WarehouseStocktakingItemService.cs" />
+    <Compile Include="Warehouse\WarehouseStocktakingService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PaiXie.Core\PaiXie.Core.csproj">
+      <Project>{c91d32d3-2e3a-4dc4-8116-8a93184d79d5}</Project>
+      <Name>PaiXie.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PaiXie.Data\PaiXie.Data.csproj">
+      <Project>{a2de5c41-3a4d-4a63-9aff-16738c0b0bcb}</Project>
+      <Name>PaiXie.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PaiXie.Utils\PaiXie.Utils.csproj">
+      <Project>{1e8745fa-4dba-458f-9509-a67a28b9d5ef}</Project>
+      <Name>PaiXie.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

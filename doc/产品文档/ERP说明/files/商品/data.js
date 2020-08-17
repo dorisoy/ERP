@@ -1,0 +1,77 @@
+﻿$axure.loadCurrentPage({
+  "url":"商品.html",
+  "generationDate":new Date(1441549172322.77),
+  "isCanvasEnabled":false,
+  "variables":["OnLoadVariable"],
+  "page":{
+    "packageId":"d39390a71ee349248275343a51ca41be",
+    "type":"Axure:Page",
+    "name":"商品",
+    "notes":{
+},
+    "style":{
+      "baseStyle":"627587b6038d43cca051c114ac41ad32",
+      "pageAlignment":"center",
+      "fill":{
+        "fillType":"solid",
+        "color":0xFFF2F2F2},
+      "image":null,
+      "imageHorizontalAlignment":"near",
+      "imageVerticalAlignment":"near",
+      "imageRepeat":"auto",
+      "favicon":null,
+      "sketchFactor":"0",
+      "colorStyle":"appliedColor",
+      "fontName":"应用字体",
+      "borderWidth":"0"},
+    "adaptiveStyles":{
+},
+    "interactionMap":{
+},
+    "diagram":{
+      "objects":[{
+          "id":"5d47f072dd49432d850f1f5d3477d45f",
+          "label":"",
+          "type":"buttonShape",
+          "styleType":"paragraph",
+          "visible":true,
+          "style":{
+            "lineSpacing":"25px",
+            "paddingTop":"5",
+            "paddingBottom":"5",
+            "location":{
+              "x":100,
+              "y":100},
+            "size":{
+              "width":1000,
+              "height":600}},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"441bc29f055e4893b0b6472d8fb30933",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "lineSpacing":"25px",
+                "paddingTop":"5",
+                "paddingBottom":"5",
+                "location":{
+                  "x":100,
+                  "y":100},
+                "size":{
+                  "width":1000,
+                  "height":600}},
+              "adaptiveStyles":{
+}}],
+          "images":{
+            "normal~":"resources/images/transparent.gif"}}]}},
+  "masters":{
+},
+  "objectPaths":{
+    "5d47f072dd49432d850f1f5d3477d45f":{
+      "scriptId":"u0"},
+    "441bc29f055e4893b0b6472d8fb30933":{
+      "scriptId":"u1"}}});

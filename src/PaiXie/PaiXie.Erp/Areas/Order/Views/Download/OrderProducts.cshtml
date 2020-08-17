@@ -1,0 +1,44 @@
+﻿@{
+    var shopID = ViewBag.ShopID;
+    var ordouterID = ViewBag.OrdouterID;
+    var outOrderCode = ViewBag.OutOrderCode;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+    <style>
+        .divTitle {
+            height: 40px;
+            line-height: 40px;
+            padding-left: 10px;
+            font-family: \5FAE\8F6F\96C5\9ED1;
+        }
+
+        .divContent {
+            height: 100%;
+            width: 98%;
+            padding: 0px 10px 10px 10px;
+        }
+    </style>
+}
+<div data-options="region:'center',border:false" class="p0lr22">
+    <form id="ff" method="post" novalidate="novalidate">
+        <div class="divTitle">
+            外部订单商品
+        </div>
+        <div class="divContent" id="divOuterItem">
+            <table id="gridOuter" class="easyui-datagrid" data-options="singleSelect:false,collapsible:true,method:'get'"></table>
+        </div>
+        <div class="divTitle">
+            系统订单商品
+        </div>
+        <div class="divContent" id="divItem">
+            <table id="grid" class="easyui-datagrid" data-options="singleSelect:false,collapsible:true,method:'get'"></table>
+        </div>
+        <input type="hidden" id="hdnShopID" value="@(shopID)" />
+        <input type="hidden" id="hdnOrdouterID" value="@(ordouterID)" />
+        <input type="hidden" id="hdnOutOrderCode" value="@(outOrderCode)" />
+    </form>
+</div>
+@section bottom{
+    <script src="~/Areas/Order/ViewJs/OrderProductsInfoList.js"></script>
+}

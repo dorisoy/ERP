@@ -1,0 +1,337 @@
+﻿@using System.Data;
+@using PaiXie.Data;
+@using PaiXie.Service;
+@using PaiXie.Core;
+@{
+    var ordbase = ViewBag.Ordbase as Ordbase;
+    var outboundList = ViewBag.OutboundList as List<WarehouseOutbound>;
+    var outboundItemList = ViewBag.OutboundItemList as List<WarehouseOutboundPickItemWebInfo>;
+    var matchingWarehouseList = ViewBag.MatchingWarehouseList as System.Data.DataTable;
+    var distributionWarehouseList = ViewBag.DistributionWarehouseList as List<DistributionWarehouseInfo>;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+    <style>
+        .divTitle {
+            margin-top: 1px;
+            padding-left: 10px;
+            background: #f0f0f0;
+            border: 1px solid #ccc;
+        }
+
+            .divTitle input.button {
+                border: 0px;
+                background: #436fac;
+                color: #fff;
+                height: 30px;
+                width: 90px;
+                cursor: pointer;
+            }
+
+        #grid {
+            text-align: center;
+            width: 100%;
+            margin: 10px 0px 0px 0px;
+            border-left: 1px solid #ccc;
+            border-top: 1px solid #ccc;
+        }
+
+            #grid th {
+                height: 30px;
+                line-height: 30px;
+                background-color: #f0f0f0;
+                border-right: 1px solid #ccc;
+                border-bottom: 1px solid #ccc;
+            }
+
+            #grid td {
+                height: 30px;
+                line-height: 30px;
+                border-right: 1px solid #ccc;
+                border-bottom: 1px solid #ccc;
+            }
+
+                #grid td a {
+                    text-decoration: none;
+                    color: #1d72df;
+                }
+
+                    #grid td a:hover {
+                        color: #fc8b00;
+                    }
+
+        .inputextbox {
+            text-align: center;
+        }
+    </style>
+}
+<div class="easyui-layout" data-options="fit:true">
+    <div data-options="region:'north',height:63" id="topdiv">
+        <div class="toolbar" id="toolbar">
+            <a href="#" class="refresh" id="refresh"><span></span>刷新</a>
+        </div>
+    </div>
+    <div data-options="region:'center',border:false" class="p0lr22">
+        <form id="ff" method="post" novalidate>
+            <input type="hidden" id="hdnExpressID" name="expressID" value="" />
+            <div class="divTitle">
+                <table width="100%" cellpadding="12" cellspacing="0" border="0">
+                    <tr>
+                        <td>订单编号：@ordbase.ErpOrderCode</td>
+                        <td>下单时间：@(ordbase.CreateType == 1 ? ordbase.CreateDate : ordbase.Created)</td>
+                        <td>付款方式：@ordbase.ErpOrderCode</td>
+                        <td>发货物流：@LogisticsService.GetLogistics(ordbase.LogisticsID).Name</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">
+                            当前匹配仓库：
+                            <select id="warehouse" name="warehouse" class="easyui-combobox" style="width:150px;" data-options="height:30,editable:false">
+                                <option value="">手动分配</option>
+                                @if (matchingWarehouseList.Rows.Count > 0) {
+                                    int i = 0;
+                                    foreach (DataRow item in matchingWarehouseList.Rows) {
+                                        <option value="@(item["Code"])" @(i == 0 ? "selected" : "")>@(item["Name"])</option>
+                                        i++;
+                                    }
+                                }
+                            </select>&nbsp;
+                            <input type="button" id="btnCreate" value="生成出库单" class="button">
+                            <input type="hidden" name="OrdbaseID" value="@ordbase.ID" />
+                            <input type="hidden" id="ErpOrderCode" name="ErpOrderCode" value="@ordbase.ErpOrderCode" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div style="padding: 15px 0px 0px 5px; font-family: \5FAE\8F6F\96C5\9ED1; font-size: 10pt; " id="divTitle">
+                订单商品
+            </div>
+            <table id="grid" cellpadding="5" cellspacing="0" border="0">
+                <tr>
+                    <th width="15%">商品编码</th>
+                    <th width="20%">商品名称</th>
+                    <th width="15%">属性</th>
+                    <th width="10%">SKU码</th>
+                    <th width="10%">未分配数量</th>
+                    <th width="8%">查货状态</th>
+                    <th>发货仓库</th>
+                </tr>
+                @{
+                    var index = 0;
+                    foreach (var item in distributionWarehouseList) {
+                        <tr>
+                            <td>
+                                @item.ProductsCode
+                            </td>
+                            <td>
+                                @item.ProductsName
+                            </td>
+                            <td>
+                                @(string.IsNullOrEmpty(item.ProductsSkuSaleprop) ? "-" : item.ProductsSkuSaleprop)
+                            </td>
+                            <td>
+                                @item.ProductsSkuCode
+                            </td>
+                            <td>
+                                @item.WfpNum
+                                <input type="hidden" name="ID" value="@item.WfpNum" />
+                                <input type="hidden" id="hdnWfpNum_@item.ProductsSkuID" value="@item.WfpNum" />
+                            </td>
+                            <td>
+                                @{
+                        if (item.CheckStatus == 0) {
+                            <font>有货</font>
+                        }
+                        if (item.CheckStatus == 1) {
+                            <font style="color:#ff0000;">缺货</font>
+                        }
+                        if (item.CheckStatus == 2) {
+                            <font style="color:blueviolet">驳回</font>
+                        }
+                                }
+                            </td>
+                            <td style="text-align:left;">
+                                @foreach (var warehouse in item.warehouseProductsSkuInventoryList) {
+                                    <div style="margin: 5px 0px 5px 10px;">
+                                        <input type="text" id="txtNum_@index" name="Num" class="inputextbox" value="" />
+                                        <input type="hidden" name="ProductsSkuID" value="@item.ProductsSkuID" />
+                                        <input type="hidden" name="OrditemID" value="@item.ID" />
+                                        <input type="hidden" id="hdnKfhNum_@index" value="@(warehouse.KyNum - warehouse.ZyNum - warehouse.OrdZyNum + warehouse.BookingKyNum)" />
+                                        <input type="hidden" name="WarehouseCode" value="@warehouse.WarehouseCode" />
+                                        @(warehouse.WarehouseName + "(" + (warehouse.KyNum - warehouse.ZyNum - warehouse.OrdZyNum + warehouse.BookingKyNum) + ")")
+                                    </div>
+                                    index++;
+                                }
+                            </td>
+                        </tr>
+                    }
+                }
+            </table>
+            @if (outboundList.Count > 0) { 
+            <div style="padding: 15px 0px 0px 5px; font-family: \5FAE\8F6F\96C5\9ED1; font-size: 10pt; " id="divTitle">
+                已生成出库单
+            </div>
+            }
+            @foreach (var outbound in outboundList) {
+                <div style="padding: 10px 0px 0px 5px;">
+                    出库单：@outbound.BillNo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    发货仓库：@(WarehouseService.GetwarehousebyCode(outbound.WarehouseCode).Name)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    发货状态：@(Enum.Parse(typeof(WarehouseOutboundStatus), outbound.Status.ToString())) 
+                </div>
+                <table id="grid" cellpadding="5" cellspacing="0" border="0">
+                    <tr>
+                        <th width="15%">商品编码</th>
+                        <th width="20%">商品名称</th>
+                        <th width="15%">属性</th>
+                        <th width="10%">SKU码</th>
+                        <th width="10%">数量</th>
+                    </tr>
+                    @{
+                foreach (var item in outboundItemList.Where(r => r.OutboundID == outbound.ID).ToList()) {
+                    <tr>
+                        <td>
+                            @item.ProductsCode
+                        </td>
+                        <td>
+                            @item.ProductsName
+                        </td>
+                        <td>
+                            @(string.IsNullOrEmpty(item.ProductsSkuSaleprop) ? "-" : item.ProductsSkuSaleprop)
+                        </td>
+                        <td>
+                            @item.ProductsSkuCode
+                        </td>
+                        <td>
+                            @item.Num
+                        </td>
+                    </tr>
+                }
+                    }
+                </table>
+            }
+        </form>
+    </div>
+</div>
+@section bottom{
+    <script>
+        $(function () {
+            $('#btnCreate').click(function () {
+                createOutbound();
+            });
+
+            $('.inputextbox').keyup(function (event) {
+                var num = $(this).val().replace(/\D/g, '');
+                $(this).val(num);
+                checkInputNum($(this).attr("id"));
+            });
+
+            $('#warehouse').combobox({
+                onChange: function () {
+                    if ($('#warehouse').combobox('getValue') == "") {
+                        $("#divTitle").show();
+                        $("#grid").show();
+                    }
+                    else {
+                        $("#divTitle").hide();
+                        $("#grid").hide();
+                    }
+                }
+            });
+
+            if ($('#warehouse').combobox('getValue') == "") {
+                $("#divTitle").show();
+                $("#grid").show();
+            }
+            else {
+                $("#divTitle").hide();
+                $("#grid").hide();
+            }
+
+            //刷新
+            $('#refresh').click(function () {
+                window.location.reload();
+            });
+        });
+
+        function checkInputNum(id) {
+            var totalNum = 0;
+            $("#" + id).parent().parent().find('.inputextbox').each(function (index, element) {
+                totalNum = totalNum + Number($(element).val());
+            });
+            if (Number($("#" + id).val()) > Number($("#" + id).next().next().next().val())) {
+                $("#" + id).val("");
+                $.MsgBox.Alert("提示", "分配数量超过了仓库可用量！");
+            }
+            if (totalNum > Number($("#hdnWfpNum_" + $("#" + id).next().val()).val())) {
+                $("#" + id).val("");
+                $.MsgBox.Alert("提示", "分配数量超过了未分配数量！");
+            }
+        }
+
+        function createOutbound() {
+            var warehouseCode = $("#warehouse").combobox('getValue');
+            if (warehouseCode != "") {
+                $.ajax({
+                    url: "/Order/DistributionWarehouse/CreateOutbound",
+                    type: "GET",
+                    cache: false,
+                    data: { erpOrderCode: $("#ErpOrderCode").val(), warehouseCode: warehouseCode },
+                    success: function (r) {
+                        var map = $.parseJSON(r);
+                        if (map.result == 1) {
+                            $.MsgBox.Alert("提示", "分配成功！", 1000);
+                            if (map.isGenerateComplete == 1) {
+                                location.href = "/Order/WaitAudit/index";
+                            }
+                            else {
+                                window.location.reload(true);
+                            }
+                        }
+                        else {
+                            $.MsgBox.Alert("提示", map.message);
+                        }
+                    },
+                    error: function () {
+                        $.MsgBox.Alert("提示", "生成失败！");
+                    }
+                });
+            }
+            else {
+                $('#ff').form('submit', {
+                    url: "/Order/DistributionWarehouse/CreateOutbound",
+                    type: "POST",
+                    dataType: "json",
+                    onSubmit: function () {
+                        var isValid = true;
+                        var totalNum = 0;
+                        $('.inputextbox').each(function (index, element) {
+                            totalNum = totalNum + Number($(element).val());
+                        });
+                        if (totalNum == 0) {
+                            $.MsgBox.Alert("提示", "请输入分配数量！");
+                            isValid = false;
+                        }
+                        return isValid;
+                    },
+                    success: function (r) {
+                        var map = $.parseJSON(r);
+                        if (map.result == 1) {
+                            $.MsgBox.Alert("提示", "分配成功！", 1000);
+                            if (map.isGenerateComplete == 1) {
+                                location.href = "/Order/WaitAudit/index";
+                            }
+                            else {
+                                window.location.reload(true);
+                            }
+                        }
+                        else {
+                            $.MsgBox.Alert("提示", map.message);
+                        }
+                    },
+                    error: function () {
+                        $.MsgBox.Alert("提示", "生成失败！");
+                    }
+                });
+            }
+        }
+    </script>
+}

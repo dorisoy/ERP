@@ -1,0 +1,85 @@
+﻿$axure.loadCurrentPage({
+  "url":"财务.html",
+  "generationDate":new Date(1442195101832.53),
+  "isCanvasEnabled":false,
+  "variables":["OnLoadVariable"],
+  "page":{
+    "packageId":"0ebe1c1b654d489387f603ae541284a4",
+    "type":"Axure:Page",
+    "name":"财务",
+    "notes":{
+},
+    "style":{
+      "baseStyle":"627587b6038d43cca051c114ac41ad32",
+      "pageAlignment":"center",
+      "fill":{
+        "fillType":"solid",
+        "color":0xFFF2F2F2},
+      "image":null,
+      "imageHorizontalAlignment":"near",
+      "imageVerticalAlignment":"near",
+      "imageRepeat":"auto",
+      "favicon":null,
+      "sketchFactor":"0",
+      "colorStyle":"appliedColor",
+      "fontName":"应用字体",
+      "borderWidth":"0"},
+    "adaptiveStyles":{
+},
+    "interactionMap":{
+},
+    "diagram":{
+      "objects":[{
+          "id":"3ab2adf8fcd04e108c7ac8b4e0c1e7fc",
+          "label":"",
+          "type":"buttonShape",
+          "styleType":"paragraph",
+          "visible":true,
+          "style":{
+            "lineSpacing":"25px",
+            "paddingTop":"5",
+            "paddingBottom":"5",
+            "location":{
+              "x":100,
+              "y":100},
+            "size":{
+              "width":897,
+              "height":823},
+            "borderWidth":"1",
+            "borderFill":{
+              "fillType":"solid",
+              "color":0xFFCCCCCC}},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"8d37b494a6cb4efbaccaea4a0f51eda6",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "lineSpacing":"25px",
+                "paddingTop":"5",
+                "paddingBottom":"5",
+                "location":{
+                  "x":100,
+                  "y":100},
+                "size":{
+                  "width":897,
+                  "height":823},
+                "borderWidth":"1",
+                "borderFill":{
+                  "fillType":"solid",
+                  "color":0xFFCCCCCC}},
+              "adaptiveStyles":{
+}}],
+          "images":{
+            "normal~":"images/售后流程/u0.png"}}]}},
+  "masters":{
+},
+  "objectPaths":{
+    "3ab2adf8fcd04e108c7ac8b4e0c1e7fc":{
+      "scriptId":"u0"},
+    "8d37b494a6cb4efbaccaea4a0f51eda6":{
+      "scriptId":"u1"}}});

@@ -1,0 +1,79 @@
+2015/9/23 17:00:04
+Duplicate entry 'qq' for key 'uni_sys_user_UserCode'----MySql.Data.MySqlClient.MySqlException (0x80004005): Duplicate entry 'qq' for key 'uni_sys_user_UserCode'
+   在 FluentData.ExecuteQueryHandler.HandleQueryException(Exception exception)
+   在 FluentData.ExecuteQueryHandler.ExecuteQuery(Boolean useReader, Action action)
+   在 FluentData.MySqlProvider.ExecuteReturnLastId[T](IDbCommand command, String identityColumnName)
+   在 FluentData.DbCommand.ExecuteReturnLastId[T](String identityColumnName)
+   在 PaiXie.Data.SysuserRepository.Add(Sysuser entity) 位置 e:\001\src\PaiXie\PaiXie.Data\Repository\sys\SysuserRepository.cs:行号 22
+   在 PaiXie.Service.SysuserService.Add(Sysuser entity) 位置 e:\001\src\PaiXie\PaiXie.Service\sys\SysuserService.cs:行号 18
+   在 PaiXie.Erp.Areas.Sys.SysController.Save(Sysuser obj) 位置 e:\001\src\PaiXie\PaiXie.Erp\Areas\Sys\Controllers\SysController.cs:行号 64
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+------------------------------------------------------------------
+2015/9/23 17:01:21
+Duplicate entry '和共和国和共和国' for key 'uni_sys_user_UserCode'----MySql.Data.MySqlClient.MySqlException (0x80004005): Duplicate entry '和共和国和共和国' for key 'uni_sys_user_UserCode'
+   在 FluentData.ExecuteQueryHandler.HandleQueryException(Exception exception)
+   在 FluentData.ExecuteQueryHandler.ExecuteQuery(Boolean useReader, Action action)
+   在 FluentData.MySqlProvider.ExecuteReturnLastId[T](IDbCommand command, String identityColumnName)
+   在 FluentData.DbCommand.ExecuteReturnLastId[T](String identityColumnName)
+   在 PaiXie.Data.SysuserRepository.Add(Sysuser entity) 位置 e:\001\src\PaiXie\PaiXie.Data\Repository\sys\SysuserRepository.cs:行号 22
+   在 PaiXie.Service.SysuserService.Add(Sysuser entity) 位置 e:\001\src\PaiXie\PaiXie.Service\sys\SysuserService.cs:行号 18
+   在 PaiXie.Erp.Areas.Sys.SysController.Save(Sysuser obj) 位置 e:\001\src\PaiXie\PaiXie.Erp\Areas\Sys\Controllers\SysController.cs:行号 64
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+------------------------------------------------------------------
+2015/9/23 17:16:09
+Table 'erpnet.Sysuser' doesn't exist----MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'erpnet.Sysuser' doesn't exist
+   在 FluentData.ExecuteQueryHandler.HandleQueryException(Exception exception)
+   在 FluentData.ExecuteQueryHandler.ExecuteQuery(Boolean useReader, Action action)
+   在 FluentData.DbCommand.QuerySingle[TEntity](Action`2 customMapper)
+   在 PaiXie.Data.BaseRepository`1.GetQuerySingle(String sqlStr) 位置 e:\001\src\PaiXie\PaiXie.Data\BaseRepository\BaseRepository.cs:行号 14
+   在 PaiXie.Service.BaseService`1.GetQuerySingle(String sqlStr) 位置 e:\001\src\PaiXie\PaiXie.Service\Base\BaseService.cs:行号 31
+   在 PaiXie.Erp.Areas.Sys.SysController.Save(Sysuser obj) 位置 e:\001\src\PaiXie\PaiXie.Erp\Areas\Sys\Controllers\SysController.cs:行号 67
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+------------------------------------------------------------------
+2015/9/23 17:25:20
+Duplicate entry 'trrrtrt' for key 'uni_sys_user_UserCode'----MySql.Data.MySqlClient.MySqlException (0x80004005): Duplicate entry 'trrrtrt' for key 'uni_sys_user_UserCode'
+   在 FluentData.ExecuteQueryHandler.HandleQueryException(Exception exception)
+   在 FluentData.ExecuteQueryHandler.ExecuteQuery(Boolean useReader, Action action)
+   在 FluentData.MySqlProvider.ExecuteReturnLastId[T](IDbCommand command, String identityColumnName)
+   在 FluentData.DbCommand.ExecuteReturnLastId[T](String identityColumnName)
+   在 PaiXie.Data.SysuserRepository.Add(Sysuser entity) 位置 e:\001\src\PaiXie\PaiXie.Data\Repository\sys\SysuserRepository.cs:行号 22
+   在 PaiXie.Service.SysuserService.Add(Sysuser entity) 位置 e:\001\src\PaiXie\PaiXie.Service\sys\SysuserService.cs:行号 18
+   在 PaiXie.Erp.Areas.Sys.SysController.Save(Sysuser obj) 位置 e:\001\src\PaiXie\PaiXie.Erp\Areas\Sys\Controllers\SysController.cs:行号 63
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+------------------------------------------------------------------

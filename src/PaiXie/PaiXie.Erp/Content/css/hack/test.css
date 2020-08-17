@@ -1,0 +1,48 @@
+﻿/* http://www.fantxi.com/demo/html/browser_detector.html */
+
+/*css hacks start*/
+
+#example{
+background:#036;/*Moz (& All browsers)*/
+_background:#F00;/*IE5 (& IE5.5/IE6)*/
+/*/background:#630;*/
+/*IE8 beta1
+如果装了IE8 beta1绿色版之后,又安装了IE8 beta2,那么再用IE8 beta1绿色版访问此页,IE8 beta1显示效果为IE7
+Ps:我是先装了IETester,后装Internet Explorer Collection测试发现是这样的,也许是装了Internet Explorer Collection使IETester的IE8内核变成了IE7?..
+*/
+background:#09F\0;/*IE8/IE9*/
+background:#09F\0/;/*IE8 only*/
+}
+
+:root #example { background:#963\0 }/*IE9 only*/
+
+#example/*IE5.5+*/{
++background:#f60; /*IE7 (& IE5.5/IE6),“+”可以写成“*”*/
+_background:#000;/*IE6 (& IE5.5)*/
+_background /*IE5.5*/:#390;
+/*IE8/IE9 也可写在这*/
+}
+
+@media all and (min-width:0){/* webkit and opera */
+#example{background:#f06;}
+}
+@media screen and (-webkit-min-device-pixel-ratio:0){
+#example{background:#609;}/*webkit (& Opera9.2)*/
+}
+
+/* webkit */
+@media screen and (-webkit-min-device-pixel-ratio:0){ #example{} }
+/* opera */
+@media all and (-webkit-min-device-pixel-ratio:10000), not all and (-webkit-min-device-pixel-ratio:0) { #example{} }
+/* firefox * /
+@-moz-document url-prefix(){ #example{} }
+
+/*
+body:nth-of-type(1) #example{
+   background:#ccc;
+}
+Google Chrome $ Safari 3+ & Opera 9.5
+
+*/
+
+/*css hacks end*/

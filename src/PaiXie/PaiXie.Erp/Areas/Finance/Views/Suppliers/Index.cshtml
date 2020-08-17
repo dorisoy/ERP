@@ -1,0 +1,61 @@
+﻿@{
+    ViewBag.Title = "title";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+    
+
+}
+<div data-options="region:'north'" style="height:105px">
+    <input type="hidden" name="refreshCurrentPage" id="refreshCurrentPage" />
+    <div class="toolbar">
+        <a href="javascript:void(0);" class="refresh" id="refresh"><span></span>刷新</a>
+        <a href="javascript:void(0);" class="" id="add"><span></span>供应商结算</a>
+       </div>
+    <div class="searchpro" id="searchpro">
+        <label>供应商名称：</label>
+        <select id="Suppliers" name="Suppliers" class="easyui-combobox" data-options="height:30,panelHeight:161,width:130"></select>
+
+        <label>类型：</label>
+        <select id="billtype" name="billtype" class="easyui-combobox" data-options="height:30,panelHeight:161,width:130">
+            <option value="0">不限</option>
+            <option value="10">采购入库</option>
+            <option value="20">采购退回</option>
+        </select>
+
+
+        <label>审核状态：</label>
+        <select id="Status" name="Status" class="easyui-combobox" data-options="height:30,panelHeight:161,width:130">
+            <option value="0">不限</option>
+            <option value="2">待审核</option>
+            <option value="3">已审核</option>
+        </select>
+
+
+        <label>结算状态：</label>
+        <select id="Settlement" name="Settlement" class="easyui-combobox" data-options="height:30,panelHeight:161,width:130">
+            <option value="-1">不限</option>
+            <option value="0">待结算</option>
+            <option value="1">已结算</option>
+        </select>
+
+       
+        <input type="button" class="button" id="btnSerach" value="模糊搜索">
+        <input type="button" class="button-rest" id="btnRest" value="重置" onclick="javascript:location.reload();">
+   
+    </div>
+</div>
+<div data-options="region:'center'" class="p0lr22">
+    <input id="hid" type="hidden" value="0" />
+    <input id="issupper" type="hidden" value="0" />
+    <table id="grid" class="easyui-datagrid"
+           data-options="singleSelect:false,collapsible:true,method:'get'"></table>
+
+
+
+</div>
+@section bottom{
+<script src="~/Areas/Finance/ViewJs/Supplierslist.js"></script>
+
+}
+

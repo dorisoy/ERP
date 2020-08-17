@@ -1,0 +1,55 @@
+﻿@using PaiXie.Data
+@{
+    var warehouseLocation = ViewBag.WarehouseLocation as WarehouseLocation;
+    var productsNum = ViewBag.ProductsNum;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+    <style>
+        .reservoirifo {
+            line-height: 30px;
+            height: 30px;
+            color: #fc8b00;
+        }
+
+            .reservoirifo span {
+                padding-right: 20px;
+                font-size: 14px;
+            }
+    </style>
+}
+<div class="easyui-layout" data-options="fit:true">
+    <div data-options="region:'north',height:148" id="topdiv">
+        <div class="toolbar" id="toolbar">
+            <a href="javascript:void(0);" class="refresh" id="refresh"><span></span>刷新</a>
+            <a href="javascript:void(0);" id="export"><span></span>导出</a>
+        </div>
+        <div class="searchpro" id="searchpro">
+            <select id="keyWordType" name="keyWordType" class="easyui-combobox" data-options="height:30,width:100,editable:false">
+                <option value="">关键字类型</option>
+                <option value="商品名称">商品名称</option>
+                <option value="商品编码" selected>商品编码</option>
+                <option value="商品货号">商品货号</option>
+                <option value="商品SKU码">商品SKU码</option>
+            </select>
+            <input type="text" id="txtKeyWord" value="" style="width:150px;">
+            <label>分类：</label><input id="category" name="category" class="easyui-combotree" data-options="url:'/Products/Category/JsonTree?ram='+Math.random(),method:'get',height:30,width:82">
+            <label>品牌：</label><select id="brand" name="brand" class="easyui-combobox" data-options="height:30,width:82"></select>
+            <input type="button" id="btnSearch" value="搜索" class="button">
+            <input type="button" id="btnReset" value="清空条件" class="button-rest">
+        </div>
+        <div class="reservoirifo p0lr22">
+            <span>库区名称: @warehouseLocation.Name</span>
+            <span>库位数量:1</span>
+            <span>库位编码: @warehouseLocation.Code</span>
+            <span>商品数量: @productsNum</span>
+            <input type="hidden" id="hdnLocationID" value="@warehouseLocation.ID" />
+        </div>
+    </div>
+    <div data-options="region:'center',border:false" class="p0lr22">
+        <table id="grid" class="easyui-datagrid" title="" data-options="singleSelect:false,collapsible:true,method:'get'"></table>
+    </div>
+</div>
+@section bottom{
+    <script src="~/Areas/Warehouse/ViewJs/WasteBinInfoList.js"></script>
+}

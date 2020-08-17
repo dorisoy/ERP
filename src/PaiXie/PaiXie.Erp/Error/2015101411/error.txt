@@ -1,0 +1,358 @@
+2015/10/14 11:18:38
+未找到视图“Search”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: 
+~/Areas/Warehouse/Views/WarehouseBookingProductsSku/Search.aspx
+~/Areas/Warehouse/Views/WarehouseBookingProductsSku/Search.ascx
+~/Areas/Warehouse/Views/Shared/Search.aspx
+~/Areas/Warehouse/Views/Shared/Search.ascx
+~/Views/WarehouseBookingProductsSku/Search.aspx
+~/Views/WarehouseBookingProductsSku/Search.ascx
+~/Views/Shared/Search.aspx
+~/Views/Shared/Search.ascx
+~/Areas/Warehouse/Views/WarehouseBookingProductsSku/Search.cshtml
+~/Areas/Warehouse/Views/WarehouseBookingProductsSku/Search.vbhtml
+~/Areas/Warehouse/Views/Shared/Search.cshtml
+~/Areas/Warehouse/Views/Shared/Search.vbhtml
+~/Views/WarehouseBookingProductsSku/Search.cshtml
+~/Views/WarehouseBookingProductsSku/Search.vbhtml
+~/Views/Shared/Search.cshtml
+~/Views/Shared/Search.vbhtml----System.InvalidOperationException: 未找到视图“Search”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: 
+~/Areas/Warehouse/Views/WarehouseBookingProductsSku/Search.aspx
+~/Areas/Warehouse/Views/WarehouseBookingProductsSku/Search.ascx
+~/Areas/Warehouse/Views/Shared/Search.aspx
+~/Areas/Warehouse/Views/Shared/Search.ascx
+~/Views/WarehouseBookingProductsSku/Search.aspx
+~/Views/WarehouseBookingProductsSku/Search.ascx
+~/Views/Shared/Search.aspx
+~/Views/Shared/Search.ascx
+~/Areas/Warehouse/Views/WarehouseBookingProductsSku/Search.cshtml
+~/Areas/Warehouse/Views/WarehouseBookingProductsSku/Search.vbhtml
+~/Areas/Warehouse/Views/Shared/Search.cshtml
+~/Areas/Warehouse/Views/Shared/Search.vbhtml
+~/Views/WarehouseBookingProductsSku/Search.cshtml
+~/Views/WarehouseBookingProductsSku/Search.vbhtml
+~/Views/Shared/Search.cshtml
+~/Views/Shared/Search.vbhtml
+   在 System.Web.Mvc.ViewResult.FindView(ControllerContext context)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+------------------------------------------------------------------
+2015/10/14 11:19:21
+未找到视图“Search”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: 
+~/Areas/Warehouse/Views/WarehouseBookingProductsSku/Search.aspx
+~/Areas/Warehouse/Views/WarehouseBookingProductsSku/Search.ascx
+~/Areas/Warehouse/Views/Shared/Search.aspx
+~/Areas/Warehouse/Views/Shared/Search.ascx
+~/Views/WarehouseBookingProductsSku/Search.aspx
+~/Views/WarehouseBookingProductsSku/Search.ascx
+~/Views/Shared/Search.aspx
+~/Views/Shared/Search.ascx
+~/Areas/Warehouse/Views/WarehouseBookingProductsSku/Search.cshtml
+~/Areas/Warehouse/Views/WarehouseBookingProductsSku/Search.vbhtml
+~/Areas/Warehouse/Views/Shared/Search.cshtml
+~/Areas/Warehouse/Views/Shared/Search.vbhtml
+~/Views/WarehouseBookingProductsSku/Search.cshtml
+~/Views/WarehouseBookingProductsSku/Search.vbhtml
+~/Views/Shared/Search.cshtml
+~/Views/Shared/Search.vbhtml----System.InvalidOperationException: 未找到视图“Search”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: 
+~/Areas/Warehouse/Views/WarehouseBookingProductsSku/Search.aspx
+~/Areas/Warehouse/Views/WarehouseBookingProductsSku/Search.ascx
+~/Areas/Warehouse/Views/Shared/Search.aspx
+~/Areas/Warehouse/Views/Shared/Search.ascx
+~/Views/WarehouseBookingProductsSku/Search.aspx
+~/Views/WarehouseBookingProductsSku/Search.ascx
+~/Views/Shared/Search.aspx
+~/Views/Shared/Search.ascx
+~/Areas/Warehouse/Views/WarehouseBookingProductsSku/Search.cshtml
+~/Areas/Warehouse/Views/WarehouseBookingProductsSku/Search.vbhtml
+~/Areas/Warehouse/Views/Shared/Search.cshtml
+~/Areas/Warehouse/Views/Shared/Search.vbhtml
+~/Views/WarehouseBookingProductsSku/Search.cshtml
+~/Views/WarehouseBookingProductsSku/Search.vbhtml
+~/Views/Shared/Search.cshtml
+~/Views/Shared/Search.vbhtml
+   在 System.Web.Mvc.ViewResult.FindView(ControllerContext context)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+------------------------------------------------------------------
+2015/10/14 11:23:26
+未找到视图“Search”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: 
+~/Areas/Warehouse/Views/WarehouseBookingProductsSku/Search.aspx
+~/Areas/Warehouse/Views/WarehouseBookingProductsSku/Search.ascx
+~/Areas/Warehouse/Views/Shared/Search.aspx
+~/Areas/Warehouse/Views/Shared/Search.ascx
+~/Views/WarehouseBookingProductsSku/Search.aspx
+~/Views/WarehouseBookingProductsSku/Search.ascx
+~/Views/Shared/Search.aspx
+~/Views/Shared/Search.ascx
+~/Areas/Warehouse/Views/WarehouseBookingProductsSku/Search.cshtml
+~/Areas/Warehouse/Views/WarehouseBookingProductsSku/Search.vbhtml
+~/Areas/Warehouse/Views/Shared/Search.cshtml
+~/Areas/Warehouse/Views/Shared/Search.vbhtml
+~/Views/WarehouseBookingProductsSku/Search.cshtml
+~/Views/WarehouseBookingProductsSku/Search.vbhtml
+~/Views/Shared/Search.cshtml
+~/Views/Shared/Search.vbhtml----System.InvalidOperationException: 未找到视图“Search”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: 
+~/Areas/Warehouse/Views/WarehouseBookingProductsSku/Search.aspx
+~/Areas/Warehouse/Views/WarehouseBookingProductsSku/Search.ascx
+~/Areas/Warehouse/Views/Shared/Search.aspx
+~/Areas/Warehouse/Views/Shared/Search.ascx
+~/Views/WarehouseBookingProductsSku/Search.aspx
+~/Views/WarehouseBookingProductsSku/Search.ascx
+~/Views/Shared/Search.aspx
+~/Views/Shared/Search.ascx
+~/Areas/Warehouse/Views/WarehouseBookingProductsSku/Search.cshtml
+~/Areas/Warehouse/Views/WarehouseBookingProductsSku/Search.vbhtml
+~/Areas/Warehouse/Views/Shared/Search.cshtml
+~/Areas/Warehouse/Views/Shared/Search.vbhtml
+~/Views/WarehouseBookingProductsSku/Search.cshtml
+~/Views/WarehouseBookingProductsSku/Search.vbhtml
+~/Views/Shared/Search.cshtml
+~/Views/Shared/Search.vbhtml
+   在 System.Web.Mvc.ViewResult.FindView(ControllerContext context)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+------------------------------------------------------------------
+2015/10/14 11:23:41
+未找到视图“Search”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: 
+~/Areas/Warehouse/Views/WarehouseBookingProductsSku/Search.aspx
+~/Areas/Warehouse/Views/WarehouseBookingProductsSku/Search.ascx
+~/Areas/Warehouse/Views/Shared/Search.aspx
+~/Areas/Warehouse/Views/Shared/Search.ascx
+~/Views/WarehouseBookingProductsSku/Search.aspx
+~/Views/WarehouseBookingProductsSku/Search.ascx
+~/Views/Shared/Search.aspx
+~/Views/Shared/Search.ascx
+~/Areas/Warehouse/Views/WarehouseBookingProductsSku/Search.cshtml
+~/Areas/Warehouse/Views/WarehouseBookingProductsSku/Search.vbhtml
+~/Areas/Warehouse/Views/Shared/Search.cshtml
+~/Areas/Warehouse/Views/Shared/Search.vbhtml
+~/Views/WarehouseBookingProductsSku/Search.cshtml
+~/Views/WarehouseBookingProductsSku/Search.vbhtml
+~/Views/Shared/Search.cshtml
+~/Views/Shared/Search.vbhtml----System.InvalidOperationException: 未找到视图“Search”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: 
+~/Areas/Warehouse/Views/WarehouseBookingProductsSku/Search.aspx
+~/Areas/Warehouse/Views/WarehouseBookingProductsSku/Search.ascx
+~/Areas/Warehouse/Views/Shared/Search.aspx
+~/Areas/Warehouse/Views/Shared/Search.ascx
+~/Views/WarehouseBookingProductsSku/Search.aspx
+~/Views/WarehouseBookingProductsSku/Search.ascx
+~/Views/Shared/Search.aspx
+~/Views/Shared/Search.ascx
+~/Areas/Warehouse/Views/WarehouseBookingProductsSku/Search.cshtml
+~/Areas/Warehouse/Views/WarehouseBookingProductsSku/Search.vbhtml
+~/Areas/Warehouse/Views/Shared/Search.cshtml
+~/Areas/Warehouse/Views/Shared/Search.vbhtml
+~/Views/WarehouseBookingProductsSku/Search.cshtml
+~/Views/WarehouseBookingProductsSku/Search.vbhtml
+~/Views/Shared/Search.cshtml
+~/Views/Shared/Search.vbhtml
+   在 System.Web.Mvc.ViewResult.FindView(ControllerContext context)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+------------------------------------------------------------------
+2015/10/14 11:27:10
+未将对象引用设置到对象的实例。----System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 PaiXie.Erp.Areas.Warehouse.Controllers.WarehouseBookingProductsSkuController.Search(String ProductsCode) 位置 f:\erpnet\src\PaiXie\PaiXie.Erp\Areas\Warehouse\Controllers\WarehouseBookingProductsSkuController.cs:行号 64
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+------------------------------------------------------------------
+2015/10/14 11:29:03
+未将对象引用设置到对象的实例。----System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 PaiXie.Erp.Areas.Warehouse.Controllers.WarehouseBookingProductsSkuController.Search(String ProductsCode) 位置 f:\erpnet\src\PaiXie\PaiXie.Erp\Areas\Warehouse\Controllers\WarehouseBookingProductsSkuController.cs:行号 53
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+------------------------------------------------------------------
+2015/10/14 11:33:10
+未找到视图“Search”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: 
+~/Areas/Warehouse/Views/WarehouseBookingProductsSku/Search.aspx
+~/Areas/Warehouse/Views/WarehouseBookingProductsSku/Search.ascx
+~/Areas/Warehouse/Views/Shared/Search.aspx
+~/Areas/Warehouse/Views/Shared/Search.ascx
+~/Views/WarehouseBookingProductsSku/Search.aspx
+~/Views/WarehouseBookingProductsSku/Search.ascx
+~/Views/Shared/Search.aspx
+~/Views/Shared/Search.ascx
+~/Areas/Warehouse/Views/WarehouseBookingProductsSku/Search.cshtml
+~/Areas/Warehouse/Views/WarehouseBookingProductsSku/Search.vbhtml
+~/Areas/Warehouse/Views/Shared/Search.cshtml
+~/Areas/Warehouse/Views/Shared/Search.vbhtml
+~/Views/WarehouseBookingProductsSku/Search.cshtml
+~/Views/WarehouseBookingProductsSku/Search.vbhtml
+~/Views/Shared/Search.cshtml
+~/Views/Shared/Search.vbhtml----System.InvalidOperationException: 未找到视图“Search”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: 
+~/Areas/Warehouse/Views/WarehouseBookingProductsSku/Search.aspx
+~/Areas/Warehouse/Views/WarehouseBookingProductsSku/Search.ascx
+~/Areas/Warehouse/Views/Shared/Search.aspx
+~/Areas/Warehouse/Views/Shared/Search.ascx
+~/Views/WarehouseBookingProductsSku/Search.aspx
+~/Views/WarehouseBookingProductsSku/Search.ascx
+~/Views/Shared/Search.aspx
+~/Views/Shared/Search.ascx
+~/Areas/Warehouse/Views/WarehouseBookingProductsSku/Search.cshtml
+~/Areas/Warehouse/Views/WarehouseBookingProductsSku/Search.vbhtml
+~/Areas/Warehouse/Views/Shared/Search.cshtml
+~/Areas/Warehouse/Views/Shared/Search.vbhtml
+~/Views/WarehouseBookingProductsSku/Search.cshtml
+~/Views/WarehouseBookingProductsSku/Search.vbhtml
+~/Views/Shared/Search.cshtml
+~/Views/Shared/Search.vbhtml
+   在 System.Web.Mvc.ViewResult.FindView(ControllerContext context)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+------------------------------------------------------------------
+2015/10/14 11:33:47
+未找到视图“Search”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: 
+~/Areas/Warehouse/Views/WarehouseBookingProductsSku/Search.aspx
+~/Areas/Warehouse/Views/WarehouseBookingProductsSku/Search.ascx
+~/Areas/Warehouse/Views/Shared/Search.aspx
+~/Areas/Warehouse/Views/Shared/Search.ascx
+~/Views/WarehouseBookingProductsSku/Search.aspx
+~/Views/WarehouseBookingProductsSku/Search.ascx
+~/Views/Shared/Search.aspx
+~/Views/Shared/Search.ascx
+~/Areas/Warehouse/Views/WarehouseBookingProductsSku/Search.cshtml
+~/Areas/Warehouse/Views/WarehouseBookingProductsSku/Search.vbhtml
+~/Areas/Warehouse/Views/Shared/Search.cshtml
+~/Areas/Warehouse/Views/Shared/Search.vbhtml
+~/Views/WarehouseBookingProductsSku/Search.cshtml
+~/Views/WarehouseBookingProductsSku/Search.vbhtml
+~/Views/Shared/Search.cshtml
+~/Views/Shared/Search.vbhtml----System.InvalidOperationException: 未找到视图“Search”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: 
+~/Areas/Warehouse/Views/WarehouseBookingProductsSku/Search.aspx
+~/Areas/Warehouse/Views/WarehouseBookingProductsSku/Search.ascx
+~/Areas/Warehouse/Views/Shared/Search.aspx
+~/Areas/Warehouse/Views/Shared/Search.ascx
+~/Views/WarehouseBookingProductsSku/Search.aspx
+~/Views/WarehouseBookingProductsSku/Search.ascx
+~/Views/Shared/Search.aspx
+~/Views/Shared/Search.ascx
+~/Areas/Warehouse/Views/WarehouseBookingProductsSku/Search.cshtml
+~/Areas/Warehouse/Views/WarehouseBookingProductsSku/Search.vbhtml
+~/Areas/Warehouse/Views/Shared/Search.cshtml
+~/Areas/Warehouse/Views/Shared/Search.vbhtml
+~/Views/WarehouseBookingProductsSku/Search.cshtml
+~/Views/WarehouseBookingProductsSku/Search.vbhtml
+~/Views/Shared/Search.cshtml
+~/Views/Shared/Search.vbhtml
+   在 System.Web.Mvc.ViewResult.FindView(ControllerContext context)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+------------------------------------------------------------------
+2015/10/14 11:35:18
+未找到视图“Search”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: 
+~/Areas/Warehouse/Views/WarehouseBookingProductsSku/Search.aspx
+~/Areas/Warehouse/Views/WarehouseBookingProductsSku/Search.ascx
+~/Areas/Warehouse/Views/Shared/Search.aspx
+~/Areas/Warehouse/Views/Shared/Search.ascx
+~/Views/WarehouseBookingProductsSku/Search.aspx
+~/Views/WarehouseBookingProductsSku/Search.ascx
+~/Views/Shared/Search.aspx
+~/Views/Shared/Search.ascx
+~/Areas/Warehouse/Views/WarehouseBookingProductsSku/Search.cshtml
+~/Areas/Warehouse/Views/WarehouseBookingProductsSku/Search.vbhtml
+~/Areas/Warehouse/Views/Shared/Search.cshtml
+~/Areas/Warehouse/Views/Shared/Search.vbhtml
+~/Views/WarehouseBookingProductsSku/Search.cshtml
+~/Views/WarehouseBookingProductsSku/Search.vbhtml
+~/Views/Shared/Search.cshtml
+~/Views/Shared/Search.vbhtml----System.InvalidOperationException: 未找到视图“Search”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: 
+~/Areas/Warehouse/Views/WarehouseBookingProductsSku/Search.aspx
+~/Areas/Warehouse/Views/WarehouseBookingProductsSku/Search.ascx
+~/Areas/Warehouse/Views/Shared/Search.aspx
+~/Areas/Warehouse/Views/Shared/Search.ascx
+~/Views/WarehouseBookingProductsSku/Search.aspx
+~/Views/WarehouseBookingProductsSku/Search.ascx
+~/Views/Shared/Search.aspx
+~/Views/Shared/Search.ascx
+~/Areas/Warehouse/Views/WarehouseBookingProductsSku/Search.cshtml
+~/Areas/Warehouse/Views/WarehouseBookingProductsSku/Search.vbhtml
+~/Areas/Warehouse/Views/Shared/Search.cshtml
+~/Areas/Warehouse/Views/Shared/Search.vbhtml
+~/Views/WarehouseBookingProductsSku/Search.cshtml
+~/Views/WarehouseBookingProductsSku/Search.vbhtml
+~/Views/Shared/Search.cshtml
+~/Views/Shared/Search.vbhtml
+   在 System.Web.Mvc.ViewResult.FindView(ControllerContext context)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+------------------------------------------------------------------
+2015/10/14 11:35:18
+未找到视图“Search”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: 
+~/Areas/Warehouse/Views/WarehouseBookingProductsSku/Search.aspx
+~/Areas/Warehouse/Views/WarehouseBookingProductsSku/Search.ascx
+~/Areas/Warehouse/Views/Shared/Search.aspx
+~/Areas/Warehouse/Views/Shared/Search.ascx
+~/Views/WarehouseBookingProductsSku/Search.aspx
+~/Views/WarehouseBookingProductsSku/Search.ascx
+~/Views/Shared/Search.aspx
+~/Views/Shared/Search.ascx
+~/Areas/Warehouse/Views/WarehouseBookingProductsSku/Search.cshtml
+~/Areas/Warehouse/Views/WarehouseBookingProductsSku/Search.vbhtml
+~/Areas/Warehouse/Views/Shared/Search.cshtml
+~/Areas/Warehouse/Views/Shared/Search.vbhtml
+~/Views/WarehouseBookingProductsSku/Search.cshtml
+~/Views/WarehouseBookingProductsSku/Search.vbhtml
+~/Views/Shared/Search.cshtml
+~/Views/Shared/Search.vbhtml----System.InvalidOperationException: 未找到视图“Search”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: 
+~/Areas/Warehouse/Views/WarehouseBookingProductsSku/Search.aspx
+~/Areas/Warehouse/Views/WarehouseBookingProductsSku/Search.ascx
+~/Areas/Warehouse/Views/Shared/Search.aspx
+~/Areas/Warehouse/Views/Shared/Search.ascx
+~/Views/WarehouseBookingProductsSku/Search.aspx
+~/Views/WarehouseBookingProductsSku/Search.ascx
+~/Views/Shared/Search.aspx
+~/Views/Shared/Search.ascx
+~/Areas/Warehouse/Views/WarehouseBookingProductsSku/Search.cshtml
+~/Areas/Warehouse/Views/WarehouseBookingProductsSku/Search.vbhtml
+~/Areas/Warehouse/Views/Shared/Search.cshtml
+~/Areas/Warehouse/Views/Shared/Search.vbhtml
+~/Views/WarehouseBookingProductsSku/Search.cshtml
+~/Views/WarehouseBookingProductsSku/Search.vbhtml
+~/Views/Shared/Search.cshtml
+~/Views/Shared/Search.vbhtml
+   在 System.Web.Mvc.ViewResult.FindView(ControllerContext context)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+------------------------------------------------------------------

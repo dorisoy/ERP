@@ -1,0 +1,91 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Uploadajax</title>
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+
+
+  
+
+</head>
+<body>
+    <div>
+        <div class="col-sm-7">
+            <input type="file" id="filePicture" name="filePicture" value="浏览" />
+            <button id="btnUploadPicture" type="button">上传</button>
+            <img src="" id="imgPicture" width="100" height="100"  />
+         
+            <br />
+            <input type="text" name="uppicture" style="width: 1px;height: 1px;border: none;" class="" value="上传" />
+        </div>
+    </div>
+    <script src="~/Scripts/ajaxfileupload.js"></script>
+     <script>
+        function validatePicture(fileName) {
+            var file = document.getElementById(fileName).value;
+            if (file.length == 0) {
+                alert("请选择要上传的位图文件!");
+                return false;
+            }
+
+            var index = file.lastIndexOf(".");
+            if (index > -1) {
+                //获取扩展名
+                var extName = file.substring(index + 1).toLowerCase();
+                if (extName == 'png' || extName == 'jpg') {
+                    return true;
+                }
+                else {
+                    alert("只能上传 .png jpg类型的文件!");
+                    return false;
+
+                }
+            }
+            else {
+                alert("只能上传 .png jpg类型的文件!");
+                return false;
+            }
+        }
+
+        $("#btnUploadPicture").click(function (ev) {
+
+
+            ev.preventDefault();
+            if (!validatePicture("filePicture"))
+                return;
+            $.ajaxFileUpload({
+                url: "/Export/CatalogPicture",
+                secureuri: false,
+                fileElementId: "filePicture",
+                dataType: "json",
+                success: function (r) {
+                    var map = $.parseJSON(r);
+                    if (map.result == 1) {
+                        $("[name=uppicture]").val(map.message);
+                        $("#imgPicture").attr("src", map.message);
+                        $("#imgPicture").removeClass("hidden");
+
+                    } else {
+                           }
+
+                    //if (url) {
+                    //      } else {
+                    //    alert("上传失败!");
+                    //}
+                },
+                error: function () {
+                    alert("上传失败!");
+                }
+            });
+        });
+
+
+    </script>
+</body>
+</html>

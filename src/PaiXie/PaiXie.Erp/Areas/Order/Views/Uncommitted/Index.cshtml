@@ -1,0 +1,36 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{}
+<div class="easyui-layout" data-options="fit:true">
+    <div data-options="region:'north',height:113" id="topdiv">
+        <div class="toolbar" id="toolbar">
+            <a href="javascript:void(0)" class="refresh" id="refresh"><span></span>刷新</a>
+            <a href="javascript:void(0)" id="add">添加订单</a>
+            <a href="javascript:void(0);" id="refreshCurrentPage" style="display:none;"><span></span>刷新当前页</a>
+        </div>
+        <div class="searchpro" id="searchpro">
+            <form id="ff" method="post">
+                <select id="keyWordType" name="keyWordType" class="easyui-combobox" data-options="height:30,width:100,editable:false">
+                    <option value="">关键字类型</option>
+                    <option value="收件人姓名" selected>收件人姓名</option>
+                    <option value="收件人手机">收件人手机</option>
+                    <option value="订单编号">订单编号</option>
+                    <option value="外部订单号">外部订单号</option>
+                    <option value="商品编码">商品编码</option>
+                    <option value="商品货号">商品货号</option>
+                    <option value="商品SKU码">商品SKU码</option>
+                </select>
+                <input type="text" id="txtKeyWord" value="" style="width:150px;">
+                <input type="button" id="btnSearch" value="搜索" class="button">
+                <input type="button" id="btnReset" value="清空条件" class="button-rest">
+            </form>
+        </div>
+    </div>
+    <div data-options="region:'center',border:false" style="padding:0 22px;">
+        <table id="grid" class="easyui-datagrid" title="" data-options="singleSelect:false,collapsible:true,method:'get'"></table>
+    </div>
+</div>
+@section bottom{
+    <script src="~/Areas/Order/ViewJs/UncommittedInfoList.js"></script>
+}

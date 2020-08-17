@@ -1,0 +1,479 @@
+﻿@using PaiXie.Data
+@using System.Data;
+@{
+    var dtPlatformTypes = ViewBag.dtPlatformTypes as DataTable;
+    var Type = ViewBag.Type as DataTable; 
+    var Sysuser = ViewBag.Sysuser as Shop;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+     var stype ='0'.ToString();
+     if (!string.IsNullOrEmpty(Sysuser.Type)) {
+         stype = Sysuser.Type;
+     }
+
+
+     var ddlsheng = "0";
+     var ddlshi = "0";
+     var ddlqu = "0";
+     var deladd = "";
+     if (!string.IsNullOrEmpty(Sysuser.StoreAddr)) {
+         string[] ins = Sysuser.StoreAddr.Split(',');
+         for (int z = 0; z < ins.Length; z++) {
+             if(z==0)
+             {
+                 ddlsheng = ins[0]; 
+             }
+           
+             else if (z == 1)
+             {
+                 ddlshi = ins[1];
+             }
+                
+             else if (z == 2)
+             {
+                 ddlqu = ins[2];
+             }
+
+             else if (z == 3) {
+                 deladd = ins[3];
+             }
+           
+         }
+         
+     }
+}
+    @section head{
+<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+<link href="~/Content/css/pro.css" rel="stylesheet" />
+<style type="text/css">
+    .gray {
+        color: Gray;
+    }
+
+    .textcenter {
+        text-align: left;
+    }
+</style>
+
+<script type="text/javascript">
+    $(function
+    () {
+        $("#dadd")
+        .addClass("gray")//添加灰色字体样式
+        .val("请输入详细地址")//添加文字
+        .bind({//绑定以下两个事件
+            //①单击事件（如果文本框中的文字为
+            //  请输入查询关键字，则给文本框置为空，且移除灰色字体样式）
+            "focus":
+        function
+        () {
+            if
+            ($(this).val()
+            ==
+            "请输入详细地址")
+            {
+                $(this).val("").removeClass("gray");
+            }
+        },
+            //②失去焦点事件（如果文本框没有输入内容，则为其添加
+            // 请输入关键字 的提示信息，且添加灰色字体样式）
+            "blur":
+            function
+            () {
+                if
+                ($(this).val()              ==
+                "")
+                {
+                    $(this).val("请输入详细地址").addClass("gray");
+                }
+            }
+        });
+    });
+</script>
+    }
+<div class="easyui-layout" data-options="fit:true">
+	
+    <div data-options="region:'north',height:62" id="topdiv">
+        <div class="toolbar" id="toolbar">
+            <a id="back" class="back" href="javascript:history.go(-1)"><span></span>返回</a>
+            <a id="tsave" href="javascript:void(0)">保存</a>
+        </div>
+        </div>
+    <div data-options="region:'center',border:false " class="p0lr22">
+        @*<div style="padding:20px">*@
+        <form id="ff" method="post" novalidate="novalidate">
+            <input type="hidden" value="@Sysuser.ID" id="ID" name="ID" />
+            <input type="hidden" value="@Sysuser.Code" id="Code" name="Code" />
+            <input type="hidden" value="@Sysuser.IsEnable" id="IsEnable" name="IsEnable" />
+            <input type="hidden" value="@Sysuser.RefreshToken" id="RefreshToken" name="RefreshToken" />
+            <input type="hidden" value="@Sysuser.Website" id="Website" name="Website" />
+            <input type="hidden" value="@Sysuser.Remark" id="Remark" name="Remark" />
+            <input type="hidden" id="Type" name="Type" value="@Sysuser.Type" />
+            <table id="tblAdd" class="tableinfo">
+                <tr>
+                    <th style="width:200px">@*<label for="Name">*@店铺名称：@*</label>*@</th>
+                    <td>
+                        <input style="width:300px;" value="@Sysuser.Name" class="easyui-validatebox" type="text" id="Name" name="Name" data-options="required:true,validType:'length[1,20]'" /> <span class="f12c">20个字以内</span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>店铺负责人：</th>
+                    <td>
+                        <input style="width:160px;" value="@Sysuser.ContactPerson" class="easyui-validatebox" type="text" id="ContactPerson" name="ContactPerson" />
+                    </td>
+                </tr>
+                <tr>
+                    <th>联系电话：</th>
+                    <td>
+                        <input style="width:160px;" value="@Sysuser.ContactTel" class="easyui-validatebox" type="text" id="AppSession" name="ContactTel" />
+                    </td>
+                </tr>
+                <tr>
+                    <th>店铺类型：</th>
+                    <td>
+                        @{
+                            for (int i = 0; i < Type.Rows.Count; i++) {
+                                <label>
+                                    <input name="Typeradio" type="radio" onclick="change();"
+                                           @(Sysuser.ID > 0 ? "disabled='disabled'" : "")
+                                           @(Sysuser.Type == Type.Rows[i]["Value"].ToString() ? "checked" : "")
+                                           @("1" == Type.Rows[i]["Value"].ToString() ? "checked" : "")
+                                           value="@(Type.Rows[i]["Value"])" />@(Type.Rows[i]["TEXT"])
+                                    </label>
+
+                            }
+
+                        }
+
+                        <span class="f12c"><span class="red">注:</span>店铺类型添加后不能修改</span>
+                    </td>
+                </tr>
+                <tr id="ptlxvisual">
+                    <th style="width:200px">平台类型：</th>
+                    <td>
+
+                        <select name="PlatformType" class="easyui-combobox" data-options="height:30">
+                            @{
+                                for (int i = 0; i < dtPlatformTypes.Rows.Count; i++) {
+                                    <option value="@(dtPlatformTypes.Rows[i]["Value"])" @(Sysuser.PlatformType == (int)dtPlatformTypes.Rows[i]["Value"] ? "selected" : "")>@(dtPlatformTypes.Rows[i]["Name"])</option>
+
+                                }
+
+                            }
+                        </select>
+                    </td>
+                </tr>
+                <tr id="ak">
+                    <th style="width:200px">AppKey：</th>
+                    <td>
+                        <input style="width:300px;" value="@Sysuser.AppKey" class="easyui-validatebox" type="text" id="AppKey" name="AppKey" />
+                    </td>
+                </tr>
+                <tr id="ast">
+                    <th style="width:200px">AppSecret：</th>
+                    <td>
+                        <input style="width:300px;" value="@Sysuser.AppSecret" class="easyui-validatebox" type="text" id="AppSecret" name="AppSecret" />
+                    </td>
+                </tr>
+                <tr id="asn">
+                    <th style="width:200px">AppSession：</th>
+                    <td>
+                        <input style="width:300px;" value="@Sysuser.AppSession" class="easyui-validatebox" type="text" id="AppSession" name="AppSession" />
+                    </td>
+                </tr>
+                @*<tr id="mddz">
+                <th style="width:200px"><label for="Description">门店地址：</label></th>
+                <td >
+                    <textarea style="height:50px; width:400px;" id="StoreAddr" name="StoreAddr">@Sysuser.StoreAddr</textarea>
+                </td>
+            </tr>*@
+                <tr id="mddz">
+                    <th style="width:200px" valign="top">门店地址：</th>
+                    <td height="180" valign="top">
+                        <table>
+                            <tr>
+                                <td>
+
+
+                                    <select id="SelectF" class="easyui-combobox" data-options="valueField:'Value',textField:'Text',url:'/Warehouse/Warehouse/GetAreaJson',width:150,height:30,modal:true"></select>
+                                    <select id="SelectW" class="easyui-combobox" data-options="valueField:'Value',textField:'Text',url:'/Warehouse/Warehouse/GetAreaJson?grade=1&pid=@ddlsheng',width:150,height:30,modal:true"></select>
+                                    <select id="SelectL" class="easyui-combobox" data-options="valueField:'Value',textField:'Text',url:'/Warehouse/Warehouse/GetAreaJson?grade=2&pid=@ddlshi',width:150,height:30,modal:true"></select>
+                                    <input style="width:120px;" value="" class="easyui-validatebox" type="hidden" id="ssq" name="ssq" />
+                                    <input id="StoreAddr" name="StoreAddr" value="@Sysuser.StoreAddr" type="hidden" />
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <input style="width:400px;" value="@deladd" class="easyui-validatebox" type="text" id="dadd" name="dadd" onblur="searchByStationName();" data-options="height:30" />
+
+
+                                    @*经度：*@
+                                    <input id="Longitude" name="Longitude" value="@Sysuser.Longitude" type="hidden" />
+                                    @*纬度：*@
+
+                                    <input id="Latitude" name="Latitude" value="@Sysuser.Latitude" type="hidden" />
+                                    <input id="result_" type="hidden" />
+                                </td>
+                            </tr>
+
+
+
+                            <tr>
+                                <td>
+                                    <div id="container"
+                                         style="
+
+                margin-top:0px;
+                width: 600px;
+                height: 300px;
+                top: 10;
+                border: 1px solid gray;
+                overflow:hidden;">
+                                    </div>
+
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+                <tr id="mddz">
+                    <th style="width:200px" valign="top"</th>
+                    <td height="80" valign="top">
+                        <a href="javascript:void(0)" class="button-oky" id="btnSave" iconcls="icon-ok">确定</a>
+                        <a href="javascript:void(0)" class="button-cancel" iconcls="icon-cancel" id="btnClose">取消</a>
+
+                        </td></tr>
+            </table>
+         
+        </form>
+        @*</div>*@
+    </div>
+  
+    </div>  
+ 
+   
+@section bottom{
+<script src="~/Areas/shop/ViewJs/Editshop.js"></script>
+    <script>
+        $(document).ready(function () {
+
+
+            if('@deladd' !='')
+            {
+                $('#dadd').val('@deladd');
+                $('#dadd').removeClass("gray");
+                initMap();
+                var point = new BMap.Point(map_x, map_y);
+                curMarker.setPoint(point);
+            }
+          
+
+
+            var obj = document.getElementsByName("Typeradio");
+            for (var i = 0; i < obj.length; i++) {
+                if (obj[i].checked) {               
+                    if (obj[i].value=="1")//平台
+                    {
+                        $('#ptlxvisual').show();
+                        $('#ak').show();
+                        $('#ast').show();
+                        $('#asn').show();
+                        $('#mddz').hide();            
+                    } 
+                    else  if(obj[i].value == "2")//官网
+                    {
+                        $('#ptlxvisual').hide();
+                        $('#ak').show();
+                        $('#ast').show();
+                        $('#asn').show();
+                        $('#mddz').hide();
+                    }
+                    else //实体
+                    {
+                        $('#ptlxvisual').hide();
+                        $('#ak').hide();
+                        $('#ast').hide();
+                        $('#asn').hide();
+                        $('#mddz').show();
+                    }
+                }
+            }           
+       });
+    </script>
+
+
+<script type="text/javascript">
+
+
+
+    $(document).ready(function () {
+              //Start:设置combox的选择事件
+              $('#SelectF').combobox({
+                  onSelect: function () {
+                      var url = '/Warehouse/Warehouse/GetAreaJson?grade=1&pid=' + $('#SelectF').combobox('getValue');
+                      $('#SelectW').combobox('reload', url);
+                      $('#SelectW').combobox('select', 0);
+                      $('#SelectL').combobox('select', 0);
+                      $('#ssq').val($('#SelectF').combobox('getText'));
+                  }
+              });
+              $('#SelectW').combobox({
+                  onSelect: function () {
+                      var url = '/Warehouse/Warehouse/GetAreaJson?grade=2&pid=' + $('#SelectW').combobox('getValue');
+                      $('#SelectL').combobox('reload', url);
+                      $('#SelectL').combobox('select', 0);
+                      $('#ssq').val($('#SelectF').combobox('getText') + $('#SelectW').combobox('getText'));
+                  }
+              });
+              $('#SelectL').combobox({
+                  onSelect: function () {
+                      $('#ssq').val($('#SelectF').combobox('getText') + $('#SelectW').combobox('getText') + $('#SelectL').combobox('getText'));
+                  }
+              });
+              //End:设置combox的选择事件
+
+              //$("#SelectW").combobox('setValue', 0);
+              //$("#SelectL").combobox('setValue', 0);
+
+        //   alert($('#SelectF').combobox('getText'));
+
+
+
+              $("#SelectF").combobox('setValue', @ddlsheng);
+              $("#SelectW").combobox('setValue', @ddlshi);
+              $("#SelectL").combobox('setValue', @ddlqu);
+
+
+
+
+          });
+
+
+
+</script>
+
+
+<script type="text/javascript">
+    // 当前经纬度
+    @{string xstr = "116.405347";
+      if (string.IsNullOrEmpty(Sysuser.Longitude)) {
+             // xstr = "";
+          }
+      else {
+          xstr = Sysuser.Longitude;
+      }
+
+      }
+
+    var map_x = @xstr;
+
+    @{string ystr = "39.931867";
+          if (string.IsNullOrEmpty(Sysuser.Latitude)) {
+            //  ystr = "";
+          }
+          else {
+              ystr = Sysuser.Latitude;
+          }
+
+      }
+
+    var map_y =@ystr;
+    //创建和初始化地图函数：
+    function initMap(){
+        createMap();//创建地图
+        setMapEvent();//设置地图事件
+        addMapControl();//向地图添加控件
+        addMarker();//向地图中添加marker
+    }
+    //创建地图函数：
+    function createMap(){
+        var map = new BMap.Map("container");//在百度地图容器中创建一个地图
+        var point = new BMap.Point(map_x,map_y);//定义一个中心点坐标
+        map.centerAndZoom(point, 14);//设定地图的中心点和坐标并将地图显示在地图容器中
+        //  map.centerAndZoom("福建厦门同安西柯下尾", 14);
+        window.map = map;//将map变量存储在全局
+     //   map.addEventListener("click", getXy);
+    }
+    //地图事件设置函数：
+    function setMapEvent(){
+       map.enableDragging();//启用地图拖拽事件，默认启用(可不写)
+        //   map.disableDragging();   //禁止拖拽 
+        map.enableScrollWheelZoom();//启用地图滚轮放大缩小
+        map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
+        map.enableKeyboard();//启用键盘上下左右键移动地图
+    }
+    //地图控件添加函数：
+    function addMapControl(){
+        //向地图中添加缩放控件
+        var ctrl_nav = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_SMALL});
+        map.addControl(ctrl_nav);
+        //向地图中添加缩略图控件
+        var ctrl_ove = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:0});
+        map.addControl(ctrl_ove);
+        //向地图中添加比例尺控件
+        var ctrl_sca = new BMap.ScaleControl({anchor:BMAP_ANCHOR_TOP_RIGHT});
+        map.addControl(ctrl_sca);
+        //map.addEventListener("dragend", function showInfo() {
+        //    var cp = map.getCenter();
+        //    document.getElementById("result_").value = cp.lng + "," + cp.lat;
+        //    document.getElementById("Longitude").value = cp.lng;
+        //    document.getElementById("Latitude").value = cp.lat;
+        //    var point = new BMap.Point(cp.lng, cp.lat);
+        //    curMarker.setPoint(point);
+        //});
+    }
+    //标注点数组
+    var myMarker = {title:"",content:"",point:''+map_x+'|'+map_y,isOpen:0,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}};
+    var curMarker = null;
+    //创建marker
+    function addMarker(){
+        var json = myMarker;
+        var p0 = json.point.split("|")[0];
+        var p1 = json.point.split("|")[1];
+        var point = new BMap.Point(p0,p1);
+        var iconImg = createIcon(json.icon);
+        var marker = new BMap.Marker(point, { icon: iconImg });
+        marker.enableDragging();
+        marker.addEventListener("dragend", getXy);
+        map.addOverlay(marker);
+        curMarker = marker;
+    }
+    //创建InfoWindow
+    function createInfoWindow(i){
+        var json = markerArr[i];
+        var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title + "</b><div class='iw_poi_content'>"+json.content+"</div>");
+        return iw;
+    }
+    //创建一个Icon
+    function createIcon(json){
+        var icon = new BMap.Icon("http://app.baidu.com/map/images/us_mk_icon.png", new BMap.Size(json.w,json.h),{imageOffset: new BMap.Size(-json.l,-json.t),infoWindowOffset:new BMap.Size(json.lb+5,1),offset:new BMap.Size(json.x,json.h)})
+        return icon;
+    }
+    function getXy(e){
+        document.getElementById("result_").value = e.point.lng + "," + e.point.lat;
+        document.getElementById("Longitude").value = e.point.lng;
+        document.getElementById("Latitude").value = e.point.lat;
+        curMarker.setPoint(e.point);
+    }
+    initMap();//创建和初始化地图
+    var localSearch = new BMap.LocalSearch(map);
+    localSearch.enableAutoViewport(); //允许自动调节窗体大小
+    function searchByStationName() {
+        map.clearOverlays();//清空原来的标注
+        var keyword =document.getElementById("ssq").value+ document.getElementById("dadd").value;// '厦门思明区软件园二期观日路50号';
+        localSearch.setSearchCompleteCallback(function (searchResult) {
+            var poi = searchResult.getPoi(0);
+            document.getElementById("result_").value = poi.point.lng + "," + poi.point.lat;
+            document.getElementById("Longitude").value = poi.point.lng;
+            document.getElementById("Latitude").value = poi.point.lat;
+            map_x = poi.point.lng;
+            map_y = poi.point.lat;
+            initMap();
+            var point = new BMap.Point(poi.point.lng, poi.point.lat);
+            curMarker.setPoint(point);
+        });
+        localSearch.search(keyword);
+    }
+</script>
+}   

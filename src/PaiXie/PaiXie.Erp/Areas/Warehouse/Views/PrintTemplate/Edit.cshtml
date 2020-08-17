@@ -1,0 +1,51 @@
+﻿@using PaiXie.Data;
+@using PaiXie.Core;
+@{
+    var warehousePrintTemplate = ViewBag.WarehousePrintTemplate as WarehousePrintTemplate;
+    var isFhd = warehousePrintTemplate.TypeID == (int)PrintTemplateType.发货单 ? "checked" : "";
+    var isJhd = warehousePrintTemplate.TypeID == (int)PrintTemplateType.拣货单 ? "checked" : "";
+    var isEnable = warehousePrintTemplate.IsEnable == 1 ? "checked" : "";
+    ViewBag.Title = "编辑模版";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section head{
+
+}
+<form id="ff" method="post" novalidate>
+    <input type="hidden" id="hdnID" name="ID" value="@warehousePrintTemplate.ID" />
+    <table class="tableinfo" style="margin-top:15px">
+        <tr>
+            <th style="width:120px"><span class="red">*</span>模版名称：</th>
+            <td>
+                <input type="text" id="txtName" name="Name" class="easyui-validatebox" style="width:182px;" data-options="required:true,validType:'length[1,20]'" value="@warehousePrintTemplate.Name">
+                &nbsp;<span id="errorMessage" style="color:red;"></span>
+            </td>
+        </tr>
+        <tr>
+            <th style="width:120px"><span class="red">*</span>模版类型：</th>
+            <td>
+                <input type="radio" id="TypeID0" name="TypeID" value="0" @Html.Raw(isFhd)><label for="TypeID0">发货单</label>
+                <input type="radio" id="TypeID1" name="TypeID" value="1" @Html.Raw(isJhd)><label for="TypeID1">拣货单</label>
+            </td>
+        </tr>
+        <tr>
+            <th>&nbsp;</th>
+            <td>
+                <input type="checkbox" id="chkIsEnable" name="IsEnable" value="1" @Html.Raw(isEnable) /><label for="chkIsEnable">启用</label>
+            </td>
+        </tr>
+        <tr>
+            <th>&nbsp;</th>
+            <td>
+                <a href="javascript:void(0);" class="button-oky" id="btnSave" iconcls="icon-ok">保存</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="javascript:void(0);" class="button-cancel" id="btnClose" iconcls="icon-ok">关闭</a>
+            </td>
+
+        </tr>
+    </table>
+</form>
+@section bottom{
+    <script src="~/Areas/Warehouse/ViewJs/EditPrintTemplate.js"></script>
+}

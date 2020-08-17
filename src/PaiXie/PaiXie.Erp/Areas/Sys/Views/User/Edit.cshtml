@@ -1,0 +1,99 @@
+﻿@using PaiXie.Data
+@{
+    var Sysuser = ViewBag.Sysuser as Sysuser;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    @section head{
+
+    }
+
+    <div  style="padding:20px" >     
+        <input type="hidden" id="ck" name="ck" value="@ViewBag.ck" />
+
+        <form id="ff" method="post" novalidate="novalidate">
+            <input type="hidden" value="@Sysuser.ID" id="ID" name="ID" />
+            <fieldset>
+                <legend>用户必填信息</legend>
+                <table id="tblAdd" class="tableinfo">
+                    <tr>
+                        <th><label for="Code">登录名：</label></th>
+                        <td>
+                            <input style="width:120px;"
+                                   @if (Sysuser.ID > 0) { @("readonly='readonly'")   }
+                                   value="@Sysuser.Code" class="easyui-validatebox" type="text" id="Code" name="Code" data-options="required:true" />
+                            <label id="lblmsg" style="color:red;"></label>
+                        </td>
+                        <th><label for="Name">真实姓名：</label></th>
+                        <td>
+                            <input style="width:120px;" value="@Sysuser.Name" class="easyui-validatebox" type="text" id="Name" name="Name" data-options="required:true" />
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <th><label for="IsEnable">是否可用：</label></th>
+                        <td>
+                            <input type="checkbox"  @if (Sysuser.ID == 0 || Sysuser.IsEnable==1) {
+                                                     string c=   "checked";  
+                                                         @(c) 
+                                                    }
+                                    value="@(Sysuser.ID == 0? 1: Sysuser.IsEnable)" 
+                                   
+                                   id="IsEnable" name="IsEnable" />
+                              </td>
+                        <th><label for="Seq">排序：</label></th>
+                        <td>
+                            <input style="width:128px;" value="@Sysuser.Seq" class="easyui-numberbox" type="text" id="Seq" name="Seq" data-options="height:30" />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th><label for="IsEnable">密码：</label></th>
+                        <td>
+                            @{string str = "******";
+                            if (Sysuser.ID == 0) {
+                                str = "";
+                            }
+
+                            }
+                            <input style="width:120px;" value="@str" class="easyui-validatebox" type="text" id="txtpwd" name="txtpwd" data-options="required:true" />
+                            @{ if (Sysuser.ID > 0) {
+                                @Html.Raw(" <label style=\"font-size:10px;color:red;\">修改密码，请清空*,重新输入</label> ")
+                             }
+                            }
+
+
+                        </td>
+                        <th></th>
+                        <td></td>
+                    </tr>
+                </table>
+            </fieldset>
+
+
+
+
+            <br />
+            <fieldset>
+                <legend>用户选填信息</legend>
+                <table id="tblAdd1" class="tableinfo">
+                    <tr>
+                        <th valign="top"><label for="Description">备注信息：</label></th>
+                        <td colspan="3">
+                            <textarea style="height:50px; width:400px;"  id="Description" name="Description">@Sysuser.Description</textarea>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+            <br />
+			<div class="textcenter">
+				<a href="javascript:void(0)" class="button-oky" id="btnSave" iconcls="icon-ok">确定</a>
+				<a href="javascript:void(0)" class="button-cancel" iconcls="icon-cancel" id="btnClose">取消</a>
+			</div>
+        </form>
+    </div>       
+@section bottom{
+ 
+<script src="~/Areas/Sys/ViewJs/EditUser.js"></script>
+}
+   

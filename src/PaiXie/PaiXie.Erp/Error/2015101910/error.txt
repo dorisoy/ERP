@@ -1,0 +1,82 @@
+2015/10/19 10:00:27
+未找到视图“Save”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: 
+~/Areas/Warehouse/Views/WarehouseConversionRule/Save.aspx
+~/Areas/Warehouse/Views/WarehouseConversionRule/Save.ascx
+~/Areas/Warehouse/Views/Shared/Save.aspx
+~/Areas/Warehouse/Views/Shared/Save.ascx
+~/Views/WarehouseConversionRule/Save.aspx
+~/Views/WarehouseConversionRule/Save.ascx
+~/Views/Shared/Save.aspx
+~/Views/Shared/Save.ascx
+~/Areas/Warehouse/Views/WarehouseConversionRule/Save.cshtml
+~/Areas/Warehouse/Views/WarehouseConversionRule/Save.vbhtml
+~/Areas/Warehouse/Views/Shared/Save.cshtml
+~/Areas/Warehouse/Views/Shared/Save.vbhtml
+~/Views/WarehouseConversionRule/Save.cshtml
+~/Views/WarehouseConversionRule/Save.vbhtml
+~/Views/Shared/Save.cshtml
+~/Views/Shared/Save.vbhtml----System.InvalidOperationException: 未找到视图“Save”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: 
+~/Areas/Warehouse/Views/WarehouseConversionRule/Save.aspx
+~/Areas/Warehouse/Views/WarehouseConversionRule/Save.ascx
+~/Areas/Warehouse/Views/Shared/Save.aspx
+~/Areas/Warehouse/Views/Shared/Save.ascx
+~/Views/WarehouseConversionRule/Save.aspx
+~/Views/WarehouseConversionRule/Save.ascx
+~/Views/Shared/Save.aspx
+~/Views/Shared/Save.ascx
+~/Areas/Warehouse/Views/WarehouseConversionRule/Save.cshtml
+~/Areas/Warehouse/Views/WarehouseConversionRule/Save.vbhtml
+~/Areas/Warehouse/Views/Shared/Save.cshtml
+~/Areas/Warehouse/Views/Shared/Save.vbhtml
+~/Views/WarehouseConversionRule/Save.cshtml
+~/Views/WarehouseConversionRule/Save.vbhtml
+~/Views/Shared/Save.cshtml
+~/Views/Shared/Save.vbhtml
+   在 System.Web.Mvc.ViewResult.FindView(ControllerContext context)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+------------------------------------------------------------------
+2015/10/19 10:00:58
+未找到视图“Save”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: 
+~/Areas/Warehouse/Views/WarehouseConversionRule/Save.aspx
+~/Areas/Warehouse/Views/WarehouseConversionRule/Save.ascx
+~/Areas/Warehouse/Views/Shared/Save.aspx
+~/Areas/Warehouse/Views/Shared/Save.ascx
+~/Views/WarehouseConversionRule/Save.aspx
+~/Views/WarehouseConversionRule/Save.ascx
+~/Views/Shared/Save.aspx
+~/Views/Shared/Save.ascx
+~/Areas/Warehouse/Views/WarehouseConversionRule/Save.cshtml
+~/Areas/Warehouse/Views/WarehouseConversionRule/Save.vbhtml
+~/Areas/Warehouse/Views/Shared/Save.cshtml
+~/Areas/Warehouse/Views/Shared/Save.vbhtml
+~/Views/WarehouseConversionRule/Save.cshtml
+~/Views/WarehouseConversionRule/Save.vbhtml
+~/Views/Shared/Save.cshtml
+~/Views/Shared/Save.vbhtml----System.InvalidOperationException: 未找到视图“Save”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: 
+~/Areas/Warehouse/Views/WarehouseConversionRule/Save.aspx
+~/Areas/Warehouse/Views/WarehouseConversionRule/Save.ascx
+~/Areas/Warehouse/Views/Shared/Save.aspx
+~/Areas/Warehouse/Views/Shared/Save.ascx
+~/Views/WarehouseConversionRule/Save.aspx
+~/Views/WarehouseConversionRule/Save.ascx
+~/Views/Shared/Save.aspx
+~/Views/Shared/Save.ascx
+~/Areas/Warehouse/Views/WarehouseConversionRule/Save.cshtml
+~/Areas/Warehouse/Views/WarehouseConversionRule/Save.vbhtml
+~/Areas/Warehouse/Views/Shared/Save.cshtml
+~/Areas/Warehouse/Views/Shared/Save.vbhtml
+~/Views/WarehouseConversionRule/Save.cshtml
+~/Views/WarehouseConversionRule/Save.vbhtml
+~/Views/Shared/Save.cshtml
+~/Views/Shared/Save.vbhtml
+   在 System.Web.Mvc.ViewResult.FindView(ControllerContext context)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+------------------------------------------------------------------

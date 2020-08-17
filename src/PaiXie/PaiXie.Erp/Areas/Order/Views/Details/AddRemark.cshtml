@@ -1,0 +1,101 @@
+﻿@using PaiXie.Data
+@{
+    var erpOrderCode = ViewBag.ErpOrderCode;
+    var ordremarkList = ViewBag.OrdremarkList as List<Ordremark>;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+    <style>
+        .list {
+            padding: 0px 15px 0 15px;
+            height: 248px;
+            overflow-y: auto;
+            margin-top: 10px;
+        }
+
+            .list th {
+                border-bottom: 1px solid #dddddd;
+                height: 40px;
+                background-color: #436fac;
+                color: #fff;
+                text-align: center;
+                font-weight: normal;
+            }
+
+            .list td {
+                border-bottom: 1px dotted #cccccc;
+                height: 50px;
+                padding: 0 5px;
+                text-align: center;
+            }
+
+            .list .alignleft {
+                text-align: left;
+            }
+
+            .list .blue {
+                color: #00F;
+            }
+
+        .aappp {
+            position: absolute;
+            left: 15px;
+            bottom: 10px;
+        }
+    </style>
+}
+<div class="list">
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+            <th width="100">用户</th>
+            <th>备注内容</th>
+            <th width="170">时间</th>
+        </tr>
+        @foreach (var ordremark in ordremarkList) {
+            <tr>
+                <td>@(ordremark.UserName)</td>
+                <td class="alignleft">@(ordremark.Content)</td>
+                <td>@(ordremark.CreateDate)</td>
+            </tr>
+        }
+    </table>
+</div>
+<div class="aappp">
+    <form id="ff" method="post" novalidate>
+        <input type="hidden" id="hdnErpOrderCode" name="erpOrderCode" value="@erpOrderCode" />
+        <input value="" class="easyui-textbox" type="text" name="content" data-options="width:380,height:30,required:true" />
+        <a href="javascript:void(0)" class="button-oky" id="btnSave" iconcls="icon-ok" style="height:30px; line-height:30px;">添加备注</a>
+    </form>
+</div>
+@section bottom{
+    <script>
+        $(document).ready(function () {
+            $("#btnSave").click(function () {
+                btnSave();
+            });
+        });
+
+        function btnSave() {
+            $('#ff').form('submit', {
+                url: "/Order/Details/SaveRemark",
+                type: "POST",
+                dataType: "json",
+                onSubmit: function () {
+                    var isValid = $(this).form('validate');
+                    return isValid;
+                },
+                success: function (r) {
+                    var map = $.parseJSON(r);
+                    if (map.result == 1) {
+                        window.location.reload(true);
+                    } else {
+                        $.MsgBox.Alert("提示", map.message);
+                    }
+                },
+                error: function () {
+                    $.MsgBox.Alert("提示", "操作失败,请重试或刷新！");
+                }
+            });
+        }
+    </script>
+}

@@ -1,0 +1,48 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+    <style>
+        .searchpro .no {
+            width: auto;
+            height: auto;
+            margin: 10px 3px 0 0;
+        }
+
+        .searchpro .pr10 {
+            padding-right: 10px;
+        }
+    </style>
+}
+<div class="easyui-layout" data-options="fit:true">
+    <div data-options="region:'north',height:112" id="topdiv">
+        <div class="toolbar" id="toolbar">
+            <a href="#" class="refresh" id="refresh"><span></span>刷新</a>
+            <a href="#" id="add" class="add"><span></span>添加采购计划单</a>
+            <a href="javascript:void(0);" id="refreshCurrentPage" style="display:none;"><span></span>刷新当前页</a>
+        </div>
+        <input type="hidden" id="refreshPermit" value="0" onchange="mytextare();">
+        <div class="searchpro" id="searchpro">
+            <select id="keyWordType" name="keyWordType" class="easyui-combobox" data-options="height:30,width:100,editable:false">
+                <option value="">关键字类型</option>
+                <option value="采购计划单号" selected>采购计划单号</option>
+                <option value="计划单名称">计划单名称</option>
+                <option value="商品编码">商品编码</option>
+                <option value="商品SKU码">商品SKU码</option>
+            </select>
+            <input type="text" id="txtKeyWord" value="" style="width:150px;">
+            <label>状态：</label>
+            <input type="checkbox" name="status" id="status1" value="0" class="no" checked="checked"><label for="status1" class="pr10">未提交</label>
+            <input type="checkbox" name="status" id="status2" value="10" class="no" checked="checked"><label for="status2" class="pr10">已提交</label>
+            <input type="checkbox" name="status" id="status3" value="20" class="no"><label for="status3" class="pr10">已结束</label>
+            <input type="button" id="btnSearch" value="搜索" class="button">
+            <input type="button" id="btnReset" value="清空条件" class="button-rest">
+        </div>
+    </div>
+    <div data-options="region:'center',border:false" class="p0lr22">
+        <table id="grid" class="easyui-datagrid" title="" data-options="singleSelect:false,collapsible:true,method:'get'"></table>
+    </div>
+</div>
+@section bottom{
+    <script src="~/Areas/Warehouse/ViewJs/PurchasePlanInfoList.js"></script>
+}

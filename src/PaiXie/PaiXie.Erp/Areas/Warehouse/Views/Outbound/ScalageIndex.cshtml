@@ -1,0 +1,183 @@
+﻿@using PaiXie.Core;
+@{
+    ViewBag.Title = "出库单称重";
+    var billNo = ViewBag.BillNo;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section head{
+    <style>
+        .tableinfo td {
+            height: 20px;
+            line-height: 20px;
+        }
+        .tableinfo td a {
+            text-decoration: none;
+            color: #1d72df;
+        }
+        .tableinfo td a:hover {
+            color: #fc8b00;
+        }
+        .tableinfo td .button {
+            border: 0px;
+            background: #436fac;
+            color: #fff;
+            height: 30px;
+            width: 70px;
+            cursor: pointer;
+        }
+    </style>
+}
+<div style="height: 260px; overflow-x:hidden; overflow-y: auto;">
+    <table id="tblAdd" class="tableinfo" style="margin-top: 15px; ">
+        <tr>
+            <td align="left">
+                出库单号/运单号：<input type="text" id="txtBillNo" name="billNo" class="easyui-validatebox" style="width:200px;" data-options="height:30" autocomplete="Off" value="@billNo">&nbsp;<input type="button" id="btnConfirm" name="btnConfirm" class="button" value="确认" />
+                <div id="divMsg" style="text-align: center; color: red;"></div>
+            </td>
+        </tr>
+        <tr id="trManyOutbound" style="display:none;">
+            <td id="tdManyOutbound" align="left"></td>
+        </tr>
+        <tr id="trInputWeight" style="display:none;">
+            <td align="left">
+                请输入包裹重量：<input type="text" id="txtTotalWeight" name="totalWeight" class="easyui-numberbox" style="width:70px;" min="0.001" max="9999999.999" missingmessage="只能输入0.001~9999999.999之间的数字" data-options="required:true,validType:'number',precision:3,height:30" autocomplete="Off"><span class="f12c">G</span>&nbsp;<input type="button" id="btnSave" name="btnSave" class="button" value="保存" />
+                <div id="divOutboundInfo" style="margin-top:10px;"></div>
+            </td>
+        </tr>
+    </table>
+</div>
+@section bottom{
+    <script src="~/Scripts/sound.js"></script>
+    <script type="text/javascript">
+        var cancelValue = '@((int)WarehouseOutboundStatus.已取消)';
+        var cancelText = '@(WarehouseOutboundStatus.已取消.ToString())';
+        $(function () {
+            $("#txtBillNo").focus();
+            $("#txtBillNo").select();
+            $("#txtBillNo").keyup(function (e) {
+                var currKey = 0, e = e || event;
+                currKey = e.keyCode || e.which || e.charCode;
+                if (currKey == 13) {
+                    searchOutbound($("#txtBillNo").val());
+                }
+            });
+            //有传出库单号进来，自动查询
+            if ('@billNo' != '') {
+                searchOutbound('@billNo');
+            }
+            $("#btnConfirm").click(function () {
+                searchOutbound($("#txtBillNo").val());
+            });
+            $("#txtTotalWeight").next('span').find('input').keyup(function (e) {
+                var currKey = 0, e = e || event;
+                currKey = e.keyCode || e.which || e.charCode;
+                if (currKey == 13) {
+                    save();
+                }
+            });
+            $("#btnSave").click(function () {
+                save();
+            }); 
+        });
+        //查询出库单，如果是已取消或申请退款，不显示重量输入文本
+        function searchOutbound(billNo) {
+            if (billNo.trim() != "") {
+                $("#txtBillNo").val(billNo);
+                //查询之前先隐藏重量输入文本
+                $("#trManyOutbound").hide();
+                $("#trInputWeight").hide();
+                $("#txtTotalWeight").numberbox("setValue", "");
+                $("#divMsg").html("");
+                $("#divMsg").css("margin-top", "0px");
+                $.ajax({
+                    url: "/Warehouse/Outbound/SearchOutbound?billNo=" + billNo,
+                    type: "GET",
+                    async: false,
+                    cache: false,
+                    success: function (r) {
+                        var outboundList = $.parseJSON(r);
+                        if (outboundList.length > 0) {
+                            if (outboundList.length == 1) {
+                                if (outboundList[0].Status == cancelValue) {
+                                    showErrMsg("出库单 " + outboundList[0].BillNo + " " + cancelText + "！");
+                                } else if (outboundList[0].IsApplyRefund == 1) {
+                                    showErrMsg("出库单 " + outboundList[0].BillNo + " 已申请退款，请先处理！");
+                                }else {
+                                    //显示重量输入文本
+                                    $("#trInputWeight").show();
+                                    $("#txtTotalWeight").next('span').find('input').focus();
+                                    var html = "出库单号：<lable id='lblBillNo'>" + outboundList[0].BillNo + "</lable>";
+                                    html += "，运单号：" + outboundList[0].WaybillNo + "";
+                                    html += "<br/>商品数量：<lable id='lblProductsNum' style='color:red;'>" + outboundList[0].ProductsNum + "</lable> 件";
+                                    html += "，商品重量：<lable id='lblProductsWeight' style='color:red;'>" + outboundList[0].ProductsWeight.toFixed(3) + "</lable> <span class='f12c'>G</span>";
+                                    html += "，实际包裹重量：<lable id='lblTotalWeight' style='color:red;'>" + outboundList[0].TotalWeight.toFixed(3) + "</lable><span class='f12c'>G</span>";
+                                    $("#divOutboundInfo").html(html);
+                                }
+                            } else {
+                                //查询出有多个出库单，需要手动选择称重哪单
+                                $("#trManyOutbound").show();
+                                var manyOutbound = '有多个出库单，请选择：';
+                                for (var i = 0; i < outboundList.length; i++) {
+                                    if (outboundList[i].Status == cancelValue || outboundList[i].IsApplyRefund == 1) {
+                                        var statusName = '';
+                                        if (outboundList[i].Status == cancelValue) {
+                                            statusName = "<font color='red'>(" + cancelText + ")</font>";
+                                        } else if (outboundList[i].IsApplyRefund == 1) {
+                                            statusName = "<font color='red'>(申请退款)</font>";
+                                        }
+                                        manyOutbound += "<br/><span style=\"color:#999;\">" + (i + 1) + "、出库单号：" + outboundList[i].BillNo + "，运单号：" + outboundList[i].WaybillNo + " " + statusName + "</span>";
+                                    } else {
+                                        manyOutbound += "<br/><a href=\"javascript:void(0);\" onclick=\"searchOutbound('" + outboundList[i].BillNo + "');\">" + (i + 1) + "、出库单号：" + outboundList[i].BillNo + "，运单号：" + outboundList[i].WaybillNo + "</a>";
+                                    }
+                                }
+                                $("#tdManyOutbound").html(manyOutbound);
+                            }
+                        }
+                        else {
+                            showErrMsg("出库单号/运单号未找到！");
+                        }
+                    },
+                    error: function () {
+                        showErrMsg("读取出库单信息失败！");
+                    }
+                });
+            } else {
+                showErrMsg("请输入出库单号或运单号！");
+            }
+        }
+        //显示错误消息，并播放错误提示音，且将将焦点移到文本框
+        function showErrMsg(errMsg) {
+            $("#divMsg").html(errMsg);
+            $("#divMsg").css("margin-top", "5px");
+            $("#txtBillNo").focus();
+            playSound("../../Content/images/ScanErr.wav");
+        }
+        //保存包裹重量
+        function save() {
+            var billNo = $("#lblBillNo").text().trim();
+            var totalWeight = $("#txtTotalWeight").numberbox("getValue");
+            if (billNo != "" && totalWeight != "") {
+                $.ajax({
+                    url: "/Warehouse/Outbound/SetTotalWeight?billNo=" + billNo + "&totalWeight=" + totalWeight,
+                    type: "GET",
+                    async: false,
+                    cache: false,
+                    success: function (r) {
+                        var map = $.parseJSON(r);
+                        if (map.result == 1) {
+                            $("#lblTotalWeight").text(totalWeight);
+                            $("#txtBillNo").focus();
+                            $("#txtBillNo").select();
+                        } else {
+                            $.MsgBox.Alert("提示", map.message);
+                        }
+                    },
+                    error: function () {
+                        $.MsgBox.Alert("提示", "保存操作失败！");
+                    }
+                });
+            }
+        }
+    </script>
+}

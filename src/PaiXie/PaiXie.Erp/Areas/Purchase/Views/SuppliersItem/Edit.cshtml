@@ -1,0 +1,82 @@
+﻿@using PaiXie.Data
+@{
+    var suppliersID = ViewBag.SuppliersID;
+    var products = ViewBag.Products as Products;
+    var isEdit = ViewBag.IsEdit;
+    var arrivalCycle = ViewBag.ArrivalCycle;
+    ViewBag.Title = "编辑供应商商品";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section head{
+<style>
+    .setlist {
+        width: 650px;
+        height: 235px;
+        margin: 10px auto 0 auto;
+        overflow: hidden;
+        position: relative;
+        font-size: 14px;
+    }
+
+    .setlist table table td {
+        height: auto;
+        border: 0px;
+        white-space: normal;
+        text-align: left;
+    }
+
+    .inputextbox {
+        text-align: center;
+    }
+
+    .infotitle .pl2em {
+        padding-left: 2em;
+        font-size: 14px;
+    }
+
+    .infotitle {
+        line-height: 24px;
+    }
+
+    .infotitle .f12c {
+        color: #999;
+        font-size: 12px;
+    }
+</style>
+}
+<div style="height:380px; overflow-y:auto; overflow-x:hidden;">
+    @if (isEdit == 0) {
+    <table class="tableinfo" style="margin-top:25px; width:auto; margin-left:22px;">
+        <tr>
+            <th style="width:auto">请输入商品编码：</th>
+            <td><input style="width:200px" value="" class="easyui-validatebox" type="text" id="txtCode" name="Code" data-options="height:30" /></td>
+            <td><a href="javascript:void(0)" class="button-okb" id="btnSearch" iconcls="icon-ok" style="height:28px; line-height:28px">查找</a></td>
+        </tr>
+    </table>
+    <div class="p0lr22 infotitle ndis" id="infotitle"></div>
+    }
+    <form id="ffpost" action="">
+        <input id="hdnIsEdit" name="IsEdit" type="hidden" value="@isEdit">
+        <input id="hdnSuppliersID" name="SuppliersID" type="hidden" value="@suppliersID">
+        <input id="hdnProductsCode" name="ProductsCode" type="hidden" value="@products.Code">
+        <input id="hdnProductsName" name="ProductsName" type="hidden" value="@products.Name">
+        <input id="hdnProductsNo" name="ProductsNo" type="hidden" value="@products.No">
+        <input id="hdnProductsID" name="ProductsID" type="hidden" value="@products.ID">
+        <div class="p0lr22 setlist ndis" id="setlist">
+            <table id="grid" class="easyui-datagrid" title="" data-options="singleSelect:false,collapsible:true,method:'get'"></table>
+            <div class="infotitle">
+                到货周期:
+                <input type="text" class="easyui-numberbox" value="@arrivalCycle" id="txtArrivalCycle" name="ArrivalCycle" data-options="height:30,width:60"> 天
+                <span class="f12c">（下采购单后预计多久能到货）</span>
+            </div>
+        </div>
+    </form>
+    <div class="ndis" style=" text-align:center; padding:10px 0px;" id="buttonbox">
+        <a href="javascript:void(0)" class="button-oky" id="btnSave" iconcls="icon-ok">保存</a>
+        <a href="javascript:void(0)" class="button-cancel" id="btnClose" iconcls="icon-ok">取消</a>
+    </div>
+</div>
+@section bottom{
+    <script src="~/Areas/Purchase/ViewJs/EditSuppliersItem.js"></script>
+}

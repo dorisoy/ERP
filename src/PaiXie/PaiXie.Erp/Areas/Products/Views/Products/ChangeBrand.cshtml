@@ -1,0 +1,42 @@
+﻿@{
+    var brandID = ViewBag.BrandID;
+    var productsIDs = ViewBag.productsIDs;
+    var productsCount = ViewBag.productsCount;
+    ViewBag.Title = "更换品牌";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+
+}
+
+<form id="ff" method="post" novalidate="novalidate">
+    <input type="hidden" value="@productsIDs" id="productsIDs" name="productsIDs" />
+    <div style="width: 460px; height: 60px; margin: 10px auto; text-align: center; line-height:60px; color: red; border: 1px solid #ccc; background-color: #f2f2f2; ">当前选择 @productsCount 件商品</div>
+    <table id="tblAdd" style="margin:20px auto; line-height:28px;">
+        <tr>
+            <td align="right"><label for="Name">选择品牌：</label></td>
+            <td>
+                <select id="Brand" name="Brand" class="easyui-combobox" style="width:150px;" data-options="height:30,panelHeight:150,editable:false"></select>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align:center; padding-top:25px">
+                <a href="javascript:void(0)" class="button-oky" id="btnSave" iconcls="icon-ok">确定</a>
+                <a href="javascript:void(0)" class="button-cancel" iconcls="icon-cancel" id="btnClose">取消</a>
+            </td>
+        </tr>
+    </table>
+</form>
+@section bottom{
+    <script src="~/Areas/Products/ViewJs/ChangeBrand.js"></script>
+    <script>
+        $(document).ready(function () {
+            //初始化数据
+            BindDictItem("Brand", "Brand");
+            //选中特定值
+            $("#Brand").combobox('setValue', '@brandID');
+        });
+    </script>
+
+}
+

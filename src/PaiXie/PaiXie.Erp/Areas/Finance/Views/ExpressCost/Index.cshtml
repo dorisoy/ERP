@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "快递费用";
+    var startDate = PaiXie.Utils.ZDateTime.DayOfMonth(DateTime.Now, true).ToString("yyyy-MM-dd");
+    var endDate = DateTime.Now.ToString("yyyy-MM-dd");
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+
+}
+<div class="easyui-layout" data-options="fit:true">
+    <div data-options="region:'north',height:133" id="topdiv">
+        <div class="toolbar" id="toolbar">
+            <a href="javascript:void(0);" class="refresh" id="refresh"><span></span>刷新</a>            
+            <a href="javascript:void(0);" id="export"><span></span>导出</a>
+        </div>
+        <div class="searchpro" id="searchpro">
+            <select id="keyWordType" name="keyWordType" class="easyui-combobox" data-options="height:30,width:100,editable:false">
+                <option value="">关键字类型</option>
+                <option value="出库单号" selected>出库单号</option>
+                <option value="订单编号">订单编号</option>
+                <option value="运单号">运单号</option>
+            </select>
+            <input type="text" id="txtKeyWord" value="" style="width:150px;">
+            <label>快递公司：</label>
+            <select id="Logistics" name="Logistics" class="easyui-combobox" data-options="height:30,width:132"></select>
+            <label>仓库：</label>
+            <select id="Warehouse" name="Warehouse" class="easyui-combobox" data-options="height:30,width:132"></select>
+            <label>发货时间：</label>
+            <input value="@startDate" class="easyui-datebox" type="text" id="startDate" name="startDate" data-options="height:30,width:100,editable:false" />
+            <label>至&nbsp;&nbsp;&nbsp;</label>
+            <input value="@endDate" class="easyui-datebox" type="text" id="endDate" name="endDate" data-options="height:30,width:100,editable:false" />
+            <input type="button" id="btnSearch" value="搜索" class="button">
+            <input type="reset" id="btnReset" value="清空条件" class="button-rest">
+        </div>
+        <div class="p0lr22">
+            提示：当前快递费用 <label id="lblTotalExpressFreight" style="color:red;">0.000</label> 元，手续费 <label id="lblTotalBuyCodFee" style="color:red;">0.000</label> 元
+        </div>
+    </div>
+    <div data-options="region:'center',border:false" class="p0lr22">
+        <table id="grid" class="easyui-datagrid" title="" data-options="singleSelect:false,collapsible:true,method:'get'"></table>
+    </div>
+</div>
+@section bottom{
+    <script src="~/Areas/Warehouse/ViewJs/OutboundCommon.js"></script>
+    <script src="~/Areas/Finance/ViewJs/ExpressCostList.js"></script>
+}

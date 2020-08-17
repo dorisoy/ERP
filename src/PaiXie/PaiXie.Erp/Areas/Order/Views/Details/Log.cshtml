@@ -1,0 +1,124 @@
+﻿@using PaiXie.Data
+@{
+    var erpOrderCode = ViewBag.ErpOrderCode;
+    var logList = ViewBag.LogList as List<OrdlogList>;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+    <style>
+        a {
+            text-decoration: none;
+        }
+
+        .tagcont {
+            color: #666666;
+        }
+
+        .tableinfoa {
+            margin-top: 0px;
+        }
+
+            .tableinfoa th.title {
+                background: #436fac;
+                color: #fff;
+                text-align: left;
+                padding-left: 15px;
+                height: 30px;
+            }
+
+            .tableinfoa .red, .red {
+                color: #F00;
+            }
+
+            .tableinfoa .blue {
+                color: #00F;
+            }
+
+        .list td {
+            height: 50px;
+            text-align: center;
+        }
+
+        .list th {
+            width: 150px;
+            text-align: center;
+        }
+        .tableinfoa th1 {
+            border-bottom: 1px dotted #cccccc;
+            width: 150px;
+            height: 49px;
+            text-align: right;
+            background-color: #f6f6f6;
+            padding-right: 10px;
+        }
+
+        .totalnum {
+            text-align: center;
+        }
+
+        .money {
+            float: right;
+            width: 300px;
+            padding-right: 5px;
+        }
+
+            .money li {
+                float: left;
+                width: 150px;
+                text-align: right;
+                line-height: 24px;
+                height: 24px;
+            }
+
+            .money b {
+                float: left;
+                width: 85px;
+                text-align: right;
+                font-weight: normal;
+            }
+    </style>
+}
+<div class="easyui-layout" data-options="fit:true" style="overflow-y:auto;">
+    <div data-options=" region:'north',height:90" id="topdiv">
+        <ul class="tag" style="padding-top:20px">
+            <li>基本信息</li>
+            <li>商品列表</li>
+            <li>收退款记录</li>
+            <li>发货记录</li>
+            <li>售后记录</li>
+            <li class="current">订单日志</li>
+        </ul>
+    </div>
+    <div data-options="region:'center',border:false">
+        <div class="tagcont p0lr22">
+            <input type="hidden" id="hdnErpOrderCode" name="ErpOrderCode" value="@(erpOrderCode)" />
+            <table border="0" cellpadding="0" cellspacing="0" class="tableinfoa list">
+                <tr>
+                    <th colspan="3" class="title">订单日志</th>
+                </tr>
+                <tr>
+                    <th class="th1">时间</th>
+                    <th>日志内容</th>
+                    <th>操作人</th>
+                </tr>
+                @foreach (var item in logList) {
+                    <tr>
+                        <td>@(item.CreateDate)</td>
+                        <td>
+                            @if (item.WarehouseCode != "") {
+                                <span>仓库[@item.WarehouseName]</span>
+                            }
+                            @(item.Message)
+                        </td>
+                        <td>
+                            @(item.UserCode)
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+</div>
+@section bottom{
+    <script src="~/Areas/Order/ViewJs/Details.js"></script>
+}

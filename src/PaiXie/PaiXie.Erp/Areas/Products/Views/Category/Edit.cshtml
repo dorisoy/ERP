@@ -1,0 +1,38 @@
+﻿@using PaiXie.Data
+@{
+    var category = ViewBag.Category as Category;
+    ViewBag.Title = "编辑分类";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+
+}
+
+    <form id="ff" method="post" novalidate="novalidate">
+        <input type="hidden" value="@category.ID" id="ID" name="ID" />
+            <table id="tblAdd" class="tableinfo" style=" margin-top:25px">
+                <tr>
+                    <th align="right" style="width:100px"><label for="Name">上级分类：</label></th>
+                    <td>
+                        <input name="ParentID" id="ParentID" value="@category.ParentID" class="easyui-combotree" data-options="url:'/Products/Category/JsonTree',method:'get',required:true,height:30,panelHeight:150,editable:false">
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right"><label for="Code">分类名称：</label></td>
+                    <td>
+                        <input style="width:134px;" value="@category.Name" class="easyui-validatebox" type="text" id="txtName" name="Name" data-options="required:true,validType:'length[1,10]'" />
+                        &nbsp;<span id="errorMessage" style="color:red;"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align:center; padding-top:25px">
+                        <a href="javascript:void(0)" class="button-oky" id="btnSave" iconcls="icon-ok">确定</a>
+                        <a href="javascript:void(0)" class="button-cancel" iconcls="icon-cancel" id="btnClose">取消</a>
+                    </td>
+                </tr>
+            </table>
+    </form>
+@section bottom{
+    <script src="~/Areas/Products/ViewJs/EditCategory.js"></script>
+}
+

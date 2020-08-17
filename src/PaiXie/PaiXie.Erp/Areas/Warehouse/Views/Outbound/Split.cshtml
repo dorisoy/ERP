@@ -1,0 +1,46 @@
+﻿@{
+    var id = ViewBag.ID;
+    ViewBag.Title = "拆分待采";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section head{
+    <style>
+        .tableinfo td {
+            height: 20px;
+            line-height: 20px;
+        }
+    </style>
+}
+<form id="ff" method="post" novalidate="novalidate">
+    <input type="hidden" value="@id" id="hdnID" name="id" />
+    <table id="tblAdd" class="tableinfo" style="margin-top:15px;">
+        <tr>
+            <td width="45px"><span style="color:#ff0000;">提示：</span></td>
+            <td>
+                1、本操作会把出库单中有库存的商品和预售商品拆分成两个出库单。
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>
+                2、此功能主要用于有库存的商品先进行发货，预售商品补充库存后再发货的这种分多次发货的情况。
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>
+                3、点击确认拆分进行拆分操作。
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align:center;">
+                <a href="javascript:void(0);" class="button-oky" id="btnSave" iconcls="icon-ok">确认拆分</a>
+                <a href="javascript:void(0);" class="button-cancel" iconcls="icon-cancel" id="btnClose">取消</a>
+            </td>
+        </tr>
+    </table>
+</form>
+@section bottom{
+    <script src="~/Areas/Warehouse/ViewJs/SplitOutbound.js"></script>
+}

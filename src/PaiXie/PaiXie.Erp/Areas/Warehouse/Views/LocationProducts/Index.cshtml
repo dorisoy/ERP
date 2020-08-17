@@ -1,0 +1,66 @@
+﻿@using PaiXie.Data;
+@using PaiXie.Service;
+@{
+    ViewBag.Title = "库位商品列表";
+    var parentID = ViewBag.ParentID;
+    WarehouseLocation warehouseLocation = ViewBag.WarehouseLocation as WarehouseLocation;
+    var locationType = WarehouseLocationService.GetTypeName(warehouseLocation.TypeID);
+    var locationNum = ViewBag.LocationNum;
+    var productsNum = ViewBag.ProductsNum;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+<style>
+    .reservoirifo {
+        line-height: 30px;
+        height: 30px;
+        color: #fc8b00;
+    }
+    .reservoirifo span {
+        padding-right: 20px;
+        font-size: 14px;
+    }
+</style>
+}
+<div class="easyui-layout" data-options="fit:true">
+    <div data-options="region:'north',height:148" id="topdiv">
+        <input type="hidden" value="@parentID" id="hdnParentID" name="ParentID" />
+        <div class="toolbar" id="toolbar">
+            <a href="javascript:void(0);" class="refresh" id="refresh"><span></span>刷新</a>
+            <a href="javascript:void(0);" id="add" class="add"><span></span>添加库位</a>
+            <a href="javascript:void(0);" class="del unclick" id="del"><span></span>删除库位</a>
+            <a href="javascript:void(0);" class="import" id="import"><span></span>导入库位</a>
+            <a href="javascript:void(0);" id="export"><span></span>导出</a>
+            <a href="javascript:void(0);" id="refreshCurrentPage" style="display:none;"><span></span>刷新当前页</a>
+        </div>
+        <div class="searchpro" id="searchpro">
+            <select id="keyWordType" name="keyWordType" class="easyui-combobox" data-options="height:30,width:100,editable:false">
+                <option value="">关键字类型</option>
+                <option value="商品名称">商品名称</option>
+                <option value="商品编码" selected>商品编码</option>
+                <option value="商品货号">商品货号</option>
+                <option value="商品SKU码">商品SKU码</option>
+                <option value="库位编码">库位编码</option>
+                <option value="库位名称">库位名称</option>
+            </select>
+            <input type="text" id="txtKeyWord" value="" style="width:150px;">
+                <label>分类：</label><input id="Category" name="Category" class="easyui-combotree" value="-1" data-options="url:'/Products/Category/JsonTree',method:'get',required:true,height:30,panelHeight:161,width:130">
+                <label>品牌：</label><select id="Brand" name="Brand" class="easyui-combobox" data-options="height:30,width:130"></select>
+                <input type="submit" id="btnSearch" value="搜索" class="button">
+                <input type="reset" id="btnReset" value="清空条件" class="button-rest">
+        </div>
+        <div class="reservoirifo p0lr22">
+            <span>库区名称: @warehouseLocation.Name</span>
+            <span>类型: @locationType</span>
+            <span>库位数量: @locationNum</span>
+            <span>商品数量: @productsNum</span>
+            <span><input type="checkbox" id="showEmptyLocation" name="showEmptyLocation"><label for="showEmptyLocation">不展示空库位</label></span>
+        </div>
+    </div>
+    <div data-options="region:'center',border:false" class="p0lr22">
+        <table id="grid" class="easyui-datagrid" title="" data-options="singleSelect:false,collapsible:true,method:'get'"></table>
+    </div>
+</div>
+@section bottom{
+    <script src="~/Areas/Warehouse/ViewJs/LocationProductsInfoList.js"></script>
+}

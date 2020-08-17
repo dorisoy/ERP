@@ -1,0 +1,18 @@
+2015/9/22 16:54:48
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='admin' and  Password='202cb962ac59075b964b07152d234b70' and IsEnable=1 
+------------------------------------------------------------------
+2015/9/22 16:57:24
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='admin' and  Password='202cb962ac59075b964b07152d234b70' and IsEnable=1 
+------------------------------------------------------------------
+2015/9/22 16:57:36
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='admin' and  Password='202cb962ac59075b964b07152d234b70' and IsEnable=1 
+------------------------------------------------------------------

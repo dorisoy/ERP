@@ -1,0 +1,40 @@
+﻿@using PaiXie.Data
+@{
+    var warehouseLocation = ViewBag.WarehouseLocation as WarehouseLocation;
+    var parentID = ViewBag.ParentID;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+}
+<form id="ff" method="post" novalidate>
+    <input type="hidden" id="hdnID" name="ID" value="@warehouseLocation.ID">
+    <input type="hidden" id="hdnTypeID" name="TypeID" value="@warehouseLocation.TypeID">
+    <input type="hidden" id="hdnParentID" name="ParentID" value="@parentID">
+    <table class="tableinfo" style="margin-top:25px">
+        <tr>
+            <th style="width:150px">请输入库位名称：</th>
+            <td>
+                <input style="width:200px" class="easyui-validatebox" type="text" id="txtName" name="Name" value="@warehouseLocation.Name" data-options="height:30,validType:'length[0,30]'" />
+            </td>
+        </tr>
+        <tr>
+            <th>请输入库位编码：</th>
+            <td>
+                <input style="width:155px" class="easyui-validatebox" type="text" id="txtCode" name="Code" value="@warehouseLocation.Code" data-options="height:30,required:true,validType:['code','length[1,30]']" />
+                &nbsp;<span id="errorMessage" style="color:red;"></span>
+            </td>
+        </tr>
+        <tr>
+            <th></th>
+            <td>
+                <a href="javascript:void(0)" class="button-oky" id="btnSave" iconcls="icon-ok">保存</a>
+                <a href="javascript:void(0)" class="button-cancel" iconcls="icon-cancel" id="btnClose">取消</a>
+            </td>
+
+        </tr>
+    </table>
+</form>
+@section bottom{
+    <script src="~/Areas/Warehouse/ViewJs/EditChildLocation.js"></script>
+}
+

@@ -1,0 +1,140 @@
+﻿@using PaiXie.Data
+@{
+    var leftRuleItemList = ViewBag.LeftRuleItemList as List<WarehouseConversionRuleItemInfo>;
+    var rightRuleItemList = ViewBag.RightRuleItemList as List<WarehouseConversionRuleItemInfo>;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+    <style>
+        .Transformation {
+            float: left;
+            width: 42%;
+        }
+
+            .Transformation table {
+                width: 100%;
+            }
+
+                .Transformation table th {
+                    height: 40px;
+                    background-color: #436fac;
+                    font-weight: normal;
+                    text-align: center;
+                    color: #fff;
+                }
+
+                .Transformation table td {
+                    height: 49px;
+                    background-color: #fff;
+                    border-bottom: 1px dotted #ccc;
+                    text-align: center;
+                    color: #666;
+                }
+
+        .TransformationIocn {
+            float: left;
+            width: 16%;
+            text-align: center;
+            padding-top: 25px;
+        }
+
+            .TransformationIocn a {
+                display: block;
+                width: 80px;
+                height: 60px;
+                position: fixed;
+                top: 100px;
+                left: 50%;
+                margin-left: -40px;
+                text-align: center;
+                color: #666;
+                text-decoration: none;
+            }
+
+                .TransformationIocn a span {
+                    display: block;
+                    height: 35px;
+                    background: url(../../Content/images/Transformation1.jpg) left top no-repeat;
+                    width: 70px;
+                    margin: 0 auto 5px auto;
+                }
+
+                    .TransformationIocn a span.off {
+                        background-position: left -40px;
+                    }
+
+        .textbox-text {
+            text-align: center;
+        }
+    </style>
+}
+<form id="ff" method="post">
+    <div data-options="region:'north'" style="height:85px;">
+        <div class="infotitle p0lr22" style="padding-top:20px; height:25px"><input type="checkbox" checked value="" id="checkbox"><label for="checkbox">按固定设置比例转化商品:</label></div>
+        <div class="p0lr22">
+            <div class="Transformation">
+                <table border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <th width="50%">SKU码</th>
+                        <th width="25%">中转仓数量</th>
+                        <th width="25%" id="transleft">转入数量</th>
+                    </tr>
+                </table>
+            </div>
+            <div class="TransformationIocn"></div>
+            <div class="Transformation">
+                <table border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <th width="50%">SKU码</th>
+                        <th width="25%">中转仓数量</th>
+                        <th width="25%" id="transright">转出数量</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div data-options="region:'south'" style="height:70px;">
+        <div style="text-align:center; padding-top:15px">
+            <a iconcls="icon-ok" id="btnSave" class="button-oky" href="javascript:void(0)">确认转换</a>
+            <a iconcls="icon-ok" id="btnCancel" class="button-cancel" href="javascript:void(0)">取消</a>
+        </div>
+    </div>
+    <div data-options="region:'center'" class="p0lr22">
+        <div class="Transformation">
+            <table border="0" cellpadding="0" cellspacing="0" id="TransformationLeft">
+                @foreach (var item in leftRuleItemList) {
+                    <tr>
+                        <td width="50%">@item.ProductsSkuCode<input type="hidden" name="ProductsSkuID" value="@item.ProductsSkuID"></td>
+                        <td width="25%">@item.KyNum<input type="hidden" name="ProductsSkuCode" value="@item.ProductsSkuCode"></td>
+                        <td width="25%">
+                            <input value="" class="easyui-numberbox" type="text" name="Num" data-options="height:30,width:50" min="0" max="9999999" />
+                            <input type="hidden" name="ZhblNum" value="@(item.Num)">
+                            <input type="hidden" name="ConversionWay" value="0">
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+        <div class="TransformationIocn">
+            <a href="#" id="PermitTransformation"><span></span>点击切换方向</a><input type="hidden" id="hdnPermitTransformation" name="PermitTransformation" value="" />
+        </div>
+        <div class="Transformation">
+            <table border="0" cellpadding="0" cellspacing="0" id="TransformationRight">
+                @foreach (var item in rightRuleItemList) {
+                    <tr>
+                        <td width="50%">@item.ProductsSkuCode<input type="hidden" name="ProductsSkuID" value="@item.ProductsSkuID"></td>
+                        <td width="25%">@item.KyNum<input type="hidden" name="ProductsSkuCode" value="@item.ProductsSkuCode"></td>
+                        <td width="25%">
+                            <input value="" class="easyui-numberbox" type="text" name="Num" data-options="height:30,width:50" min="0" max="9999999" />
+                            <input type="hidden" name="ZhblNum" value="@(item.Num)">
+                            <input type="hidden" name="ConversionWay" value="1">
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+</form>
+@section bottom{
+    <script src="~/Areas/Warehouse/ViewJs/ProductsConversion.js"></script>
+}

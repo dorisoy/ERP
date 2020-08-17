@@ -1,0 +1,2 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>SELECT Code AS VALUE,TEXT FROM sys_code WHERE CodeType='001'  ORDER BY Seq ASC,ID DESC</root>

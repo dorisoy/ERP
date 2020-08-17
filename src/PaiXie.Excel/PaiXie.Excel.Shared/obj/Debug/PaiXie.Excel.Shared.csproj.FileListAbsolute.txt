@@ -1,0 +1,5 @@
+D:\BaiduYunDownload\erp(3)\src\PaiXie.Excel\PaiXie.Excel.Shared\bin\Debug\PaiXie.Excel.Shared.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie.Excel\PaiXie.Excel.Shared\bin\Debug\PaiXie.Excel.Shared.pdb
+D:\BaiduYunDownload\erp(3)\src\PaiXie.Excel\PaiXie.Excel.Shared\obj\Debug\PaiXie.Excel.Shared.csprojResolveAssemblyReference.cache
+D:\BaiduYunDownload\erp(3)\src\PaiXie.Excel\PaiXie.Excel.Shared\obj\Debug\PaiXie.Excel.Shared.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie.Excel\PaiXie.Excel.Shared\obj\Debug\PaiXie.Excel.Shared.pdb

@@ -1,0 +1,38 @@
+﻿@{
+    var status = ViewBag.Status;
+    ViewBag.Title = "下载商品";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+    <script src="~/Content/jquery-easyui/jquery.timers-1.2.js"></script>
+    <style>
+        .datagrid-row {
+            height: 80px;
+        }
+    </style>
+}
+<div class="easyui-layout" data-options="fit:true">
+    <div data-options="region:'north',height:112" id="topdiv">
+        <div class="toolbar" id="toolbar">
+            <input type="hidden" id="hdnStatus" value="@status" />
+            <a href="javascript:void(0);" class="back" id="back"><span></span>返回</a>
+            <a href="javascript:void(0);" class="import" id="import"><span></span>导入系统</a>
+            <a href="javascript:void(0);" class="del unclick" id="del"><span></span>删除</a>
+            <a href="javascript:void(0);" class="refreshCurrentPage" id="refreshCurrentPage" style="display:none;"><span></span>刷新当前页</a>
+        </div>
+        <div class="searchpro">
+            <label>选择网店：</label><select id="shop" name="shop" class="easyui-combobox" style="width:150px;" data-options="height:30"></select>
+            <select id="productsStatus" name="productsStatus" class="easyui-combobox" style="width:150px;" data-options="height:30">
+                <option value="0" selected>请选择商品类型</option>
+            </select>
+            <input type="button" id="btnDownProducts" value="下载商品" class="button"> <span id="spanProcessBar"></span>
+        </div>
+    </div>
+    <div data-options="region:'center',border:false" style="padding:0 22px">
+        <table id="grid" class="easyui-datagrid"
+               data-options="singleSelect:false,collapsible:true,method:'get'"></table>
+    </div>
+</div>
+@section bottom{
+    <script src="~/Areas/Shop/ViewJs/DownProducts.js"></script>
+}

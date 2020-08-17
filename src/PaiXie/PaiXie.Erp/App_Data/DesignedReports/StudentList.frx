@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ConvertNulls="false" ReportInfo.Created="09/09/2015 15:11:20" ReportInfo.Modified="09/10/2015 16:36:41" ReportInfo.CreatorVersion="2015.3.3.0" PrintSettings.Printer="Solid PDF Creator" PrintSettings.SavePrinterWithReport="true" PrintSettings.ShowDialog="false">
+  <Dictionary>
+    <TableDataSource Name="class" ReferenceName="erp.class" DataType="System.Int32" Enabled="true">
+      <Column Name="ID" DataType="System.Int32" PropName="Column"/>
+      <Column Name="ClassName" DataType="System.String" PropName="Column"/>
+    </TableDataSource>
+    <TableDataSource Name="student" ReferenceName="erp.student" DataType="System.Int32" Enabled="true">
+      <Column Name="SstuNmae" DataType="System.String" PropName="Column"/>
+      <Column Name="Sex" DataType="System.Boolean" PropName="Column"/>
+      <Column Name="Score" DataType="System.Double" PropName="Column"/>
+      <Column Name="ClassId" DataType="System.String" PropName="Column"/>
+      <Column Name="ClassName" DataType="System.String" PropName="Column"/>
+      <Column Name="IsTuanYuan" DataType="System.Boolean" PropName="Column"/>
+    </TableDataSource>
+    <Relation Name="class_student" ParentDataSource="class" ChildDataSource="student" ParentColumns="ID" ChildColumns="ClassId" Enabled="true"/>
+  </Dictionary>
+  <ReportPage Name="Page1" RawPaperSize="9">
+    <PageHeaderBand Name="PageHeader1" Width="718.2" Height="85.05">
+      <TextObject Name="Text1" Left="311.85" Width="170.1" Height="28.35" Text="各班级学生情况" HorzAlign="Center" VertAlign="Center" Font="宋体, 16pt, style=Bold"/>
+      <TextObject Name="Text2" Left="519.75" Top="28.35" Width="122.85" Height="18.9" Text="[PageN]" HorzAlign="Right" VertAlign="Center" Font="宋体, 14pt, style=Bold"/>
+      <TextObject Name="Text19" Left="75.6" Top="28.35" Width="311.85" Height="18.9" Text="班级名称：[class.ClassName]" Font="宋体, 14pt, style=Bold"/>
+      <TextObject Name="Text9" Left="75.6" Top="56.7" Width="113.4" Height="28.35" Border.Lines="Left, Top, Bottom" Text="班级" HorzAlign="Center" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text10" Left="189" Top="56.7" Width="113.4" Height="28.35" Border.Lines="Left, Top, Bottom" Text="姓名" HorzAlign="Center" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text11" Left="302.4" Top="56.7" Width="113.4" Height="28.35" Border.Lines="Left, Top, Bottom" Text="成绩" HorzAlign="Center" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text12" Left="415.8" Top="56.7" Width="113.4" Height="28.35" Border.Lines="Left, Top, Bottom" Text="性别" HorzAlign="Center" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text13" Left="529.2" Top="56.7" Width="113.4" Height="28.35" Border.Lines="All" Text="团员" HorzAlign="Center" VertAlign="Center" Font="宋体, 12pt, style=Bold"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="89.05" Width="718.2" Height="0.1" StartNewPage="true" DataSource="class" KeepTogether="true" KeepDetail="true">
+      <DataBand Name="Data2" Top="93.05" Width="718.2" Height="37.8" DataSource="student" RowCount="2" KeepTogether="true" KeepDetail="true">
+        <TextObject Name="Text14" Left="75.6" Width="113.4" Height="37.8" Border.Lines="Left, Bottom" Text="[student.ClassName]" HorzAlign="Center" VertAlign="Center" Font="宋体, 12pt"/>
+        <TextObject Name="Text15" Left="189" Width="113.4" Height="37.8" Border.Lines="Left, Bottom" Text="[student.SstuNmae]" HorzAlign="Center" VertAlign="Center" Font="宋体, 12pt"/>
+        <TextObject Name="Text17" Left="415.8" Width="113.4" Height="37.8" Border.Lines="Left, Bottom" Text="[student.Sex]" HorzAlign="Center" VertAlign="Center" Font="宋体, 12pt"/>
+        <TextObject Name="Text18" Left="529.2" Width="113.4" Height="37.8" Border.Lines="Left, Right, Bottom" Text="[student.IsTuanYuan]" HorzAlign="Center" VertAlign="Center" Font="宋体, 12pt"/>
+        <TextObject Name="Text16" Left="302.4" Width="113.4" Height="37.8" Border.Lines="Left, Bottom" Text="[student.Score]" Format="Number" Format.UseLocale="true" HorzAlign="Center" VertAlign="Center" WordWrap="false" Font="宋体, 12pt" Trimming="EllipsisCharacter"/>
+      </DataBand>
+    </DataBand>
+  </ReportPage>
+</Report>

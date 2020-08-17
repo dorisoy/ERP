@@ -1,0 +1,377 @@
+﻿@using PaiXie.Core;
+@using PaiXie.Data;
+@{
+    ViewBag.Title = "出库单校验";
+    var billNo = ViewBag.BillNo;
+    WarehouseOutbound outbound = ViewBag.WarehouseOutbound as WarehouseOutbound;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section head{
+    <style>
+        .tblOutboundInfo {
+            width: 90%;
+            margin: 15px 0px 0px 15px;
+            border:1px solid #ddd;
+            background-color:#f0f0f0;
+        }
+        .tblOutboundInfo td {
+            height: 38px;
+            line-height: 38px;
+        }
+        .tblOutboundInfo td a {
+            text-decoration: none;
+            color: #1d72df;
+        }
+        .tblOutboundInfo td a:hover {
+            color: #fc8b00;
+        }
+        .tblOutboundInfo td .button {
+            border: 0px;
+            background: #436fac;
+            color: #fff;
+            height: 30px;
+            width: 70px;
+            cursor: pointer;
+        }
+        .title{
+            display:none;
+            width:200px;
+            height:30px;
+            line-height:30px;
+            margin-left:15px;
+        }
+        .tblItemInfo {
+            display: none;
+            width: 90%;
+            margin: 0px 0px 0px 15px;
+            border-left: 1px solid #ccc;
+            border-top: 1px solid #ccc;
+            text-align:center;
+        }
+        .tblItemInfo th {
+            height: 20px;
+            line-height: 20px;
+            background-color: #f0f0f0;
+            border-right: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .tblItemInfo td {
+            height: 20px;
+            line-height: 20px;
+            border-right: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+        }
+        .scanNum {
+            color: #1d72df;
+        }
+    </style>
+}
+
+<table id="tblOutboundInfo" class="tblOutboundInfo" cellpadding="5" cellspacing="0" border="0">
+    <tr>
+        <td width="20%" align="right">
+            出库单号/运单号：
+        </td>
+        <td align="left">
+            <input type="text" id="txtBillNo" name="billNo" class="easyui-validatebox" style="width:200px;" data-options="height:30" autocomplete="Off" value="@billNo">&nbsp;<input type="button" id="btnConfirm" name="btnConfirm" class="button" value="确认" />
+            <input type="hidden" id="hdnBillNo" value="" />
+            <span id="spanMsg" style="text-align: center; color: red;"></span>
+        </td>
+    </tr>
+    <tr id="trManyOutbound" style="display:none;">
+        <td id="tdManyOutbound" colspan="2" align="left"></td>
+    </tr>
+    <tr id="trScanSku" style="display:none;">
+        <td align="right">
+            扫描商品SKU码/条码：
+        </td>
+        <td align="left">
+            <input type="text" id="txtSkuCode" name="skuCode" class="easyui-validatebox" style="width:274px;" data-options="height:30" autocomplete="Off">
+            <span id="spanSkuMsg" style="text-align: center; color: red;"></span>
+        </td>
+    </tr>
+</table>
+<div id="title" class="title">
+    商品列表：
+</div>
+<table id="tblItemInfo" class="tblItemInfo" cellpadding="5" cellspacing="0" border="0">
+    <tr id="titleTr">
+        <th width="12%">商品编码</th>
+        <th width="20%">商品名称</th>
+        <th width="14%">属性</th>
+        <th width="14%">SKU码</th>
+        <th width="14%">条码</th>
+        <th width="8%">重量</th>
+        <th width="6%">数量</th>
+        <th width="6%">校验数量</th>
+        <th width="6%">校验结果</th>
+    </tr>
+</table>
+@section bottom{
+    <script src="~/Scripts/sound.js"></script>
+    <script type="text/javascript">
+        var cancelValue = '@((int)WarehouseOutboundStatus.已取消)';
+        var cancelText = '@(WarehouseOutboundStatus.已取消.ToString())';
+        $(function () {
+            $("#txtBillNo").focus();
+            $("#txtBillNo").select();
+            $("#txtBillNo").keyup(function (e) {
+                var currKey = 0, e = e || event;
+                currKey = e.keyCode || e.which || e.charCode;
+                if (currKey == 13) {
+                    searchOutbound($("#txtBillNo").val());
+                }
+            });
+            //有传出库单号进来，自动查询
+            if ('@billNo' != '') {
+                searchOutbound('@billNo');
+            }
+            $("#btnConfirm").click(function () {
+                searchOutbound($("#txtBillNo").val());
+            });
+            $("#txtSkuCode").keyup(function (e) {
+                var currKey = 0, e = e || event;
+                currKey = e.keyCode || e.which || e.charCode;
+                if (currKey == 13) {
+                    scanSku($("#txtSkuCode").val());
+                }
+            });
+            $(".dataTr").mouseover(function () {
+                $(this).css("background", "#e2e2e2");
+            }).mouseout(function () {
+                $(this).css("background", "#fff");
+            });
+        });
+
+        //查询出库单，如果是已取消或申请退款，则不查询商品
+        function searchOutbound(billNo) {
+            if (billNo.trim() != "") {
+                $("#txtBillNo").val(billNo);
+                //查询之前先隐藏商品列表以及SKU码文本框
+                $("#trManyOutbound").hide();
+                $("#trScanSku").hide();
+                $("#txtSkuCode").val("");
+                $("#title").hide();
+                $("#tblItemInfo").hide();
+                $("#hdnBillNo").val("");
+                $("#spanMsg").html("");
+                $.ajax({
+                    url: "/Warehouse/Outbound/SearchOutbound?billNo=" + billNo,
+                    type: "GET",
+                    async: false,
+                    cache: false,
+                    success: function (r) {
+                        var outboundList = $.parseJSON(r);
+                        if (outboundList.length > 0) {
+                            if (outboundList.length == 1) {
+                                if (outboundList[0].Status == cancelValue) {
+                                    showErrMsg("出库单 " + outboundList[0].BillNo + " " + cancelText + "！");
+                                    $("#txtBillNo").select();
+                                } else if (outboundList[0].IsApplyRefund == 1) {
+                                    showErrMsg("出库单 " + outboundList[0].BillNo + " 已申请退款，请先处理！");
+                                    $("#txtBillNo").select();
+                                } else if (outboundList[0].IsScanCheck == 1) {
+                                    showErrMsg("出库单 " + outboundList[0].BillNo + " 已校验！");
+                                    $("#txtBillNo").select();
+                                } else {
+                                    $("#hdnBillNo").val(outboundList[0].BillNo);
+                                    searchProducts(outboundList[0].ID);
+                                }
+                            } else {
+                                //查询出有多个出库单，需要手动选择校验哪单
+                                $("#trManyOutbound").show();
+                                var manyOutbound = '有多个出库单，请选择：';
+                                for (var i = 0; i < outboundList.length; i++) {
+                                    if (outboundList[i].Status == cancelValue || outboundList[i].IsApplyRefund == 1 || outboundList[i].IsScanCheck == 1) {
+                                        var statusName = '';
+                                        if (outboundList[i].Status == cancelValue) {
+                                            statusName = "<font color='red'>(" + cancelText + ")</font>";
+                                        } else if (outboundList[i].IsApplyRefund == 1) {
+                                            statusName = "<font color='red'>(申请退款)</font>";
+                                        } else if (outboundList[i].IsScanCheck == 1) {
+                                            statusName = "<font color='red'>(已校验)</font>";
+                                        }
+                                        manyOutbound += "<br/><span style=\"color:#999;\">" + (i + 1) + "、出库单号：" + outboundList[i].BillNo + "，运单号：" + outboundList[i].WaybillNo + " " + statusName + "</span>";
+                                    } else {
+                                        manyOutbound += "<br/><a href=\"javascript:void(0);\" onclick=\"searchOutbound('" + outboundList[i].BillNo + "');\">" + (i + 1) + "、出库单号：" + outboundList[i].BillNo + "，运单号：" + outboundList[i].WaybillNo + "</a>";
+                                    }
+                                }
+                                $("#tdManyOutbound").html(manyOutbound);
+                            }
+                        } else {
+                            showErrMsg("出库单号/运单号未找到！");
+                            $("#txtBillNo").select();
+                        }
+                    },
+                    error: function () {
+                        showErrMsg("读取出库单信息失败！");
+                        $("#txtBillNo").select();
+                    }
+                });
+            } else {
+                showErrMsg("请输入出库单号或运单号！");
+                $("#txtBillNo").select();
+            }
+        }
+        //因为扫描时，会改变行的顺序，所以定义一个全局变量，在查询出库单商品时记录初始行的集合
+        var dataTrs = null;
+        //查询出库单商品
+        function searchProducts(id) {
+            $.ajax({
+                url: "/Warehouse/Outbound/SearchProducts?id=" + id,
+                type: "GET",
+                async: false,
+                cache: false,
+                success: function (r) {
+                    var orditemList = $.parseJSON(r);
+                    if (orditemList.length > 0) {
+                        //查询到商品才显示
+                        $("#trScanSku").show();
+                        $("#txtSkuCode").focus();
+                        $("#title").show();
+                        $("#tblItemInfo").show();
+                        $(".dataTr").each(function (index, element) {
+                            $(element).remove();
+                        });
+                        for (var i = 0; i < orditemList.length; i++) {
+                            var tr = $("<tr id=\"dataTr_" + orditemList[i].ID + "\" class=\"dataTr\" orditemid=\"" + orditemList[i].ID + "\"></tr>");
+                            var td1 = $("<td>" + orditemList[i].ProductsCode + "</td>");
+                            td1.appendTo(tr);
+                            var td2 = $("<td>" + orditemList[i].ProductsName + "</td>");
+                            td2.appendTo(tr);
+                            var td3 = $("<td>" + orditemList[i].ProductsSkuSaleprop + "</td>");
+                            td3.appendTo(tr);
+                            var td4 = $("<td><span id=\"spanSkuCode_" + orditemList[i].ID + "\" class=\"skuCode\">" + orditemList[i].ProductsSkuCode + "</span></td>");
+                            td4.appendTo(tr);
+                            var td5 = $("<td><span id=\"spanSkuBarCode_" + orditemList[i].ID + "\" class=\"skuBarCode\">" + (orditemList[i].ProductsSkuBarCode == null ? "" : orditemList[i].ProductsSkuBarCode) + "</span></td>");
+                            td5.appendTo(tr);
+                            var td6 = $("<td>" + orditemList[i].ProductsWeight + "</td>");
+                            td6.appendTo(tr);
+                            var td7 = $("<td><span id=\"spanProductsNum_" + orditemList[i].ID + "\" class=\"productsNum\">" + orditemList[i].ProductsNum + "</span></td>");
+                            td7.appendTo(tr);
+                            var td8 = $("<td><span id=\"spanScanNum_" + orditemList[i].ID + "\" class=\"scanNum\">0</span></td>");
+                            td8.appendTo(tr);
+                            var td9 = $("<td><span id=\"spanScanResult_" + orditemList[i].ID + "\" class=\"scanResult\">--</span></td>");
+                            td9.appendTo(tr); 
+                            tr.appendTo($("#tblItemInfo"));
+                        }
+                        $.parser.parse($("#tblItemInfo"));
+                        dataTrs = $(".dataTr");
+                    } else {
+                        showErrMsg("未找到出库单商品！");
+                    }
+                },
+                error: function () {
+                    showErrMsg("读取出库单商品信息失败！");
+                }
+            });
+        }
+        //扫描SKU
+        function scanSku(code) {
+            $("#spanSkuMsg").html("");
+            if (code.trim() != "") {
+                //是否找到对应的sku
+                var isFindSku = false;
+                //是否超出了sku下单数量
+                var isOverProductsNum = true;
+                dataTrs.each(function (index, element) {
+                    var ordItemID = $(element).attr("orditemid");
+                    var skuCode = $("#spanSkuCode_" + ordItemID).html();
+                    var skuBarCode = $("#spanSkuBarCode_" + ordItemID).html();
+                    var productsNum = $("#spanProductsNum_" + ordItemID).html();
+                    var scanNum = $("#spanScanNum_" + ordItemID).html();
+                    var scanResult = $("#spanScanResult_" + ordItemID).html();
+                    if (skuCode == code || skuBarCode == code) {
+                        isFindSku = true;
+                        if (scanResult != "OK") {
+                            isOverProductsNum = false;
+                            //置顶正在扫描的行
+                            //$(element).fadeOut().fadeIn();
+                            $(element).insertAfter($("#titleTr"));
+                            $(element).css("background", "#e2e2e2");
+                            var newScanNum = Number(scanNum) + 1;
+                            $("#spanScanNum_" + ordItemID).html(newScanNum);
+                            //数量相等表示当前行扫描完成
+                            if (productsNum == newScanNum) {
+                                $("#spanScanResult_" + ordItemID).html("OK");
+                                $("#spanScanResult_" + ordItemID).css("color", "green");
+                                playSound("../../Content/images/ScanOk.wav");
+                                //每行扫描完之后，都检查是否整单是否完成
+                                var isAllOk = true;
+                                $(".scanResult").each(function (index, element) {
+                                    if ($(element).html() != "OK") {
+                                        isAllOk = false;
+                                        return false;
+                                    }
+                                });
+                                if (isAllOk) {
+                                    save();
+                                }
+                            } else {
+                                playSound("../../Content/images/ScanOne.wav");
+                            }
+                            return false;
+                        } else {
+                            //当前行已经扫描完成，继续下一行
+                            return true;
+                        }
+                    }
+                });
+                if (isFindSku) {
+                    if (isOverProductsNum) {
+                        showSkuErrMsg("校验数量不能超过下单数量！");
+                    }
+                } else {
+                    showSkuErrMsg("商品SKU码/条码未找到！");
+                }
+            } else {
+                showSkuErrMsg("请输入商品SKU码/条码！");
+            }
+            $("#txtSkuCode").select();
+        }
+        //设置为已校验
+        function save() {
+            var billNo = $("#hdnBillNo").val();
+            $.ajax({
+                url: "/Warehouse/Outbound/SetScanCheck?billNo=" + billNo,
+                type: "GET",
+                async: false,
+                cache: false,
+                success: function (r) {
+                    var map = $.parseJSON(r);
+                    if (map.result == 1) {
+                        $("#txtBillNo").focus();
+                        $("#txtBillNo").select();
+                        $("#trScanSku").hide();
+                        $("#txtSkuCode").val("");
+                        $("#title").hide();
+                        $("#tblItemInfo").hide();
+                        $("#hdnBillNo").val("");
+                        $(".dataTr").each(function (index, element) {
+                            $(element).remove();
+                        });
+                    } else {
+                        $.MsgBox.Alert("提示", map.message);
+                    }
+                },
+                error: function () {
+                    $.MsgBox.Alert("提示", "保存操作失败！");
+                }
+            });
+        }
+        //显示错误消息，并播放错误提示音，且将将焦点移到文本框
+        function showErrMsg(errMsg) {
+            $("#spanMsg").html(errMsg);
+            $("#txtBillNo").focus();
+            playSound("../../Content/images/ScanErr.wav");
+        }
+        //显示sku扫描错误消息
+        function showSkuErrMsg(errMsg) {
+            $("#spanSkuMsg").html(errMsg);
+            $("#txtSkuCode").focus();
+            playSound("../../Content/images/ScanErr.wav");
+        }
+</script>
+}

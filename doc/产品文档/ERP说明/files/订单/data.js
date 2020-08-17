@@ -1,0 +1,85 @@
+﻿$axure.loadCurrentPage({
+  "url":"订单.html",
+  "generationDate":new Date(1442195101725.52),
+  "isCanvasEnabled":false,
+  "variables":["OnLoadVariable"],
+  "page":{
+    "packageId":"11da427868c8486683946470f787b05b",
+    "type":"Axure:Page",
+    "name":"订单",
+    "notes":{
+},
+    "style":{
+      "baseStyle":"627587b6038d43cca051c114ac41ad32",
+      "pageAlignment":"near",
+      "fill":{
+        "fillType":"solid",
+        "color":0xFFF2F2F2},
+      "image":null,
+      "imageHorizontalAlignment":"near",
+      "imageVerticalAlignment":"near",
+      "imageRepeat":"auto",
+      "favicon":null,
+      "sketchFactor":"0",
+      "colorStyle":"appliedColor",
+      "fontName":"应用字体",
+      "borderWidth":"0"},
+    "adaptiveStyles":{
+},
+    "interactionMap":{
+},
+    "diagram":{
+      "objects":[{
+          "id":"dd0a6c7d28144960b4daa13f1541dc78",
+          "label":"",
+          "type":"buttonShape",
+          "styleType":"paragraph",
+          "visible":true,
+          "style":{
+            "lineSpacing":"25px",
+            "paddingTop":"5",
+            "paddingBottom":"5",
+            "location":{
+              "x":100,
+              "y":100},
+            "size":{
+              "width":897,
+              "height":910},
+            "borderWidth":"1",
+            "borderFill":{
+              "fillType":"solid",
+              "color":0xFFCCCCCC}},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"bd77d52c70d34204bd7a6eec906f8d76",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "lineSpacing":"25px",
+                "paddingTop":"5",
+                "paddingBottom":"5",
+                "location":{
+                  "x":100,
+                  "y":100},
+                "size":{
+                  "width":897,
+                  "height":910},
+                "borderWidth":"1",
+                "borderFill":{
+                  "fillType":"solid",
+                  "color":0xFFCCCCCC}},
+              "adaptiveStyles":{
+}}],
+          "images":{
+            "normal~":"images/订单/u0.png"}}]}},
+  "masters":{
+},
+  "objectPaths":{
+    "dd0a6c7d28144960b4daa13f1541dc78":{
+      "scriptId":"u0"},
+    "bd77d52c70d34204bd7a6eec906f8d76":{
+      "scriptId":"u1"}}});

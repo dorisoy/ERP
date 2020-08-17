@@ -1,0 +1,102 @@
+﻿@using PaiXie.Data;
+@{
+    var warehouseConfig = ViewBag.WarehouseConfig as WarehouseConfig;
+    var isOpenWeightWarn = warehouseConfig.IsOpenWeightWarn == 1 ? "checked" : "";
+    var isScanDelivery = warehouseConfig.IsScanDelivery == 1 ? "checked" : "";
+    var isWeightDelivery = warehouseConfig.IsWeightDelivery == 1 ? "checked" : "";
+    ViewBag.Title = "校验称重设置";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+    <style>
+        .divTitle {
+            height: 40px;
+            line-height: 40px;
+            padding-left: 10px;
+            background-color: #f2f2f2;
+        }
+        .divContent {
+            height: 40px;
+            line-height: 40px;
+            padding-left: 20px;
+        }
+    </style>
+}
+<div class="easyui-layout" data-options="fit:true">
+    <div data-options="region:'north',height:63" id="topdiv">
+        <div class="toolbar" id="toolbar">
+            <a href="javascript:void(0);" class="refresh" id="refresh"><span></span>刷新</a>
+            <a href="javascript:void(0);" class="toolbarsave" id="toolbarsave"><span></span>保存设置</a>
+        </div>
+    </div>
+    <div data-options="region:'center',border:false" class="p0lr22">
+        <form id="ff" method="post" novalidate="novalidate">
+            <div class="divTitle">
+                <b>校验设置：</b>
+            </div>
+            <div class="divContent">
+                <input type="checkbox" id="chkIsScanDelivery" name="IsScanDelivery" value="1" @isScanDelivery /><label for="chkIsScanDelivery">发货之前出库单必须校验</label>
+            </div>
+            <div class="divTitle">
+                <b>称重设置：</b>
+            </div>
+            <div class="divContent">
+                <input type="checkbox" id="chkIsOpenWeightWarn" name="IsOpenWeightWarn" value="1" @isOpenWeightWarn /><label for="chkIsOpenWeightWarn">开启称重预警</label>
+            </div>
+            <div id="divWeightWarn" class="divContent" style="display:none;">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;出库单称重误差在<input type="text" id="txtDeviationWeight" name="DeviationWeight" class="easyui-numberbox" style="width:60px;" min="0" max="9999999.999" missingmessage="只能输入0~9999999.999之间的数字" data-options="required:true,validType:'number',precision:3,height:30" value="@warehouseConfig.DeviationWeight" /> G以外，进行提示
+            </div>
+            <div class="divContent">
+                <input type="checkbox" id="chkIsWeightDelivery" name="IsWeightDelivery" value="1" @isWeightDelivery /><label for="chkIsWeightDelivery">发货之前出库单必须称重</label>
+            </div>
+        </form>
+    </div>
+</div>
+@section bottom{
+<script>
+    $(document).ready(function () {
+        $("#refresh").click(function () {
+            window.location.reload(true);
+        });
+        $("#toolbarsave").click(function () {
+            save();
+        });
+        $("#chkIsOpenWeightWarn").click(function () {
+            if ($(this).attr("checked")) {
+                $("#divWeightWarn").show();
+            } else {
+                $("#divWeightWarn").hide();
+                if ($("#txtDeviationWeight").numberbox("getValue") == "") {
+                    $("#txtDeviationWeight").numberbox("setValue", 0);
+                }
+            }
+        });
+        if ($("#chkIsOpenWeightWarn").attr("checked")) {
+            $("#divWeightWarn").show();
+        }
+    });
+    function save() {
+        $('#ff').form('submit', {
+            url: "/Warehouse/Config/Save",
+            type: "POST",//使用get方法访问后台
+            dataType: "json",
+            onSubmit: function () {
+                var isValid = $(this).form('validate');
+                return isValid;	// 返回false终止表单提交
+            },
+            success: function (r) {
+                var map = $.parseJSON(r);
+                if (map.result == 1) {
+                    $.MsgBox.Alert("提示", "保存设置成功！", 1000);
+                }
+                else {
+                    $.MsgBox.Alert("提示", map.message);
+                }
+            },
+            error: function () {
+                $.MsgBox.Alert("提示", "保存设置失败！");
+            }
+        });
+    }
+</script>
+}

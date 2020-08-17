@@ -1,0 +1,150 @@
+﻿*{font-size:12px; font-family:Tahoma,Verdana,微软雅黑,新宋体}
+body{margin:0px; }
+a{ text-decoration:none}
+/*顶部*/
+.panel-header,
+.panel-body{ border-color:transparent; border:none;}
+.layout-expand{ background-color:transparent; border-right:none}
+.layout-panel-north .layout-body{ background:#436fac;}
+.layout-panel-north table{ height:100%;}
+.north-top{ padding-right:30px; padding-top:8px; color:#96b8db;}
+.north-top a{ color:#96b8db;font-size: 14px;}
+.north-top .line{ display:inline-block; width:1px; height:18px; background-color:#567eb4; border-left:1px solid #3c649a;margin:0 26px -5px 25px;}
+/*左边菜单*/
+.layout-split-west{ border:0px;}
+.easyui-accordion1 ul{list-style-type:none;margin:0px; padding:0;}
+.easyui-accordion1 ul li{ padding:0; height:50px; line-height:50px; text-align: center}
+.easyui-accordion1 ul li:hover{background-color: #3a5a88;color: #fff;}
+.easyui-accordion1 ul li .nav{font-size: 14px;}
+.icon-pro,
+.icon-order,
+.icon-shop,
+.icon-depot,
+.icon-purchase,
+.icon-finance,
+.icon-basis,
+.icon-system{ background:url(../images/inco.png) no-repeat;}
+.icon-pro{ background-position:-4px -4px}
+.icon-order{ background-position:-36px -3px}
+.icon-shop{ background-position:-64px -3px}
+.icon-depot{ background-position:-91px -4px}
+.icon-purchase{ background-position:-116px -3px}
+.icon-finance{ background-position:-143px -3px}
+.icon-basis{ background-position:-170px -3px}
+.icon-system{ background-position:-191px -3px}
+.icon-pro,.accordion-header-selected .icon-pro{ background-position:-4px -34px}
+.icon-order,.accordion-header-selected .icon-order{ background-position:-36px -33px}
+.icon-shop,.accordion-header-selected .icon-shop{ background-position:-64px -33px}
+.icon-depot,.accordion-header-selected .icon-depot{ background-position:-91px -34px}
+.icon-purchase,.accordion-header-selected .icon-purchase{ background-position:-116px -33px}
+.icon-finance,.accordion-header-selected .icon-finance{ background-position:-143px -33px}
+.icon-basis,.accordion-header-selected .icon-basis{ background-position:-170px -33px}
+.icon-system,.accordion-header-selected .icon-system{ background-position:-191px -33px}
+.accordion .accordion-header{background:#37495d;}
+.accordion .accordion-body{ background-color:#2d3e50}
+.accordion .accordion-header-selected{ background:#37495d;}
+.accordion a{ color:#a9b1c7;}
+.accordion .panel-tool a{ opacity:1;-moz-opacity:1;-khtml-opacity:1;filter:alpha(Opacity=100);}
+.accordion .panel-tool{ right:23px}
+.accordion{ background-color:#2d3e50;}
+.panel-title{ color:#dddddd; font-weight:normal;font-size: 16px;}
+.accordion .accordion-header-selected .panel-title{ color:#dddddd;}
+.accordion .panel{ border-bottom:1px solid #2d3e50;}
+.accordion-expand,
+.accordion-collapse{ background-image:url(../images/accordion_arrows.png)}
+.MenuLinkSelected{ background-color:#3a5a88}
+.MenuLinkSelected a{ color:#fff}
+.panel-icon{ left:29px;}
+.panel-with-icon{ padding-left:53px; height:40px; line-height:40px;}
+/*顶tag选项卡*/
+.tabs .icon-empty{ display:none}
+.icon-empty{display: none}
+.tabs-header, .tabs-scroller-left, .tabs-scroller-right, .tabs-tool, .tabs, .tabs-panels, .tabs li a.tabs-inner, .tabs li.tabs-selected a.tabs-inner, .tabs-header-bottom .tabs li.tabs-selected a.tabs-inner, .tabs-header-left .tabs li.tabs-selected a.tabs-inner, .tabs-header-right .tabs li.tabs-selected a.tabs-inner{ border-color:#d6dbdf}
+.tabs-header{ padding:0px; border-color:#d6dbdf; background:#fcfcfb;}
+.tabs{padding-left:0px}
+.tabs li{ margin-right:0px; margin-left:-1px; margin-top:-1px;}
+.tabs li a.tabs-inner{ border-radius:0px; border-bottom:none;color:#8b8b8b; font-size:14px; font-weight:normal; padding-right:15px;
+  background: -webkit-linear-gradient(top,#fefefe 0,#fafafa 100%);
+  background: -moz-linear-gradient(top,#fefefe 0,#fafafa 100%);
+  background: -o-linear-gradient(top,#fefefe 0,#fafafa 100%);
+  background: linear-gradient(to bottom,#fefefe 0,#fafafa 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#fefefe,endColorstr=#fafafa,GradientType=0);}
+.tabs li.tabs-selected a.tabs-inner{ 
+	color:#393939;
+	font-weight:normal;
+	broder-top:1px solid #3d568e;
+	border-bottom:2px solid #fff;
+	background: -webkit-linear-gradient(top,#fff 0,#fff 100%);
+	background: -moz-linear-gradient(top,#fff 0,#fff 100%);
+	background: -o-linear-gradient(top,#fff 0,#fff 100%);
+	background: linear-gradient(to bottom,#fff 0,#fff 100%);
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#fff,endColorstr=#fff,GradientType=0);}
+.tabs li.tabs-selected{ height:40px; background:#fff;}
+.tabs li a.tabs-close{ right:9px; background:url(../images/tabs_icons.png) 2px 2.5px no-repeat;}
+.tabs li a:hover.tabs-close{ background-position:-18px 2.5px; background-color:transparent;}
+.tabs li span{font-size: 13px;}
+.tabs-scroller-left{ border-left:0px;}
+.tabs-scroller-right,
+.tabs-tool{border-right:0px;}
+/*=======================================*/
+.window,
+.window-shadow {
+  position: absolute;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+}
+.window-shadow {
+  background: #436fac;
+  -moz-box-shadow:none;
+  -webkit-box-shadow:none;
+  box-shadow: none ;
+  filter:none;
+}
+.window{
+  padding:0px;
+  border-color: #436fac;
+  background: #436fac;
+  filter:none;
+}
+.window .window-header{ background-color:#436fac; padding-left:22px; font-size:15px; color:#fff; height:40px; padding-bottom:0px;}
+.window-header .panel-title{color:#fff; line-height:40px; font-size:15px; font-weight:normal}
+.window .window-body{
+	border:none;
+	color:#666;
+}
+.messager-body{ padding:30px 40px;}
+.window .l-btn {
+  color: #888888;
+  background: #fff;
+  border: 1px solid #dddddd;
+  filter:none;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+}
+.window .l-btn:hover {
+  background: #f6f6f6;
+  color: #888888;
+  border: 1px solid #dddddd;
+  filter: none;
+}
+.window .l-btn-text{
+  font-size:14px;
+  line-height:32px;
+}
+.window .panel-tool{ text-align:right;}
+.window .panel-tool-close{ width:20px; height:20px;background:url(../images/icon-close.png) center center no-repeat; margin-right:10px }
+.window .panel-tool a:hover{ background-color:transparent; }
+.refresh-menu{
+  position: relative;
+  z-index: 5;
+  cursor: pointer;
+  display: inline-block;
+    width: 20px;
+    background:url(/Content/images/list-inco.png) no-repeat 0 0;
+    height: 22px;
+    float: left;
+    margin-top: 9px;}

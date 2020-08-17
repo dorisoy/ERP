@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "添加采购计划单";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+}
+<form id="ff" method="post" novalidate="novalidate">
+    <table id="tblAdd" class="tableinfo" style=" margin-top:20px">
+        <tr>
+            <th align="right" style="width:100px"><label for="Name">计划单名称：</label></th>
+            <td>
+                <input style="width:165px;" value="" class="easyui-validatebox" type="text" id="txtName" name="Name" data-options="required:true,validType:'length[1,30]'" />
+                &nbsp;<span id="errorMessage" style="color:red;"></span>
+            </td>
+        </tr>
+        <tr>
+            <th align="right"><label for="WarehouseCode">选择对应仓库：</label></th>
+            <td>
+                <select id="Warehouse" name="WarehouseCode" class="easyui-combobox" data-options="required:true,editable:false,height:30,width:165,panelHeight:80"></select>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align:center; padding-top:10px">
+                <a href="javascript:void(0)" class="button-oky" id="btnSave" iconcls="icon-ok">确定</a>
+                <a href="javascript:void(0)" class="button-cancel" iconcls="icon-cancel" id="btnClose">取消</a>
+            </td>
+        </tr>
+    </table>
+</form>
+@section bottom{
+    <script src="~/Areas/Purchase/ViewJs/AddPlan.js"></script>
+}

@@ -1,0 +1,232 @@
+﻿@using PaiXie.Core;
+@using PaiXie.Data;
+@using PaiXie.Api.Bll;
+@{
+    var warehouseExpress = ViewBag.WarehouseExpress as WarehouseExpress;
+    var warehouseExpressPriceList = ViewBag.WarehouseExpressPriceList as List<WarehouseExpressPrice>;
+    var logisticsCode = ViewBag.LogisticsCode;
+    var logisticsName = ViewBag.LogisticsName;
+    ViewBag.Title = "设置运费";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section head{
+    <style>
+        .divTitle {
+            margin-top: 1px;
+            padding-left: 10px;
+            height: 50px;
+            line-height: 50px;
+            background: #f0f0f0;
+            border: 1px solid #ccc;
+        }
+        .divAdd {
+            margin-top:10px;
+            padding-left: 20px;
+        }
+        .divAdd input.button {
+            border: 0px;
+            background: #436fac;
+            color: #fff;
+            height: 30px;
+            width: 90px;
+            cursor: pointer;
+        }
+        #grid {
+            text-align: center;
+            width:96%;
+            margin: 10px 0px 0px 20px;
+            border-left: 1px solid #ccc;
+            border-top: 1px solid #ccc;
+        }
+        #grid th {
+            height: 30px;
+            line-height: 30px;
+            background-color: #f0f0f0;
+            border-right: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+        }
+        #grid td {
+            height: 30px;
+            line-height: 30px;
+            border-right: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+        }
+        #grid td a{
+            text-decoration:none;
+            color:#1d72df;
+        }
+        #grid td a:hover {
+            color: #fc8b00;
+        }
+        .unclick {
+            color: #999;
+            cursor: default;
+        }
+        .numberbox .textbox-text {
+            text-align: center;
+        }
+    </style >
+
+}
+<div class="easyui-layout" data-options="fit:true" style="overflow-y:auto;">
+    <div data-options=" region:'north',height:63" id="topdiv">
+        <div class="toolbar" id="toolbar">
+            <a href="javascript:void(0);" class="back" id="back"><span></span>返回</a>
+            <a href="javascript:void(0);" class="toolbarsave" id="toolbarsave"><span></span>保存运费</a>
+            <a href="javascript:void(0);" class="refresh" id="refresh" onclick="window.location.reload(true);" style="display:none;">刷新</a>
+        </div>
+    </div>
+    <div data-options="region:'center',border:false" class="p0lr22">
+        <form id="ff" method="post" novalidate>
+            <input type="hidden" id="hdnExpressID" name="expressID" value="@warehouseExpress.ID" />
+            <div class="divTitle">
+                <span>快递名称：@(warehouseExpress.Name)</span>
+                <span style="margin-left:100px;">所属物流：@(logisticsName)</span>
+                <span style="margin-left:100px;">类型：@(ExpressManager.GetPrinterTypeName(warehouseExpress.PrinterType))</span>
+            </div>            
+            <div class="divAdd">
+                特定地区运费：<input type="button" id="btnAdd" name="btnAdd" class="button" value="添加" onclick="addArea();" />
+            </div>
+            <table id="grid" cellpadding="5" cellspacing="0" border="0">
+                <tr>
+                    <th width="30%">地区</th>
+                    <th width="10%">首重(kg)</th>
+                    <th width="10%">首费(元)</th>
+                    <th width="10%">续重(kg)</th>
+                    <th width="10%">续费(元)</th>
+                    <th width="10%">操作</th>
+                </tr>
+        @{
+    if (warehouseExpressPriceList.Count == 0) {
+        <tr id="dataTr_0" class="dataTr">
+            <td>
+                <div align="left">
+                    <input type="hidden" id="hdnID_0" name="ID" value="0" />
+                    <input type="hidden" id="hdnSysAreaNames_0" name="SysAreaNames" value="全国">
+                    <input type="hidden" id="hdnSysAreaIDs_0" name="SysAreaIDs" value="">
+                    <div id="divSysAreaNames_0" style="float: left; width: 350px;">全国</div>
+                    <span style="float: right; width: 40px;" class="unclick">编辑&nbsp;&nbsp;</span>
+                </div>
+            </td>
+            <td><input type="text" id="txtFirstWeight_0" name="FirstWeight" class="easyui-numberbox" min="0" max="9999999.999" missingmessage="只能输入0~9999999.999之间的数字" data-options="required:true,validType:'number',precision:3,width:85,height:30" value="" /></td>
+            <td><input type="text" id="txtFirstPrice_0" name="FirstPrice" class="easyui-numberbox" min="0" max="9999999.999" missingmessage="只能输入0~9999999.999之间的数字" data-options="required:true,validType:'number',precision:3,width:85,height:30" value="" /></td>
+            <td><input type="text" id="txtContinueWeight_0" name="ContinueWeight" class="easyui-numberbox" min="0" max="9999999.999" missingmessage="只能输入0~9999999.999之间的数字" data-options="required:true,validType:'number',precision:3,width:85,height:30" value="" /></td>
+            <td><input type="text" id="txtContinuePrice_0" name="ContinuePrice" class="easyui-numberbox" min="0" max="9999999.999" missingmessage="只能输入0~9999999.999之间的数字" data-options="required:true,validType:'number',precision:3,width:85,height:30" value="" /></td>
+            <td><span class="unclick">删除</span></td>
+        </tr>
+    }
+    else {
+        var index = 0;
+        foreach (var warehouseExpressPrice in warehouseExpressPriceList) {
+            <tr id="dataTr_@index" class="dataTr">
+                <td>
+                    <input type="hidden" id="hdnID_@index" name="ID" value="@warehouseExpressPrice.ID" />
+                    <input type="hidden" id="hdnSysAreaNames_@index" name="SysAreaNames" value="@warehouseExpressPrice.SysAreaNames">
+                    <input type="hidden" id="hdnSysAreaIDs_@index" name="SysAreaIDs" value="@warehouseExpressPrice.SysAreaIDs">
+                    <div id="divSysAreaNames_@index" style="float: left; text-align:left; width: 350px;">@(warehouseExpressPrice.SysAreaNames.Replace(",","、"))</div>
+                @if (warehouseExpressPrice.SysAreaNames == "全国") {
+                    <div style="float: right; width: 40px;" class="unclick">编辑&nbsp;&nbsp;</div>
+            }
+            else {
+                    <div style="float: right; width: 40px;"><a href="javascript:void(0);" onclick="editArea(@warehouseExpressPrice.ID, @index);">编辑</a>&nbsp;&nbsp;</div>
+                }
+                    <div style="clear:both;height:0px;font-size:0px;"></div>    
+                </td>
+                <td><input type="text" id="txtFirstWeight_@index" name="FirstWeight" class="easyui-numberbox" style="width:85px;height:30px;" min="0" max="9999999.999" missingmessage="只能输入0~9999999.999之间的数字" data-options="required:true,validType:'number',precision:3" value="@warehouseExpressPrice.FirstWeight" /></td>
+                <td><input type="text" id="txtFirstPrice_@index" name="FirstPrice" class="easyui-numberbox" style="width:85px;height:30px;" min="0" max="9999999.999" missingmessage="只能输入0~9999999.999之间的数字" data-options="required:true,validType:'number',precision:3" value="@warehouseExpressPrice.FirstPrice" /></td>
+                <td><input type="text" id="txtContinueWeight_@index" name="ContinueWeight" class="easyui-numberbox" style="width:85px;height:30px;" min="0" max="9999999.999" missingmessage="只能输入0~9999999.999之间的数字" data-options="required:true,validType:'number',precision:3" value="@warehouseExpressPrice.ContinueWeight" /></td>
+                <td><input type="text" id="txtContinuePrice_@index" name="ContinuePrice" class="easyui-numberbox" style="width:85px;height:30px;" min="0" max="9999999.999" missingmessage="只能输入0~9999999.999之间的数字" data-options="required:true,validType:'number',precision:3" value="@warehouseExpressPrice.ContinuePrice" /></td>
+                <td>
+                @if(warehouseExpressPrice.SysAreaNames == "全国"){
+                    <span class="unclick">删除</span>
+                }else{
+                    <a href="javascript:void(0);" onclick="del(@index);">删除</a>
+                }
+                </td>
+            </tr>
+            index++;
+        }
+    }
+}
+            </table>
+        </form>
+    </div>
+</div>
+@section bottom{
+    <script type="text/javascript">
+        $(function(){
+            $("#back").click(function () {
+                location.href = "/Warehouse/Express/Index";
+            });
+            $("#toolbarsave").click(save);
+            $(".dataTr").mouseover(function(){    
+                $(this).css("background","#e2e2e2");
+            }).mouseout(function(){
+                $(this).css("background","#fff");
+            });
+        });
+        function addArea() {
+            showLocalWindow("选择地区", "/Warehouse/Express/SelectArea?warehouseExpressPriceID=0&rowIndex=0", 900, 550, true, false, false);
+        }
+        function editArea(id, rowIndex) {
+            var checkedIDs = $("#hdnSysAreaIDs_" + rowIndex).val();
+            showLocalWindow("选择地区", "/Warehouse/Express/SelectArea?warehouseExpressPriceID=" + id + "&rowIndex=" + rowIndex + "&checkedIDs=" + checkedIDs, 900, 550, true, false, false);
+        }
+        function del(rowIndex) {
+            var id = $("#hdnID_" + rowIndex).val();
+            if(parseInt(id) > 0){
+                //删除
+                $.messager.confirm('提示', "确定要删除吗？", function (r) {
+                    if (r) {
+                        $.ajax({
+                            url: "/Warehouse/Express/DeleteExpressPrice?warehouseExpressPriceID=" + id,
+                            type: "GET",
+                            cache: false,
+                            success: function (r) {
+                                var map = $.parseJSON(r);
+                                if (map.result == 1) {
+                                    $("#dataTr_" + rowIndex).remove();
+                                } else {
+                                    $.MsgBox.Alert("提示", map.message);
+                                }
+                            },
+                            error: function () {
+                                $.MsgBox.Alert("提示", "删除失败！");
+                            }
+                        });
+                    }
+                });
+            }else {
+                $("#dataTr_" + rowIndex).remove();
+            }
+        }
+        function save() {
+            $('#ff').form('submit', {
+                url: "/Warehouse/Express/SaveExpressPrice",
+                type: "POST",//使用get方法访问后台
+                dataType: "json",
+                onSubmit: function () {
+                    var isValid = $(this).form('validate');
+                    return isValid;	// 返回false终止表单提交
+                },
+                success: function (r) {
+                    var map = $.parseJSON(r);
+                    if (map.result == 1) {
+                        $.MsgBox.Alert("提示", "保存运费成功！", 1000);
+                        setTimeout(function () {
+                            $("#refresh").click();
+
+                        }, 1000);
+                    }
+                    else {
+                        $.MsgBox.Alert("提示", map.message);
+                    }
+                },
+                error: function () {
+                    $.MsgBox.Alert("提示", "保存运费失败！");
+                }
+            });
+        }
+    </script>
+}

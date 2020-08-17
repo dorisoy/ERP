@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "添加移位单";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section head{
+
+}
+<form id="ff" method="post" novalidate>
+    <table class="tableinfo" style="margin-top:25px">
+        <tr>
+            <th style="width:120px" valign="top">移位说明：</th>
+            <td><textarea id="txtRemark" name="remark" class="textarea easyui-validatebox" style="width:300px; height:110px;" maxlength="500"></textarea> </td>
+        </tr>
+        <tr>
+            <th></th>
+            <td>
+                <a href="javascript:void(0);" class="button-oky" id="btnSave" iconcls="icon-ok">添加</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="javascript:void(0);" class="button-cancel" id="btnCancel" iconcls="icon-ok">取消</a>
+            </td>
+
+        </tr>
+    </table>
+</form>
+@section bottom{
+    <script src="~/Areas/Warehouse/ViewJs/AddMoveLocation.js"></script>
+}

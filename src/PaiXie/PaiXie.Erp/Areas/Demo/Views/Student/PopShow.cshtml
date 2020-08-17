@@ -1,0 +1,78 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>PopShow</title>
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Content/jquery-easyui/jquery.easyui.min.js"></script>
+
+    <link href="~/Content/jquery-easyui/themes/gray/easyui.css" rel="stylesheet" />
+    <link href="~/Content/jquery-easyui/themes/icon.css" rel="stylesheet" />
+    <script src="~/Scripts/easyuiExt.js"></script>
+    <script src="~/Content/jquery-easyui/locale/easyui-lang-zh_CN.js"></script>
+    <script src="~/Scripts/dictType.js"></script>
+</head>
+<body>
+    <div>
+        <table>
+            <tr>
+                <th>
+                    <label for="Customer_ID">客户名称：</label>
+                </th>
+                <td colspan="3">
+                    <input class="easyui-validatebox" style="width:300px;background-color:peachpuff" readonly="readonly" type="text" id="Customer_Name" name="Customer_Name" data-options="required:true,validType:'length[1,50]'" />
+                    <input type="hidden" style="width:300px" id="Customer_ID" name="Customer_ID" />
+                    <a href="javascript:void(0)" class="easyui-linkbutton" id="btnSelectCustomer" iconcls="icon-search">选择客户</a>
+                </td>
+            </tr>
+
+
+
+            <tr>
+                <th>
+                    <label for="Subscribe">动态下拉列表的处理：</label>
+                </th>
+                <td colspan="3">
+                    <select id="Subscribe" name="Subscribe" class="easyui-combobox" style="width:150px">
+                        @*<option value="1">订阅</option>
+                        <option value="0">取消</option>*@
+                    </select>&nbsp;&nbsp;&nbsp;
+                </td>
+            </tr>
+
+
+
+
+        </table>
+    </div>
+  
+    <script>
+        $("#btnSelectCustomer").click(function () {
+         //   dispalyLoad();
+         //  Load();
+          //  showProcess(true,"ewew","assa");
+         //   Confirm("确认操作");
+          //  showConfirm("11", "22", sf);
+        showMyWindow("test", "/Demo/Student/PopShowContent?id=1888", 600, 400, true, false, false);    
+        });
+        function sf()
+        {
+            alert("showConfirm");
+        }
+
+        $(document).ready(function () {
+         
+          //初始化数据
+            BindDictItem("Subscribe", "Classs");
+            //选中特定值
+            $("#Subscribe").combobox('setValue', 4);
+          //  $("#Subscribe2").text(info.Subscribe == "1" ? "订阅" : "取消");
+        });
+    </script>
+</body>
+</html>

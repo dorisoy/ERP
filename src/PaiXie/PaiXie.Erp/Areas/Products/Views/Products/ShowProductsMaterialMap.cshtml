@@ -1,0 +1,49 @@
+﻿@using PaiXie.Data
+@using PaiXie.Core
+@using PaiXie.Utils
+@{
+    var products = ViewBag.Products as Products;
+    var smallPic = "";
+    if (ZConvert.ToString(products.SmallPic) != "") {
+        smallPic = products.SmallPic.Split(',')[0];
+    }
+    else {
+        smallPic = "../../Upload/Products/NoImg.jpg";
+    }
+    var status = ViewBag.Status;
+    ViewBag.Title = "查看关联物料";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+
+}
+<div class="easyui-layout" data-options="fit:true">
+    <div data-options="region:'north',height:190">
+        <div class="toolbar" id="toolbar">
+            <input type="hidden" id="hdnStatus" value="@status" />
+            <a href="javascript:void(0);" class="back" id="back"><span></span>返回</a>
+        </div>
+        <div class="p0lr22">
+            <div class="proinfo">
+                <div class="img70"><dfn></dfn><img src="@smallPic"></div>
+                <p><b>商品名称:</b> @products.Name</p>
+                <p><b>商品货号:</b> @products.No</p>
+                <p>
+                    <b>商品编码:</b> @products.Code
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <b>商品条码:</b> @products.BarCode
+                </p>
+                <input type="hidden" id="hdnProductsID" value="@products.ID" />
+            </div>
+            <div class="infotitle">设置关联物料：</div>
+        </div>
+    </div>
+    <div data-options="region:'center',border:false" style="padding:0 22px;">
+        <table id="grid" class="easyui-datagrid" title="" data-options="singleSelect:false,collapsible:true,method:'get'"></table>
+        <!--用于弹窗刷新父级页面-->
+        <a href="javascript:void(0);" id="refresh" class="ndis">刷新</a>
+    </div>
+</div>
+@section bottom{
+    <script src="~/Areas/Products/ViewJs/ShowProductsMaterialMap.js"></script>
+}

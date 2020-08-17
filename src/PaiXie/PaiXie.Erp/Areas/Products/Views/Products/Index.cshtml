@@ -1,0 +1,58 @@
+﻿@{
+    ViewBag.Title = "商品列表";
+    var status = ViewBag.Status;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+
+    <style>
+        .datagrid-row {
+        }
+    </style>
+}
+<div class="easyui-layout" data-options="fit:true">
+    <div data-options="region:'north',height:113" id="topdiv">
+        <div class="toolbar" id="toolbar">
+            <a href="javascript:void(0);" class="refresh" id="refresh"><span></span>刷新</a>
+            <a href="javascript:void(0);" class="add" id="add"><span></span>添加商品</a>
+            <a href="javascript:void(0);" class="down" id="down"><span></span>下载商品</a>
+            <a href="javascript:void(0);" class="import" id="import"><span></span>表格导入</a>
+            <a href="javascript:void(0);" id="changeCategory"><span></span>更换分类</a>
+            <a href="javascript:void(0);" id="changeBrand"><span></span>更换品牌</a>
+            @*<a href="javascript:void(0);" id="export"><span></span>导出</a>*@
+            <a href="javascript:void(0);" class="unclick" id="onSale"><span></span>上架</a>
+            <a href="javascript:void(0);" class="unclick" id="offSale"><span></span>下架</a>
+            <a href="javascript:void(0);" class="del unclick" id="del"><span></span>删除</a>
+            <a href="javascript:void(0);" id="refreshCurrentPage" style="display:none;"><span></span>刷新当前页</a>
+        </div>
+        <div class="searchpro" id="searchpro">
+            <select id="keyWordType" name="keyWordType" class="easyui-combobox" data-options="height:30,width:100,editable:false">
+                <option value="">关键字类型</option>
+                <option value="商品名称">商品名称</option>
+                <option value="商品编码" selected>商品编码</option>
+                <option value="商品货号">商品货号</option>
+                <option value="商品SKU码">商品SKU码</option>
+                <option value="商品条码">商品条码</option>
+            </select>
+            <input type="text" id="txtKeyWord" value="" style="width:150px;">
+            <label>分类：</label><input id="Category" name="Category" class="easyui-combotree" value="-1" data-options="url:'/Products/Category/JsonTree',method:'get',required:true,height:30,panelHeight:161,width:130,editable:false">
+            <label>品牌：</label><select id="Brand" name="Brand" class="easyui-combobox" data-options="height:30,panelHeight:161,width:130,editable:false"></select>
+            <input type="submit" id="btnSearch" value="搜索" class="button">
+            <input type="reset" id="btnReset" value="清空条件" class="button-rest">
+        </div>
+    </div>
+    <div data-options="region:'center',border:false" class="p0lr22">
+        <div id="tt" class="easyui-tabs" data-options="fit:true,border:false,plain:true">
+            <input type="hidden" id="hdnStatus" value="@status" />
+            <div title="销售中商品" data-options="region:'center',border:false" id="onSalediv">
+                <table id="grid" class="easyui-datagrid" title="" data-options="singleSelect:false,collapsible:true,method:'get'"></table>
+            </div>
+            <div title="仓库中商品" id="offSalediv">
+                <table id="gridOff" class="easyui-datagrid" title="" data-options="singleSelect:false,collapsible:true,method:'get'"></table>
+            </div>
+        </div>
+    </div>
+</div>
+@section bottom{
+    <script src="~/Areas/Products/ViewJs/ProductsInfoList.js"></script>
+}

@@ -1,0 +1,48 @@
+2015/9/22 8:51:55
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='iuiu' and  Password='b03a8809e8fc94eca48594d1a5470189' and IsEnable=1 
+------------------------------------------------------------------
+2015/9/22 8:55:00
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='weew' and  Password='4eb81dca9216cabf7e0a51bd48628044' and IsEnable=1 
+------------------------------------------------------------------
+2015/9/22 8:55:18
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='dsds' and  Password='4ab47e54c2f73ad4c0eb3974709721cd' and IsEnable=1 
+------------------------------------------------------------------
+2015/9/22 8:55:32
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='dsds' and  Password='fa02962f5fb9474dd13bba1c1908681d' and IsEnable=1 
+------------------------------------------------------------------
+2015/9/22 8:55:38
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='dsds' and  Password='d41d8cd98f00b204e9800998ecf8427e' and IsEnable=1 
+------------------------------------------------------------------
+2015/9/22 8:55:47
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='iuiu' and  Password='b4b27c9132d1fca14442ceae495a224a' and IsEnable=1 
+------------------------------------------------------------------
+2015/9/22 8:56:11
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='dsds' and  Password='e52fdc32daba527629fa9c26a48c2781' and IsEnable=1 
+------------------------------------------------------------------
+2015/9/22 8:58:33
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='6565' and  Password='e615c82aba461681ade82da2da38004a' and IsEnable=1 
+------------------------------------------------------------------

@@ -1,0 +1,93 @@
+﻿@{
+    var ordRefundID = ViewBag.OrdRefundID;
+    ViewBag.Title = "退回商品";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+    
+}
+<form id="ff" method="post" novalidate="novalidate">
+    <input type="hidden" value="@ordRefundID" id="hdnOrdRefundID" name="ordRefundID" />
+    <div style="width: 500px; height: 60px; margin: 10px auto; text-align: center; line-height: 60px; border: 1px solid #ccc; background-color: #f2f2f2; ">填入买家寄回商品的物流信息</div>
+    <table id="tblAdd" style="margin:20px auto; line-height:28px;">
+        <tr>
+            <td width="25%" align="right"><lable style="color:red;">*</lable>寄回物流：</td>
+            <td>
+                <select id="logisticsID" name="logistics" class="easyui-combobox" style="width:150px;" data-options="height:30"></select>
+                <input type="hidden" id="hdnExpressCompany" name="ExpressCompany" value="" />
+            </td>
+        </tr>
+        <tr>
+            <td align="right"><lable style="color:red;">*</lable>运单号：</td>
+            <td>
+                <input type="text" id="txtWaybillNo" name="WaybillNo" class="easyui-validatebox" style="width:210px;" data-options="required:true,validType:['code','length[1,20]'],height:30" />
+            </td>
+        </tr>
+        <tr>
+            <td align="right"><lable style="color:red;">*</lable>寄回运费：</td>
+            <td>
+                <input type="text" id="txtReturnFreight" name="ReturnFreight" class="easyui-numberbox" style="width:100px;" min="0" max="9999999.999" missingmessage="只能输入0~9999999.999之间的数字" data-options="required:true,validType:'number',precision:3,height:30">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align:center; padding-top:25px;">
+                <a href="javascript:void(0)" class="button-oky" id="btnSave" iconcls="icon-ok">确定</a>
+                <a href="javascript:void(0)" class="button-cancel" iconcls="icon-cancel" id="btnClose">取消</a>
+            </td>
+        </tr>
+    </table>
+</form>
+@section bottom{
+    <script>
+        //初始化
+        $(function () {
+            $("#btnClose").click(function () {
+                parent.$('#localWin').window('close');
+            });
+            $("#btnSave").click(btnSave);
+            //初始化数据
+            BindDictItem("logisticsID", "Logistics");
+            //选中特定值
+            setTimeout(function () {
+                $("#logisticsID").combobox("setValue", 0);
+            }, 0);
+            $("#logisticsID").combobox({
+                onChange: function (n, o) {
+                    if (n == 0) {
+                        $("#hdnExpressCompany").val("");
+                    } else {
+                        $("#hdnExpressCompany").val($("#logisticsID").combobox("getText"));
+                    }
+                }
+            });
+        });
+        function btnSave() {
+            if (Number($("#logisticsID").combobox("getValue")) > 0) {
+                $('#ff').form('submit', {
+                    url: "/OrderRefund/OrderRefund/Savelogistics",
+                    type: "POST",
+                    dataType: "json",
+                    onSubmit: function () {
+                        var isValid = $(this).form('validate');
+                        return isValid;	// 返回false终止表单提交
+                    },
+                    success: function (r) {
+                        var map = $.parseJSON(r);
+                        if (map.result == 1) {
+                            parent.$("#refreshCurrentPage").click();
+                            $("#btnClose").click();
+                        }
+                        else {
+                            $.MsgBox.Alert("提示", map.message);
+                        }
+                    },
+                    error: function () {
+                        $.MsgBox.Alert("提示", "保存失败！");
+                    }
+                });
+            } else {
+                $.MsgBox.Alert("提示", "请选择寄回物流！");
+            }
+        }
+    </script>
+}

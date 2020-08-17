@@ -1,0 +1,41 @@
+﻿@using PaiXie.Data
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+}
+<form id="ff" method="post" novalidate>
+    <table class="tableinfo" style="margin-top:25px">
+        <tr>
+            <th style="width:120px">选择入库类型：</th>
+            <td>
+                <select id="BillType" name="BillType" class="easyui-combobox" data-options="height:30,width:100">
+                    <option value="">入库类型</option>
+                    <option value="10">采购入库</option>
+                    <option value="30">其它入库</option>
+                </select>
+            </td>
+        </tr>
+        <tr id="gldh" style="display:none;">
+            <th>关联采购单号：</th>
+            <td>
+                <input style="width:150px;" value="" class="easyui-validatebox" type="text" id="SourceNo" name="SourceNo" />
+                &nbsp;<span id="errorMsg" style="color:#ff0000;"></span>
+            </td>
+        </tr>
+        <tr>
+            <th valign="top">入库备注：</th>
+            <td><textarea id="Remark" name="Remark" class="textarea easyui-validatebox" style=" width:300px; height:110px"></textarea> </td>
+        </tr>
+        <tr>
+            <th>&nbsp;</th>
+            <td>
+                <a href="javascript:void(0)" class="button-oky" id="btnSave" iconcls="icon-ok">添加</a>
+                <a href="javascript:void(0)" class="button-cancel" id="btnCancel" iconcls="icon-ok">取消</a>
+            </td>
+        </tr>
+    </table>
+</form>
+@section bottom{
+    <script src="~/Areas/Warehouse/ViewJs/EditWarehouseInStock.js"></script>
+}  

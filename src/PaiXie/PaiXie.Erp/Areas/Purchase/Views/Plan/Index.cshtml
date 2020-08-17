@@ -1,0 +1,51 @@
+﻿@{
+    ViewBag.Title = "采购计划单列表";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+<style>
+    .searchpro .no {
+        width: auto;
+        height: auto;
+        margin: 10px 3px 0 0;
+    }
+
+    .searchpro .pr10 {
+        padding-right: 10px;
+    }
+</style>
+}
+<div class="easyui-layout" data-options="fit:true">
+    <div data-options="region:'north',height:112" id="topdiv">
+        <div class="toolbar" id="toolbar">
+            <a href="javascript:void(0);" class="refresh" id="refresh"><span></span>刷新</a>
+            <a href="javascript:void(0);" class="add" id="add"><span></span>添加采购计划单</a>
+            <a href="javascript:void(0);" class="del unclick" id="del"><span></span>删除</a>
+            <a href="javascript:void(0);" id="refreshCurrentPage" style="display:none;"><span></span>刷新当前页</a>
+        </div>
+        <div class="searchpro" id="searchpro">
+            <select id="keyWordType" name="keyWordType" class="easyui-combobox" data-options="height:30,width:100,editable:false">
+                <option value="">关键字类型</option>
+                <option value="计划单名称">计划单名称</option>
+                <option value="采购计划单号" selected>采购计划单号</option>
+                <option value="商品编码">商品编码</option>
+                <option value="商品SKU码">商品SKU码</option>
+            </select>
+            <input type="text" id="txtKeyWord" value="" style="width:150px;">
+            <label>仓库名称：</label>
+            <select id="Warehouse" name="Warehouse" class="easyui-combobox" data-options="height:30,panelHeight:161,width:130"></select>
+            <label>状态：</label>
+            <input type="checkbox" name="purchaseStatus" id="noPurchase" value="1" class="no" checked><label for="noPurchase" class="pr10">未采购</label>
+            <input type="checkbox" name="purchaseStatus" id="purchased" value="2" class="no" checked><label for="purchased" class="pr10">已采购</label>
+            <input type="checkbox" name="purchaseStatus" id="end" value="3" class="no"><label for="end" class="pr10">已结束</label>
+            <input type="submit" id="btnSearch" value="搜索" class="button">
+            <input type="reset" id="btnReset" value="清空条件" class="button-rest">
+        </div>
+    </div>
+    <div data-options="region:'center',border:false" class="p0lr22">
+        <table id="grid" class="easyui-datagrid" title="" data-options="singleSelect:false,collapsible:true,method:'get'"></table>
+    </div>
+</div>
+@section bottom{
+    <script src="~/Areas/Purchase/ViewJs/PlanInfoList.js"></script>
+}

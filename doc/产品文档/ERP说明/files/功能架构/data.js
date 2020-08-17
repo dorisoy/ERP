@@ -1,0 +1,153 @@
+﻿$axure.loadCurrentPage({
+  "url":"功能架构.html",
+  "generationDate":new Date(1442195100892.48),
+  "isCanvasEnabled":false,
+  "variables":["OnLoadVariable"],
+  "page":{
+    "packageId":"1191829512494e3cbabf3192c5f34e07",
+    "type":"Axure:Page",
+    "name":"功能架构",
+    "notes":{
+},
+    "style":{
+      "baseStyle":"627587b6038d43cca051c114ac41ad32",
+      "pageAlignment":"near",
+      "fill":{
+        "fillType":"solid",
+        "color":0xFFF2F2F2},
+      "image":null,
+      "imageHorizontalAlignment":"near",
+      "imageVerticalAlignment":"near",
+      "imageRepeat":"auto",
+      "favicon":null,
+      "sketchFactor":"0",
+      "colorStyle":"appliedColor",
+      "fontName":"应用字体",
+      "borderWidth":"0"},
+    "adaptiveStyles":{
+},
+    "interactionMap":{
+},
+    "diagram":{
+      "objects":[{
+          "id":"ba63b2f8f962421f8e66cd4ad9bf4b6b",
+          "label":"",
+          "type":"buttonShape",
+          "styleType":"buttonShape",
+          "visible":true,
+          "style":{
+            "fill":{
+              "fillType":"solid",
+              "color":0xFFFFFF},
+            "location":{
+              "x":131,
+              "y":2123},
+            "size":{
+              "width":936,
+              "height":100},
+            "borderWidth":"-1"},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"92472f4ce0d1452dba4c1f21250f0206",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "fill":{
+                  "fillType":"solid",
+                  "color":0xFFFFFF},
+                "location":{
+                  "x":131,
+                  "y":2123},
+                "size":{
+                  "width":936,
+                  "height":100},
+                "borderWidth":"-1"},
+              "adaptiveStyles":{
+}}],
+          "images":{
+            "normal~":"resources/images/transparent.gif"}},
+{
+          "id":"c94e341206334777bde33b9abb6d22df",
+          "label":"",
+          "type":"imageBox",
+          "styleType":"imageBox",
+          "visible":true,
+          "style":{
+            "location":{
+              "x":100,
+              "y":100},
+            "size":{
+              "width":595,
+              "height":984}},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"76072137e8144846a8c4fe5fe7a40f8c",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "location":{
+                  "x":100,
+                  "y":100},
+                "size":{
+                  "width":595,
+                  "height":984}},
+              "adaptiveStyles":{
+}}],
+          "images":{
+            "normal~":"images/功能架构/u2.png"}},
+{
+          "id":"e8c40119de0a4b42bd50e7483595757e",
+          "label":"",
+          "type":"imageBox",
+          "styleType":"imageBox",
+          "visible":true,
+          "style":{
+            "location":{
+              "x":100,
+              "y":1094},
+            "size":{
+              "width":598,
+              "height":1006}},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"f413f267b9d74f44a23deb1c9504f868",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "location":{
+                  "x":100,
+                  "y":1094},
+                "size":{
+                  "width":598,
+                  "height":1006}},
+              "adaptiveStyles":{
+}}],
+          "images":{
+            "normal~":"images/功能架构/u4.png"}}]}},
+  "masters":{
+},
+  "objectPaths":{
+    "ba63b2f8f962421f8e66cd4ad9bf4b6b":{
+      "scriptId":"u0"},
+    "92472f4ce0d1452dba4c1f21250f0206":{
+      "scriptId":"u1"},
+    "c94e341206334777bde33b9abb6d22df":{
+      "scriptId":"u2"},
+    "76072137e8144846a8c4fe5fe7a40f8c":{
+      "scriptId":"u3"},
+    "e8c40119de0a4b42bd50e7483595757e":{
+      "scriptId":"u4"},
+    "f413f267b9d74f44a23deb1c9504f868":{
+      "scriptId":"u5"}}});

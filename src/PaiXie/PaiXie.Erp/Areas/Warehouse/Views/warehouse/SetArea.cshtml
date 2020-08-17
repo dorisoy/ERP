@@ -1,0 +1,34 @@
+﻿@using PaiXie.Data
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    @section head{
+
+    }
+<div data-options="region:'north'" style="height:500px">
+    <div class="proinfo" style="padding:15px;">
+        <p style="padding-left:3em; text-indent:-3em"> 
+            <b style="font-weight:normal; color:#F00">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>
+        仓库名称：@ViewBag.wname
+        
+        <br>授权品牌：@ViewBag.Librand </p>
+    </div>
+    <input type="hidden" value="@ViewBag.wid" id="wid" name="wid" />
+  
+   
+   <table id="test" title=""></table>
+
+
+
+</div>
+<div data-options="region:'center'">
+    <div style="text-align:center; padding-top:10px">
+        <a href="javascript:void(0)" class="button-oky" id="btnSave" iconcls="icon-ok">确定</a>
+        <a href="javascript:void(0)" class="button-cancel" iconcls="icon-cancel" id="btnClose">取消</a>
+    </div>
+
+</div>
+    @section bottom{
+      
+<script src="~/Areas/Warehouse/ViewJs/SetArea.js"></script>
+    }

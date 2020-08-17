@@ -1,0 +1,13 @@
+D:\BaiduYunDownload\erp(3)\src\PaiXie.Excel\PaiXie.Excel\bin\Debug\PaiXie.Excel.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie.Excel\PaiXie.Excel\bin\Debug\PaiXie.Excel.pdb
+D:\BaiduYunDownload\erp(3)\src\PaiXie.Excel\PaiXie.Excel\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie.Excel\PaiXie.Excel\bin\Debug\Microsoft.Practices.Unity.Configuration.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie.Excel\PaiXie.Excel\bin\Debug\Microsoft.Practices.Unity.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie.Excel\PaiXie.Excel\bin\Debug\NPOI.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie.Excel\PaiXie.Excel\bin\Debug\PaiXie.Excel.Shared.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie.Excel\PaiXie.Excel\bin\Debug\ICSharpCode.SharpZipLib.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie.Excel\PaiXie.Excel\bin\Debug\PaiXie.Excel.Shared.pdb
+D:\BaiduYunDownload\erp(3)\src\PaiXie.Excel\PaiXie.Excel\bin\Debug\NPOI.xml
+D:\BaiduYunDownload\erp(3)\src\PaiXie.Excel\PaiXie.Excel\obj\Debug\PaiXie.Excel.csprojResolveAssemblyReference.cache
+D:\BaiduYunDownload\erp(3)\src\PaiXie.Excel\PaiXie.Excel\obj\Debug\PaiXie.Excel.dll
+D:\BaiduYunDownload\erp(3)\src\PaiXie.Excel\PaiXie.Excel\obj\Debug\PaiXie.Excel.pdb

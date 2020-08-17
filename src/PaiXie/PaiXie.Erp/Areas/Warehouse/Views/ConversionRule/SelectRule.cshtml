@@ -1,0 +1,50 @@
+﻿@using PaiXie.Data
+@{
+    var warehouseConversionRuleList = ViewBag.WarehouseConversionRuleList as List<WarehouseConversionRule>;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+    <style>
+        .list {
+            height: 123px;
+            overflow-y: auto;
+        }
+
+            .list a {
+                display: block;
+                color: #666;
+                height: 40px;
+                line-height: 40px;
+                text-align: center;
+                border-bottom: 1px dotted #ccc;
+                text-decoration: none;
+            }
+
+                .list a:hover {
+                    background-color: #f2f2f2;
+                }
+    </style>
+}
+<div class="easyui-layout" scroll=no style="padding:30px">
+    <div style="height:40px; line-height:40px; background-color:#436fac; color:#fff; text-align:center;">请点击选择转化规则</div>
+    <div class="list" id="list">
+        @foreach (var item in warehouseConversionRuleList) {
+            <a href="/Warehouse/ConversionRule/Conversion?ruleID=@(item.ID)">@(item.Name)</a>
+        }
+    </div>
+</div>
+@section bottom{
+    <script>
+        $(function () {
+            $('#list a').click(function () {
+                //parent.$('#localWin').window('close');
+                //var url = $(this).attr('href');
+                //parent.location.href = url;
+                //return false;
+                var url = $(this).attr('href');
+                showMyWindow("商品转化", url, 750, 450, true, false, false);
+                return false;
+            });
+        });
+    </script>
+}

@@ -1,0 +1,40 @@
+2015/9/27 16:03:46
+未找到视图“index”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: 
+~/Areas/Sys/Views/whouse/index.aspx
+~/Areas/Sys/Views/whouse/index.ascx
+~/Areas/Sys/Views/Shared/index.aspx
+~/Areas/Sys/Views/Shared/index.ascx
+~/Views/whouse/index.aspx
+~/Views/whouse/index.ascx
+~/Views/Shared/index.aspx
+~/Views/Shared/index.ascx
+~/Areas/Sys/Views/whouse/index.cshtml
+~/Areas/Sys/Views/whouse/index.vbhtml
+~/Areas/Sys/Views/Shared/index.cshtml
+~/Areas/Sys/Views/Shared/index.vbhtml
+~/Views/whouse/index.cshtml
+~/Views/whouse/index.vbhtml
+~/Views/Shared/index.cshtml
+~/Views/Shared/index.vbhtml----System.InvalidOperationException: 未找到视图“index”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: 
+~/Areas/Sys/Views/whouse/index.aspx
+~/Areas/Sys/Views/whouse/index.ascx
+~/Areas/Sys/Views/Shared/index.aspx
+~/Areas/Sys/Views/Shared/index.ascx
+~/Views/whouse/index.aspx
+~/Views/whouse/index.ascx
+~/Views/Shared/index.aspx
+~/Views/Shared/index.ascx
+~/Areas/Sys/Views/whouse/index.cshtml
+~/Areas/Sys/Views/whouse/index.vbhtml
+~/Areas/Sys/Views/Shared/index.cshtml
+~/Areas/Sys/Views/Shared/index.vbhtml
+~/Views/whouse/index.cshtml
+~/Views/whouse/index.vbhtml
+~/Views/Shared/index.cshtml
+~/Views/Shared/index.vbhtml
+   在 System.Web.Mvc.ViewResult.FindView(ControllerContext context)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+------------------------------------------------------------------

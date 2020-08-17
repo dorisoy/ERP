@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "title";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+
+}
+<div data-options="region:'north'" style="height:105px">
+    <div class="toolbar">
+        <a href="javascript:void(0);" class="refresh" title="刷新" id="refresh"><span></span>刷新</a>
+        <a href="javascript:void(0);" class="add" title="新增" id="add"><span></span>新增</a>
+        <a href="javascript:void(0);" class="del" title="删除" id="delete"><span></span>删除</a>
+    </div>
+    <div class="searchpro" id="searchpro">
+        <label for="txtName">角色代码：</label>
+        <input type="text" id="Code" name="Code" />
+        <input type="button" class="button" id="btnSerach" value="搜索">
+        <input type="button" class="button-rest" id="btnRest" value="清空条件" onclick="javascript:location.reload();">
+  
+    </div>
+</div>
+<div data-options="region:'center'" class="p0lr22">
+    <input id="hid" type="hidden" value="0" />
+    <table id="grid" class="easyui-datagrid"
+           data-options="singleSelect:true,collapsible:true,method:'get'"></table>
+
+
+   
+</div>
+@section bottom{
+<script src="~/Areas/Sys/ViewJs/role_list.js"></script>
+}
+

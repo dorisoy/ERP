@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "title";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+}
+<div data-options="region:'north'" style="height:150px">
+    <div class="z-toolbar" style="background-image: url(/Content/images/topbg.jpg); background-repeat:repeat-x;">
+        <a href="#" plain="true" class="easyui-linkbutton" icon="icon-reload" title="刷新" id="refresh">刷新</a>
+        <a href="#" plain="true" class="easyui-linkbutton" icon="icon-add" title="新增" id="add">新增</a>
+        <a href="#" plain="true" class="easyui-linkbutton" icon="icon-remove" title="删除" id="delete">删除</a>
+ 
+
+      
+    
+     </div>
+    <div class="z-toolbar">
+        @*中文验证     自定义验证
+        <input class="easyui-validatebox" data-options="required:true,validType:'CHS'"  /><br />*@
+        <label for="txtName">姓名：</label>
+        <input type="text" id="txtName" name="txtName" />&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;
+        <a href="#" class="easyui-linkbutton" iconcls="icon-search" id="btnSerach">模糊搜索</a>
+        &nbsp; &nbsp; &nbsp;
+        <a href="javascript:location.reload();" class="easyui-linkbutton" iconcls="icon-reload" id="btnRest">重置</a>
+    </div>
+</div>
+<div data-options="region:'center'">
+    <input id="hid" type="hidden" value="0" />
+    <table id="grid" class="easyui-datagrid"
+           data-options="singleSelect:false,collapsible:true,method:'get'"></table>
+</div>
+  @section bottom{
+<script src="~/Areas/Demo/ViewJs/student_list.js"></script>
+      <script>
+         //设置行背景颜色
+          $('#grid').datagrid({
+              rowStyler: function (index, row) {
+                  if (row.Score> 1) {
+                      return 'background-color:red;';
+                  }
+              }
+          });
+      </script>
+
+   
+      }

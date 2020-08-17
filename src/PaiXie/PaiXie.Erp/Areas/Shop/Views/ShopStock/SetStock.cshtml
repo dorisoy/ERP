@@ -1,0 +1,97 @@
+﻿@using PaiXie.Data
+@{
+    var list = ViewBag.list as shopComancationList;
+    var Remark = list.Remark;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    @section head{
+
+    }
+
+<div class="toolbar" id="toolbar">
+    <a href="javascript:history.go(-1)" class="back" id="back"><span></span>返回</a>
+</div>
+
+
+
+<div class="p0lr22">
+    <div class="proinfo" style="padding:15px;">
+        <p style="padding-left:3em; text-indent:-3em"><b style="font-weight:normal; color:#F00">提示：</b>1、此设置适用于所有商品。<br>2、单个商品设置的库存分配优先于此设置。</p>
+    </div>
+
+    <div style="font-size:14px; padding-top:20px">设置店铺库存比例：
+    (<span style="color:#F00">更新到店铺的库存＝可用库存*分配比例</span>)
+    </div>
+  
+    
+      <form id="ff" method="post" novalidate>
+        <table class="tableinfo">
+            <tr>
+
+                @{
+                    for (int i = 0; i < list.ShopName.Length; i++) {
+
+                        <input type="hidden" name="ShopName" id="ShopName@(i)" value="@list.ShopName[i]" />
+                        <input type="hidden" name="ShopID" id="ShopID@(i)" value="@list.ShopID[i]" />
+
+                       <th style="width:120px"><label>@list.ShopName[i]</label>：</th>
+                          <td>
+            
+                              <input  class="easyui-textbox" value="@list.Ranges[i]"  type="text" id="Ranges@(i)" name="Ranges" data-options="height:30,width:100" />
+
+                                    @("%")
+
+                              </td>
+
+
+                        }
+
+                    }
+
+
+
+                     </tr>
+              
+                <tr>
+                    <td colspan="6" style="padding-left:2em">
+                        当可用库存*分配比例大于0且小于1时，更新库存为
+                      
+
+                        <select name="Remark" id="Remark" class="easyui-combobox" data-options="height:30,width:50">
+                            <option value="0" >0</option>
+                            <option value="1" >1</option>
+
+                         
+                        </select>
+
+
+                    </td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>
+
+                       
+
+
+                        <a href="javascript:void(0)" class="button-oky" id="btnSave" iconcls="icon-ok">保存</a>
+                        <a href="javascript:history.go(-1)" class="button-cancel" id="" iconcls="icon-ok">返回</a>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+
+
+    @section bottom{
+
+    <script src="~/Areas/Shop/ViewJs/EditShopStock.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#Remark").combobox('setValue', @Remark);
+    });
+</script>
+
+    }
+

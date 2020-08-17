@@ -1,0 +1,180 @@
+﻿@using PaiXie.Api.Bll;
+@using PaiXie.Core;
+@{
+    ViewBag.Title = "扫描发货";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section head {
+    <style>
+        .tableinfo td {
+            height: 20px;
+            line-height: 20px;
+        }
+        .tableinfo td a {
+            text-decoration: none;
+            color: #1d72df;
+        }
+        .tableinfo td a:hover {
+            color: #fc8b00;
+        }
+        .tableinfo td .button {
+            border: 0px;
+            background: #436fac;
+            color: #fff;
+            height: 30px;
+            width: 70px;
+            cursor: pointer;
+        }
+    </style>
+}
+<div style="height: 260px; overflow-x:hidden; overflow-y: auto;">
+    <table id="tblAdd" class="tableinfo" style="margin-top: 15px; ">
+        <tr>
+            <td><span style="color:red;">提示：</span>扫描的出库单会自动修改状态为已发货</td>
+        </tr>
+        <tr>
+            <td align="left">
+                出库单号/运单号：<input type="text" id="txtBillNo" name="billNo" class="easyui-validatebox" style="width:200px;" data-options="height:30" autocomplete="Off">&nbsp;<input type="button" id="btnConfirm" name="btnConfirm" class="button" value="确认" />
+                <div id="divMsg" style="text-align:center;"></div>
+            </td>
+        </tr>
+        <tr id="trManyOutbound" style="display:none;">
+            <td id="tdManyOutbound" align="left"></td>
+        </tr>
+    </table>
+</div>
+@section bottom{
+    <script src="~/Scripts/sound.js"></script>
+    <script type="text/javascript">
+        var waitPickValue = '@((int)WarehouseOutboundStatus.待拣货)';
+        var waitPickText = '@(WarehouseOutboundStatus.待拣货.ToString())';
+        var waitPrintValue = '@((int)WarehouseOutboundStatus.待打印)';
+        var waitPrintText = '@(WarehouseOutboundStatus.待打印.ToString())';
+        var deliveryValue = '@((int)WarehouseOutboundStatus.已发货)';
+        var deliveryText = '@(WarehouseOutboundStatus.已发货.ToString())';
+        var cancelValue = '@((int)WarehouseOutboundStatus.已取消)';
+        var cancelText = '@(WarehouseOutboundStatus.已取消.ToString())';
+        $(function () {
+            $("#txtBillNo").focus();
+            $("#txtBillNo").select();
+            $("#txtBillNo").keyup(function (e) {
+                var currKey = 0, e = e || event;
+                currKey = e.keyCode || e.which || e.charCode;
+                if (currKey == 13) {
+                    searchOutbound($("#txtBillNo").val());
+                }
+            });
+        });
+        $("#btnConfirm").click(function () {
+            searchOutbound($("#txtBillNo").val());
+        });
+        //查询出库单，如果是已发货、已取消、申请退款，则不能发货
+        function searchOutbound(billNo) {
+            if (billNo.trim() != "") {
+                $("#txtBillNo").val(billNo);
+                //查询之前先隐藏
+                $("#trManyOutbound").hide();
+                $("#divMsg").html("");
+                $("#divMsg").css("margin-top", "0px");
+                $.ajax({
+                    url: "/Warehouse/Outbound/SearchOutbound?billNo=" + billNo,
+                    type: "GET",
+                    async: false,
+                    cache: false,
+                    success: function (r) {
+                        var outboundList = $.parseJSON(r);
+                        if (outboundList.length > 0) {
+                            if (outboundList.length == 1) {
+                                if (outboundList[0].Status == waitPickValue) {
+                                    showErrMsg("出库单 " + outboundList[0].BillNo + " 状态为" + waitPickText + "！");
+                                } else if (outboundList[0].Status == waitPrintValue) {
+                                    showErrMsg("出库单 " + outboundList[0].BillNo + " 状态为" + waitPrintText + "！");
+                                } else if (outboundList[0].Status == deliveryValue) {
+                                    showErrMsg("出库单 " + outboundList[0].BillNo + " 状态为" + deliveryText + "！");
+                                } else if (outboundList[0].Status == cancelValue) {
+                                    showErrMsg("出库单 " + outboundList[0].BillNo + " 状态为" + cancelText + "！");
+                                }else if (outboundList[0].IsApplyRefund == 1) {
+                                    showErrMsg("出库单 " + outboundList[0].BillNo + " 已申请退款，请先处理！");
+                                }else {
+                                    scanDelivery(outboundList[0].ID);
+                                }
+                            } else {
+                                //查询出有多个出库单，需要手动选择发货
+                                showErrMsg("该运单号对应多个出库单，请手动发货！");
+                                //$("#trManyOutbound").show();
+                                //var manyOutbound = '有多个出库单，请选择：';
+                                //for (var i = 0; i < outboundList.length; i++) {
+                                //    if (outboundList[i].Status == waitPickValue || outboundList[i].Status == waitPrintValue || outboundList[i].Status == deliveryValue || outboundList[i].Status == cancelValue || outboundList[i].IsApplyRefund == 1) {
+                                //        var statusName = '';
+                                //        if (outboundList[i].Status == waitPickValue) {
+                                //            statusName = "<font color='red'>(" + waitPickText + ")</font>";
+                                //        } else if (outboundList[i].Status == waitPrintValue) {
+                                //            statusName = "<font color='red'>(" + waitPrintText + ")</font>";
+                                //        } else if (outboundList[i].Status == deliveryValue) {
+                                //            statusName = "<font color='red'>(" + deliveryText + ")</font>";
+                                //        } else if (outboundList[i].Status == cancelValue) {
+                                //            statusName = "<font color='red'>(" + cancelText + ")</font>";
+                                //        } else if (outboundList[i].IsApplyRefund == 1) {
+                                //            statusName = "<font color='red'>(申请退款)<font>";
+                                //        }
+                                //        manyOutbound += "<br/><span style=\"color:#999;\">" + (i + 1) + "、出库单号：" + outboundList[i].BillNo + "，运单号：" + outboundList[i].WaybillNo + " " + statusName + "</span>";
+                                //    } else {
+                                //        manyOutbound += "<br/><a href=\"javascript:void(0);\" onclick=\"searchOutbound('" + outboundList[i].BillNo + "');\">" + (i + 1) + "、出库单号：" + outboundList[i].BillNo + "，运单号：" + outboundList[i].WaybillNo + "</a>";
+                                //    }
+                                //}
+                                //$("#tdManyOutbound").html(manyOutbound);
+                            }
+                        }
+                        else {
+                            showErrMsg("出库单号/运单号未找到！");
+                        }
+                    },
+                    error: function () {
+                        showErrMsg("读取出库单信息失败！");
+                    }
+                });
+            } else {
+                showErrMsg("请输入出库单号或运单号！");
+            }
+        }
+        //扫描发货
+        function scanDelivery(id) {
+            var billNo = $("#txtBillNo").val().trim();
+            if (billNo != "") {
+                $.ajax({
+                    url: "/Warehouse/Outbound/ScanDelivery?id=" + id,
+                    type: "GET",
+                    async: false,
+                    cache: false,
+                    success: function (r) {
+                        var map = $.parseJSON(r);
+                        if (map.result == 1) {
+                            $("#divMsg").html("<font style='color:#1d72df;'>发货成功</font>");
+                            playSound("../../Content/images/ScanOk.wav");
+                            $("#txtBillNo").focus();
+                            $("#txtBillNo").select();
+                            setTimeout(function () {
+                                $("#divMsg").html("");
+                            }, 1000);
+                        } else {
+                            showErrMsg(map.message);
+                        }
+                    },
+                    error: function () {
+                        showErrMsg("发货操作失败！");
+                    }
+                });
+            } else {
+                showErrMsg("请输入出库单号或运单号！");
+            }
+        }
+        //显示错误消息，并播放错误提示音，且将将焦点移到文本框
+        function showErrMsg(errMsg) {
+            $("#divMsg").html("<font style='color:#ff0000;'>" + errMsg + "</font>");
+            $("#divMsg").css("margin-top", "5px");
+            $("#txtBillNo").focus();
+            playSound("../../Content/images/ScanErr.wav");
+        }
+    </script>
+}

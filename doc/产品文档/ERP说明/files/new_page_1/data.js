@@ -1,0 +1,77 @@
+﻿$axure.loadCurrentPage({
+  "url":"new_page_1.html",
+  "generationDate":new Date(1441949483244.95),
+  "isCanvasEnabled":false,
+  "variables":["OnLoadVariable"],
+  "page":{
+    "packageId":"941558a7e83d4aa2b2fa63cc3337a3d7",
+    "type":"Axure:Page",
+    "name":"New Page 1",
+    "notes":{
+},
+    "style":{
+      "baseStyle":"627587b6038d43cca051c114ac41ad32",
+      "pageAlignment":"center",
+      "fill":{
+        "fillType":"solid",
+        "color":0xFFF2F2F2},
+      "image":null,
+      "imageHorizontalAlignment":"near",
+      "imageVerticalAlignment":"near",
+      "imageRepeat":"auto",
+      "favicon":null,
+      "sketchFactor":"0",
+      "colorStyle":"appliedColor",
+      "fontName":"应用字体",
+      "borderWidth":"0"},
+    "adaptiveStyles":{
+},
+    "interactionMap":{
+},
+    "diagram":{
+      "objects":[{
+          "id":"28f11da33c194fdeb9d64e538115f92c",
+          "label":"",
+          "type":"buttonShape",
+          "styleType":"paragraph",
+          "visible":true,
+          "style":{
+            "lineSpacing":"25px",
+            "paddingTop":"5",
+            "paddingBottom":"5",
+            "location":{
+              "x":100,
+              "y":100},
+            "size":{
+              "width":1000,
+              "height":600}},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"838a4cd136a441d799a0c60b0331d0a9",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "lineSpacing":"25px",
+                "paddingTop":"5",
+                "paddingBottom":"5",
+                "location":{
+                  "x":100,
+                  "y":100},
+                "size":{
+                  "width":1000,
+                  "height":600}},
+              "adaptiveStyles":{
+}}],
+          "images":{
+            "normal~":"resources/images/transparent.gif"}}]}},
+  "masters":{
+},
+  "objectPaths":{
+    "28f11da33c194fdeb9d64e538115f92c":{
+      "scriptId":"u0"},
+    "838a4cd136a441d799a0c60b0331d0a9":{
+      "scriptId":"u1"}}});

@@ -1,0 +1,59 @@
+﻿@using PaiXie.Data
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    @section head{
+
+    }
+
+    <div  style="padding:20px" >     
+     
+        <form id="ff" method="post" novalidate="novalidate">
+          <input type="hidden" value="@ViewBag.ids" id="ids" name="ids"   />
+          
+                <table id="tblAdd" class="tableinfo">
+                    <tr>
+                        <th><label for="Code">结算金额：</label></th>
+                        <td>
+                            <input value="@ViewBag.totalPrices" class="easyui-numberbox" type="text" id="SettlementAmount" name="SettlementAmount" data-options="required:true,validType:'number',precision:3,height:30, width:100" />
+                            元
+                           </td>
+                    
+                    </tr>
+                    <tr>
+                        <th><label for="Code">交易号：</label></th>
+                        <td>
+                            <input style="width:120px;" value="" class="easyui-validatebox" type="text" id="TradingNumber" name="TradingNumber" data-options="required:true" />
+
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <th><label for="Code">备注：</label></th>
+                        <td>
+                            <textarea style="height:50px; width:200px;" id="Remark" name="Remark"></textarea>
+
+
+                        </td>
+
+                    </tr>
+
+
+    
+
+                </table>
+          
+         
+            <br />
+			<div class="textcenter">
+				<a href="javascript:void(0)" class="button-oky" id="btnSave" iconcls="icon-ok">确定</a>
+				<a href="javascript:void(0)" class="button-cancel" iconcls="icon-cancel" id="btnClose">取消</a>
+			</div>
+        </form>
+    </div>       
+@section bottom{
+ 
+<script src="~/Areas/Finance/ViewJs/EditSuppliers.js"></script>
+
+}
+   

@@ -1,0 +1,82 @@
+﻿@using PaiXie.Data
+@using PaiXie.Utils
+@{
+    var shopName = ViewBag.ShopName;
+    var autogeneration = ViewBag.Autogeneration as ShopAutogeneration;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+    <style>
+        .divTitle {
+            height: 40px;
+            line-height: 40px;
+            padding-left: 10px;
+            font-family: \5FAE\8F6F\96C5\9ED1;
+        }
+
+        .divContent {
+            height: 40px;
+            line-height: 40px;
+            padding-left: 30px;
+            font-family: \5FAE\8F6F\96C5\9ED1;
+            color: #666666;
+        }
+
+        .flw {
+            float: left;
+            width: 180px;
+        }
+    </style>
+}
+<div data-options="region:'center',border:false" class="p0lr22">
+    <form id="ff" method="post" novalidate="novalidate">
+        <div class="divTitle">
+            <span style="color:red;">店铺名称：</span>@(shopName)
+        </div>
+        <div class="divTitle">
+            <input type="checkbox" id="chkIsAutoDown" name="IsAutoDown" value="1" @(autogeneration.IsAutoDown == 1 ? "checked" : "") /><label for="chkIsAutoDown">开启自动下载订单</label>
+        </div>
+        <div class="divContent">
+            每隔<input type="text" id="txtDownInterval" name="DownInterval" style="width:30px;margin:0px 5px;" value="@(autogeneration.DownInterval)" />分钟，自动下载<input type="text" id="txtCreateInterval" name="CreateInterval" style="width:30px;margin:0px 5px;" value="@(autogeneration.CreateInterval)" />分钟前创建的订单(已付款和货到付款订单)。
+        </div>
+        <div class="divTitle">
+            <input type="checkbox" id="chkIsAutogeneration" name="IsAutogeneration" value="1" @(autogeneration.IsAutogeneration == 1 ? "checked" : "") /><label for="chkIsAutogeneration">开启自动生成订单</label>
+        </div>
+        <div class="divContent">
+            每隔<input type="text" id="txtGenerateInterval" name="GenerateInterval" style="width:30px;margin:0px 5px;" value="@(autogeneration.GenerateInterval)" />分钟，自动生成一次。
+            <br />
+            以下情况不自动生成：
+            <div class="divContent">
+                <div class="flw">
+                    <input type="checkbox" id="chkNotGenerated1" name="NotGenerated" value="1" checked="checked" onclick="this.checked = true" /><label for="chkNotGenerated1">商品添加错误的订单</label>
+                </div>
+                <div class="flw">
+                    <input type="checkbox" id="chkNotGenerated2" name="NotGenerated" value="2" checked="checked" onclick="this.checked = true" /><label for="chkNotGenerated2">未匹配发货物流的订单</label>
+                </div>
+                <div class="flw">
+                    <input type="checkbox" id="chkNotGenerated3" name="NotGenerated" value="3" checked="checked" onclick="this.checked = true" /><label for="chkNotGenerated3">申请退款订单</label>
+                </div>
+                <div class="flw">
+                    <input type="checkbox" id="chkNotGenerated4" name="NotGenerated" value="4" @(System.Text.RegularExpressions.Regex.IsMatch(ZConvert.ToString(autogeneration.NotGenerated), "\\b4\\b") ? "checked" : "") /><label for="chkNotGenerated4">货到付款订单</label>
+                </div>
+                <div class="flw">
+                    <input type="checkbox" id="chkNotGenerated5" name="NotGenerated" value="5" @(System.Text.RegularExpressions.Regex.IsMatch(ZConvert.ToString(autogeneration.NotGenerated), "\\b5\\b") ? "checked" : "") /><label for="chkNotGenerated5">需要发票的订单</label>
+                </div>
+                <div class="flw">
+                    <input type="checkbox" id="chkNotGenerated6" name="NotGenerated" value="6" @(System.Text.RegularExpressions.Regex.IsMatch(ZConvert.ToString(autogeneration.NotGenerated), "\\b6\\b") ? "checked" : "") /><label for="chkNotGenerated6">有买家留言的订单</label>
+                </div>
+                <div class="flw">
+                    <input type="checkbox" id="chkNotGenerated7" name="NotGenerated" value="7" @(System.Text.RegularExpressions.Regex.IsMatch(ZConvert.ToString(autogeneration.NotGenerated), "\\b7\\b") ? "checked" : "") /><label for="chkNotGenerated7">有卖家备注的订单</label>
+                </div>
+                <input type="hidden" id="hdnShopID" name="ShopID" value="@autogeneration.ShopID">
+            </div>
+        </div>
+        <div style="clear:both; padding-left:170px;">
+            <a href="javascript:void(0)" class="button-oky" id="btnSave" iconcls="icon-ok">确认</a>
+            <a href="javascript:void(0)" class="button-cancel" id="btnCancel" iconcls="icon-ok">取消</a>
+        </div>
+    </form>
+</div>
+@section bottom{
+    <script src="~/Areas/Order/ViewJs/Autogeneration.js"></script>
+}

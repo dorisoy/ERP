@@ -1,0 +1,54 @@
+﻿@using PaiXie.Data
+@{
+    var outInStockID = ViewBag.OutInStockID;
+    var productsNum = ViewBag.ProductsNum;
+    var warehouseOutInStock = ViewBag.WarehouseOutInStock as WarehouseOutInStock;
+    ViewBag.Title = "出库单商品列表";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    @section head{
+    }
+
+
+<div class="easyui-layout" data-options="fit:true">
+    <div data-options="region:'north',height:148" id="topdiv">
+        <div class="toolbar" id="toolbar">
+            <a href="javascript:void(0);" class="back" id="back"><span></span>返回</a>
+            <a href="javascript:void(0);" id="add" class="add"><span></span>添加商品</a>
+            <a href="javascript:void(0);" id="import">导入商品</a>
+            <a href="javascript:void(0);" id="del" class="del unclick"><span></span>删除</a>
+            <a href="javascript:void(0);" id="refreshCurrentPage" style="display:none;"><span></span>刷新当前页</a>
+        </div>
+        <div class="searchpro" id="searchpro">
+            <input type="hidden" value="@warehouseOutInStock.SourceID" id="hdnSourceID" name="SourceID" />
+            <input type="hidden" value="@warehouseOutInStock.BillNo" id="hdnOutInStockBillNo" name="outInStockBillNo" />
+            <input type="hidden" value="@outInStockID" id="hdnOutInStockID" name="outInStockID" />
+            <input type="hidden" value="@warehouseOutInStock.Status" id="hdnStatus" name="status" />
+            <select id="keyWordType" name="keyWordType" class="easyui-combobox" data-options="height:30,width:100,editable:false">
+                <option value="">关键字类型</option>
+                <option value="商品名称">商品名称</option>
+                <option value="商品编码" selected>商品编码</option>
+                <option value="商品货号">商品货号</option>
+                <option value="商品SKU码">商品SKU码</option>
+                <option value="批次">批次</option>
+                <option value="库位编码">库位编码</option>
+            </select>
+            <input type="text" id="txtKeyWord" value="" style="width:150px;">
+            <input type="submit" id="btnSearch" value="搜索" class="button">
+            <input type="reset" id="btnReset" value="清空条件" class="button-rest">
+        </div>
+        <div class="reservoirifo p0lr22">
+            <span>出库单号: @warehouseOutInStock.BillNo</span>
+            @if (warehouseOutInStock.SourceNo != null) { 
+            <span>关联采购入库单: @warehouseOutInStock.SourceNo </span>
+            }
+            <span id="spanOutStockNum">出库数量: <label id="lblOutStockNum">@productsNum</label></span>
+        </div>
+    </div>
+    <div data-options="region:'center',border:false" class="p0lr22">
+        <table id="grid" class="easyui-datagrid" title="" data-options="singleSelect:false,collapsible:true,method:'get'"></table>
+    </div>
+</div>  
+@section bottom{
+    <script src="~/Areas/Warehouse/ViewJs/OutStockProducts.js"></script>
+}

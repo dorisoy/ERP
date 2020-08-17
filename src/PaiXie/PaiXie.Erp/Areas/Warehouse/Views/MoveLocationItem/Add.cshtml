@@ -1,0 +1,93 @@
+﻿@using PaiXie.Data;
+@{
+    var moveLocationID = ViewBag.MoveLocationID;
+    var moveLocationBillNo = ViewBag.MoveLocationBillNo;
+    ViewBag.Title = "添加移位商品";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section head{
+<style>
+    .setlist {
+        width: 650px;
+        height: 155px;
+        margin: 10px auto 0 auto;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .setlist table table td {
+        height: auto;
+        border: 0px;
+        white-space: normal;
+        text-align: left;
+    }
+
+    .inputextbox {
+        text-align: center;
+        width: 100px;
+    }
+
+    .infoshow li {
+        font-size: 14px;
+        line-height: 32px;
+        height: 36px;
+    }
+
+    .infoshow .red {
+        color: #F00;
+        padding-left: 0.5em;
+    }
+
+    .infotitle {
+        line-height: 30px;
+    }
+</style >
+}
+<div style="height:435px; overflow-y:auto; overflow-x:hidden;">
+    <table class="tableinfo" style="margin-top:25px; width:auto; margin-left:22px;">
+        <tr>
+            <th style="width:auto">请输入商品SKU码：</th>
+            <td><input style="width:200px" value="" class="easyui-validatebox" type="text" id="txtCode" name="Code" data-options="height:30" /></td>
+            <td><a href="javascript:void(0);" class="button-okb" id="btnSearch" iconcls="icon-ok" style="height:28px; line-height:28px">查找</a></td>
+        </tr>
+    </table>
+    <form id="ffpost" action="">
+        <input type="hidden" id="hdnMoveLocationID" name="MoveLocationID" value="@moveLocationID" />
+        <input type="hidden" id="hdnMoveLocationBillNo" name="MoveLocationBillNo" value="@moveLocationBillNo" />
+        <input id="hdnProductsSkuID" name="ProductsSkuID" type="hidden" value="">
+        <input id="hdnProductsSkuCode" name="ProductsSkuCode" type="hidden" value="">
+        <input id="hdnProductsSkuSaleprop" name="ProductsSkuSaleprop" type="hidden" value="">
+        <input id="hdnProductsCode" name="ProductsCode" type="hidden" value="">
+        <input id="hdnProductsName" name="ProductsName" type="hidden" value="">
+        <input id="hdnProductsNo" name="ProductsNo" type="hidden" value="">
+        <input id="hdnProductsID" name="ProductsID" type="hidden" value="">
+        <div class="p0lr22 infotitle ndis" id="infotitle"></div>
+        <ul class="infoshow p0lr22 ndis" id="infoshow">
+            <li></li>
+            <li>
+                选择移出库位：
+                <input id="ReservoirArea" class="easyui-combobox" value="0" name="ReservoirArea" data-options="height:30,panelHeight:69,width:120">
+                <input id="Location" class="easyui-combobox" value="请选择库位" name="Location" data-options="height:30,panelHeight:69,width:120">
+            </li>
+        </ul>
+        <div class="p0lr22 setlist ndis" id="setlist">
+            <table id="grid" class="easyui-datagrid" title="" data-options="singleSelect:false,collapsible:true,method:'get'"></table>
+        </div>
+        <ul class="infoshow p0lr22 ndis" id="InLocationshow">
+            <li>
+                选择移入库位：
+                <input id="InReservoirArea" class="easyui-combobox" value="0" name="InReservoirArea" data-options="height:30,panelHeight:69,width:120">
+                <input id="InLocation" class="easyui-combobox" value="请选择库位" name="InLocationID" data-options="height:30,panelHeight:69,width:120">
+                <input type="hidden" id="hdnInLocationCode" name="InLocationCode" value="" />
+            </li>
+        </ul>
+    </form>
+    <div class="ndis" style=" text-align:center; padding-top:10px" id="buttonbox">
+        <a href="javascript:void(0)" class="button-oky" id="btnSave" iconcls="icon-ok">添加</a>
+        <a href="javascript:void(0)" class="button-cancel" id="btnCancel" iconcls="icon-ok">取消</a>
+    </div>
+</div>
+@section bottom{
+    <script src="~/Areas/Warehouse/ViewJs/AddMoveLocationItem.js"></script>
+}

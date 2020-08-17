@@ -1,0 +1,97 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>select</title>
+    <link href="~/Content/jquery-easyui/themes/gray/easyui.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Content/jquery-easyui/jquery.easyui.min.js"></script>
+    <script src="~/Content/jquery-easyui/locale/easyui-lang-zh_CN.js"></script>
+    <link href="~/Content/jquery-easyui/themes/icon.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div>
+        <form id="form1" runat="server">
+            <div>
+                <div id="divcenter" style="width: 400px; height: 500px; position: absolute">
+                    <div id="divQuery" class="easyui-panel" title="查询">
+                        <table style="border: 0; width: 100%">
+                            <tr style="height: 30px;">
+                                <td style="text-align: right;" class="style2" align="right">
+                                    工厂：
+                                </td>
+                                <td style="text-align: left;" class="style1">
+                                    <select id="SelectF" class="easyui-combobox" data-options="valueField:'Value',textField:'Text',url:'/Warehouse/Warehouse/GetAreaJson',width:200,modal:true"></select>
+                                </td>
+                            </tr>
+                            <tr style="height: 30px;">
+                                <td style="text-align: right;" class="style2" align="right">
+                                    工作中心：
+                                </td>
+                                <td style="text-align: left;" class="style1">
+                                    <select id="SelectW" class="easyui-combobox" data-options="valueField:'Value',textField:'Text',width:200"></select>
+                                </td>
+                            </tr>
+                            <tr style="height: 30px;">
+                                <td style="text-align: right;" class="style2" align="right">
+                                    线别：
+                                </td>
+                                <td style="text-align: left;" class="style1">
+                                    <select id="SelectL" class="easyui-combobox" data-options="valueField:'Value',textField:'Text',width:200"></select>
+                                </td>
+                            </tr>
+                            <tr style="height: 30px;">
+                                <td style="text-align: right;" class="style2" align="right">
+                                    日期:
+                                </td>
+                                <td style="text-align: left; font-weight: bold; padding-left: 10px;" class="style1">
+                                    <input id="StartDate_WorkGroup" type="text" style="width: 90px;" class="easyui-datebox" />至
+                                    <input id="EndDate_WorkGroup" type="text" style="width: 90px;" class="easyui-datebox" />
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+    <script language="javascript" type="text/javascript">
+
+        $(document).ready(function () {
+            alert(1);
+            //Start:居中显示
+            $("#divcenter").css("left", (($(document).width()) / 2 - (parseInt($("#divcenter").width()) / 2)) + "px");
+            $("#divcenter").css("top", (($(document).height()) / 2 - (parseInt($("#divcenter").height()) / 2)) + "px");
+            //End:居中显示
+
+            //Start:设置combox的选择事件
+            $('#SelectF').combobox({
+                onSelect: function () {
+                    var url = '/Warehouse/Warehouse/GetAreaJson?pid=' + $('#SelectF').combobox('getValue');
+                    $('#SelectW').combobox('reload', url);
+                }
+            });
+
+            $('#SelectW').combobox({
+                onSelect: function () {
+                    var url = '/Warehouse/Warehouse/GetAreaJson?grade=1&pid=' + $('#SelectW').combobox('getValue');
+                    $('#SelectL').combobox('reload', url);
+                }
+            });
+            //End:设置combox的选择事件
+
+        });
+
+
+    </script>
+
+</body>
+</html>

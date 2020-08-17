@@ -1,0 +1,2 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>SELECT  ID AS VALUE ,OrdrefundValue AS  TEXT FROM ord_refundReason ORDER BY ID ASC</root>

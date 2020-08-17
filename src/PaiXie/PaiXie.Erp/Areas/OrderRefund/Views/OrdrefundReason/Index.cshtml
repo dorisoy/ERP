@@ -1,0 +1,80 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+}
+<div class="easyui-layout" data-options="fit:true">
+    <div data-options="region:'north',height:60" id="topdiv">
+        <div class="toolbar" id="toolbar">
+            <a href="javascript:void(0);" class="refresh" id="refresh"><span></span>刷新</a>
+            <a href="javascript:void(0);" id="add" class="add"><span></span>添加原因</a>
+        </div>
+    </div>
+    <div data-options="region:'center',border:false" class="p0lr22">
+        <table id="grid" class="easyui-datagrid" title="" data-options="singleSelect:false,collapsible:true,method:'get'"></table>
+    </div>
+</div>
+
+@section bottom{
+    <script>
+        $(document).ready(function () {
+            //刷新
+            $('#refresh').click(function () {
+                initTable(1);
+            });
+
+            //添加原因
+            $('#add').click(function () {
+                showLocalWindow("添加售后原因", "/OrderRefund/OrdrefundReason/Add", 400, 200, true, false, false);
+            });
+
+            initTable(1);
+        });
+
+        //加载列表
+        function initTable(queryData, pageNumber) {
+            $('#grid').datagrid({
+                url: '/OrderRefund/OrdrefundReason/Search?ram=' + Math.random(),
+                columns: [[
+                    { field: 'ck', width: 52, checkbox: true },
+                    { title: '售后原因', field: 'OrdrefundValue', width: 500, align: 'center', sortable: false },
+                    {
+                        title: '操作', field: 'Permit', width: 500, align: 'center',
+                        formatter: function (value, row, index) {
+                            return "<a href=\"javascript:void(0);\" onclick=\"update('" + row.ID + "')\">修改</a> | <a href=\"javascript:void(0);\" onclick=\"del('" + row.ID + "')\">删除</a>";
+                        },
+                        sortable: false
+                    }
+                ]],
+                onLoadSuccess: function (data) {
+                    DataGridNoData(this);
+                }
+            });
+        }
+
+        //修改
+        function update(id) {
+            showLocalWindow("添加售后原因", "/OrderRefund/OrdrefundReason/Add?id=" + id, 400, 200, true, false, false);
+        }
+
+        //删除
+        function del(id) {
+            $.ajax({
+                url: "/OrderRefund/OrdrefundReason/Delete?id=" + id,
+                type: "POST",
+                cache: false,
+                success: function (r) {
+                    var map = $.parseJSON(r);
+                    if (map.result == 1) {
+                        window.location.reload();
+                    } else {
+                        $.MsgBox.Alert("提示", map.message);
+                    }
+                },
+                error: function () {
+                    $.MsgBox.Alert("提示", "删除失败！");
+                }
+            });
+        }
+    </script>
+}

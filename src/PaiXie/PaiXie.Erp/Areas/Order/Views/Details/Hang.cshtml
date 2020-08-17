@@ -1,0 +1,83 @@
+﻿@using PaiXie.Data
+@{
+    var erpOrderCode = ViewBag.ErpOrderCode;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+    <style>
+        .setlist {
+            width: 650px;
+            height: 205px;
+            margin: 10px auto 0 auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+            .setlist table table td {
+                height: auto;
+                border: 0px;
+                white-space: normal;
+                text-align: left;
+            }
+
+        .inputextbox {
+            text-align: center;
+            width: 60px;
+        }
+
+        .infotitle {
+            line-height: 30px;
+        }
+    </style>
+}
+<form id="ff" method="post" novalidate>
+    <input type="hidden" name="ErpOrderCode" value="@(erpOrderCode)" />
+    <table class="tableinfo" style="margin-top:0px; width:auto; margin-left:22px;">
+        <tr>
+            <td>
+                <span class="red">*</span>输入挂起备注：<br>
+                <input style="width:420px" value="" class="easyui-textbox" type="text" name="HangRemark" data-options="height:120,multiline:true,required:true,missingMessage:'必填项'" />
+            </td>
+        </tr>
+    </table>
+</form>
+<div style="text-align:center; width:460px; padding-top:10px" id="buttonbox">
+    <a href="javascript:void(0)" class="button-oky" id="btnSave" iconcls="icon-ok">挂起</a>
+    <a href="javascript:void(0)" class="button-cancel" id="btnCancel" iconcls="icon-ok">关闭</a>
+</div>
+@section bottom{
+    <script>
+        $(document).ready(function () {
+            $("#btnSave").click(function () {
+                btnSave();
+            });
+
+            $("#btnCancel").click(function () {
+                parent.$('#localWin').window('close');
+            });
+        });
+
+        function btnSave() {
+            $('#ff').form('submit', {
+                url: "/Order/Details/SaveHang",
+                type: "POST",
+                dataType: "json",
+                onSubmit: function () {
+                    var isValid = $(this).form('validate');
+                    return isValid;	// 返回false终止表单提交
+                },
+                success: function (r) {
+                    var map = $.parseJSON(r);
+                    if (map.result == 1) {
+                        parent.$('#localWin').window('close');
+                    } else {
+                        $.MsgBox.Alert('提示', map.message);
+                    }
+                },
+                error: function () {
+                    $.MsgBox.Alert('提示', "操作失败,请重试或刷新！");
+                }
+            });
+        }
+    </script>
+}

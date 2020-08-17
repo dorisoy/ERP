@@ -1,0 +1,96 @@
+﻿@using PaiXie.Data;
+@{
+    var warehouseExpress = ViewBag.WarehouseExpress as WarehouseExpress;
+    ViewBag.Title = "设置明细项";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section head{
+    <style>
+        .no {
+            vertical-align: -3px;
+        }
+    </style>
+}
+<form id="ff" method="post" novalidate>
+    <input type="hidden" id="hdnID" name="ID" value="@warehouseExpress.ID" />
+    <input type="hidden" id="hdnPrintProField" name="PrintProField" value="@warehouseExpress.PrintProField" />
+    <div style="width: 400px; height: 50px; margin: 10px auto; text-align: center; line-height:50px; border: 1px solid #ccc; background-color: #f2f2f2; ">
+        <label style="color:red;">提示：</label>请选择需要打印明细组合
+    </div>
+    <table id="tblAdd" style="margin:20px auto; line-height:28px;">
+        <tr>
+            <td>
+                <input type="radio" id="rabSku_0" name="rabSku" class="no" value="ProductsCode,ProductsSkuSaleprop,ProductsNum" /><label for="rabSku_0">商品编码 + 商品属性 + 数量</label>
+                <br /><input type="radio" id="rabSku_1" name="rabSku" class="no" value="ProductsName,ProductsSkuSaleprop,ProductsNum" /><label for="rabSku_1">商品名称 + 商品属性 + 数量</label>
+                <br /><input type="radio" id="rabSku_2" name="rabSku" class="no" value="ProductsName,ProductsSkuCode,ProductsNum" /><label for="rabSku_2">商品名称 + 商品SKU码 + 数量</label>
+                <br /><input type="radio" id="rabSku_3" name="rabSku" class="no" value="ProductsSkuCode,ProductsNum" /><label for="rabSku_3">商品SKU码 + 数量</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;&nbsp;可选项：<input type="checkbox" id="chkSellingPrice" class="no" value="SellingPrice" /><label for="chkSellingPrice">单价</label>
+                &nbsp;&nbsp;<input type="checkbox" id="chkLocationCode" class="no" value="LocationCode" /><label for="chkLocationCode">库位编码</label>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align:center; padding-top:25px">
+                <a href="javascript:void(0);" class="button-oky" id="btnSave" iconcls="icon-ok">确定</a>
+                <a href="javascript:void(0);" class="button-cancel" iconcls="icon-cancel" id="btnClose">取消</a>
+            </td>
+        </tr>
+    </table>
+</form>
+@section bottom{
+    <script>
+        $(document).ready(function () {
+            var printProField = $("#hdnPrintProField").val();
+            if (printProField.indexOf(",SellingPrice") != -1) {
+                $("#chkSellingPrice").attr("checked", true);
+                printProField = printProField.replace(",SellingPrice", "");
+            }
+            if (printProField.indexOf(",LocationCode") != -1) {
+                $("#chkLocationCode").attr("checked", true);
+                printProField = printProField.replace(",LocationCode", "");
+            }
+            $.each($('input:radio[name="rabSku"]'), function (index, element) {
+                if ($(this).val() == printProField) {
+                    $(this).attr("checked", true);
+                }
+            });
+            $("#btnClose").click(function () {
+                parent.$('#localWin').window('close');
+            });
+            $("#btnSave").click(function () {
+                var id = $("#hdnID").val();
+                var skuFields = $('input:radio[name="rabSku"]:checked').val();
+                if (skuFields == null) {
+                    $.MsgBox.Alert("提示", "请选择打印明细组合！");
+                } else {
+                    if ($("#chkSellingPrice").attr("checked")) {
+                        skuFields += "," + $("#chkSellingPrice").val();
+                    }
+                    if ($("#chkLocationCode").attr("checked")) {
+                        skuFields += "," + $("#chkLocationCode").val();
+                    }
+                    $.ajax({
+                        url: "/Warehouse/Express/SavePrintPro?id=" + id + "&skuFields=" + skuFields,
+                        type: "GET",
+                        cache: false,
+                        success: function (r) {
+                            var map = $.parseJSON(r);
+                            if (map.result == 1) {
+                                $("#btnClose").click();
+                            } else {
+                                $.MsgBox.Alert("提示", map.message);
+                            }
+                        },
+                        error: function () {
+                            $.MsgBox.Alert("提示", "操作失败！");
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+}

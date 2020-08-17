@@ -1,0 +1,67 @@
+﻿body,ul,li,p{ margin:0; padding:0; list-style:none}
+/*=======================================*/
+.layout{ overflow-y:auto}
+
+.protable{ margin:10px 30px 0 30px;font-size:14px; font-family:\5B8B\4F53; color:#666666; line-height:30px;}
+.protable th{ font-weight:normal; width:120px; text-align:right; padding:10px 0;}
+.protable td{ padding:10px 0;}
+.protable .red{ color:#FF0000}
+.protable .f12{ font-family:\5B8B\4F53; font-size:12px;}
+.protable .f12c{ font-family:\5B8B\4F53; font-size:12px;color:#999999; padding-left:10px}
+
+.inputext{ border:1px solid #dddddd; height:28px; line-height:28px; padding:0 3px}
+.error{ border-color:#ff0000;}
+
+
+.pl10{ padding-left:10px;}
+.ndis{ display:none;}
+
+.protable table { margin-top:-10px; }
+.protable table input{ text-align:center}
+.protable table a{ color:#265cff; text-decoration:none}
+.protable table td{ padding:10px 5px 0 5px;}
+.protable table th{ padding:5px 0; width:115px;}
+.protable table thead td{ padding:0;}
+.protable table th{ padding-top:10px}
+.protable table thead .bg{ background:#e4f1fa;}
+.protable table thead .bgf{ border-left:5px solid #fff;}
+.protable table thead .bgl{ border-right:5px solid #fff;}
+
+.protable .select{ display:inline-block; vertical-align:middle; width:173px; height:30px; position:relative; z-index:99; margin-right:20px}
+.protable .select p{ border:1px solid #dddddd; padding-right:23px; background:url(../images/select.jpg) right top no-repeat; margin:0; height:28px; line-height:28px; cursor:pointer}
+.protable .select p span{ padding-left:5px;overflow:hidden; display:block;}
+.protable .select ul{ display:none; position:absolute; border:1px solid #dddddd; width:171px; left:0px; top:29px; margin:0; padding:0; background:#fff; max-height:140px; overflow-y:auto}
+.protable .select li{ line-height:28px; height:28px; overflow:hidden; padding-left:5px; margin:0;}
+.protable .select li:hover{ background-color:#eaf2ff;}
+
+.cancel,
+.save{ padding:0 30px;height:34px;font-size:14px; font-family:\5FAE\8F6F\96C5\9ED1 }
+.cancel{ border:1px solid #e7e7e7; background:#fff; color:#888; }
+.save{ border:none; background:#ffaf32; color:#fff;}
+.cancel:hover{ border:1px solid #ddd; background:#f6f6f6;}
+.save:hover{ background:#fabb58;}
+
+
+.prompt{ display:inline-block; width:14px; height:15px; background:url(../images/inco-ask.png) center center no-repeat; vertical-align:middle; margin-left:5px; margin-bottom:3px}
+
+.img60{width:60px;height:60px;text-align:center;font-size:0;background:url(../images/loading.gif) no-repeat center center;}
+.img60 *{vertical-align:middle;border:0;}
+.img60 dfn{height:100%;display:inline-block;}
+.img60 img{ max-height:60px; max-width:60px;}
+.imglist{ height:70px; background:#f7f7f7; padding-left:2px;padding-top:7px; margin:35px auto 5px auto}
+.imglist li{ padding-left:10px; float:left;}
+.imglist li .img60{ display:block; border:1px solid #e2e2e2; background-image:none; background-color:#fff;}
+.imglist li.text{ line-height:62px}
+.imglist li.hover{ position:relative;}
+.imglist li.hover .img60{ background-color:#abaeae;}
+.imglist li.hover .img60 img{ opacity:0.3;-moz-opacity:0.3;-khtml-opacity:0.3;filter:alpha(Opacity=30);}
+.imglist li.hover i{ position:absolute; color:#fff; top:0px; right:0px; width:62px; height:62px; text-align:center; line-height:62px; font-weight:bold; cursor:pointer; font-weight:normal; font-style:normal }
+.uploadify {position: relative;float:left; margin-right:5px}
+.uploadify-button {
+	background:url(../images/uploadpic.jpg) no-repeat;
+	width: 100%;
+}
+.uploadify:hover .uploadify-button { opacity:0.8;-moz-opacity:0.8;-khtml-opacity:0.8;filter:alpha(Opacity=80);}
+.uploadify-button-text{ display:none;}
+.uploadify-queue-item{ width:0px; height:0px; overflow:hidden;}
+

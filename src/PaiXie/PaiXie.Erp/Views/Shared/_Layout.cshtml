@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/jquery-easyui/themes/gray/easyui")
+    @Scripts.Render("~/Scripts/jquery-1.8.2.min.js")
+    @Scripts.Render("~/Content/jquery-easyui/jquery.easyui.min.js")
+    @Scripts.Render("~/Content/jquery-easyui/locale/easyui-lang-zh_CN")
+    @Styles.Render("~/Content/jquery-easyui/themes/icon")
+    @Scripts.Render("~/Scripts/hjs")
+    @Scripts.Render("~/Content/jquery-easyui/extvalidator")
+    @Styles.Render("~/Content/jquery-easyui/demo/demo")
+    @Styles.Render("~/Content/css/list")
+    @Scripts.Render("~/Scripts/layout")
+  
+    <script type="text/javascript">
+        (function () {
+            $.MsgBox = {
+                Alert: function (title, msg, callbackORcloseSecond) {
+                    var iscallback = typeof (callbackORcloseSecond) == 'function';
+                    GenerateHtml("alert", title, msg);
+                    if (iscallback) {
+                        btnOk(callbackORcloseSecond);
+                    } else {
+                        btnOk();
+                        if (Number(callbackORcloseSecond) > 0) {
+                            setTimeout(function () { $("#mb_box,#mb_con").remove(); }, callbackORcloseSecond);
+                        }
+                    }
+                },
+                Confirm: function (title, msg, callback) {
+                    GenerateHtml("confirm", title, msg);
+                    btnOk(callback);
+                    btnNo();
+                }
+            }
+
+            //生成Html
+            var GenerateHtml = function (type, title, msg) {
+
+                var _html = "";
+
+                _html += '<div id="mb_box"></div><div id="mb_con"><span id="mb_tit">' + title + '</span>';
+                _html += '<div id="mb_msg">' + msg + '</div><div id="mb_btnbox">';
+
+                if (type == "alert") {
+                    _html += '<input id="mb_btn_ok" type="button" value="确定" />';
+                }
+                if (type == "confirm") {
+                    _html += '<input id="mb_btn_ok" type="button" value="确定" />';
+                    _html += '<input id="mb_btn_no" type="button" value="取消" />';
+                }
+                _html += '</div></div>';
+
+                //必须先将_html添加到body，再设置Css样式
+                $("body").append(_html); GenerateCss();
+            }
+
+            //生成Css
+            var GenerateCss = function () {
+
+                $("#mb_box").css({
+                    width: '100%', height: '100%', zIndex: '99999', position: 'fixed',
+                    filter: 'Alpha(opacity=60)', backgroundColor: 'black', top: '0', left: '0', opacity: '0.6'
+                });
+
+                $("#mb_con").css({
+                    zIndex: '999999', width: '400px', position: 'fixed',
+                    backgroundColor: 'White', borderRadius: '15px'
+                });
+
+                $("#mb_tit").css({
+                    display: 'block', fontSize: '14px', color: '#444', padding: '10px 15px',
+                    backgroundColor: '#DDD', borderRadius: '15px 15px 0 0',
+                    borderBottom: '3px solid #009BFE', fontWeight: 'bold'
+                });
+
+                $("#mb_msg").css({
+                    padding: '20px', lineHeight: '20px',
+                    borderBottom: '1px dashed #DDD', fontSize: '13px'
+                });
+
+                $("#mb_ico").css({
+                    display: 'block', position: 'absolute', right: '10px', top: '9px',
+                    border: '1px solid Gray', width: '18px', height: '18px', textAlign: 'center',
+                    lineHeight: '16px', cursor: 'pointer', borderRadius: '12px', fontFamily: '微软雅黑'
+                });
+
+                $("#mb_btnbox").css({ margin: '15px 0 10px 0', textAlign: 'center' });
+                $("#mb_btn_ok,#mb_btn_no").css({ width: '85px', height: '30px', color: 'white', border: 'none' });
+                $("#mb_btn_ok").css({ backgroundColor: '#168bbb' });
+                $("#mb_btn_no").css({ backgroundColor: 'gray', marginLeft: '20px' });
+
+
+                //右上角关闭按钮hover样式
+                $("#mb_ico").hover(function () {
+                    $(this).css({ backgroundColor: 'Red', color: 'White' });
+                }, function () {
+                    $(this).css({ backgroundColor: '#DDD', color: 'black' });
+                });
+
+                var _widht = document.documentElement.clientWidth;  //屏幕宽
+                var _height = document.documentElement.clientHeight; //屏幕高
+
+                var boxWidth = $("#mb_con").width();
+                var boxHeight = $("#mb_con").height();
+
+                //让提示框居中
+                $("#mb_con").css({ top: (_height - boxHeight) / 2 + "px", left: (_widht - boxWidth) / 2 + "px" });
+            }
+
+
+            //确定按钮事件
+            var btnOk = function (callback) {
+                $("#mb_btn_ok").click(function () {
+                    $("#mb_box,#mb_con").remove();
+                    if (typeof (callback) == 'function') {
+                        callback();
+                    }
+                });
+            }
+
+            //取消按钮事件
+            var btnNo = function () {
+                $("#mb_btn_no,#mb_ico").click(function () {
+                    $("#mb_box,#mb_con").remove();
+                });
+            }
+        })();
+
+    </script>
+  
+   <script>
+       $(function () {
+           $.messager.progress({
+               title: '请稍后',
+               msg: '页面加载中...'
+           });
+       });    
+   </script>
+    @RenderSection("head", required: false)
+</head>
+<body class="easyui-layout" scroll=no>
+    <div class="easyui-layout" data-options="fit:true">
+        @RenderBody()     
+    </div>  
+    @RenderSection("bottom", required: false)
+    <div id="localWin" style="overflow:hidden;"></div>
+    <script>
+        $(function () {    
+            $.messager.progress('close');
+        });
+
+        function DataGridNoData(Obj) {
+            if ($(Obj).datagrid("getRows").length == 0) {
+                var body = $(Obj).data().datagrid.dc.body2;
+                body.find('table tbody').append('<tr><td width="' + body.width() + '" style="height: 35px; text-align: center; color:#888;" colspan="20">没有相关记录！</td></tr>');
+            }
+        }
+
+        function setTxtAreaFocus(obj) {
+            if (obj.setSelectionRange) {
+                setTimeout(function () { obj.setSelectionRange(0, 0); obj.focus(); }, 100);
+            } else {
+                if (obj.createTextRange) {
+                    var range = obj.createTextRange();
+                    range.collapse(true);
+                    range.moveEnd("character", 0);
+                    range.moveStart("character", 0);
+                    range.select();
+                } try {
+                    obj.focus();
+                } catch (e) { }
+            }
+        }
+
+    </script>
+</body>
+
+</html>

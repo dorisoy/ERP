@@ -1,0 +1,59 @@
+﻿@using PaiXie.Data
+@using PaiXie.Core
+@{
+    var warehouseCode = ViewBag.WarehouseCode;
+    var billNo = ViewBag.BillNo;
+    var planID = ViewBag.PlanID;
+    ViewBag.Title = "添加计划商品";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+<style>
+    .setlist {
+        width: 650px;
+        height: 245px;
+        margin: 10px auto 0 auto;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .setlist table table td {
+        height: auto;
+        border: 0px;
+        white-space: normal;
+        text-align: left;
+    }
+
+    .inputextbox {
+        text-align: center;
+    }
+</style>
+}
+
+<table class="tableinfo" style="margin-top:25px; width:auto; margin-left:22px;">
+    <tr>
+        <th style="width:auto">请输入商品编码：</th>
+        <td><input style="width:200px" value="" class="easyui-validatebox" type="text" id="txtCode" name="Code" /></td>
+        <td><a href="javascript:void(0)" class="button-okb" id="btnSearch" iconcls="icon-ok" style="height:28px; line-height:28px">查找</a></td>
+    </tr>
+</table>
+<div class="p0lr22 infotitle ndis" id="infotitle"></div>
+<form id="ffpost" action="">
+    <input id="hdnBillNo" name="BillNo" type="hidden" value="@billNo">
+    <input id="hdnPlanID" name="PlanID" type="hidden" value="@planID">
+    <input id="hdnWarehouseCode" name="WarehouseCode" type="hidden" value="@warehouseCode">
+    <input id="hdnProductsCode" name="ProductsCode" type="hidden" value="">
+    <input id="hdnProductsName" name="ProductsName" type="hidden" value="">
+    <input id="hdnProductsNo" name="ProductsNo" type="hidden" value="">
+    <input id="hdnProductsID" name="ProductsID" type="hidden" value="">
+    <div class="p0lr22 setlist ndis" id="setlist">
+        <table id="grid" class="easyui-datagrid" title="" data-options="singleSelect:false,collapsible:true,method:'get'"></table>
+    </div>
+</form>
+<div class="ndis" style=" text-align:center; padding-top:10px" id="buttonbox">
+    <a href="javascript:void(0)" class="button-oky" id="btnSave" iconcls="icon-ok">添加</a>
+    <a href="javascript:void(0)" class="button-cancel" id="btnClose" iconcls="icon-ok">取消</a>
+</div>
+@section bottom{
+    <script src="~/Areas/Purchase/ViewJs/AddPlanItem.js"></script>
+}

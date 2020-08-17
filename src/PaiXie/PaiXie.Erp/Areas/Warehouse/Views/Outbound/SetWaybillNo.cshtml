@@ -1,0 +1,98 @@
+﻿@using PaiXie.Data;
+@{
+    var printBatchCode = ViewBag.PrintBatchCode;
+    var outboundList = ViewBag.OutboundList as List<WarehouseOutboundList>;
+    var expressName = ViewBag.ExpressName;
+    var deliveryExpressID = ViewBag.DeliveryExpressID;
+    var logisticsCode = ViewBag.LogisticsCode;
+    ViewBag.Title = "保存运单号";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section head{
+    <style>
+        .divTitle {
+            height: 50px;
+            line-height: 50px;
+        }
+        #grid {
+            text-align: center;
+            width: 100%;
+            border-left: 1px solid #ccc;
+            border-top: 1px solid #ccc;
+        }
+
+        #grid th {
+            height: 30px;
+            line-height: 30px;
+            background-color: #f0f0f0;
+            border-right: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+        }
+
+        #grid td {
+            height: 20px;
+            line-height: 20px;
+            border-right: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+        }
+        .no{
+            vertical-align:-3px;
+        }
+    </style>
+}
+    <div class="p0lr22" style="height:398px; overflow-y:auto;">
+        <form id="ff" method="post" novalidate>
+            <div class="divTitle">
+                <span>打印批次：@printBatchCode</span>
+                <span style="margin-left:90px;">出库单数量：@outboundList.Count</span>
+                <span style="margin-left:90px;">打印快递：@expressName</span>
+                <input type="hidden" id="hdnLogisticsCode" name="logisticsCode" value="@logisticsCode" />
+                <input type="hidden" id="hdnDeliveryExpressID" name="deliveryExpressID" value="@deliveryExpressID" />
+            </div>
+            <table id="grid" cellpadding="5" cellspacing="0" border="0">
+                <tr>
+                    <th width="5%"><input type="checkbox" id="chkAll" name="chkAll" checked /></th>
+                    <th width="22%">出库单号</th>
+                    <th width="10%">商品数量</th>
+                    <th width="47%">收件人</th>
+                    <th width="16%">运单号&nbsp;<input type="checkbox" id="chkContinuous" name="chkContinuous" class="no"><label for="chkContinuous">连号</label></th>
+                </tr>
+                @{
+                    var index = 0;
+                    foreach (var outbound in outboundList) {
+                        <tr id="dataTr_@index" class="dataTr">
+                            <td>
+                                <input type="checkbox" id="chkID_@index" name="chkID" index="@index" checked value="@outbound.ID" />
+                            </td>
+                            <td>
+                                @outbound.BillNo
+                                <br /><span style="color:#999;">(@(outbound.ShopName))</span>
+                            </td>
+                            <td>
+                                @outbound.ProductsNum
+                            </td>    
+                            <td align="left">
+                                @(outbound.BuyName + " " + outbound.BuyMtel)
+                                @(outbound.BuyMtel == "" ? outbound.BuyTel : ("，" + outbound.BuyTel))
+                                <br />@(outbound.BuyAddr + "(" + outbound.BuyPostCode + ")")
+                            </td>
+                            <td>
+                                <input type="text" id="txtWaybillNo_@index" name="waybillNo" class="easyui-validatebox" index="@index" data-options="height:30" maxlength="20" value="@outbound.WaybillNo" style="width:125px; text-align:center;" /><div id="divErrorMsg_@index" style="color:red;"></div>
+                            </td>
+                        </tr>
+                        index++;
+                    }
+                }
+            </table>
+        </form>
+    </div>
+    <div style="padding-top:10px;">
+        <span style="color:#999; margin-left:150px;">(只保存勾选的出库单)</span>
+        <a href="javascript:void(0);" class="button-oky" id="btnSave" iconcls="icon-ok">保存运单号</a>
+        <span style="margin-left:40px;"><a href="javascript:void(0);" class="button-cancel" id="btnClose" iconcls="icon-ok">关闭</a></span>
+    </div>
+@section bottom{
+    <script src="~/Areas/Warehouse/ViewJs/WaybillNoInfo.js"></script>
+    <script src="~/Areas/Warehouse/ViewJs/SetWaybillNo.js"></script>
+}

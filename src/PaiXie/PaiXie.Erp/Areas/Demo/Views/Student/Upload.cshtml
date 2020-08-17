@@ -1,0 +1,67 @@
+﻿@{
+    Layout = null;
+}
+@*// uploadify   上传文件   支持多文件上传*@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Upload</title>
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <link href="~/Content/css/css.css" rel="stylesheet" />
+    <script src="~/Scripts/uploadify/jquery.uploadify.js"></script> 
+          <script type="text/javascript">
+            $(function () {
+                $("#file_upload").uploadify({
+                    queueID: "1",
+                    swf: '/Scripts/uploadify/uploadify.swf',
+                    uploader: '/demo/student/Upload', // 上传文件，后台上传方法
+                    buttonImage: "/Content/images/xiangcebiaoqian_anniu_1.gif", // 按钮图片地址
+                    fileSizeLimit: '100000000KB', // 最大允许文件上传大小，这里是 10M
+                    fileTypeDesc: 'Image Files',
+                    fileTypeExts: '*.gif; *.jpg; *.png; *.jpeg;*.doc',
+                    auto: true, // 自动上传
+                    uploadLimit: 20, // 允许文件上传个数
+                    queueSizeLimit: 5, // 允许同时文件上传个数
+                    width: 159, // 上传按钮的宽度
+                    height: 47, // 上传按钮的高度
+                    onSelect: function (file) { // 选择文件的事件
+                        var name = file.name;
+                        if (name.length >= 10) {
+                            var index = name.lastIndexOf(".");
+                            name = name.substr(0, 8) + "...." + name.substr(index + 1);
+                        }
+                        var html = '<div id="div_id_' + file.id + '" class="uploading"><div id="div_title_' + file.id + '" class="uploading_file_name">' + name + '<div><div id="div_uploading_' + file.id + '" class="uploading_schedule">0%</div></div>';
+                        $("#div_img_list").append(html);
+
+                    },
+                    onUploadProgress: function (file, bytesUploaded, bytesTotal, totalBytesUploaded, totalBytesTotal) { // 上传文件的进度事件
+                        var v = Math.round(bytesUploaded / bytesTotal * 100);
+                        $('#div_uploading_' + file.id).html(v + "%");
+                    },
+                    onUploadSuccess: function (file, data, response) { // 上传文件成功之后的事件
+                        $("#div_title_" + file.id).remove();
+                        $("#div_uploading_" + file.id).remove();
+                        var html = '<img alt="" src="' + data + '" />';
+                        html += "<a href=\"javascript:\" onclick=\"DeleteFile('" + file.id + "');\">X</a>";
+                        $("#div_id_" + file.id).html(html);
+                    }
+                });
+            });
+
+            // 移除图片
+            function DeleteFile(id) {
+                $("#div_id_" + id).remove();
+            }
+        </script>
+  
+</head>
+<body>
+  
+    <input id="file_upload" name="file_upload" type="file" />
+    <div id="div_img_list" class="xiangce_biaoqian_right_shangchuanzhaopian">
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,351 @@
+﻿@using PaiXie.Core;
+@using PaiXie.Data;
+@using PaiXie.Api.Bll;
+@{
+    var warehousePrintTemplate = ViewBag.WarehousePrintTemplate as WarehousePrintTemplate;
+    var isPrintPro = warehousePrintTemplate.IsPrintPro == 1 ? "checked" : "";
+    var isDefault = warehousePrintTemplate.IsDefault == 1 ? "checked" : "";
+    var typeName = ViewBag.TypeName;
+    var templateContent = ViewBag.TemplateContent;
+    ViewBag.Title = "设置模版";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section head{
+    <style>
+        .no {
+            vertical-align: -3px;
+        }
+		.iframe{ position:absolute; top:0px; left:0px; width:100%; height:100%; border:0px; z-index:-1;}
+	</style>
+	
+	
+    <script src="~/Scripts/PrintActivex.js"></script>
+}
+<div class="easyui-layout" data-options="fit:true" style="overflow-y:auto;">
+    <div data-options=" region:'north',height:63" id="topdiv">
+        <div class="toolbar" id="toolbar">
+            <a href="javascript:void(0);" class="back" id="back"><span></span>返回</a>
+            <a href="javascript:void(0);" class="toolbarsave" id="toolbarsave"><span></span>保存模版</a>
+            <a href="javascript:void(0);" class="reset" id="reset"><span></span>恢复默认模版</a>
+        </div>
+    </div>
+    <div data-options="region:'center',border:false" class="p0lr22">
+        <form id="ff" method="post" novalidate>
+            <div style="margin-top: 1px; padding-left: 10px; height: 50px; line-height: 50px; background: #f0f0f0; border: 1px solid #ccc;">
+                <span>模版名称：@(warehousePrintTemplate.Name)</span>
+                <span style="margin-left:100px;">模版类型：@(typeName)</span>
+                <span style="margin-left:100px;"><input type="checkbox" id="chkIsDefault" name="isDefault" class="no" @Html.Raw(isDefault) onclick="setIsDefault(@warehousePrintTemplate.TypeID,@warehousePrintTemplate.ID);" /><label for="chkIsDefault">设为默认@(typeName)</label></span>
+            </div>
+            <div style="padding: 10px 0px 10px 10px; margin-top:10px; height: 70px; line-height:30px; border: 1px solid #ccc; position:relative; z-index:10;">
+                次页打印偏移：<input type="text" id="secondPageOffset" class="easyui-numberbox" value="@warehousePrintTemplate.SecondPageOffset" style="width:50px;" min="-999.9" max="999.9" missingmessage="只能输入-999.9~999.9之间的数字" data-options="required:true,validType:'number',precision:1,height:30" />mm，纸张尺寸：宽 <input type="text" id="printTemplateWidth" class="easyui-numberbox" value="@warehousePrintTemplate.Width" style="width:50px;" min="1" max="999.9" missingmessage="只能输入1~999.9之间的数字" data-options="required:true,validType:'number',precision:1,height:30" />mm，
+                高 <input type="text" id="printTemplateHeight" class="easyui-numberbox" value="@warehousePrintTemplate.Height" style="width:50px;" min="-999.9" max="999.9" missingmessage="只能输入-999.9~999.9之间的数字" data-options="required:true,validType:'number',precision:1,height:30" />mm
+                选择默认打印机：<input id="printerName" name="printerName" class="easyui-combobox" style="width: 190px;" data-options="valueField:'value', textField:'text',editable:false, height:30">
+                &nbsp;<input type="checkbox" id="chkIsPrintPro" class="no" @(isPrintPro) /><label for="chkIsPrintPro">打印商品明细</label>
+                <input type="button" id="btnSetPrintPro" value="设置明细项" style="display:none;" />
+                <div style="margin-top:10px;">
+                    添加打印项：
+                    <select id="fieldList" name="fieldList" class="easyui-combobox" data-options="editable:false,height:30,width:180"></select>
+                    添加条码/二维码：
+                    <select id="barcodeFieldList" name="barcodeFieldList" class="easyui-combobox" data-options="editable:false,height:30,width:150">
+                    </select>
+                    <label style="color:red;">提示：</label>按键盘上的“Ctrl+Delete”可以删除选中内容
+                </div>
+            </div>
+            <div style="padding: 10px 0px 0px 0px;position:relative; z-index:1" id="showLODOP">
+                <object id="LODOP_OB" classid="clsid:2105C259-1E0C-4534-8141-A753534CB4CA" width=1174 height=620>
+                    <param name="Caption" value="快递模板设计">
+                    <param name="Border" value="1">
+                    <param name="Color" value="#C0C0C0">
+                    <param name="wmode" value="transparent" />
+                    <embed id="LODOP_EM" wmode="transparent" type="application/x-print-lodop" width=1174 height=620>
+                </object>
+            </div>
+            <input type="hidden" id="hdnPrinterName" value="@warehousePrintTemplate.PrinterName" />
+            <input type="hidden" id="hdnPrintTemplateID" value="@warehousePrintTemplate.ID" />
+        </form>
+    </div>
+</div>
+@section bottom{
+    <script type="text/javascript">
+        var LODOP; //声明为全局变量
+        $(document).ready(function () {
+            var fieldData = [];
+            var barcodeFieldData = [];
+            if ('@warehousePrintTemplate.TypeID' == '@PrintTemplateType.拣货单') {
+                //拣货单
+                fieldData.push({ "Text": "—请选择—", "Value": "" });
+                fieldData.push({ "Text": "打印批次：$打印批次", "Value": "打印批次：$打印批次" });
+                fieldData.push({ "Text": "出库单数量：$出库单数量", "Value": "出库单数量：$出库单数量" });
+                fieldData.push({ "Text": "商品数量：$商品数量", "Value": "商品数量：$商品数量" });
+                fieldData.push({ "Text": "$商品明细打印区域", "Value": "$商品明细打印区域" });
+                barcodeFieldData.push({ "Text": "—请选择—", "Value": "" });
+            } else {
+                //发货单
+                fieldData.push({ "Text": "—请选择—", "Value": "" });
+                fieldData.push({ "Text": "发货单 - $序号", "Value": "发货单 - $序号" });
+                fieldData.push({ "Text": "打印时间：$当前时间", "Value": "打印时间：$当前时间" });
+                fieldData.push({ "Text": "发货日期：$发货日期", "Value": "发货日期：$发货日期" });
+                fieldData.push({ "Text": "店铺名称：$店铺名称", "Value": "店铺名称：$店铺名称" });
+                fieldData.push({ "Text": "买家会员名：$买家会员名", "Value": "买家会员名：$买家会员名" });
+                fieldData.push({ "Text": "系统订单号：$系统订单号", "Value": "系统订单号：$系统订单号" });
+                fieldData.push({ "Text": "外部订单号：$外部订单号", "Value": "外部订单号：$外部订单号" });
+                fieldData.push({ "Text": "出库单号：$出库单号", "Value": "出库单号：$出库单号" });
+                fieldData.push({ "Text": "运单号：$运单号", "Value": "运单号：$运单号" });
+                fieldData.push({ "Text": "收件人姓名：$收件人姓名", "Value": "收件人姓名：$收件人姓名" });
+                fieldData.push({ "Text": "收件人电话：$收件人电话", "Value": "收件人电话：$收件人电话" });
+                fieldData.push({ "Text": "收件人手机：$收件人手机", "Value": "收件人手机：$收件人手机" });
+                fieldData.push({ "Text": "收件人地址：收件人地址", "Value": "收件人地址：收件人地址" });
+                fieldData.push({ "Text": "买家留言：$买家留言", "Value": "买家留言：$买家留言" });
+                fieldData.push({ "Text": "卖家备注：$卖家备注", "Value": "卖家备注：$卖家备注" });
+                fieldData.push({ "Text": "发票信息：$发票信息", "Value": "发票信息：$发票信息" });
+                fieldData.push({ "Text": "$商品明细打印区域", "Value": "$商品明细打印区域" });
+                fieldData.push({ "Text": "$商品数量：$商品数量", "Value": "$商品数量：$商品数量" });
+                fieldData.push({ "Text": "$商品金额：$商品金额", "Value": "$商品金额：$商品金额" });
+                fieldData.push({ "Text": "商品优惠：$商品优惠", "Value": "商品优惠：$商品优惠" });
+                fieldData.push({ "Text": "实收运费：$实收运费", "Value": "实收运费：$实收运费" });
+                fieldData.push({ "Text": "$实收金额：$实收金额", "Value": "$实收金额：$实收金额" });
+                barcodeFieldData.push({ "Text": "—请选择—", "Value": "" });
+                barcodeFieldData.push({ "Text": "$运单号条码", "Value": "$运单号条码" });
+                barcodeFieldData.push({ "Text": "$运单号二维码", "Value": "$运单号二维码" });
+                barcodeFieldData.push({ "Text": "$系统订单号条码", "Value": "$系统订单号条码" });
+                barcodeFieldData.push({ "Text": "$系统订单号二维码", "Value": "$系统订单号二维码" });
+                barcodeFieldData.push({ "Text": "$外部订单号条码", "Value": "$外部订单号条码" });
+                barcodeFieldData.push({ "Text": "$外部订单号二维码", "Value": "$外部订单号二维码" });
+                barcodeFieldData.push({ "Text": "$出库单号条码", "Value": "$出库单号条码" });
+                barcodeFieldData.push({ "Text": "$出库单号二维码", "Value": "$出库单号二维码" });
+            }
+            $("#fieldList").combobox({
+                valueField: 'Value',
+                textField: 'Text',
+                data: fieldData,
+                onChange: function (n, o) {
+                    autoAddText();
+                }
+            });
+            $("#barcodeFieldList").combobox({
+                valueField: 'Value',
+                textField: 'Text',
+                data: barcodeFieldData,
+                onChange: function (n, o) {
+                    autoAddBarcode();
+                }
+            });
+            //返回
+            $("#back").click(function () {
+                location.href = "/Warehouse/PrintTemplate/Index";
+            });
+            //保存
+            $("#toolbarsave").click(save);
+            //恢复默认
+            $("#reset").click(resetDefault);
+            $("#chkIsPrintPro").click(function () {
+                if ($(this).attr("checked")) {
+                    $("#btnSetPrintPro").show();
+                } else {
+                    $("#btnSetPrintPro").hide();
+                }
+            });
+            if ($("#chkIsPrintPro").attr("checked")) {
+                $("#btnSetPrintPro").show();
+            }
+            $("#btnSetPrintPro").click(function () {
+                showLocalIfWindow("设置明细项", "/Warehouse/PrintTemplate/SetPrintPro?id=" + $("#hdnPrintTemplateID").val(), 480, 410, true, false, false);
+            });
+            //兼容chrome
+            setTimeout(function () { DisplayDesign(); }, 1);
+        });
+        
+        //添加字段
+        function autoAddText() {
+            var text = $("#fieldList").combobox('getValue');
+            if (text != "") {
+                if (text == "$商品明细打印区域") {
+                    //添加样式，样式名称 printTable 不能修改
+                    var strStyleCSS = ".printTable{ border-left:solid 0px #333333; border-bottom:solid 1px #333333;} .printTable td{ border-top:solid 1px #333333; border-right:solid 0px #333333; text-align:center; padding:3px; font-size:13px;}";
+                    LODOP.ADD_PRINT_TABLE("45mm", "5mm", "185mm", "75mm", "<style type=\"text/css\">" + strStyleCSS + "</style>" + text + "$SecondPageOffset");
+                } else {
+                    LODOP.ADD_PRINT_TEXT("5mm", "5mm", "65mm", "6mm", text);
+                }
+            }
+        }
+        //添加条码
+        function autoAddBarcode(){
+            var text = $("#barcodeFieldList").combobox('getValue');
+            if (text != "") {
+                if (text.indexOf("条码") != -1) {
+                    LODOP.ADD_PRINT_BARCODE("0mm", "43mm", "65mm", "7mm", "128A", text);
+                    LODOP.SET_PRINT_STYLEA(0, "ShowBarText", 0);
+                } else {
+                    LODOP.ADD_PRINT_BARCODE("0mm", "43mm", "18.81mm", "69mm", "QRCode", text);
+                    LODOP.SET_PRINT_STYLEA(0, "ShowBarText", 0);
+                }
+            }
+        }
+        //保存
+        function save() {
+            var _id = $("#hdnPrintTemplateID").val();
+            var _width = $("#printTemplateWidth").numberbox("getValue");
+            if (_width == "") _width = 0;
+            var _height = $("#printTemplateHeight").numberbox("getValue");
+            if(_height == "") _height = 0;
+            var _printerName = $("#printerName").combobox('getValue');
+            var _isPrintPro = $("#chkIsPrintPro").attr("checked") ? 1 : 0;
+            var _secondPageOffset = $("#secondPageOffset").numberbox("getValue");
+            if(_secondPageOffset == "") _secondPageOffset = 0;
+            LODOP = getLodop(document.getElementById('LODOP_OB'), document.getElementById('LODOP_EM'), "showLODOP");
+            var _templateContent = LODOP.GET_VALUE("ProgramCodes", 0);
+            _templateContent = encodeURIComponent(_templateContent.replace(/\r\n/g, ""));
+            $.ajax({
+                url: "/Warehouse/PrintTemplate/SavePrintTemplate?ram=" + Math.random(),
+                type: "POST",
+                data: { id: _id, width: _width, height: _height, templateContent: _templateContent, secondPageOffset: _secondPageOffset, printerName: _printerName, isPrintPro: _isPrintPro },
+                async: false,
+                cache: false,
+                success: function (r) {
+                    var map = $.parseJSON(r);
+                    if (map.result == 1) {
+                        //$.MsgBox.Alert("提示", "保存成功！", 1000);
+                        alert("保存成功！");
+                    } else {
+                        //$.MsgBox.Alert("提示", map.message);
+                        alert(map.message);
+                    }
+                },
+                error: function () {
+                    //$.MsgBox.Alert("提示", "保存失败！");
+                    alert("保存失败！");
+                }
+            });
+        }
+        //恢复默认设置
+        function resetDefault() {
+            if (confirm("确定要恢复默认设置？")) {
+                $.ajax({
+                    url: "/Warehouse/PrintTemplate/ResetDefault?id=" + $("#hdnPrintTemplateID").val(),
+                    type: "GET",
+                    async: false,
+                    cache: false,
+                    success: function (r) {
+                        var map = $.parseJSON(r);
+                        if (map.result == 1) {
+                            //$.MsgBox.Alert("提示", "恢复成功！", 1000);
+                            alert("恢复成功！");
+                            window.location.reload(true);
+                        } else {
+                            //$.MsgBox.Alert("提示", map.message);
+                            alert(map.message);
+                        }
+                    },
+                    error: function () {
+                        //$.MsgBox.Alert("提示", "操作失败！");
+                        alert("操作失败！");
+                    }
+                });
+            }
+
+        }
+        //设置、取消 默认模版
+        function setIsDefault(typeID, id) {
+            var isDefault = $("#chkIsDefault").attr("checked") ? 1 : 0;
+            var operateName = isDefault == 0 ? "取消默认" : "设置默认";
+            $.ajax({
+                url: "/Warehouse/PrintTemplate/SetIsDefault?typeID=" + typeID + "&id=" + id + "&isDefault=" + isDefault,
+                type: "GET",
+                cache: false,
+                success: function (r) {
+                    var map = $.parseJSON(r);
+                    if (map.result == 1) {
+                        alert(operateName + "成功！");
+                        //$.MsgBox.Alert("提示", operateName + "成功！", 1000);
+                    } else {
+                        alert(map.message);
+                        //$.MsgBox.Alert("提示", map.message);
+                    }
+                },
+                error: function () {
+                    alert(operateName + "失败！");
+                    //$.MsgBox.Alert("提示", operateName + "失败！");
+                }
+            });
+        }
+        //显示设计界面
+        function DisplayDesign() {
+            CreatePrintPage();
+            LODOP.SET_SHOW_MODE("DESIGN_IN_BROWSE", 1);
+            LODOP.SET_SHOW_MODE("SETUP_ENABLESS", "11111111000000");//隐藏关闭(叉)按钮
+            LODOP.SET_SHOW_MODE("HIDE_GROUND_LOCK", true);//隐藏纸钉按钮
+            LODOP.PRINT_DESIGN();
+        }
+        function CreatePrintPage() {
+            LODOP = getLodop(document.getElementById('LODOP_OB'), document.getElementById('LODOP_EM'), "showLODOP");
+            //绑定打印机
+            var printerComboboxID = "printerName";
+            var defaultPrinterName = $("#hdnPrinterName").val();
+            bindPrinterName(LODOP, printerComboboxID, defaultPrinterName);
+            @Html.Raw(templateContent)
+        };
+	$(document).ready(function(){
+		$('.combo .combo-arrow').click(function(){
+			$('.combo-p').each(function(index, element) {
+				if ($(element).find('iframe').length==0){
+					$(element).prepend('<iframe class="iframe"></iframe>');
+				}
+				if ($(element).find('div:eq(0)').attr('style')!=''){
+					$(element).find('iframe').attr('style',$(element).find('div:eq(0)').attr('style'));
+				}
+				setTimeout(function(){
+					if ($(element).find('div:eq(0)').attr('style')!=''){
+						$(element).find('iframe').attr('style',$(element).find('div:eq(0)').attr('style'));
+					}
+				},500);
+			});
+		});
+		
+		$('#btnSetPrintPro').click(function(){
+			if ($('#iframewindow').length<=0) $('body').append('<iframe class="iframe" id="iframewindow"></iframe>');
+			$('#iframewindow').hide();
+			if ($('.window:eq(0)').attr('style')!=''){
+				$('#iframewindow').attr('style',$('.window:eq(0)').attr('style'));
+				$('#iframewindow').css('z-index',$('.window:eq(0)').css('z-index')-1).show();
+				$('#iframewindow').css('width',$('.window:eq(0)').width()+2);
+				$('#iframewindow').css('height',$('.window:eq(0)').height()+2);
+			}
+			setTimeout(function(){
+				if ($('.window:eq(0)').attr('style')!=''){
+					$('#iframewindow').attr('style',$('.window:eq(0)').attr('style'));
+					$('#iframewindow').css('z-index',$('.window:eq(0)').css('z-index')-1).show();
+					$('#iframewindow').css('width',$('.window:eq(0)').width()+2);
+					$('#iframewindow').css('height',$('.window:eq(0)').height()+2);
+				}
+			},500);
+		});
+		
+	});
+	
+function showLocalIfWindow(n, t, i, r, u, f, e) {
+    $("#localWin").window({
+        title: n,
+        width: i === undefined ? 600 : i,
+        height: r === undefined ? 400 : r,
+        content: '<iframe scrolling="auto" frameborder="0"  src="' + t + '" style="width:100%;height:100%;"><\/iframe>',
+        modal: u === undefined ? !0 : u,
+        minimizable: f === undefined ? !1 : f,
+        maximizable: e === undefined ? !1 : e,
+        shadow: !1,
+        cache: !1,
+        closed: !1,
+        collapsible: !1,
+        resizable: !1,
+        top: ($(window).height() - r) * .1,
+        left: ($(window).width() - i) * .5,
+        loadingMessage: "正在加载数据，请稍等片刻......",
+		onBeforeClose: function () {
+			if ($('#iframewindow').length>0) $('#iframewindow').hide();
+		}
+    })
+}
+	
+	
+    </script>
+}

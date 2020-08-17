@@ -1,0 +1,60 @@
+﻿@using PaiXie.Data
+@{
+    var obj = ViewBag.psku as List<ProductsSkuList>;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    @section head{
+    }
+    <div style="padding:20px">
+    <table>
+        <tr>
+            <td>
+                <label>选择独享店铺：</label>
+            </td>
+            <td>
+                @ViewBag.shopname
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" height="10"></td>
+        </tr>
+        @*<tr>
+            <td>设置独享数量:</td>
+            <td><label id="lbldxnum">@ViewBag.dxnum </label></td>
+        </tr>*@
+    </table>
+    <br />
+        <table border="0">
+            <tr style="background-color: #436fac; color:white;">
+                <td height="30" width="20%" align="center">属性</td>
+                <td width="30%" align="center">商品SKU码</td>
+                <td width="30%" align="center">当前可用库存</td>
+                <td width="20%" align="center">独享数量</td>
+            </tr>
+            @{
+                foreach (var item in obj) {
+                  <tr align="center">
+                        <td height="25">
+                            @item.Saleprop
+                        </td>
+                        <td>@item.Code</td>
+                        <td>@item.kc</td>
+                        <td>@item.dxsl</td>
+                    </tr>
+                }
+            }
+        </table>
+    <br />
+    <input readonly="readonly"  type="checkbox" @(ViewBag.IsSalePub == "1" ? "checked" : "") value="1" name="Isggkc" id="Isggkc" /> 使用公共库存
+    <br />
+    <div class="textcenter">
+        <a href="javascript:void(0)" class="button-oky" id="btnSave" iconcls="icon-ok">确认</a>
+    </div>
+</div>     
+@section bottom{
+    <script>
+        $("#btnSave").click(function () {
+            parent.$('#localWin').window('close');
+        });
+    </script>
+}

@@ -1,0 +1,39 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{}
+<div class="easyui-layout" data-options="fit:true">
+    <div data-options="region:'north',height:113" id="topdiv">
+        <div class="toolbar" id="toolbar">
+            <a href="javascript:void(0)" class="refresh" id="refresh"><span></span>刷新</a>
+        </div>
+        <div class="searchpro" id="searchpro">
+            <form id="ff" method="post">
+                <select id="keyWordType" name="keyWordType" class="easyui-combobox" data-options="height:30,width:100,editable:false">
+                    <option value="">关键字类型</option>
+                    <option value="批次号" selected>批次号</option>
+                    <option value="商品名称">商品名称</option>
+                    <option value="商品编码">商品编码</option>
+                    <option value="商品SKU码">商品SKU码</option>
+                </select>
+                <input type="text" id="txtKeyWord" value="" style="width:150px;">
+                <label>批次来源：</label><select id="batchSource" class="easyui-combobox" name="batchSource" data-options="height:30,width:82">
+                    <option value="0">不限</option>
+                    <option value="1">入库</option>
+                    <option value="2">盘盈</option>
+                    <option value="3">商品转换</option>
+                </select>
+                <input type="button" id="btnSearch" value="搜索" class="button">
+                <input type="button" id="btnReset" value="清空条件" class="button-rest">
+            </form>
+        </div>
+    </div>
+    <div data-options="region:'center',border:false" style="padding:0 22px;">
+        <table id="grid" class="easyui-datagrid" title="" data-options="singleSelect:false,collapsible:true,method:'get'"></table>
+    </div>
+</div>
+@section bottom{
+    <script src="~/Areas/Warehouse/ViewJs/BatchInfoList.js"></script>
+}
+
+

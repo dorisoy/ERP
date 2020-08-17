@@ -1,0 +1,358 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A2DE5C41-3A4D-4A63-9AFF-16738C0B0BCB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PaiXie.Data</RootNamespace>
+    <AssemblyName>PaiXie.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FluentData, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SharedDlls\FluentData.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SharedDlls\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseRepository\BaseRepository.cs" />
+    <Compile Include="Base\Db.cs" />
+    <Compile Include="Model\Finance\SuppliersSettlement.cs" />
+    <Compile Include="Model\Finance\FinanceLog.cs" />
+    <Compile Include="Model\OrderRefund\Ordrefund.cs" />
+    <Compile Include="Model\OrderRefund\OrdrefundItem.cs" />
+    <Compile Include="Model\OrderRefund\OrdrefundReason.cs" />
+    <Compile Include="Model\Order\OrdaccountsBill.cs" />
+    <Compile Include="Model\Order\Ordbase.cs" />
+    <Compile Include="Model\Order\Orddiscount.cs" />
+    <Compile Include="Model\Order\Orditem.cs" />
+    <Compile Include="Model\Order\Ordlog.cs" />
+    <Compile Include="Model\Order\Ordoccupy.cs" />
+    <Compile Include="Model\Order\Ordouter.cs" />
+    <Compile Include="Model\Order\OrdouterItem.cs" />
+    <Compile Include="Model\Order\Ordremark.cs" />
+    <Compile Include="Model\Order\SendShop.cs" />
+    <Compile Include="Model\Products\Category.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Products\Products.cs" />
+    <Compile Include="Model\Products\Brand.cs" />
+    <Compile Include="Model\Products\ProductsImportError.cs" />
+    <Compile Include="Model\Products\ProductsMaterialMap.cs" />
+    <Compile Include="Model\Products\ProductsSku.cs" />
+    <Compile Include="Model\Shop\Shop.cs" />
+    <Compile Include="Model\Shop\ShopAllocation.cs" />
+    <Compile Include="Model\Shop\ShopAutogeneration.cs" />
+    <Compile Include="Model\Shop\ShopComancation.cs" />
+    <Compile Include="Model\Shop\ShopExpressSet.cs" />
+    <Compile Include="Model\Shop\ShopUpdateProducts.cs" />
+    <Compile Include="Model\Shop\ShopProducts.cs" />
+    <Compile Include="Model\Shop\ShopStockUpdate.cs" />
+    <Compile Include="Model\Shop\ShopTask.cs" />
+    <Compile Include="Model\Suppliers\Suppliers.cs" />
+    <Compile Include="Model\Suppliers\SuppliersItem.cs" />
+    <Compile Include="Model\Sys\Logistics.cs" />
+    <Compile Include="Model\Sys\LogisticsAreaMap.cs" />
+    <Compile Include="Model\Sys\Sysarea.cs" />
+    <Compile Include="Model\Sys\Sysbutton.cs" />
+    <Compile Include="Model\Sys\Syscode.cs" />
+    <Compile Include="Model\Sys\SyscodeType.cs" />
+    <Compile Include="Model\Sys\SyscolList.cs" />
+    <Compile Include="Model\Sys\SyscolPermissions.cs" />
+    <Compile Include="Model\Sys\SyserrorLog.cs" />
+    <Compile Include="Model\Sys\Syslog.cs" />
+    <Compile Include="Model\Sys\SysloginHistory.cs" />
+    <Compile Include="Model\Sys\Sysmenu.cs" />
+    <Compile Include="Model\Sys\SysmenuButtonMap.cs" />
+    <Compile Include="Model\Sys\Sysrole.cs" />
+    <Compile Include="Model\Sys\SysroleColumnmap.cs" />
+    <Compile Include="Model\Sys\SysroleMenuButtonMap.cs" />
+    <Compile Include="Model\Sys\SysroleMenuMap.cs" />
+    <Compile Include="Model\Sys\Sysuser.cs" />
+    <Compile Include="Model\Sys\SysuserRoleMap.cs" />
+    <Compile Include="Model\Sys\Sysbillno.cs" />
+    <Compile Include="Model\ThirdResponse\PXResponseBase.cs" />
+    <Compile Include="Model\ThirdResponse\PXResponseOrder.cs" />
+    <Compile Include="Model\ThirdResponse\PXResponseProduct.cs" />
+    <Compile Include="Model\Warehouse\Warehouse.cs" />
+    <Compile Include="Model\Warehouse\WarehouseAreaMap.cs" />
+    <Compile Include="Model\Warehouse\WarehouseAreaStruct.cs" />
+    <Compile Include="Model\Warehouse\WarehouseBookingProductsSku.cs" />
+    <Compile Include="Model\Warehouse\WarehouseConfig.cs" />
+    <Compile Include="Model\Warehouse\WarehouseConversionItemLog.cs" />
+    <Compile Include="Model\Warehouse\WarehouseConversionLog.cs" />
+    <Compile Include="Model\Warehouse\WarehouseConversionRule.cs" />
+    <Compile Include="Model\Warehouse\WarehouseConversionRuleItem.cs" />
+    <Compile Include="Model\Warehouse\WarehouseExpress.cs" />
+    <Compile Include="Model\Warehouse\WarehouseExpressPrice.cs" />
+    <Compile Include="Model\Warehouse\WarehouseInventoryWarn.cs" />
+    <Compile Include="Model\Warehouse\WarehouseLocation.cs" />
+    <Compile Include="Model\Warehouse\WarehouseLocationProducts.cs" />
+    <Compile Include="Model\Warehouse\WarehouseMoveLocation.cs" />
+    <Compile Include="Model\Warehouse\WarehouseMoveLocationItem.cs" />
+    <Compile Include="Model\Warehouse\WarehouseOutbound.cs" />
+    <Compile Include="Model\Warehouse\WarehouseOutboundPickItem.cs" />
+    <Compile Include="Model\Warehouse\WarehouseOutboundPrintBatch.cs" />
+    <Compile Include="Model\Warehouse\WarehouseOutInStock.cs" />
+    <Compile Include="Model\Warehouse\WarehouseOutInStockItem.cs" />
+    <Compile Include="Model\Warehouse\WarehouseOutInStockLog.cs" />
+    <Compile Include="Model\Warehouse\WarehousePrintTemplate.cs" />
+    <Compile Include="Model\Warehouse\WarehouseProducts.cs" />
+    <Compile Include="Model\Warehouse\WarehouseProductsSku.cs" />
+    <Compile Include="Model\Warehouse\WarehousePurchase.cs" />
+    <Compile Include="Model\Warehouse\WarehousePurchaseItem.cs" />
+    <Compile Include="Model\Warehouse\WarehousePurchasePlan.cs" />
+    <Compile Include="Model\Warehouse\WarehousePurchasePlanItem.cs" />
+    <Compile Include="Model\Warehouse\WarehouseStocktaking.cs" />
+    <Compile Include="Model\Warehouse\WarehouseStocktakingItem.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\Finance\SuppliersSettlementRepository.cs" />
+    <Compile Include="Repository\Finance\FinanceLogRepository.cs" />
+    <Compile Include="Repository\OrderRefund\OrdrefundItemRepository.cs" />
+    <Compile Include="Repository\OrderRefund\OrdrefundReasonRepository.cs" />
+    <Compile Include="Repository\OrderRefund\OrdrefundRepository.cs" />
+    <Compile Include="Repository\Order\OrdaccountsBillRepository.cs" />
+    <Compile Include="Repository\Order\OrdbaseRepository.cs" />
+    <Compile Include="Repository\Order\OrddiscountRepository.cs" />
+    <Compile Include="Repository\Order\OrditemRepository.cs" />
+    <Compile Include="Repository\Order\OrdlogRepository.cs" />
+    <Compile Include="Repository\Order\OrdoccupyRepository.cs" />
+    <Compile Include="Repository\Order\OrdouterItemRepository.cs" />
+    <Compile Include="Repository\Order\OrdouterRepository.cs" />
+    <Compile Include="Repository\Order\OrdremarkRepository.cs" />
+    <Compile Include="Repository\Order\SendShopRepository.cs" />
+    <Compile Include="Repository\Products\CategoryRepository.cs" />
+    <Compile Include="Repository\Products\BrandRepository.cs" />
+    <Compile Include="Repository\Products\ProductsImportErrorRepository.cs" />
+    <Compile Include="Repository\Products\ProductsMaterialMapRepository.cs" />
+    <Compile Include="Repository\Products\ProductsRepository.cs" />
+    <Compile Include="Repository\Products\ProductsSkuRepository.cs" />
+    <Compile Include="Repository\Shop\ShopAllocationRepository.cs" />
+    <Compile Include="Repository\Shop\ShopAutogenerationRepository.cs" />
+    <Compile Include="Repository\Shop\ShopComancationRepository.cs" />
+    <Compile Include="Repository\Shop\ShopExpressSetRepository.cs" />
+    <Compile Include="Repository\Shop\ShopUpdateProductsRepository.cs" />
+    <Compile Include="Repository\Shop\ShopProductsRepository.cs" />
+    <Compile Include="Repository\Shop\ShopRepository.cs" />
+    <Compile Include="Repository\Shop\ShopStockUpdateRepository.cs" />
+    <Compile Include="Repository\Shop\ShopTaskRepository.cs" />
+    <Compile Include="Repository\Suppliers\SuppliersItemRepository.cs" />
+    <Compile Include="Repository\Suppliers\SuppliersRepository.cs" />
+    <Compile Include="Repository\Sys\LogisticsAreaMapRepository.cs" />
+    <Compile Include="Repository\Sys\LogisticsRepository.cs" />
+    <Compile Include="Repository\Sys\SysareaRepository.cs" />
+    <Compile Include="Repository\Sys\SysbuttonRepository.cs" />
+    <Compile Include="Repository\Sys\SyscodeRepository.cs" />
+    <Compile Include="Repository\Sys\SyscodeTypeRepository.cs" />
+    <Compile Include="Repository\Sys\SyscolListRepository.cs" />
+    <Compile Include="Repository\Sys\SyscolPermissionsRepository.cs" />
+    <Compile Include="Repository\Sys\SyserrorLogRepository.cs" />
+    <Compile Include="Repository\Sys\SysloginHistoryRepository.cs" />
+    <Compile Include="Repository\Sys\SyslogRepository.cs" />
+    <Compile Include="Repository\Sys\SysmenuButtonMapRepository.cs" />
+    <Compile Include="Repository\Sys\SysmenuRepository.cs" />
+    <Compile Include="Repository\Sys\SysroleColumnmapRepository.cs" />
+    <Compile Include="Repository\Sys\SysroleMenuButtonMapRepository.cs" />
+    <Compile Include="Repository\Sys\SysroleMenuMapRepository.cs" />
+    <Compile Include="Repository\Sys\SysroleRepository.cs" />
+    <Compile Include="Repository\Sys\SysuserRepository.cs" />
+    <Compile Include="Repository\Sys\SysuserRoleMapRepository.cs" />
+    <Compile Include="Repository\Sys\SysbillnoRepository.cs" />
+    <Compile Include="Repository\Warehouse\WarehouseAreaMapRepository.cs" />
+    <Compile Include="Repository\Warehouse\WarehouseAreaStructRepository.cs" />
+    <Compile Include="Repository\Warehouse\WarehouseBookingProductsSkuRepository.cs" />
+    <Compile Include="Repository\Warehouse\WarehouseConfigRepository.cs" />
+    <Compile Include="Repository\Warehouse\WarehouseConversionItemLogRepository.cs" />
+    <Compile Include="Repository\Warehouse\WarehouseConversionLogRepository.cs" />
+    <Compile Include="Repository\Warehouse\WarehouseConversionRuleItemRepository.cs" />
+    <Compile Include="Repository\Warehouse\WarehouseConversionRuleRepository.cs" />
+    <Compile Include="Repository\Warehouse\WarehouseExpressPriceRepository.cs" />
+    <Compile Include="Repository\Warehouse\WarehouseExpressRepository.cs" />
+    <Compile Include="Repository\Warehouse\WarehouseInventoryWarnRepository.cs" />
+    <Compile Include="Repository\Warehouse\WarehouseLocationProductsRepository.cs" />
+    <Compile Include="Repository\Warehouse\WarehouseLocationRepository.cs" />
+    <Compile Include="Repository\Warehouse\WarehouseMoveLocationItemRepository.cs" />
+    <Compile Include="Repository\Warehouse\WarehouseMoveLocationRepository.cs" />
+    <Compile Include="Repository\Warehouse\WarehouseOutboundPickItemRepository.cs" />
+    <Compile Include="Repository\Warehouse\WarehouseOutboundPrintBatchRepository.cs" />
+    <Compile Include="Repository\Warehouse\WarehouseOutboundRepository.cs" />
+    <Compile Include="Repository\Warehouse\WarehouseOutInStockItemRepository.cs" />
+    <Compile Include="Repository\Warehouse\WarehouseOutInStockLogRepository.cs" />
+    <Compile Include="Model\Warehouse\WarehouseProductsBatch.cs" />
+    <Compile Include="Repository\Warehouse\WarehouseOutInStockRepository.cs" />
+    <Compile Include="Repository\Warehouse\WarehousePrintTemplateRepository.cs" />
+    <Compile Include="Repository\Warehouse\WarehouseProductsBatchRepository.cs" />
+    <Compile Include="Repository\Warehouse\WarehouseProductsRepository.cs" />
+    <Compile Include="Repository\Warehouse\WarehouseProductsSkuRepository.cs" />
+    <Compile Include="Repository\Warehouse\WarehousePurchaseItemRepository.cs" />
+    <Compile Include="Repository\Warehouse\WarehousePurchasePlanItemRepository.cs" />
+    <Compile Include="Repository\Warehouse\WarehousePurchasePlanRepository.cs" />
+    <Compile Include="Repository\Warehouse\WarehousePurchaseRepository.cs" />
+    <Compile Include="Repository\Warehouse\WarehouseRepository.cs" />
+    <Compile Include="Repository\Warehouse\WarehouseStocktakingItemRepository.cs" />
+    <Compile Include="Repository\Warehouse\WarehouseStocktakingRepository.cs" />
+    <Compile Include="ViewModel\DeliveryOrderInfo.cs" />
+    <Compile Include="ViewModel\DistributionWarehouseWebInfo.cs" />
+    <Compile Include="ViewModel\DistributionWarehouseInfo.cs" />
+    <Compile Include="ViewModel\DownOrderParam.cs" />
+    <Compile Include="ViewModel\ExpressCostList.cs" />
+    <Compile Include="ViewModel\OrdbaseInfoList.cs" />
+    <Compile Include="ViewModel\OrdlogList.cs" />
+    <Compile Include="ViewModel\OrdouterInfoList.cs" />
+    <Compile Include="ViewModel\ExpressOrderInfo.cs" />
+    <Compile Include="ViewModel\OrdaccountsBillList.cs" />
+    <Compile Include="ViewModel\OrdRefundItemList.cs" />
+    <Compile Include="ViewModel\OrdRefundList.cs" />
+    <Compile Include="ViewModel\OrdRefundReceiveInfo.cs" />
+    <Compile Include="ViewModel\OrdRefundWebInfo.cs" />
+    <Compile Include="ViewModel\PickOrderInfo.cs" />
+    <Compile Include="ViewModel\PrintTemplateList.cs" />
+    <Compile Include="ViewModel\SalesList.cs" />
+    <Compile Include="ViewModel\SelectAreaWebInfo.cs" />
+    <Compile Include="ViewModel\ShopAutogenerationWebInfo.cs" />
+    <Compile Include="ViewModel\ShopExpressSetWebInfo.cs" />
+    <Compile Include="ViewModel\StockLogList.cs" />
+    <Compile Include="ViewModel\Stocktakingcs.cs" />
+    <Compile Include="ViewModel\SuppliersSettlementList.cs" />
+    <Compile Include="ViewModel\OrddiscountWebInfo.cs" />
+    <Compile Include="ViewModel\SuppliersShList.cs" />
+    <Compile Include="ViewModel\OrdProductsSkuWebInfo.cs" />
+    <Compile Include="ViewModel\OrdProductsSkuList.cs" />
+    <Compile Include="ViewModel\ProductsInventory.cs" />
+    <Compile Include="ViewModel\ProductsSkuInventory.cs" />
+    <Compile Include="ViewModel\WarehouseAddressWebInfo.cs" />
+    <Compile Include="ViewModel\WarehouseExpressList.cs" />
+    <Compile Include="ViewModel\WarehouseExpressPriceWebInfo.cs" />
+    <Compile Include="ViewModel\WarehouseOutboundPickItemWebInfo.cs" />
+    <Compile Include="ViewModel\WarehouseStocktakingItemList.cs" />
+    <Compile Include="ViewModel\WarehouseOutboundList.cs" />
+    <Compile Include="ViewModel\WarehouseStocktakingList.cs" />
+    <Compile Include="ViewModel\BatchItemList.cs" />
+    <Compile Include="ViewModel\MoveLocationItemWebInfo.cs" />
+    <Compile Include="ViewModel\MoveLocationProductsList.cs" />
+    <Compile Include="ViewModel\OutStockLocationProductsList.cs" />
+    <Compile Include="ViewModel\OutStockLocationProductsWebInfo.cs" />
+    <Compile Include="ViewModel\StockItemList.cs" />
+    <Compile Include="ViewModel\BatchList.cs" />
+    <Compile Include="ViewModel\Storagelist.cs" />
+    <Compile Include="ViewModel\SKUStockNumList.cs" />
+    <Compile Include="ViewModel\SkuSearchList.cs" />
+    <Compile Include="ViewModel\WarehouseMoveLocationItemList.cs" />
+    <Compile Include="ViewModel\WarehouseMoveLocationList.cs" />
+    <Compile Include="ViewModel\WarehouseOutStockItemList.cs" />
+    <Compile Include="ViewModel\StockList.cs" />
+    <Compile Include="ViewModel\WarehouseStocktakingWebInfo.cs" />
+    <Compile Include="ViewModel\SuppliersItemList.cs" />
+    <Compile Include="ViewModel\SuppliersItemWebInfo.cs" />
+    <Compile Include="ViewModel\SuppliersList.cs" />
+    <Compile Include="ViewModel\SuppliersSkuList.cs" />
+    <Compile Include="ViewModel\WarehouseOutInStockList.cs" />
+    <Compile Include="ViewModel\shopStockUpdateMsg.cs" />
+    <Compile Include="ViewModel\ShopStockUpdate.cs" />
+    <Compile Include="ViewModel\DownProductsParam.cs" />
+    <Compile Include="ViewModel\LocationProductsKucInfo.cs" />
+    <Compile Include="ViewModel\ProductsSkuMaterialMapInfo.cs" />
+    <Compile Include="ViewModel\SuppliersItemInfo.cs" />
+    <Compile Include="ViewModel\WarehouseConversionRuleItemInfo.cs" />
+    <Compile Include="ViewModel\shopAllocationList.cs" />
+    <Compile Include="ViewModel\shopComancationList.cs" />
+    <Compile Include="ViewModel\ProductsSkuList.cs" />
+    <Compile Include="ViewModel\WarehouseLocationInfo.cs" />
+    <Compile Include="ViewModel\WarehouseLocationList.cs" />
+    <Compile Include="ViewModel\WarehouseLocationProductsList.cs" />
+    <Compile Include="ViewModel\ProductsSkuInfo.cs" />
+    <Compile Include="ViewModel\WarehouseProductsSkuInfo.cs" />
+    <Compile Include="ViewModel\WarehousePurchaseItemList.cs" />
+    <Compile Include="ViewModel\WarehousePurchaseList.cs" />
+    <Compile Include="ViewModel\WarehousePurchaseItemWebInfo.cs" />
+    <Compile Include="ViewModel\WarehousePurchaseSkuList.cs" />
+    <Compile Include="ViewModel\WarehousePurchasePlanSkuList.cs" />
+    <Compile Include="ViewModel\WarehousePurchasePlanItemWebInfo.cs" />
+    <Compile Include="ViewModel\WarehouseProductsInfo.cs" />
+    <Compile Include="ViewModel\WarehouseProductsSkuKucInfo.cs" />
+    <Compile Include="ViewModel\ShopList.cs" />
+    <Compile Include="ViewModel\WarehouseInfo.cs" />
+    <Compile Include="ViewModel\WarehouseBookingProductsWebInfo.cs" />
+    <Compile Include="ViewModel\WarehouseBookingProductsSkuInfo.cs" />
+    <Compile Include="ViewModel\WarehouseBookingProductsList.cs" />
+    <Compile Include="ViewModel\ProductsSkuKucInfo.cs" />
+    <Compile Include="ViewModel\ShopProductsList.cs" />
+    <Compile Include="ViewModel\WarehouseConversionRuleWebInfo.cs" />
+    <Compile Include="ViewModel\WarehousePurchasePlanItemList.cs" />
+    <Compile Include="ViewModel\WarehousePurchasePlanList.cs" />
+    <Compile Include="ViewModel\WarehouseProductsList.cs" />
+    <Compile Include="ViewModel\ProductsWebInfo.cs" />
+    <Compile Include="ViewModel\ProductsList.cs" />
+    <Compile Include="ViewModel\ProductsInfo.cs" />
+    <Compile Include="ViewModel\SysroleInfo.cs" />
+    <Compile Include="ViewModel\SysuserInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model\readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PaiXie.Core\PaiXie.Core.csproj">
+      <Project>{c91d32d3-2e3a-4dc4-8116-8a93184d79d5}</Project>
+      <Name>PaiXie.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PaiXie.Utils\PaiXie.Utils.csproj">
+      <Project>{1e8745fa-4dba-458f-9509-a67a28b9d5ef}</Project>
+      <Name>PaiXie.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

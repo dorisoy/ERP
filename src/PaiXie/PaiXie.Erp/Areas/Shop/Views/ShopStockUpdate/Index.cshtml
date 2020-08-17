@@ -1,0 +1,60 @@
+﻿@{
+    ViewBag.Title = "下载商品";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+
+}
+<div data-options="region:'north'" style="height:190px">
+    <div class="z-toolbar" style="height:41px">
+        <a href="#" plain="true" class="easyui-linkbutton" icon="icon-reload" title="刷新" id="refresh">刷新</a>
+    </div>
+    <div class="searchpro">
+
+        <div id="toolbar">
+            <label for="txtName">商品编码：</label>
+            <input type="text" id="OuterId" name="OuterId" />
+
+            <label for="txtName">商品货号：</label>
+            <input type="text" id="ProNo" name="ProNo" />
+
+
+            <label for="txtName">商品SKU码：</label>
+            <input type="text" id="ProSKU" name="ProSKU" />
+
+
+
+            <input type="button" class="button" id="btnSerach" value="搜索">
+            <input type="button" class="button-rest" id="btnRest" value="清空条件" onclick="javascript:location.reload();">
+        </div>
+
+
+
+    </div>
+    <div class="searchpro">
+        <label>选择网店：</label><select id="shop" name="shop" class="easyui-combobox" style="width:150px;" data-options="height:30"></select>
+          <input type="button" id="btnupdate" value="更新库存" class="button"> <span id="spanProcessBar"></span>
+        <label id="lblupdatestatus">0/0</label>
+   	</div>
+	<div class="p0lr22" style="line-height:24px; color:#666">
+      提示：更新商品 <label id="lblpronum">0</label> 件，共 <label id="lblskunum">0</label> 条SKU，成功 <label id="lblsuess" style="color:green;">0</label> 条，失败 <label id="lblerror" style="color:red;">0</label> 条。   更新时间：<label id="lbltime"></label> 
+	</div> 
+</div>
+
+
+
+<div data-options="region:'center'" class="p0lr22">
+    <table id="grid" class="easyui-datagrid"
+           data-options="singleSelect:true,collapsible:true,method:'get'"></table>
+</div>
+@section bottom{
+<script src="~/Areas/Shop/ViewJs/ShopStockUpdate.js"></script>
+    <script>
+        $(document).ready(function () {
+            //初始化数据
+            BindDictItem("shop", "Shop");
+            //选中特定值
+            $("#shop").combobox('setValue', '0');
+        });
+    </script>
+}

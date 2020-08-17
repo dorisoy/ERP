@@ -1,0 +1,89 @@
+﻿@using PaiXie.Data
+@using PaiXie.Core
+@{
+    List<WarehouseLocation> warehouseLocationList = ViewBag.WarehouseLocationList as List<WarehouseLocation>;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+    <style>
+        .flw100 {
+            float: left;
+            width: 180px;
+        }
+
+        .tipbox {
+            background: #fffef5;
+            color: #666666;
+            padding: 0px 10px 5px 55px;
+            text-indent: -3em;
+            line-height: 24px;
+            margin: 30px 20px 0px 20px;
+        }
+
+            .tipbox .red {
+                color: #F00;
+            }
+    </style>
+}
+<div style="height:330px; overflow-y:auto; padding-bottom:10px;">
+    <form id="ff" method="post" novalidate>
+        <div class="tipbox">
+            <span class="red">提示：</span>1、为了数据准确，请<span class="red">不要在操作订单发货的同时对发货类型库区做盘点操作</span>。<br>
+            2、请不要在盘点期间，对相关库区做<span class="red">出库、入库、商品转换、移位</span>等操作。
+        </div>
+        <table class="tableinfo">
+            <tr>
+                <th style="width:120px" valign="top">选择盘点库区：</th>
+                <td>
+                    @foreach (var item in warehouseLocationList) {
+                        switch (item.TypeID) {
+                            case (int)LocationType.中转区:
+                                <div class="flw100" style="clear: both;">
+                                    <input type="checkbox" id="pdReservoir_@(item.ID)" name="LocationID" value="@(item.ID)">
+                                    <input type="checkbox" name="LocationName" value="@(item.Name)" style="display:none;">
+                                    <label for="pdreservoir_@(item.ID)">@(item.Name)</label>
+                                </div>
+                                break;
+                            case (int)LocationType.废品区:
+                                <div class="flw100" style="clear: both;">
+                                    <input type="checkbox" id="pdReservoir_@(item.ID)" name="LocationID" value="@(item.ID)">
+                                    <input type="checkbox" name="LocationName" value="@(item.Name)" style="display:none;">
+                                    <label for="pdReservoir_@(item.ID)">@(item.Name)</label>
+                                </div>
+                                break;
+                            case (int)LocationType.发货区:
+                                <div class="flw100">
+                                    <input type="checkbox" id="pdReservoir_@(item.ID)" name="LocationID" value="@(item.ID)">
+                                    <input type="checkbox" name="LocationName" value="@(item.Name)" style="display:none;">
+                                    <label for="pdReservoir_@(item.ID)">@(item.Name)(<span class="red">发货</span>)</label>
+                                </div>
+                                break;
+                            case (int)LocationType.备用区:
+                                <div class="flw100">
+                                    <input type="checkbox" id="pdReservoir_@(item.ID)" name="LocationID" value="@(item.ID)">
+                                    <input type="checkbox" name="LocationName" value="@(item.Name)" style="display:none;">
+                                    <label for="pdReservoir_@(item.ID)">@(item.Name)(<span class="red">备用</span>)</label>
+                                </div>
+                                break;
+                        }
+                    }
+                </td>
+            </tr>
+            <tr>
+                <th style="width:120px" valign="top">盘点备注：</th>
+                <td><input type="text" class="easyui-textbox" name="Remark" value="" data-options="height:30,width:250" validtype="length[0,30]"> <span class="f12c">30字以内</span></td>
+            </tr>
+            <tr>
+                <th></th>
+                <td>
+                    <a href="javascript:void(0)" class="button-oky" id="btnSave" iconcls="icon-ok">添加</a>
+                    <a href="javascript:void(0)" class="button-cancel" id="btnCancel" iconcls="icon-ok">取消</a>
+                </td>
+
+            </tr>
+        </table>
+    </form>
+</div>
+@section bottom{
+    <script src="~/Areas/Warehouse/ViewJs/AddStocktaking.js"></script>
+}

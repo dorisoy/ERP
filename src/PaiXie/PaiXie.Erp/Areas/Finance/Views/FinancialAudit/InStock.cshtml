@@ -1,0 +1,225 @@
+﻿@using PaiXie.Data
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+}
+<div class="easyui-layout" data-options="fit:true">
+    <input type="hidden" value="@ViewBag.BillNo" name="BillNo" id="BillNo" />
+    <input type="hidden" value="@ViewBag.OutInStockID" name="OutInStockID" id="hdnOutInStockID" />
+    <div data-options="region:'north',height:148" id="topdiv">
+        <div class="toolbar" id="toolbar">
+            <a href="/Finance/FinancialAudit/Index" class="back" id="back"><span></span>返回</a>
+        </div>
+        <input type="hidden" id="refreshPermit" value="0" onchange="mytextare();">
+        <div class="searchpro" id="searchpro">
+
+            <input type="hidden" value="0" id="ID" name="ID" />
+            <input type="hidden" value="0" id="status" name="status" />
+            <select id="keyWordType" name="keyWordType" class="easyui-combobox" data-options="height:30,width:100,editable:false">
+                <option value="">关键字类型</option>
+                <option value="商品编码">商品编码</option>
+                <option value="商品名称">商品名称</option>
+                <option value="库位编码">库位编码</option>            
+                <option value="商品SKU码">商品SKU码</option>
+            </select>
+            <input type="text" id="txtKeyWord" value="" style="width:150px;">
+
+               <input type="button" id="btnSearch" value="搜索" class="button">
+            <input type="reset" id="btnReset" value="清空条件" class="button-rest">
+
+        </div>
+        <div class="reservoirifo p0lr22">
+            <span>入库单号: @ViewBag.BillNo</span>
+            <span>   采购单号: @ViewBag.SourceNo </span>
+            <span >入库数量: @(ViewBag.ProductsNum == null ? 0 : ViewBag.ProductsNum)</span>
+            <span id="rksl">入库总额:￥@(ViewBag.Price)元</span>
+            
+
+
+        </div>
+    </div>
+    <div data-options="region:'center',border:false" class="p0lr22">
+        <table id="grid" class="easyui-datagrid" title="" data-options="singleSelect:false,collapsible:true,method:'get'"></table>
+    </div>
+</div>
+@section bottom{
+    <script>
+    var gridID = "grid";
+    var status = 1;
+    var oldvalue = 0;
+    function mytextare() {
+        var newValue = $('#refreshPermit').val();
+        if (newValue == oldvalue) {
+            return;
+        } else {
+            BindSerarchLickEvent(1);
+            oldvalue = newValue;
+        }
+    };
+    function updateActions(index) {
+
+        $('#' + gridID).datagrid('updateRow', {
+            index: index,
+            row: {}
+        });
+    }
+    function editrow(index) {
+        $('#grid').datagrid('beginEdit', index);
+    }
+    function saverow(index) {
+        $('#' + gridID).datagrid('endEdit', index);
+    }
+        //搜索
+    $('#btnSearch').click(function () {
+        BindSerarchLickEvent(1);
+       });
+    //初始化
+    $(function () {
+        initTable('', 1);
+        $('.datagrid-header-inner .datagrid-header-check input[type="checkbox"]').click(function () {
+            if ($(this).attr('checked') == 'checked' || $(this).attr('checked') == true) {
+                $('#del').removeClass('unclick');
+            } else {
+                $('#del').addClass('unclick');
+            }
+        });
+        $('#btnReset').click(function () {
+            window.location.reload(true);
+        });
+        @{
+            if (ViewBag.IsAuditPrice==1) {
+              @Html.Raw("$(\"#grid\").datagrid('hideColumn', 'action');")
+          
+            }
+        }
+
+    });
+     //加载列表
+    function initTable(queryData, pageNumber) {
+        $('#' + gridID).datagrid({
+            url: '/Warehouse/WarehouseInStock/InStockProsearch?BillNo=' + $('#BillNo').val() + '&ram=' + Math.random(),
+            height: '100%',
+            width: '100%',
+            nowrap: false,
+            autoRowHeight: false,
+            queryParams: queryData,  //异步查询的参数
+            pageNumber: pageNumber,
+            striped: true,
+            collapsible: true,
+            pagination: true,
+            fitColumns: true,
+            fit: true, //datagrid自适应宽度
+            fitColumn: false, //列自适应宽度
+            border: false,
+            pageSize: 15,
+            pageList: [15, 20, 30],
+            rownumbers: false,
+            remoteSort: false,      
+            columns: [[
+                //{ field: 'ck', width: 52, checkbox: true },   //选择
+                { title: '', field: 'ID', hidden: true },
+                { title: '商品编码', field: 'ProductsCode', width: 150, align: 'center', sortable: true },
+                { title: '商品名称', field: 'ProductsName', width: 350, align: 'center', sortable: true },
+                { title: '属性', field: 'ProductsSkuSaleprop', width: 150, align: 'center', sortable: true },
+                { title: 'SKU码', field: 'ProductsSkuCode', width: 150, align: 'center', sortable: true },
+                { title: '采购数量', field: 'PurchaseNum', width: 150, align: 'center', sortable: true },
+                { title: '已入数量', field: 'AlreadyNum', width: 150, align: 'center', sortable: true },
+               {  title: '生产日期', field: 'ProductionDate', width: 150, align: 'center',  sortable: false},
+                {  title: ' 库位编码 ', field: 'Locationcode', width: 150, align: 'center',      sortable: false  },
+               {  title: '入库数量', field: 'ProductsNum', width: 150, align: 'center',  sortable: true  },
+                  {
+                      title: '采购价格', field: 'CostPrice', width: 150, align: 'center',
+                      editor: {
+                          type: 'numberbox',
+                          options: {
+                              height: 30,
+                              precision: 3 //小数点位数
+                          }
+                      },
+                      sortable: true
+                  },
+
+                {
+                    title: '操作', field: 'action', width: 150, align: 'center',
+                    formatter: function (value, row, index) {
+
+                        if (row.editing) {
+                            var s = '<a href="#" onclick="saverow(' + index + ')">保存</a> ';
+                            return s;
+                        } else {
+                            var e = '<a href="#" onclick="editrow(' + index + ')">编辑</a> ';
+                            return e;
+                        }
+
+
+                    },
+                    sortable: true
+                }
+            ]],
+            onBeforeEdit: function (index, row) {
+                row.editing = true;
+                updateActions(index);
+            },
+            onAfterEdit: function (index, row) {
+                row.editing = false;
+                $.ajax({
+                    url: "/Finance/FinancialAudit/UpdatePrice?ram=" + Math.random(),
+                    type: "GET",
+                    data: row,
+                    async:false,
+                    cache: false,
+                    success: function (r) {
+                        var map = $.parseJSON(r);
+                        if (map.result == 1) {
+                            $('#btnSearch').click();
+
+                            $.ajax({
+                                url: "/Finance/FinancialAudit/GetTotalPrice?ram=" + Math.random() + "&BillNo=" + $('#BillNo').val(),
+                                type: "GET",
+                                cache: false,
+                                success: function (r) {
+                                  
+                                    $("#rksl").text("入库总额:￥" + r+"元");
+                                },
+                                error: function () {
+                                }
+                            });
+
+
+
+                        }
+                        else
+                        {
+                            $.MsgBox.Alert("提示", map.message);
+                            $('#btnSearch').click();
+                        }
+                         
+                    },
+                    error: function () {
+
+                        $.MsgBox.Alert("提示", "操作失败！");
+                    }
+                });
+                updateActions(index);
+            },
+            onCancelEdit: function (index, row) {
+                row.editing = false;
+                updateActions(index);
+            }
+        });
+    }
+
+    //绑定搜索按钮的的点击事件
+    function BindSerarchLickEvent(pageNumber) {
+        //得到用户输入的参数
+        var queryData = {
+            keyWordType: $("#keyWordType").combobox('getValue'),
+            keyWord: $("#txtKeyWord").val()
+        }
+        //将值传递给
+        initTable(queryData, pageNumber);
+    }
+    </script>
+
+}

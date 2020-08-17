@@ -1,0 +1,168 @@
+﻿@{
+    ViewBag.Title = "出库单详情";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+    <style>
+        .buttonList {
+            margin-top:5px;
+            height:30px;
+            line-height:30px;
+        }
+        .button {
+            border: 0px;
+            background: #436fac;
+            color: #fff;
+            height: 30px;
+            width: 90px;
+            cursor: pointer;
+        }
+        .tbOutbound, .tbPickItem, .tbOutboundLog {
+            margin-top:5px;
+            width: 100%;
+            border-top: 1px solid #ccc;
+            border-left: 1px solid #ccc;
+        }
+        .tbOutbound tr.title, .tbPickItem tr.title, .tbOutboundLog tr.title {
+            text-align: left;
+            font-weight: bold;
+            background-color: #e4e4e4; /*436fac*/
+        }
+        .tbOutbound td {
+            height: 25px;
+            line-height: 25px;
+            padding: 5px;
+            border-right: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            text-align: left;
+        }
+        .tbPickItem td, .tbOutboundLog td {
+            height: 25px;
+            line-height: 25px;
+            padding: 5px;
+            border-right: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            text-align: center;
+        }
+        .tbOutbound td a, .tbPickItem td a .tbOutboundLog td a {
+            text-decoration: none;
+            color: #1d72df;
+        }
+        .tbOutbound td a:hover, .tbPickItem td a:hover, .tbOutboundLog td a:hover {
+            color: #fc8b00;
+        }
+        .tbOutbound td.title {
+            background-color: #f2f2f2;
+            text-align: right;
+        }
+        .tbPickItem td.title, .tbOutboundLog td.title {
+            background-color: #f2f2f2;
+            text-align: center;
+        }
+    </style>
+}
+<div data-options="region:'center',border:false" class="p0lr22">
+    <div id="tt" class="easyui-tabs" data-options="fit:true,border:false,plain:true" style="margin-top:10px;">
+        <input type="hidden" id="hdnID" name="ID" value="0" />
+        <input type="hidden" id="hdnBillNo" name="BillNo" value="@ViewBag.BillNo" />
+        <div title="基本信息">
+            <div class="buttonList">
+                <input type="button" id="btnHang" name="btnHang" class="button" value="挂起出库单" />
+                <input type="button" id="btnCancelHang" name="btnCancelHang" class="button" value="取消挂起" />
+                @*&nbsp;<input type="button" id="btnCancel" name="btnCancel" class="button" value="取消出库单" />*@
+                <a href="javascript:void(0);" id="refreshCurrentPage" style="display:none;"><span></span>刷新当前页</a>
+            </div>
+            <table id="tbOutbound" class="tbOutbound" cellpadding="0" cellspacing="0" border="0">
+                <tr class="title">
+                    <td colspan="7">出库单信息</td>
+                </tr>
+                <tr>
+                    <td class="title">出库单号</td>
+                    <td colspan="2"><span id="spanBillNo"></span></td>
+                    <td class="title">订单编号</td>
+                    <td><span id="spanErpOrderCode"></span></td>
+                    <td class="title">外部订单号</td>
+                    <td><span id="spanOutOrderCode"></span></td>
+                </tr>
+                <tr>
+                    <td class="title" width="10%">出库单状态</td>
+                    <td width="4%" style="border-right: none;"><span id="spanStatusName"></span></td>
+                    <td width="22%"><span id="spanIsHang"></span></td>
+                    <td class="title" width="10%">是否待采</td>
+                    <td width="20%"><span id="spanIsWaitPurchase"></span></td>
+                    <td class="title" width="10%">创建时间</td>
+                    <td width="25%"><span id="spanCreateDate"></span></td>
+                </tr>
+                <tr class="title">
+                    <td colspan="7">发票信息</td>
+                </tr>
+                <tr>
+                    <td class="title">是否开发票</td>
+                    <td colspan="2"><span id="spanIsNeedInvoice"></span></td>
+                    <td class="title">发票信息</td>
+                    <td colspan="3"><span id="spanInvoiceInfo"></span></td>
+                </tr>
+                <tr class="title">
+                    <td colspan="7">发货信息</td>
+                </tr>
+                <tr>
+                    <td class="title">收件人姓名</td>
+                    <td colspan="2"><span id="spanBuyName"></span></td>
+                    <td class="title">收件人电话</td>
+                    <td><span id="spanBuyTel"></span></td>
+                    <td class="title">收件人手机</td>
+                    <td><span id="spanBuyMtel"></span></td>
+                </tr>
+                <tr>
+                    <td class="title">收件人地址</td>
+                    <td colspan="2"><span id="spanBuyAddr"></span></td>
+                    <td class="title">快递公司</td>
+                    <td><span id="spanExpressName"></span></td>
+                    <td class="title">运单号</td>
+                    <td><span id="spanWaybillNo"></span></td>
+                </tr>
+                <tr>
+                    <td class="title">快递费用</td>
+                    <td colspan="2"><span id="spanFreight"></span></td>
+                    <td class="title">发货时间</td>
+                    <td><span id="spanDeliveryDate"></span></td>
+                    <td class="title">要求到货时间</td>
+                    <td><span id="spanExpectedDeliDate"></span></td>
+                </tr>
+            </table>
+            <table id="tbPickItem" class="tbPickItem" cellpadding="0" cellspacing="0" border="0" style="margin-top:5px;">
+                <tr class="title">
+                    <td colspan="10" style="text-align:left;">出库商品</td>
+                </tr>
+                <tr class="secondTr">
+                    <td width="10%" class="title">商品编码</td>
+                    <td width="16%" class="title">商品名称</td>
+                    <td width="12%" class="title">商品属性</td>
+                    <td width="12%" class="title">商品SKU码</td>
+                    <td width="8%" class="title">单位</td>
+                    <td width="8%" class="title">数量</td>
+                    <td width="8%" class="title">重量</td>
+                    <td width="13%" class="title">库位编码</td>
+                    <td width="13%" class="title">批次号</td>
+                    @*<td width="6%" class="title">操作</td>*@
+                </tr>
+            </table>
+        </div>
+        <div title="出库单日志">
+            <table id="tbOutboundLog" class="tbOutboundLog" cellpadding="0" cellspacing="0" border="0">
+                <tr class="title">
+                    <td colspan="3" style="text-align:left;">出库单日志</td>
+                </tr>
+                <tr class="secondTr">
+                    <td width="20%" class="title">时间</td>
+                    <td width="60%" class="title">日志内容</td>
+                    <td width="20%" class="title">操作人</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+@section bottom{
+    <script src="~/Areas/Warehouse/ViewJs/OutboundCommon.js"></script>
+    <script src="~/Areas/Warehouse/ViewJs/OutboundDetails.js"></script>
+}

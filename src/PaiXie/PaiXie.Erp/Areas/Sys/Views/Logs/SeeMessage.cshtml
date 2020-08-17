@@ -1,0 +1,49 @@
+﻿@using PaiXie.Data
+@{
+  
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+
+}
+
+<div class="easyui-layout" data-options="fit:true">
+    <div data-options="region:'center',border:false" class="p0lr22">
+
+        <div class="tagcont">
+            <table>
+                <tr>
+                    <td colspan="3" align="left">操作前：</td>
+                </tr>
+                <tr>
+                    <td width="30"></td>
+                    <td width="440">
+                        <div style="width: 440px;   word-wrap: break-word; word-break: break-all; display: block; ">
+
+                            @ViewBag.OldMessage
+                        </div>
+
+                    </td>
+                    <td width="30"></td>
+                </tr>
+                <tr>
+                    <td colspan="3" align="left">操作后：</td>
+                </tr>
+                <tr>
+                    <td width="30"></td>
+                    <td width="440">
+                        <div style="width: 440px;   word-wrap: break-word; word-break: break-all; display: block; ">
+
+                            @ViewBag.Message
+                        </div>
+
+                    </td>
+                    <td width="30"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+            </div>
+            @section bottom{
+
+            }

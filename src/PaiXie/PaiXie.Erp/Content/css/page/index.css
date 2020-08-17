@@ -1,0 +1,20 @@
+﻿body{overflow-y:hidden;}
+#west{border-width:0 1px;}
+.tabs-tool {height:auto !important;}
+.tabs-tool{border-right:0 !important;}
+.noscript {position:absolute;z-index:100000;height:2046px;top:0px;left:0px;width:100%;background:white;text-align:center;}
+.head-north {overflow: hidden; height: 71px;background: #519bbd url(/Content/images/headbg.png) repeat-x; line-height: 64px;color: #fff; font-family: Verdana, 微软雅黑,黑体}
+.head-south {height: 30px; background: #D2E0F2;}
+.head-left {background:url(/Content/images/logo/logo48.png) no-repeat left; margin-left:10px; width:310px; height:64px;float:left; padding-left:70px; font-size:30px; font-weight:bolder; font-family:'Microsoft YaHei' !important;}
+.head-right{float:right; padding-right:10px;}
+.head-right a{color:white;}
+.head-right b{font-size:12px; font-family:Verdana,宋体,Tahoma;}
+.ul_list,.accordion ul{list-style-type:none;margin:0px; padding:10px;}
+.ul_list li,.accordion ul li{ padding:0px;margin-left:0px;}
+.ul_list li a,.accordion ul li a{line-height:24px; cursor:pointer;}
+.ul_list li div,.accordion ul li div{margin:2px 0px;padding-left:10px;padding-top:2px; border:1px solid #fff;}
+.ul_list li.hover,.accordion ul li div.hover{border:1px dashed #D69C00; background:#FFE88C;cursor:pointer;}
+.accordion ul li div.hover a{color:#D16C00; text-decoration:none;}
+.ul_list li.selected,.accordion ul li div.selected{border:1px solid #D69C00; background:#FFE88C;cursor:default;}
+.ul_list li.selected a, a.accordion ul li div.selected a{color:#D16C00; font-weight:bold;}
+.ul_list li{ border:1px solid #fff; margin-bottom:1px;}

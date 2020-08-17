@@ -1,0 +1,27 @@
+2015/10/28 14:02:29
+Duplicate entry '001-00110' for key 'uni_sys_roleMenuMap_RoleCode_MenuCode'----MySql.Data.MySqlClient.MySqlException (0x80004005): Duplicate entry '001-00110' for key 'uni_sys_roleMenuMap_RoleCode_MenuCode'
+   在 FluentData.ExecuteQueryHandler.HandleQueryException(Exception exception)
+   在 FluentData.ExecuteQueryHandler.ExecuteQuery(Boolean useReader, Action action)
+   在 FluentData.MySqlProvider.ExecuteReturnLastId[T](IDbCommand command, String identityColumnName)
+   在 FluentData.DbCommand.ExecuteReturnLastId[T](String identityColumnName)
+   在 FluentData.BaseInsertBuilder.ExecuteReturnLastId[T](String identityColumnName)
+   在 PaiXie.Data.SysroleMenuMapRepository.Add(SysroleMenuMap entity) 位置 e:\001\src\PaiXie\PaiXie.Data\Repository\sys\SysroleMenuMapRepository.cs:行号 22
+   在 PaiXie.Service.SysroleMenuMapService.Add(SysroleMenuMap entity) 位置 e:\001\src\PaiXie\PaiXie.Service\sys\SysroleMenuMapService.cs:行号 18
+   在 PaiXie.Erp.Areas.Sys.RoleController.SetRoleMenu(String mids, String rcode) 位置 e:\001\src\PaiXie\PaiXie.Erp\Areas\Sys\Controllers\RoleController.cs:行号 116
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+------------------------------------------------------------------

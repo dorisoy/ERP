@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Temp_List>
+  <Temp TypeID="0" SecondPageOffset="-20.0" PrintProField="ProductsCode,ProductsSkuSaleprop,ProductsNum,SellingPrice" PrintProFieldWidth="25%,35%,20%,20%" Width="210.0" Height="148.0">
+    <![CDATA[ 
+    LODOP.ADD_PRINT_TABLE("43.1mm","10.11mm","184.89mm","80.41mm","<style type=\"text/css\">.printTable{ border-left:solid 0px #333333; border-bottom:solid 1px #333333;} .printTable td{ border-top:solid 1px #333333; border-right:solid 0px #333333; text-align:center; padding:3px; font-size:13px;}</style>$商品明细打印区域$SecondPageOffset");LODOP.SET_PRINT_STYLEA(0,"ItemName","ProList$序号");LODOP.ADD_PRINT_TEXT("4mm","79.61mm","65.09mm","6.59mm","发货单 - $序号");LODOP.SET_PRINT_STYLEA(0,"Bold",1);LODOP.SET_PRINT_STYLEA(0,"ItemType",1);LODOP.SET_PRINT_STYLEA(0,"LinkedItem","ProList$序号");LODOP.ADD_PRINT_TEXT("11.91mm","11.4mm","56.62mm","6.59mm","发货日期：$发货日期");LODOP.ADD_PRINT_TEXT("11.59mm","67.97mm","65.09mm","6.59mm","店铺名称：$店铺名称");LODOP.ADD_PRINT_TEXT("11.11mm","133.09mm","74.88mm","13.81mm","外部订单号：$外部订单号");LODOP.SET_PRINT_STYLEA(0,"ItemType",1);LODOP.SET_PRINT_STYLEA(0,"LinkedItem","ProList$序号");LODOP.ADD_PRINT_TEXT("17.2mm","11.4mm","56.62mm","6.59mm","运单号：$运单号");LODOP.ADD_PRINT_TEXT("17.49mm","67.97mm","65.09mm","6.59mm","出库单号：$出库单号");LODOP.ADD_PRINT_TEXT("23.49mm","11.4mm","56.62mm","6.59mm","买家会员名：$买家会员名");LODOP.ADD_PRINT_TEXT("24.1mm","133.09mm","74.88mm","6.59mm","收件人电话：$收件人电话");LODOP.ADD_PRINT_TEXT("23.81mm","67.97mm","65.09mm","6.59mm","收件人姓名：$收件人姓名");LODOP.ADD_PRINT_TEXT("29.9mm","11.4mm","196.59mm","6.59mm","卖家备注：$卖家备注");LODOP.ADD_PRINT_TEXT("36.01mm","11.4mm","196.59mm","6.59mm","买家留言：$买家留言")
+    ]]>
+  </Temp>
+
+  <Temp TypeID="1" SecondPageOffset="0.0" PrintProField="ProductsCode,ProductsSkuSaleprop,ProductsNum,LocationCode" PrintProFieldWidth="20%,25%,15%,40%" Width="210.0" Height="148.0">
+    <![CDATA[ 
+    LODOP.SET_PRINT_STYLE("FontSize",12);LODOP.ADD_PRINT_TEXT(26,356,62,25,"拣货单");LODOP.SET_PRINT_STYLEA(0,"Bold",1);LODOP.SET_PRINT_STYLEA(0,"ItemType",1);LODOP.ADD_PRINT_TEXT("18.49mm","10.11mm","72.95mm","6.01mm","打印批次：$打印批次");LODOP.SET_PRINT_STYLEA(0,"ItemType",1);LODOP.ADD_PRINT_TEXT("18.49mm","84.38mm","51.25mm","6.01mm","出库单数量：$出库单数量");LODOP.SET_PRINT_STYLEA(0,"ItemType",1);LODOP.ADD_PRINT_TEXT("18.49mm","146.82mm","46.49mm","6.01mm","商品数量：$商品数量");LODOP.SET_PRINT_STYLEA(0,"ItemType",1);LODOP.ADD_PRINT_TABLE("33.36mm","10.11mm","184.89mm","84.4mm","<style type=\"text/css\">.printTable{ border-left:solid 0px #333333; border-bottom:solid 1px #333333;} .printTable td{ border-top:solid 1px #333333; border-right:solid 0px #333333; text-align:center; padding:3px; font-size:13px;}</style>$商品明细打印区域$SecondPageOffset");LODOP.SET_PRINT_STYLEA(0,"ItemName","ProList$序号");LODOP.SET_PRINT_STYLEA(1,"LinkedItem","ProList$序号");LODOP.SET_PRINT_STYLEA(2,"LinkedItem","ProList$序号");LODOP.SET_PRINT_STYLEA(3,"LinkedItem","ProList$序号");LODOP.SET_PRINT_STYLEA(4,"LinkedItem","ProList$序号")
+    ]]>
+  </Temp>
+
+</Temp_List>

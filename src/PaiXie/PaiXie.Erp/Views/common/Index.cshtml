@@ -1,0 +1,105 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Icon图标列表</title>
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Content/jquery-easyui/jquery.easyui.min.js"></script>
+    <link href="~/Content/jquery-easyui/themes/gray/easyui.css" rel="stylesheet" />
+    <link href="~/Content/jquery-easyui/themes/icon.css" rel="stylesheet" />
+</head>
+<body>
+        <div id="contents">
+            <a href="javascript:void(0)" class="easyui-linkbutton" onclick="SelectItem(this, 'icon-add')" id="a1" data-options="plain:true,iconCls:'icon-add',size:'large',toggle:true"> </a>
+            <a href="javascript:void(0)" class="easyui-linkbutton" onclick="SelectItem(this, 'icon-edit')" id="a1" data-options="plain:true,iconCls:'icon-edit',size:'large',toggle:true"> </a>
+            <a href="javascript:void(0)" class="easyui-linkbutton" onclick="SelectItem(this, 'icon-clear')" id="a1" data-options="plain:true,iconCls:'icon-clear',size:'large',toggle:true"> </a>
+
+
+            <a href="javascript:void(0)" class="easyui-linkbutton" onclick="SelectItem(this, 'icon-remove')" id="a1" data-options="plain:true,iconCls:'icon-remove',size:'large',toggle:true"> </a>
+            <a href="javascript:void(0)" class="easyui-linkbutton" onclick="SelectItem(this, 'icon-save')" id="a1" data-options="plain:true,iconCls:'icon-save',size:'large',toggle:true"> </a>
+            <a href="javascript:void(0)" class="easyui-linkbutton" onclick="SelectItem(this, 'icon-cut')" id="a1" data-options="plain:true,iconCls:'icon-cut',size:'large',toggle:true"> </a>
+
+
+
+
+            <a href="javascript:void(0)" class="easyui-linkbutton" onclick="SelectItem(this, 'icon-ok')" id="a1" data-options="plain:true,iconCls:'icon-ok',size:'large',toggle:true"> </a>
+            <a href="javascript:void(0)" class="easyui-linkbutton" onclick="SelectItem(this, 'icon-no')" id="a1" data-options="plain:true,iconCls:'icon-no',size:'large',toggle:true"> </a>
+            <a href="javascript:void(0)" class="easyui-linkbutton" onclick="SelectItem(this, 'icon-cancel')" id="a1" data-options="plain:true,iconCls:'icon-cancel',size:'large',toggle:true"> </a>
+
+
+
+
+            <a href="javascript:void(0)" class="easyui-linkbutton" onclick="SelectItem(this, 'icon-reload')" id="a1" data-options="plain:true,iconCls:'icon-reload',size:'large',toggle:true"> </a>
+            <a href="javascript:void(0)" class="easyui-linkbutton" onclick="SelectItem(this, 'icon-search')" id="a1" data-options="plain:true,iconCls:'icon-search',size:'large',toggle:true"> </a>
+            <a href="javascript:void(0)" class="easyui-linkbutton" onclick="SelectItem(this, 'icon-print')" id="a1" data-options="plain:true,iconCls:'icon-print',size:'large',toggle:true"> </a>
+
+
+
+
+
+
+
+
+
+
+
+
+            <a href="javascript:void(0)" class="easyui-linkbutton" onclick="SelectItem(this, 'icon-help')" id="a1" data-options="plain:true,iconCls:'icon-help',size:'large',toggle:true"> </a>
+            <a href="javascript:void(0)" class="easyui-linkbutton" onclick="SelectItem(this, 'icon-undo')" id="b1" data-options="plain:true,iconCls:'icon-undo',size:'large',toggle:true"> </a>
+            <a href="javascript:void(0)" class="easyui-linkbutton" onclick="SelectItem(this, 'icon-redo')" id="c1" data-options="plain:true,iconCls:'icon-redo',size:'large',toggle:true"> </a>
+
+
+
+            <a href="javascript:void(0)" class="easyui-linkbutton" onclick="SelectItem(this, 'icon-back')" id="a1" data-options="plain:true,iconCls:'icon-back',size:'large',toggle:true"> </a>
+            <a href="javascript:void(0)" class="easyui-linkbutton" onclick="SelectItem(this, 'icon-sum')" id="b1" data-options="plain:true,iconCls:'icon-sum',size:'large',toggle:true"> </a>
+            <a href="javascript:void(0)" class="easyui-linkbutton" onclick="SelectItem(this, 'icon-tip')" id="c1" data-options="plain:true,iconCls:'icon-tip',size:'large',toggle:true"> </a>
+
+
+
+
+
+
+            <a href="javascript:void(0)" class="easyui-linkbutton" onclick="SelectItem(this, 'icon-filter')" id="a1" data-options="plain:true,iconCls:'icon-filter',size:'large',toggle:true"> </a>
+            <a href="javascript:void(0)" class="easyui-linkbutton" onclick="SelectItem(this, 'icon-man')" id="b1" data-options="plain:true,iconCls:'icon-man',size:'large',toggle:true"> </a>
+            <a href="javascript:void(0)" class="easyui-linkbutton" onclick="SelectItem(this, 'icon-lock')" id="c1" data-options="plain:true,iconCls:'icon-lock',size:'large',toggle:true"> </a>
+
+
+
+
+
+            <a href="javascript:void(0)" class="easyui-linkbutton" onclick="SelectItem(this, 'icon-more')" id="a1" data-options="plain:true,iconCls:'icon-more',size:'large',toggle:true"> </a>
+            <a href="javascript:void(0)" class="easyui-linkbutton" onclick="SelectItem(this, 'icon-mini-add')" id="b1" data-options="plain:true,iconCls:'icon-mini-add',size:'large',toggle:true"> </a>
+            <a href="javascript:void(0)" class="easyui-linkbutton" onclick="SelectItem(this, 'icon-mini-edit')" id="c1" data-options="plain:true,iconCls:'icon-mini-edit',size:'large',toggle:true"> </a>
+
+
+
+
+
+
+
+            <a href="javascript:void(0)" class="easyui-linkbutton" onclick="SelectItem(this, 'icon-mini-refresh')" id="a1" data-options="plain:true,iconCls:'icon-mini-refresh',size:'large',toggle:true"> </a>
+            <a href="javascript:void(0)" class="easyui-linkbutton" onclick="SelectItem(this, 'icon-large-picture')" id="b1" data-options="plain:true,iconCls:'icon-large-picture',size:'large',toggle:true"> </a>
+            <a href="javascript:void(0)" class="easyui-linkbutton" onclick="SelectItem(this, 'icon-large-clipart')" id="c1" data-options="plain:true,iconCls:'icon-large-clipart',size:'large',toggle:true"> </a>
+            <a href="javascript:void(0)" class="easyui-linkbutton" onclick="SelectItem(this, 'icon-large-shapes')" id="a1" data-options="plain:true,iconCls:'icon-large-shapes',size:'large',toggle:true"> </a>
+            <a href="javascript:void(0)" class="easyui-linkbutton" onclick="SelectItem(this, 'icon-large-smartart')" id="b1" data-options="plain:true,iconCls:'icon-large-smartart',size:'large',toggle:true"> </a>
+            <a href="javascript:void(0)" class="easyui-linkbutton" onclick="SelectItem(this, 'icon-large-chart')" id="c1" data-options="plain:true,iconCls:'icon-large-chart',size:'large',toggle:true"> </a>
+
+
+
+
+
+        </div>
+    <script>
+        function SelectItem(a, b) {
+            var strhtml = "  <a href=\"javascript:void(0)\" class=\"easyui-linkbutton l-btn l-btn-large l-btn-plain l-btn-selected l-btn-plain-selected\" data-options=\"plain:true,iconCls:'"+b+"',size:'large',toggle:true\" group=\"\" id=\"\"><span class=\"l-btn-left l-btn-icon-left\"><span class=\"l-btn-text l-btn-empty\">&nbsp;</span><span class=\"l-btn-icon "+b+"\">&nbsp;</span></span></a>";
+            parent.$("#frmWorkArea13").contents().find('#iconname').html(strhtml);
+            //parent.$("#frmWorkArea13").contents().find.$('#iconid').val(b);
+           parent.$('#win').window('close');
+            
+        }
+    </script>
+</body>
+</html>

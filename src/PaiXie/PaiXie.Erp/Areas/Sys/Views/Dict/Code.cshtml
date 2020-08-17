@@ -1,0 +1,84 @@
+﻿@using PaiXie.Data
+@{
+    var Syscode = ViewBag.Syscode as Syscode;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    @section head{
+
+    }
+
+    <div  style="padding:20px" >     
+        <form id="ff" method="post" novalidate="novalidate">
+
+         
+            <input type="hidden" value="@ViewBag.codetype" id="CodeType" name="CodeType" />
+            <input type="hidden" value="@ViewBag.pcode" id="ParentCode" name="ParentCode" />
+
+            <input type="hidden" value="@Syscode.ID" id="ID" name="ID" />
+         
+                <table id="tblAdd" class="tableinfo">
+
+                    <tr>
+                        <th><label for="Name">项目值：</label></th>
+                        <td>
+                            <input style="width:120px;" value="@Syscode.Text" class="easyui-validatebox" type="text" id="Text" name="Text" data-options="required:true,validType:'length[1,10]'" /> 10个字以内
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <th><label for="Code">代码：</label></th>
+                        <td>
+                            <input style="width:120px;"
+
+                                  
+                                       @if (Syscode.ID > 0) {
+                                            @("readonly='readonly'") 
+                                       }
+                                     
+                                  
+                                 
+                                   value="@Syscode.Code" class="easyui-validatebox" type="text" id="Code" name="Code" data-options="required:true,validType:['length[1,5]','code']" />
+                            5位英文或数字<label id="lblcode" style="color:red;"></label>
+                        </td>
+                        </tr>
+
+
+                
+
+
+                    <tr>
+                        <th><label for="IsEnable">可用：</label></th>
+                        <td>
+                            <input type="checkbox"  @if (Syscode.ID == 0 || Syscode.IsEnable == 1) {
+                                                     string c=   "checked";  
+                                                         @(c) 
+                                                    }
+                                    value="@(Syscode.ID == 0? 1: Syscode.IsEnable)" 
+                                   
+                                   id="IsEnable" name="IsEnable" />
+                              </td>
+                    
+                    </tr>
+
+                    <tr>
+                        <th valign="top"><label for="Description">备注：</label></th>
+                        <td colspan="3">
+                            <textarea style="height:50px; width:400px;" id="Description" name="Description">@Syscode.Description</textarea>
+                        </td>
+                    </tr>
+                </table>
+        
+
+            <br />
+			<div class="textcenter">
+				<a href="javascript:void(0)" class="button-oky" id="btnSave" iconcls="icon-ok">确定</a>
+				<a href="javascript:void(0)" class="button-cancel" iconcls="icon-cancel" id="btnClose">取消</a>
+			</div>
+        </form>
+    </div>       
+@section bottom{
+ 
+<script src="~/Areas/Sys/ViewJs/Editcode.js"></script>
+}
+   

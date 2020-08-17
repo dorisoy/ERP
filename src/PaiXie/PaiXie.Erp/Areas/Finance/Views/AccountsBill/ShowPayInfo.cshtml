@@ -1,0 +1,68 @@
+﻿@using PaiXie.Data
+@{
+    var accountBill = ViewBag.AccountBill as OrdaccountsBill;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+}
+<form id="ff" method="post" novalidate="novalidate">
+    <table class="tableinfo" style=" margin-top:0px">
+        <tr>
+            <td align="right" style="width:100px">
+                付款金额：
+            </td>
+            <td>
+                <span class="red">@(accountBill.Amount)</span>
+            </td>
+        </tr>
+        <tr>
+            <td align="right" style="width:100px">
+                付款方式：
+            </td>
+            <td>
+                @(accountBill.PaymentMethod == 0 ? "在线支付" : "现金支付")
+            </td>
+        </tr>
+        <tr>
+            <td align="right" style="width:100px">
+                付款账号：
+            </td>
+            <td>
+                @(accountBill.PaymentAccount)
+            </td>
+        </tr>
+        <tr>
+            <td align="right" style="width:100px">
+                收款账号：
+            </td>
+            <td>
+                @(accountBill.ReceivableAccount)
+            </td>
+        </tr>
+        <tr>
+            <td align="right" style="width:100px">
+                交易号：
+            </td>
+            <td>
+                @(accountBill.TradingNumber)
+            </td>
+        </tr>
+        <tr>
+            <td align="right" style="width:100px">
+                付款时间：
+            </td>
+            <td>
+                @(accountBill.PayDate)
+            </td>
+        </tr>
+        <tr>
+            <td align="right" style="width:100px">
+                付款备注：
+            </td>
+            <td>
+                @(accountBill.Remark)
+            </td>
+        </tr>
+    </table>
+</form>
+@section bottom{}

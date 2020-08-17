@@ -1,0 +1,233 @@
+﻿@using PaiXie.Data
+@{
+    var ordbase = ViewBag.Ordbase as Ordbase;
+    var orditemList = ViewBag.OrditemList as List<Orditem>;
+    var discountList = ViewBag.DiscountList as List<Orddiscount>;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+    <style>
+        a {
+            text-decoration: none;
+        }
+
+        .tagcont {
+            color: #666666;
+        }
+
+        .tableinfoa {
+            margin-top: 0px;
+        }
+
+            .tableinfoa th.title {
+                background: #436fac;
+                color: #fff;
+                text-align: left;
+                padding-left: 15px;
+                height: 30px;
+            }
+
+            .tableinfoa .red, .red {
+                color: #F00;
+            }
+
+            .tableinfoa .blue {
+                color: #00F;
+            }
+
+        .list td {
+            height: 50px;
+            text-align: center;
+        }
+
+        .list th {
+            text-align: center;
+        }
+
+        .totalnum {
+            text-align: center;
+        }
+
+        .money {
+            float: right;
+            width: 340px;
+            padding-right: 5px;
+        }
+
+            .money li {
+                float: left;
+                width: 170px;
+                text-align: right;
+                line-height: 24px;
+                height: 24px;
+            }
+
+            .money b {
+                float: left;
+                width: 85px;
+                text-align: right;
+                font-weight: normal;
+            }
+    </style>
+}
+<div class="easyui-layout" data-options="fit:true" style="overflow-y:auto;">
+    <div data-options=" region:'north',height:120" id="topdiv">
+        <ul class="tag" style="padding-top:20px">
+            <li>基本信息</li>
+            <li class="current">商品列表</li>
+            <li>收退款记录</li>
+            <li>发货记录</li>
+            <li>售后记录</li>
+            <li>订单日志</li>
+        </ul>
+        <div class="toolbar" id="toolbar" style="margin-top:-30px; padding-left:15px">
+            <a id="addCollection" class="add" href="javascript:void(0)"><span></span>添加收款</a>
+            <a id="addRefund" class="add" href="javascript:void(0)"><span></span>添加退款</a>
+            <a id="addoffer" class="add" href="javascript:void(0)"><span></span>添加优惠</a>
+            <a id="" class="add unclick" href="javascript:void(0)"><span></span>添加售后</a>
+            <a id="pendingOrder" class="" href="javascript:void(0)">挂起订单</a>
+            <a id="cancelOrder" class="" href="javascript:void(0)">取消订单</a>
+            <a id="addRemarks" class="add" href="javascript:void(0)"><span></span>添加备注</a>
+            <a id="distributionWarehouse" class="" href="javascript:void(0)">分配仓库</a>
+        </div>
+    </div>
+    <div data-options="region:'center',border:false">
+        <div class="tagcont p0lr22">
+            <div id="prolist">
+                <input type="hidden" id="hdnIsOrderDetails" value="1" />
+                <input type="hidden" id="hdnIsHand" value="@(ordbase.IsHang)" />
+                <input type="hidden" id="hdnAbnormalAmount" value="@(ordbase.ReceivableAmount - ordbase.UncollectedeAmount - ordbase.RealAmount + ordbase.RefundAmount)" />
+                <input type="hidden" id="hdnOrderStatus" value="@(ordbase.OrderStatus)" />
+                <input type="hidden" id="hdnErpOrderCode" value="@ordbase.ErpOrderCode" />
+                <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tableinfoa list">
+                    <tr>
+                        <th colspan="11" class="title">订单商品 <a href="javascript:void(0)" id="addpro" style="font-weight:normal; color:#fff">[添加商品]</a></th>
+                    </tr>
+                    <tr>
+                        <th>商品编码</th>
+                        <th>商品名称</th>
+                        <th>属性</th>
+                        <th>SKU码</th>
+                        <th>单位</th>
+                        <th>税率</th>
+                        <th>销售单价</th>
+                        <th>数量</th>
+                        <th>优惠金额</th>
+                        <th>重量</th>
+                        <th>操作</th>
+                    </tr>
+                    @foreach (var item in orditemList) {
+                        <tr>
+                            <td>@(item.ProductsCode)</td>
+                            <td class="alignleft">@(item.ProductsName)</td>
+                            <td>@(item.ProductsSkuSaleprop)</td>
+                            <td>@(item.ProductsSkuCode)</td>
+                            <td>@(item.Unit)</td>
+                            <td>@(item.TaxRate * 100)</td>
+                            <td><span class="red">￥</span><span class="pprice">@(item.SellingPrice)</span></td>
+                            <td>@(item.ProductsNum)</td>
+                            <td><span class="red">￥</span><span class="oprice">@(item.DiscountAmount * item.ProductsNum)</span></td>
+                            <td>@(item.ProductsWeight)g</td>
+                            <td><a href="#" class="pdel" onclick="deleteItem('@(item.ID)')"><span class="red">X</span> 删除</a></td>
+                        </tr>
+                    }
+                </table>
+            </div>
+            <div class="totalnum">共 <span class="red" id="totalnum">@(orditemList.Count)</span> 件商品  <a href="javascript:void(0)" id="showtotalist">点击[查看全部商品]</a></div>
+            <ul class="money">
+                <li><b>商品金额:</b><span class="red">￥</span><span id="">@(ordbase.ProductsAmount)</span></li>
+                <li><b>已收金额:</b><span class="red">￥</span><span id="">@(ordbase.RealAmount)</span></li>
+                <li><b>优惠金额:</b><span class="red">￥</span><span id="">@(ordbase.OrderDiscount)</span></li>
+                <li><b>未收金额:</b><span class="red">￥</span><span id="">@(ordbase.UncollectedeAmount)</span></li>
+                <li><b>运费:</b><span class="red">￥</span><span id="">@(ordbase.Freight)</span></li>
+                <li><b>应退金额:</b><span class="red">￥</span><span id="">@(ordbase.RefundAmount)</span></li>
+                <li><b>订单金额:</b><span class="red">￥</span><span id="">@(ordbase.ReceivableAmount)</span></li>
+                <li><b>异常金额:</b><span class="red">￥</span><span id="">@(ordbase.ReceivableAmount - ordbase.UncollectedeAmount - ordbase.RealAmount + ordbase.RefundAmount)</span></li>
+            </ul>
+            <div id="offerlist" style="clear:both; padding-top:10px;">
+                <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tableinfoa list">
+                    <tr>
+                        <th colspan="5" class="title">优惠信息</th>
+                    </tr>
+                    <tr>
+                        <th>优惠备注</th>
+                        <th>优惠金额</th>
+                        <th>关联商品</th>
+                        <th>操作</th>
+                    </tr>
+                    @foreach (var discount in discountList) {
+                        <tr>
+                            <td class="alignleft">@(discount.Remark)</td>
+                            <td><span class="red">￥</span><span class="offerprice">@(discount.Amount)</span></td>
+                            <td class="alignleft">@(discount.LibProductsSkuCode)</td>
+                            <td>
+                                <a href="#" class="odel" onclick="deleteDiscount('@discount.ID')">删除</a>
+                            </td>
+                        </tr>
+                    }
+                    @{
+                        if (discountList.Count == 0) {
+                            <tr><td style="height: 35px; text-align: center; color:#888;" colspan="4">没有相关记录！</td></tr>
+                        }
+                    }
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+@section bottom{
+    <script src="~/Areas/Order/ViewJs/Details.js"></script>
+    <script>
+        $(document).ready(function () {
+            if (Number($('#totalnum').text()) > 5) {
+                $('#prolist table tr:gt(6)').hide();
+            } else {
+                $('#showtotalist').hide();
+            }
+            $('#showtotalist').click(function () {
+                $('#prolist table tr:gt(6)').show();
+                $('#showtotalist').hide();
+            });
+        });
+
+        //删除商品
+        function deleteItem(id) {
+            $.ajax({
+                url: "/Order/AddOrder/DeleteItem?orditemID=" + id,
+                type: "GET",
+                cache: false,
+                success: function (r) {
+                    var map = $.parseJSON(r);
+                    if (map.result == 1) {
+                        window.location.reload(true);
+                    } else {
+                        $.MsgBox.Alert("提示", map.message);
+                    }
+                },
+                error: function () {
+                    $.MsgBox.Alert("提示", "删除失败！");
+                }
+            });
+        }
+
+        //删除优惠
+        function deleteDiscount(id) {
+            $.ajax({
+                url: "/Order/AddOrder/DeleteDiscount?discountID=" + id,
+                type: "GET",
+                cache: false,
+                success: function (r) {
+                    var map = $.parseJSON(r);
+                    if (map.result == 1) {
+                        window.location.reload(true);
+                    } else {
+                        $.MsgBox.Alert("提示", map.message);
+                    }
+                },
+                error: function () {
+                    $.MsgBox.Alert("提示", "删除失败！");
+                }
+            });
+        }
+    </script>
+}

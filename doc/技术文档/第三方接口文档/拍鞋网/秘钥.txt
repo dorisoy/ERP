@@ -1,0 +1,100 @@
+key   3104908
+   
+秘钥
+9d542e08daca4a63fffb8dd4c783fb59
+   
+签名
+b77cf45c442fad5fcdac947305db7831
+
+
+请求的URL http://shopapi.v.com?
+
+请求的参数全部用POST 
+
+
+
+   商品间的所有关联是通过outer_id
+
+
+   
+C:\Windows\System32\drivers\etc
+
+10.0.0.3	shopapi.v.com
+10.0.0.3        shop.v.com
+10.0.0.3   www.v.com 
+10.0.0.3   m.v.com 
+10.0.0.3   ued.v.com 
+10.0.0.3   shop.v.com 
+10.0.0.3   union.v.com 
+10.0.0.3    trace.v.com 
+10.0.0.3   help.v.com 
+10.0.0.3   trade.v.com 
+10.0.0.3   member.v.com 
+10.0.0.3   v.v.com 
+10.0.0.3   statics.v.com 
+10.0.0.3    unionapi.v.com 
+10.0.0.3   m.member.v.com 
+10.0.0.3   m.help.v.com 
+10.0.0.3   m.trade.v.com 
+10.0.0.3   admin.v.com 
+10.0.0.3  v.com 
+10.0.0.3  mall47.v.com 
+10.0.0.3  mall25.v.com 
+10.0.0.3  shop101657.v.com 
+10.0.0.3   shop101664.v.com 
+10.0.0.3   shop101755.v.com 
+10.0.0.3   *.v.com 
+10.0.0.3   sellerapi.v.com 
+10.0.0.3   shop101913.v.com 
+10.0.0.3   mall2525.v.com
+
+
+
+去看商家后台的数据
+http://shop.v.com/
+
+然后用帐号caishaojie@cnxz.cn   密码123456
+
+
+郑树育-主管17:11
+$list=array( 
+'GetOrderList' =>array('order','orderList'), 
+'GetOrderInfo' =>array('order','orderInfo'), 
+'GetExpressList' =>array('order','expressList'), 
+'PostDelivery' =>array('order','orderDelivery'), 
+'GetProList' =>array('pro_item','ProList'), 
+'GetUpdateQty' =>array('item_sku','UpdateItemSku'), 
+'UserRegister' =>array('user','UserRegister'), 
+); 
+return $list; 
+}
+   
+
+
+   
+
+这几个是有的
+   
+
+其他没有
+郑树育-主管17:12
+给你的文档是 之后 拍鞋平台的开放平台的文档 
+   
+
+微小店当时开发只是按这个文档来开发来 部分接口
+   
+
+没有全部开发
+   
+
+
+   
+
+act 值为这些才有效。
+林毅凌17:14
+就是文档是拍鞋网的文档   但是 目前是微小店的接口 
+郑树育-主管17:15
+是，微小店的接口也是按这文件来开发的
+   
+
+只是没有开发全部的act

@@ -1,0 +1,45 @@
+﻿@using PaiXie.Data
+@{
+    var brand = ViewBag.Brand as Brand;
+    ViewBag.Title = "编辑品牌";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+
+}
+
+    <form id="ff" method="post" novalidate="novalidate">
+        <input type="hidden" value="@brand.ID" id="ID" name="ID" />
+            <table id="tblAdd"  class="tableinfo" style=" margin-top:20px">
+                <tr>
+                    <th align="right" style="width:100px"><label for="Name">品牌名称：</label></th>
+                    <td>
+                        <input style="width:200px;" value="@brand.Name" class="easyui-validatebox" type="text" id="txtName" name="Name" data-options="required:true,validType:'length[1,10]'" />
+                        &nbsp;<span id="errorMessage" style="color:red;"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <th align="right"><label for="Code">代码：</label></th>
+                    <td>
+                        <input style="width:100px;" value="@brand.Code" class="easyui-validatebox" type="text" id="Code" name="Code" data-options="validType:['code','length[0,10]']" />
+                    </td>
+                </tr>
+                <tr>
+                    <th align="right"><label for="Remark">备注：</label></th>
+                    <td>
+                        <textarea style="height:90px; width:300px;" id="Remark" name="Remark" maxlength="100">@brand.Remark</textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align:center; padding-top:10px">
+                        <a href="javascript:void(0)" class="button-oky" id="btnSave" iconcls="icon-ok">确定</a>
+                        <a href="javascript:void(0)" class="button-cancel" iconcls="icon-cancel" id="btnClose">取消</a>
+                    </td>
+                </tr>
+            </table>
+    </form>
+@section bottom{
+
+    <script src="~/Areas/Products/ViewJs/EditBrand.js"></script>
+}
+

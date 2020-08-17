@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "title";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+    
+
+}
+<div data-options="region:'north'" style="height:112px">
+    <div class="toolbar">
+		<a id="refresh" class="refresh" href="javascript:void(0)"><span></span>刷新</a>
+		<a id="add" class="add" href="javascript:void(0)"><span></span>设置库存</a>
+    </div>
+    <div class="searchpro" id="searchpro">
+        <select id="keyWordType" name="keyWordType" class="easyui-combobox" data-options="height:30,width:100,editable:false">
+            <option value="">关键字类型</option>
+            <option value="商品名称">商品名称</option>
+            <option value="商品编码" selected>商品编码</option>
+            <option value="商品货号">商品货号</option>
+            <option value="商品SKU码">商品SKU码</option>
+            <option value="商品条码">商品条码</option>
+        </select>
+        <input type="text" id="txtKeyWord" value="">
+        <label>分类：</label><input id="Category" name="Category" class="easyui-combotree" value="-1" data-options="url:'/Products/Category/JsonTree',method:'get',required:true,height:30,width:82">
+        <label>品牌：</label><select id="Brand" name="Brand" class="easyui-combobox" data-options="height:30,width:82"></select>
+        <input type="submit" id="btnSearch" value="搜索" class="button">
+        <input type="reset" id="btnReset" value="清空条件" class="button-rest">
+    </div>
+</div>
+<div data-options="region:'center'" class="p0lr22">
+    <input id="hid" type="hidden" value="0" />
+    <table id="grid" class="easyui-datagrid"
+           data-options="singleSelect:true,collapsible:true,method:'get'"></table>
+
+
+
+</div>
+@section bottom{
+<script src="~/Areas/Shop/ViewJs/ShopStocklist.js"></script>
+
+}
+

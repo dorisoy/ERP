@@ -1,0 +1,16 @@
+﻿{
+	"total":10,
+	"rows":[
+		{"name":"厦门仓","attribute":"湖蓝,40","sku":"643631","stock":20,"available":0,"occupancy":20,"frozen":0,"presale":0,"occupancy":0,"reserve":0},
+		{"name":"厦门仓","attribute":"灰色,40","sku":"643632","stock":40,"available":35,"occupancy":5,"frozen":0,"presale":0,"occupancy":0,"reserve":0},
+		{"name":"厦门仓","attribute":"湖蓝,41","sku":"643641","stock":7,"available":2,"occupancy":5,"frozen":3,"presale":0,"occupancy":0,"reserve":0},
+		{"name":"厦门仓","attribute":"灰色,41","sku":"643642","stock":20,"available":0,"occupancy":20,"frozen":0,"presale":0,"occupancy":0,"reserve":20},
+		{"name":"北京仓","attribute":"湖蓝,40","sku":"643631","stock":20,"available":0,"occupancy":20,"frozen":0,"presale":0,"occupancy":0,"reserve":0},
+		{"name":"北京仓","attribute":"灰色,40","sku":"643632","stock":40,"available":35,"occupancy":5,"frozen":0,"presale":0,"occupancy":0,"reserve":0},
+		{"name":"北京仓","attribute":"湖蓝,41","sku":"643641","stock":7,"available":2,"occupancy":5,"frozen":3,"presale":0,"occupancy":0,"reserve":0},
+		{"name":"北京仓","attribute":"灰色,41","sku":"643642","stock":20,"available":0,"occupancy":20,"frozen":0,"presale":0,"occupancy":0,"reserve":20}
+	],
+	"footer":[
+		{"name":"汇总","sku":"","stock":67,"available":37,"occupancy":30,"frozen":3,"presale":400,"occupancy":30,"reserve":20}
+	]
+} 

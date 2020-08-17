@@ -1,0 +1,70 @@
+﻿@{
+    ViewBag.Title = "title";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+
+
+}
+<div data-options="region:'north'" style="height:110px">
+    <div class="toolbar">
+        <a href="javascript:void(0);" class="refresh" title="刷新" id="refresh"><span></span>刷新</a>
+   </div>
+ 
+  
+    @*<div class="searchpro" id="searchpro">
+        <label for="txtName">用户名：</label>
+        <input type="text" id="Code" name="Code" />
+        <input type="button" class="button" id="btnSerach" value="搜索">
+        <input type="button" class="button-rest" id="btnRest" value="清空条件" onclick="javascript:location.reload();">
+    </div>*@
+       
+    <div class="searchpro" id="searchpro">
+        <select id="keyWordType" name="keyWordType" class="easyui-combobox" data-options="height:30,width:100,editable:false">
+            <option value="">关键字类型</option>
+            <option value="用户名">用户名</option>
+            <option value="操作对象" >操作对象</option>
+            <option value="操作内容">操作内容</option>
+         
+        </select>
+        <input type="text" id="txtKeyWord" value="" style="width:150px;">
+        <label>操作时间：</label>
+        <input type="text" id="txtStartDate" value="" class="easyui-datetimebox" data-options="height:30,width:150, required: true, editable:false">
+        <label style="padding-right:10px">至</label>
+        <input type="text" id="txtEndDate" value="" class="easyui-datetimebox" data-options="height:30,width:150,required: true, editable:false">
+
+        
+        <input type="button" id="btnSearch" value="搜索" class="button">
+        <input type="button" id="btnReset" value="清空条件" class="button-rest" onclick="javascript:location.reload();">
+    </div>
+
+
+ 
+</div>
+<div data-options="region:'center'" class="p0lr22">
+    <div id="tabs" class="easyui-tabs" data-options="fit:true,border:false,plain:true">
+        <div title="系统日志" data-options="region:'center',border:false" id="syslog">
+
+            <table id="grid2" class="easyui-datagrid"
+                   data-options="singleSelect:true,collapsible:true,method:'get'"></table>
+
+
+
+
+        </div>
+        <div title="登录日志" class="hide" style="padding-top:2px;" id="loginlog" >
+            <table id="grid" class="easyui-datagrid"
+                   data-options="singleSelect:true,collapsible:true,method:'get'"></table>
+
+        </div>
+    </div>
+</div>
+@section bottom{
+
+    <script src="~/Areas/SysWarehouse/ViewJs/logs_list.js"></script>
+ <script>
+     $("#grid").height($(document).height() * 0.65);
+</script>
+
+}
+

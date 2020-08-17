@@ -1,0 +1,9204 @@
+﻿$axure.loadCurrentPage({
+  "url":"erp原型说明.html",
+  "generationDate":new Date(1454057271117.56),
+  "isCanvasEnabled":false,
+  "variables":["OnLoadVariable"],
+  "page":{
+    "packageId":"67cd81de99154e55b86a72d413d2e79a",
+    "type":"Axure:Page",
+    "name":"ERP原型说明",
+    "notes":{
+},
+    "style":{
+      "baseStyle":"627587b6038d43cca051c114ac41ad32",
+      "pageAlignment":"center",
+      "fill":{
+        "fillType":"solid",
+        "color":0xFFF2F2F2},
+      "image":null,
+      "imageHorizontalAlignment":"near",
+      "imageVerticalAlignment":"near",
+      "imageRepeat":"auto",
+      "favicon":null,
+      "sketchFactor":"0",
+      "colorStyle":"appliedColor",
+      "fontName":"应用字体",
+      "borderWidth":"0"},
+    "adaptiveStyles":{
+},
+    "interactionMap":{
+},
+    "diagram":{
+      "objects":[{
+          "id":"547250abf084480a9e043634373bcf21",
+          "label":"",
+          "type":"buttonShape",
+          "styleType":"h1",
+          "visible":true,
+          "style":{
+            "fontName":"'宋体 Regular', '宋体'",
+            "location":{
+              "x":504,
+              "y":109},
+            "size":{
+              "width":184,
+              "height":38}},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"5b0e3a19c8f44a4699ac9af212e91ca2",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "location":{
+                  "x":504,
+                  "y":109},
+                "size":{
+                  "width":184,
+                  "height":38}},
+              "adaptiveStyles":{
+}}],
+          "images":{
+            "normal~":"resources/images/transparent.gif"}},
+{
+          "id":"0910867fc13640df9442b241376dcc77",
+          "label":"",
+          "type":"table",
+          "styleType":"table",
+          "visible":true,
+          "style":{
+            "location":{
+              "x":106,
+              "y":283},
+            "size":{
+              "width":980,
+              "height":3735}},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"a583a1dd7a1545478e0028d8653e382c",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Bold', '宋体'",
+                "fontSize":"14px",
+                "fontWeight":"700",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "fill":{
+                  "fillType":"solid",
+                  "color":0xFFE4E4E4},
+                "size":{
+                  "width":100,
+                  "height":40}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"ca96d597d2354e73b69bea109b197e51",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Bold', '宋体'",
+                    "fontSize":"14px",
+                    "fontWeight":"700",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "fill":{
+                      "fillType":"solid",
+                      "color":0xFFE4E4E4},
+                    "size":{
+                      "width":100,
+                      "height":40}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u3.png"}},
+{
+              "id":"32ee6e4ad15547269e7d50ef2da7c24a",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Bold', '宋体'",
+                "fontSize":"14px",
+                "fontWeight":"700",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "fill":{
+                  "fillType":"solid",
+                  "color":0xFFE4E4E4},
+                "location":{
+                  "x":180,
+                  "y":0},
+                "size":{
+                  "width":500,
+                  "height":40}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"0171073e88b14cffaaa40c90ae267183",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Bold', '宋体'",
+                    "fontSize":"14px",
+                    "fontWeight":"700",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "fill":{
+                      "fillType":"solid",
+                      "color":0xFFE4E4E4},
+                    "location":{
+                      "x":180,
+                      "y":0},
+                    "size":{
+                      "width":500,
+                      "height":40}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u7.png"}},
+{
+              "id":"ceb345ebe4c2481bb42867035c63a41f",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Bold', '宋体'",
+                "fontSize":"14px",
+                "fontWeight":"700",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "fill":{
+                  "fillType":"solid",
+                  "color":0xFFE4E4E4},
+                "location":{
+                  "x":680,
+                  "y":0},
+                "size":{
+                  "width":100,
+                  "height":40}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"703d4f705ecc488eab24d432742bf61c",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Bold', '宋体'",
+                    "fontSize":"14px",
+                    "fontWeight":"700",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "fill":{
+                      "fillType":"solid",
+                      "color":0xFFE4E4E4},
+                    "location":{
+                      "x":680,
+                      "y":0},
+                    "size":{
+                      "width":100,
+                      "height":40}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u3.png"}},
+{
+              "id":"f15eae20267f4c3cab16cfadf85e5530",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Bold', '宋体'",
+                "fontSize":"14px",
+                "fontWeight":"700",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "fill":{
+                  "fillType":"solid",
+                  "color":0xFFE4E4E4},
+                "location":{
+                  "x":780,
+                  "y":0},
+                "size":{
+                  "width":200,
+                  "height":40}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"92b12d781b254fca98b53d85c580a38d",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Bold', '宋体'",
+                    "fontSize":"14px",
+                    "fontWeight":"700",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "fill":{
+                      "fillType":"solid",
+                      "color":0xFFE4E4E4},
+                    "location":{
+                      "x":780,
+                      "y":0},
+                    "size":{
+                      "width":200,
+                      "height":40}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u11.png"}},
+{
+              "id":"973c2cfc0475401baa474883bc140469",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Bold', '宋体'",
+                "fontSize":"14px",
+                "fontWeight":"700",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "fill":{
+                  "fillType":"solid",
+                  "color":0xFFE4E4E4},
+                "location":{
+                  "x":100,
+                  "y":0},
+                "size":{
+                  "width":80,
+                  "height":40}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"29e4a402277840b0bccb731a00f8895c",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Bold', '宋体'",
+                    "fontSize":"14px",
+                    "fontWeight":"700",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "fill":{
+                      "fillType":"solid",
+                      "color":0xFFE4E4E4},
+                    "location":{
+                      "x":100,
+                      "y":0},
+                    "size":{
+                      "width":80,
+                      "height":40}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u5.png"}},
+{
+              "id":"5efd5f36738548e3b6cb59c2956fd069",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "location":{
+                  "x":0,
+                  "y":3675},
+                "size":{
+                  "width":100,
+                  "height":60}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"8c545010553c4a518f77f90423201c26",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "location":{
+                      "x":0,
+                      "y":3675},
+                    "size":{
+                      "width":100,
+                      "height":60}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u312.png"}},
+{
+              "id":"a3e154eb17fd446fb91abd983d51fa03",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "location":{
+                  "x":100,
+                  "y":3675},
+                "size":{
+                  "width":80,
+                  "height":60}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"77bb45e8c8ee487c8d054f7f576b7b57",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "location":{
+                      "x":100,
+                      "y":3675},
+                    "size":{
+                      "width":80,
+                      "height":60}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u314.png"}},
+{
+              "id":"5f3385d1dd774ecb91e3ba0b9bd75e71",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Bold', '宋体'",
+                "fontSize":"14px",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "lineSpacing":"25px",
+                "paddingTop":"5",
+                "paddingBottom":"5",
+                "location":{
+                  "x":180,
+                  "y":3675},
+                "size":{
+                  "width":500,
+                  "height":60}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"f61663bde80e4d308772c76aa95db0a4",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Bold', '宋体'",
+                    "fontSize":"14px",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "lineSpacing":"25px",
+                    "paddingTop":"5",
+                    "paddingBottom":"5",
+                    "location":{
+                      "x":180,
+                      "y":3675},
+                    "size":{
+                      "width":500,
+                      "height":60}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u316.png"}},
+{
+              "id":"c326aef5b5204d588efc2bb17e96166a",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "location":{
+                  "x":680,
+                  "y":3675},
+                "size":{
+                  "width":100,
+                  "height":60}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"dbf41ce0fde642768dfed46c50c7f68d",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "location":{
+                      "x":680,
+                      "y":3675},
+                    "size":{
+                      "width":100,
+                      "height":60}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u312.png"}},
+{
+              "id":"c5fc67c018ff44298354859ea3e3dc66",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFFFF0000,
+                  "opacity":1},
+                "location":{
+                  "x":780,
+                  "y":3675},
+                "size":{
+                  "width":200,
+                  "height":60}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"48c99306b4c64a13868acced94e7fa97",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFFFF0000,
+                      "opacity":1},
+                    "location":{
+                      "x":780,
+                      "y":3675},
+                    "size":{
+                      "width":200,
+                      "height":60}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u320.png"}},
+{
+              "id":"47f5847862b94fb4a2b525193f762982",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "location":{
+                  "x":0,
+                  "y":3155},
+                "size":{
+                  "width":100,
+                  "height":410}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"a1b50ef1455641db823cd721496fb116",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "location":{
+                      "x":0,
+                      "y":3155},
+                    "size":{
+                      "width":100,
+                      "height":410}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u279.png"}},
+{
+              "id":"4d32acffc1a44793834f2ef4fa7e251a",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "location":{
+                  "x":100,
+                  "y":3155},
+                "size":{
+                  "width":80,
+                  "height":410}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"d4b37873fff84f6a964fba91e4b47534",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "location":{
+                      "x":100,
+                      "y":3155},
+                    "size":{
+                      "width":80,
+                      "height":410}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u281.png"}},
+{
+              "id":"9542198f8df9482fa7ad7a8181a6a6dd",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Bold', '宋体'",
+                "fontSize":"14px",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "lineSpacing":"25px",
+                "paddingTop":"5",
+                "paddingBottom":"5",
+                "location":{
+                  "x":180,
+                  "y":3155},
+                "size":{
+                  "width":500,
+                  "height":410}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"b8acde6a24274321bdc1723f78b1f5aa",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Bold', '宋体'",
+                    "fontSize":"14px",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "lineSpacing":"25px",
+                    "paddingTop":"5",
+                    "paddingBottom":"5",
+                    "location":{
+                      "x":180,
+                      "y":3155},
+                    "size":{
+                      "width":500,
+                      "height":410}},
+                  "adaptiveStyles":{
+},
+                  "objects":[{
+                      "id":"b990726c374a4f3a804074e20b9cb016",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 商品列表",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"商品列表.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"0a905b2f646c41f8af8102118543e92d",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 添加商品",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"添加商品.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"d7f04a02cf2d44ecac8907e9e2546c60",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 下载商品",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"下载商品.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"79996367fad940a88a20e4ad9d8afb3a",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 表格导入",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"表格导入.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"dceaa22412f54fe8969027b03dcbbb4b",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 修改商品",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"修改商品.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"8fdba39b10b54b86a8cb87aebcf82a73",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 商品库存",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"商品库存.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"018cb1eec042432a87ff71472ef1f350",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 商品品牌",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"商品品牌.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"0551f733853c40b08dd2972a60ce02a9",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 商品分类",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"商品分类.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"298027e0c1f14c298e7748c08e7721d7",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 商品库",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"商品库.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"976fa163640643608d383a7369d96b4f",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 商品详情",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"商品详情.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"e80371ed9a564e6dbef6f8910f89e5a8",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 商品列表",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"商品列表_1.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"fcc1a5e2627041508c62aa73d60a7072",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 商品库存",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"商品库存_1.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"eab9a45744d0492db82027e850587c5d",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 商品预警",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"商品预警.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true}]}],
+              "images":{
+                "normal~":"images/erp原型说明/u283.png"}},
+{
+              "id":"8e966497a3b2404a93a25e82848acdbe",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "location":{
+                  "x":680,
+                  "y":3155},
+                "size":{
+                  "width":100,
+                  "height":410}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"e04f2324507844009e24cf00dc0cf176",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "location":{
+                      "x":680,
+                      "y":3155},
+                    "size":{
+                      "width":100,
+                      "height":410}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u279.png"}},
+{
+              "id":"5ab18d97cdce49a38533758dbe41b79d",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFFFF0000,
+                  "opacity":1},
+                "location":{
+                  "x":780,
+                  "y":3155},
+                "size":{
+                  "width":200,
+                  "height":410}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"be451820954d4317bd90443c283da070",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFFFF0000,
+                      "opacity":1},
+                    "location":{
+                      "x":780,
+                      "y":3155},
+                    "size":{
+                      "width":200,
+                      "height":410}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u300.png"}},
+{
+              "id":"c66bb89eac8142688630e3d53f333367",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "location":{
+                  "x":0,
+                  "y":3565},
+                "size":{
+                  "width":100,
+                  "height":110}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"77ca7dbd3042453887bc77b200c8645d",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "location":{
+                      "x":0,
+                      "y":3565},
+                    "size":{
+                      "width":100,
+                      "height":110}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u98.png"}},
+{
+              "id":"570e64713ce54d3faf34513222d2bb82",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "location":{
+                  "x":100,
+                  "y":3565},
+                "size":{
+                  "width":80,
+                  "height":110}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"8cffa282c8964cb4a6031d8840ac35c5",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "location":{
+                      "x":100,
+                      "y":3565},
+                    "size":{
+                      "width":80,
+                      "height":110}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u100.png"}},
+{
+              "id":"15fab01f35d7414d90e840412ee18d80",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Bold', '宋体'",
+                "fontSize":"14px",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "lineSpacing":"25px",
+                "paddingTop":"5",
+                "paddingBottom":"5",
+                "location":{
+                  "x":180,
+                  "y":3565},
+                "size":{
+                  "width":500,
+                  "height":110}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"6f3b8f2fb01345d6bbe9afa9f45018d3",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Bold', '宋体'",
+                    "fontSize":"14px",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "lineSpacing":"25px",
+                    "paddingTop":"5",
+                    "paddingBottom":"5",
+                    "location":{
+                      "x":180,
+                      "y":3565},
+                    "size":{
+                      "width":500,
+                      "height":110}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u102.png"}},
+{
+              "id":"421e4489cdc24fa58df9eb9c0223a7d6",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "location":{
+                  "x":680,
+                  "y":3565},
+                "size":{
+                  "width":100,
+                  "height":110}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"55d02627760e4eb3920a5c76305c1b26",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "location":{
+                      "x":680,
+                      "y":3565},
+                    "size":{
+                      "width":100,
+                      "height":110}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u98.png"}},
+{
+              "id":"7a951c6684214111b19d4fc2856cb1d7",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFFFF0000,
+                  "opacity":1},
+                "location":{
+                  "x":780,
+                  "y":3565},
+                "size":{
+                  "width":200,
+                  "height":110}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"2a1f371d2e7c4450a6dea1e785dc3fd9",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFFFF0000,
+                      "opacity":1},
+                    "location":{
+                      "x":780,
+                      "y":3565},
+                    "size":{
+                      "width":200,
+                      "height":110}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u107.png"}},
+{
+              "id":"fb96c3e714184223a7e4309b186ea0d8",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "location":{
+                  "x":0,
+                  "y":2995},
+                "size":{
+                  "width":100,
+                  "height":160}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"15fe1ac9672845e792eba3cee616db0a",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "location":{
+                      "x":0,
+                      "y":2995},
+                    "size":{
+                      "width":100,
+                      "height":160}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u61.png"}},
+{
+              "id":"b3142a58332e4779be24c974fdfdcd45",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "location":{
+                  "x":100,
+                  "y":2995},
+                "size":{
+                  "width":80,
+                  "height":160}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"ad3366ec6d4a43e7ba888f1a2d6edd0b",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "location":{
+                      "x":100,
+                      "y":2995},
+                    "size":{
+                      "width":80,
+                      "height":160}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u63.png"}},
+{
+              "id":"f1d69725f9d34a73ac35e33c8fe3977e",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Bold', '宋体'",
+                "fontSize":"14px",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "lineSpacing":"25px",
+                "paddingTop":"5",
+                "paddingBottom":"5",
+                "location":{
+                  "x":180,
+                  "y":2995},
+                "size":{
+                  "width":500,
+                  "height":160}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"7470d31a17844fab90e3e9a489a0b048",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Bold', '宋体'",
+                    "fontSize":"14px",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "lineSpacing":"25px",
+                    "paddingTop":"5",
+                    "paddingBottom":"5",
+                    "location":{
+                      "x":180,
+                      "y":2995},
+                    "size":{
+                      "width":500,
+                      "height":160}},
+                  "adaptiveStyles":{
+},
+                  "objects":[{
+                      "id":"dcfd8c1e7e3346e98c6aba779e2c5c47",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 提示窗口",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"提示窗口.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"8f6e5d96a80e4a05ab782e71a671d3c7",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 预售商品",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"预售商品.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"4c5a0fbedf394b85bedcbefe78daf54d",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 预售详情",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"预售详情.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"816b328198164e518b28077fbaaecb8a",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 添加预售",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"添加预售.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true}]}],
+              "images":{
+                "normal~":"images/erp原型说明/u65.png"}},
+{
+              "id":"b2c4becf1a344672989f6b7fefcedc65",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "location":{
+                  "x":680,
+                  "y":2995},
+                "size":{
+                  "width":100,
+                  "height":160}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"4f4bd3a0e3e44d6a884de797a96866b1",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "location":{
+                      "x":680,
+                      "y":2995},
+                    "size":{
+                      "width":100,
+                      "height":160}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u61.png"}},
+{
+              "id":"6897fd52d9864e109373f6c741f9fde2",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFFFF0000,
+                  "opacity":1},
+                "location":{
+                  "x":780,
+                  "y":2995},
+                "size":{
+                  "width":200,
+                  "height":160}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"585aae68620d44a9bde5bf01c4d7d199",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFFFF0000,
+                      "opacity":1},
+                    "location":{
+                      "x":780,
+                      "y":2995},
+                    "size":{
+                      "width":200,
+                      "height":160}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u72.png"}},
+{
+              "id":"e777f7a4d3694425a5f5f58d031121d0",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "location":{
+                  "x":0,
+                  "y":2885},
+                "size":{
+                  "width":100,
+                  "height":110}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"be064495b2894037bdfe73a2110b0de5",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "location":{
+                      "x":0,
+                      "y":2885},
+                    "size":{
+                      "width":100,
+                      "height":110}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u98.png"}},
+{
+              "id":"0410be305bb84d8fa27236db4126bfd9",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "location":{
+                  "x":100,
+                  "y":2885},
+                "size":{
+                  "width":80,
+                  "height":110}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"552eed53f4b54fa595d113388f7dc9cd",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "location":{
+                      "x":100,
+                      "y":2885},
+                    "size":{
+                      "width":80,
+                      "height":110}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u100.png"}},
+{
+              "id":"9d2cab03e14d4cc787e786eadf967a6d",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "lineSpacing":"25px",
+                "paddingTop":"5",
+                "paddingBottom":"5",
+                "location":{
+                  "x":180,
+                  "y":2885},
+                "size":{
+                  "width":500,
+                  "height":110}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"38fdf48019cf4e85a3aebbc278d61ac6",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "lineSpacing":"25px",
+                    "paddingTop":"5",
+                    "paddingBottom":"5",
+                    "location":{
+                      "x":180,
+                      "y":2885},
+                    "size":{
+                      "width":500,
+                      "height":110}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u102.png"}},
+{
+              "id":"1abcc6fa9b9246178a5fd8c3f4e4625d",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "location":{
+                  "x":680,
+                  "y":2885},
+                "size":{
+                  "width":100,
+                  "height":110}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"67da47f81ce24f4bb3e9e78bb922c006",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "location":{
+                      "x":680,
+                      "y":2885},
+                    "size":{
+                      "width":100,
+                      "height":110}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u98.png"}},
+{
+              "id":"f5cf2aa086c045c2b1d16649fe718d8d",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFFFF0000,
+                  "opacity":1},
+                "location":{
+                  "x":780,
+                  "y":2885},
+                "size":{
+                  "width":200,
+                  "height":110}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"dcdaf95d92da46eeaf66a60f514eb30c",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFFFF0000,
+                      "opacity":1},
+                    "location":{
+                      "x":780,
+                      "y":2885},
+                    "size":{
+                      "width":200,
+                      "height":110}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u107.png"}},
+{
+              "id":"f76074231cd74900bed561abfb611f4e",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "location":{
+                  "x":0,
+                  "y":2575},
+                "size":{
+                  "width":100,
+                  "height":310}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"a74d456c89394e6e9b2fd3e5c86827ce",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "location":{
+                      "x":0,
+                      "y":2575},
+                    "size":{
+                      "width":100,
+                      "height":310}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u234.png"}},
+{
+              "id":"ac8f8f1a6fed4188bd8d6f79f5d1ef30",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "location":{
+                  "x":100,
+                  "y":2575},
+                "size":{
+                  "width":80,
+                  "height":310}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"8728d629001f41b4aee77d915b86edab",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "location":{
+                      "x":100,
+                      "y":2575},
+                    "size":{
+                      "width":80,
+                      "height":310}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u236.png"}},
+{
+              "id":"e697fc43573942bdb4091176ded873a9",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Bold', '宋体'",
+                "fontSize":"14px",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "lineSpacing":"25px",
+                "paddingTop":"5",
+                "paddingBottom":"5",
+                "location":{
+                  "x":180,
+                  "y":2575},
+                "size":{
+                  "width":500,
+                  "height":310}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"bc7160a239c843c59a367a6a315868e3",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Bold', '宋体'",
+                    "fontSize":"14px",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "lineSpacing":"25px",
+                    "paddingTop":"5",
+                    "paddingBottom":"5",
+                    "location":{
+                      "x":180,
+                      "y":2575},
+                    "size":{
+                      "width":500,
+                      "height":310}},
+                  "adaptiveStyles":{
+},
+                  "objects":[{
+                      "id":"be029f76bd4345818942d7e1feae71e0",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 库区列表",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"库区列表.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"749f344ada4f4e0fbce80ed3895b1efa",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 添加库区",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"添加库区.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"640d358f52cb49f2ac21a8213742b6df",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 编辑库区",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"编辑库区.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"7f89940de1ec429b94498345b2584c65",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 管理库区",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"管理库区.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"eef74ddbfa5442698c038253b13f0a30",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 库位商品",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"库位商品.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"42103eab0f6d4ca3a42238485c32d4c2",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 库区结构",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"库区结构.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"9f845e73b12042dd935f4fd9ee9297ef",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 添加结构",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"添加结构.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"6f67ac42cfa44eb88af3f2c62ef18b54",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 中转仓",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"中转仓.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"0a30e911a3804fec85e6abdb80ad90f6",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 添加商品转换规则",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"添加商品转换规则.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"ba8644623d2347eaa6f1f5df6800cde4",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 商品库存",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"商品库存_2.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"519173bbfd1d49e284dbc4c3b80df428",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 废品仓",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"废品仓.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true}]}],
+              "images":{
+                "normal~":"images/erp原型说明/u238.png"}},
+{
+              "id":"57ee254d01964fe19e21b23f4e4a14ac",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "location":{
+                  "x":680,
+                  "y":2575},
+                "size":{
+                  "width":100,
+                  "height":310}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"fb097835fc744719b90a32404b8a0505",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "location":{
+                      "x":680,
+                      "y":2575},
+                    "size":{
+                      "width":100,
+                      "height":310}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u234.png"}},
+{
+              "id":"24706b07db0346a18fcf318d53bf2d46",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFFFF0000,
+                  "opacity":1},
+                "location":{
+                  "x":780,
+                  "y":2575},
+                "size":{
+                  "width":200,
+                  "height":310}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"92599571eaea43b390980ca2ad3ada7c",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFFFF0000,
+                      "opacity":1},
+                    "location":{
+                      "x":780,
+                      "y":2575},
+                    "size":{
+                      "width":200,
+                      "height":310}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u253.png"}},
+{
+              "id":"8efb5337e60249c085efaf57493bcdcc",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "location":{
+                  "x":0,
+                  "y":2315},
+                "size":{
+                  "width":100,
+                  "height":260}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"38e39111a6504a8a9627945e0bc160f6",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "location":{
+                      "x":0,
+                      "y":2315},
+                    "size":{
+                      "width":100,
+                      "height":260}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u43.png"}},
+{
+              "id":"c3e41d788f8842769499f145a575ca20",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "location":{
+                  "x":100,
+                  "y":2315},
+                "size":{
+                  "width":80,
+                  "height":260}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"c89697ead0084ca4bda54f36a18297f4",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "location":{
+                      "x":100,
+                      "y":2315},
+                    "size":{
+                      "width":80,
+                      "height":260}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u45.png"}},
+{
+              "id":"1531451b153c4213ba3bc7ae1d538d39",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Bold', '宋体'",
+                "fontSize":"14px",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "lineSpacing":"25px",
+                "paddingTop":"5",
+                "paddingBottom":"5",
+                "location":{
+                  "x":180,
+                  "y":2315},
+                "size":{
+                  "width":500,
+                  "height":260}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"b736873c3e8a48cea7d3b840c39d5405",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Bold', '宋体'",
+                    "fontSize":"14px",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "lineSpacing":"25px",
+                    "paddingTop":"5",
+                    "paddingBottom":"5",
+                    "location":{
+                      "x":180,
+                      "y":2315},
+                    "size":{
+                      "width":500,
+                      "height":260}},
+                  "adaptiveStyles":{
+},
+                  "objects":[{
+                      "id":"87235bf6c1a94f1481fe4cfaf78f4699",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 采购流程",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"采购流程.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"e04cba45a6b64baf93a9d158cde1f191",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 采购计划单",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"采购计划单.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"035b8fe2ab04450b97cf687f7e8cc395",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 采购单",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"采购单.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"8f44bb8b30e14e4d9d66505a9c2c4f19",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 供应商资料",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"供应商资料.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"5c2fd41660214809979ff70aa7b6a5c5",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 采购计划单",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"采购计划单_1.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"eb7f4602879e4b159cdd6ebe3294d9f2",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 采购单",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"采购单_1.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true}]}],
+              "images":{
+                "normal~":"images/erp原型说明/u47.png"}},
+{
+              "id":"4c2d174e238e40b8922010a925db76b6",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "location":{
+                  "x":680,
+                  "y":2315},
+                "size":{
+                  "width":100,
+                  "height":260}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"103a4ae37a5d436eb61a31380f2c3737",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "location":{
+                      "x":680,
+                      "y":2315},
+                    "size":{
+                      "width":100,
+                      "height":260}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u43.png"}},
+{
+              "id":"7fb01f1fe89a464cb5d3875aa047b32b",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFFFF0000,
+                  "opacity":1},
+                "location":{
+                  "x":780,
+                  "y":2315},
+                "size":{
+                  "width":200,
+                  "height":260}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"f5d4e577abd8413ba9e97a106ad3129f",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFFFF0000,
+                      "opacity":1},
+                    "location":{
+                      "x":780,
+                      "y":2315},
+                    "size":{
+                      "width":200,
+                      "height":260}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u59.png"}},
+{
+              "id":"997d04602a7549419cafedadea850a38",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "location":{
+                  "x":0,
+                  "y":2080},
+                "size":{
+                  "width":100,
+                  "height":235}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"16197e1f58d54772b0be225dd09263e0",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "location":{
+                      "x":0,
+                      "y":2080},
+                    "size":{
+                      "width":100,
+                      "height":235}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u109.png"}},
+{
+              "id":"bafea71b05c0413f9db43977354b840d",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "location":{
+                  "x":100,
+                  "y":2080},
+                "size":{
+                  "width":80,
+                  "height":235}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"657b4f2350d14958b19a2b33a8c5f2b4",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "location":{
+                      "x":100,
+                      "y":2080},
+                    "size":{
+                      "width":80,
+                      "height":235}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u111.png"}},
+{
+              "id":"8282d95b58c644e0a9357da6894ad693",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Bold', '宋体'",
+                "fontSize":"14px",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "lineSpacing":"25px",
+                "paddingTop":"5",
+                "paddingBottom":"5",
+                "location":{
+                  "x":180,
+                  "y":2080},
+                "size":{
+                  "width":500,
+                  "height":235}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"443e59495d5547d3b2697463ae797c6b",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Bold', '宋体'",
+                    "fontSize":"14px",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "lineSpacing":"25px",
+                    "paddingTop":"5",
+                    "paddingBottom":"5",
+                    "location":{
+                      "x":180,
+                      "y":2080},
+                    "size":{
+                      "width":500,
+                      "height":235}},
+                  "adaptiveStyles":{
+},
+                  "objects":[{
+                      "id":"98e95d8eaa964ad79124522814e74037",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 入库单",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"入库单.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"e689a4db1da34c6bbb21b2e215ce752b",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 出库单",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"出库单.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"62e7784d02a44c8cb469d53fc5760fba",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 商品移位",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"商品移位.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"1fc258ce32a64f19886e64e683a33c68",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 盘点管理",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"盘点管理.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"4e525d858b7b450ba501f1baf399515a",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 库存情况",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"库存情况.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"36f5f8dac545473b81b76edd33060f8d",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 批次情况",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"批次情况.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"99fc2ec02d9a400a92b5a532be87689b",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 仓库列表",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"仓库列表.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true}]}],
+              "images":{
+                "normal~":"images/erp原型说明/u113.png"}},
+{
+              "id":"f79dd3391e60462d947f640901da68fb",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "location":{
+                  "x":680,
+                  "y":2080},
+                "size":{
+                  "width":100,
+                  "height":235}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"b8c5627205db488a8da7d2c9f413de56",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "location":{
+                      "x":680,
+                      "y":2080},
+                    "size":{
+                      "width":100,
+                      "height":235}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u109.png"}},
+{
+              "id":"5abff53835bb480cbec1e3a51d474d12",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFFFF0000,
+                  "opacity":1},
+                "location":{
+                  "x":780,
+                  "y":2080},
+                "size":{
+                  "width":200,
+                  "height":235}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"96501a1e3d504d00969ae1c76a5206eb",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFFFF0000,
+                      "opacity":1},
+                    "location":{
+                      "x":780,
+                      "y":2080},
+                    "size":{
+                      "width":200,
+                      "height":235}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u125.png"}},
+{
+              "id":"569ab7cb4a7b46409e3df140a2128abd",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "location":{
+                  "x":0,
+                  "y":2020},
+                "size":{
+                  "width":100,
+                  "height":60}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"45b1eef036d548eaa2b7f7d8d609bea8",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "location":{
+                      "x":0,
+                      "y":2020},
+                    "size":{
+                      "width":100,
+                      "height":60}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u13.png"}},
+{
+              "id":"0a427ca622964922afb49c1e2d61ed10",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "location":{
+                  "x":100,
+                  "y":2020},
+                "size":{
+                  "width":80,
+                  "height":60}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"24504cc97ea241e398fe83f506603c17",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "location":{
+                      "x":100,
+                      "y":2020},
+                    "size":{
+                      "width":80,
+                      "height":60}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u15.png"}},
+{
+              "id":"de25e7d1eea44e0b9f1100a2e6160c76",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Bold', '宋体'",
+                "fontSize":"14px",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "lineSpacing":"25px",
+                "paddingTop":"5",
+                "paddingBottom":"5",
+                "location":{
+                  "x":180,
+                  "y":2020},
+                "size":{
+                  "width":500,
+                  "height":60}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"a2636bce0ae046b78127acf84190cbf6",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Bold', '宋体'",
+                    "fontSize":"14px",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "lineSpacing":"25px",
+                    "paddingTop":"5",
+                    "paddingBottom":"5",
+                    "location":{
+                      "x":180,
+                      "y":2020},
+                    "size":{
+                      "width":500,
+                      "height":60}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u17.png"}},
+{
+              "id":"0159936d3e17469bb1be7648c60fa0f4",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "location":{
+                  "x":680,
+                  "y":2020},
+                "size":{
+                  "width":100,
+                  "height":60}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"928d2e79c1304ebbb6afe62aa012dce6",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "location":{
+                      "x":680,
+                      "y":2020},
+                    "size":{
+                      "width":100,
+                      "height":60}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u13.png"}},
+{
+              "id":"1059e1d1db4e4ef49559224833363038",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFFFF0000,
+                  "opacity":1},
+                "location":{
+                  "x":780,
+                  "y":2020},
+                "size":{
+                  "width":200,
+                  "height":60}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"59f35ab6285e46ec8e9536ef682f8481",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFFFF0000,
+                      "opacity":1},
+                    "location":{
+                      "x":780,
+                      "y":2020},
+                    "size":{
+                      "width":200,
+                      "height":60}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u21.png"}},
+{
+              "id":"75ad11254e3547eb93595309ca0866b3",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "location":{
+                  "x":0,
+                  "y":1910},
+                "size":{
+                  "width":100,
+                  "height":110}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"a39b49fe0f0b4b1db3c7ce18245c49bd",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "location":{
+                      "x":0,
+                      "y":1910},
+                    "size":{
+                      "width":100,
+                      "height":110}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u98.png"}},
+{
+              "id":"9a9f9ef41cc14e2688f8124b8fac2453",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "location":{
+                  "x":100,
+                  "y":1910},
+                "size":{
+                  "width":80,
+                  "height":110}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"42aae93ac64046d8a621d40e85f0bdee",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "location":{
+                      "x":100,
+                      "y":1910},
+                    "size":{
+                      "width":80,
+                      "height":110}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u100.png"}},
+{
+              "id":"9251a9c51d4e4e6cbfd24240890a77f7",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Bold', '宋体'",
+                "fontSize":"14px",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "lineSpacing":"25px",
+                "paddingTop":"5",
+                "paddingBottom":"5",
+                "location":{
+                  "x":180,
+                  "y":1910},
+                "size":{
+                  "width":500,
+                  "height":110}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"3cd03a4da49c4481ae45424f706f672b",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Bold', '宋体'",
+                    "fontSize":"14px",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "lineSpacing":"25px",
+                    "paddingTop":"5",
+                    "paddingBottom":"5",
+                    "location":{
+                      "x":180,
+                      "y":1910},
+                    "size":{
+                      "width":500,
+                      "height":110}},
+                  "adaptiveStyles":{
+},
+                  "objects":[{
+                      "id":"e670a38079ff43a8ad2cd9eadf688102",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 店铺列表",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"店铺列表.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"c191b1dd98e94140af072e61d7fa6663",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 库存更新",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"库存更新.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"1a378bc1c3d4481c9e05c650c34a9dee",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 库存分配",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"库存分配.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true}]}],
+              "images":{
+                "normal~":"images/erp原型说明/u102.png"}},
+{
+              "id":"0fbde75777374a6a98bb8c67cb4893bf",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "location":{
+                  "x":680,
+                  "y":1910},
+                "size":{
+                  "width":100,
+                  "height":110}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"6b4af001c6494c2faba7718fe18a3e62",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "location":{
+                      "x":680,
+                      "y":1910},
+                    "size":{
+                      "width":100,
+                      "height":110}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u98.png"}},
+{
+              "id":"bca04b19b62b41c591a7ecd92a23cf04",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFFFF0000,
+                  "opacity":1},
+                "location":{
+                  "x":780,
+                  "y":1910},
+                "size":{
+                  "width":200,
+                  "height":110}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"e695a32554954cf7ba96b7a28667fc82",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFFFF0000,
+                      "opacity":1},
+                    "location":{
+                      "x":780,
+                      "y":1910},
+                    "size":{
+                      "width":200,
+                      "height":110}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u107.png"}},
+{
+              "id":"092fd93eb5d14073ab0faae2bc50a60f",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "location":{
+                  "x":0,
+                  "y":1725},
+                "size":{
+                  "width":100,
+                  "height":185}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"de682af0705f458cb0cecfcfd1565290",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "location":{
+                      "x":0,
+                      "y":1725},
+                    "size":{
+                      "width":100,
+                      "height":185}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u162.png"}},
+{
+              "id":"a3613b4224124300bf2f62572ec35c90",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "location":{
+                  "x":100,
+                  "y":1725},
+                "size":{
+                  "width":80,
+                  "height":185}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"267c9b2cf2ec480b8ace4430b68ae99f",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "location":{
+                      "x":100,
+                      "y":1725},
+                    "size":{
+                      "width":80,
+                      "height":185}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u164.png"}},
+{
+              "id":"14b5b530df34432394803e55c3e5bcb7",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Bold', '宋体'",
+                "fontSize":"14px",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "lineSpacing":"25px",
+                "paddingTop":"5",
+                "paddingBottom":"5",
+                "location":{
+                  "x":180,
+                  "y":1725},
+                "size":{
+                  "width":500,
+                  "height":185}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"49614ff908bc4dc0bb9ce8e71a363992",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Bold', '宋体'",
+                    "fontSize":"14px",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "lineSpacing":"25px",
+                    "paddingTop":"5",
+                    "paddingBottom":"5",
+                    "location":{
+                      "x":180,
+                      "y":1725},
+                    "size":{
+                      "width":500,
+                      "height":185}},
+                  "adaptiveStyles":{
+},
+                  "objects":[{
+                      "id":"2b77bc7bc0f44c95bc19140e3652822f",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 添加订单",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"添加订单.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"b521735244d9443fa3cfd8191fa9adef",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 下载订单",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"下载订单.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"581904d25d9b4e4ca0e646c02d69b23c",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 待审核订单",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"待审核订单.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"02d5980b91f546ef98b3bcc6c7866c1a",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 订单详情页",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"订单详情页.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"c2df16c1ac924f06abf4dc14b54f74ce",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 分配仓库",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"分配仓库.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"46e1031f86bf4abc94c6772ad38c2d68",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 订单列表",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"订单列表.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true}]}],
+              "images":{
+                "normal~":"images/erp原型说明/u166.png"}},
+{
+              "id":"c9a0840ece3749dbaa333a18f3fc3b28",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "location":{
+                  "x":680,
+                  "y":1725},
+                "size":{
+                  "width":100,
+                  "height":185}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"b555bfb8eab345ed8e54a66eef3ac1ac",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "location":{
+                      "x":680,
+                      "y":1725},
+                    "size":{
+                      "width":100,
+                      "height":185}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u162.png"}},
+{
+              "id":"d43d8231bef74fcd85acde4240aabb4f",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFFFF0000,
+                  "opacity":1},
+                "location":{
+                  "x":780,
+                  "y":1725},
+                "size":{
+                  "width":200,
+                  "height":185}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"0e6dadc85a6444c4939b2fbdd3732dd9",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFFFF0000,
+                      "opacity":1},
+                    "location":{
+                      "x":780,
+                      "y":1725},
+                    "size":{
+                      "width":200,
+                      "height":185}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u176.png"}},
+{
+              "id":"f2ab5d225b504ab5991e8b9109cd2606",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "location":{
+                  "x":0,
+                  "y":1465},
+                "size":{
+                  "width":100,
+                  "height":260}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"5a3a5bac8f304c929459b729ff2cdc1a",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "location":{
+                      "x":0,
+                      "y":1465},
+                    "size":{
+                      "width":100,
+                      "height":260}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u43.png"}},
+{
+              "id":"a90c80d5715d4f059a0d1cadaceed762",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "location":{
+                  "x":100,
+                  "y":1465},
+                "size":{
+                  "width":80,
+                  "height":260}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"04cff87dd8f942e488bfde0e4fab089c",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "location":{
+                      "x":100,
+                      "y":1465},
+                    "size":{
+                      "width":80,
+                      "height":260}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u45.png"}},
+{
+              "id":"b974819447ca4600981e95c10da9373c",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Bold', '宋体'",
+                "fontSize":"14px",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "lineSpacing":"25px",
+                "paddingTop":"5",
+                "paddingBottom":"5",
+                "location":{
+                  "x":180,
+                  "y":1465},
+                "size":{
+                  "width":500,
+                  "height":260}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"c9408de73da34447816f63d23bf0546f",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Bold', '宋体'",
+                    "fontSize":"14px",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "lineSpacing":"25px",
+                    "paddingTop":"5",
+                    "paddingBottom":"5",
+                    "location":{
+                      "x":180,
+                      "y":1465},
+                    "size":{
+                      "width":500,
+                      "height":260}},
+                  "adaptiveStyles":{
+},
+                  "objects":[{
+                      "id":"fa84fe1232a44b96816e09238e664c17",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 链接",
+                                  "target":{
+                                    "targetType":"page",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"445b624302f44f78af45830a951967bd",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 订单详情",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"订单详情.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"4b76a604e7bb4be0a870810081ab8740",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 待拣货出库单",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"待拣货出库单.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"2cd9738445cf4a40b26282be1a865a6c",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 出库单详情",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"出库单详情.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"49f116f0c39346a4ab0cbad615c51c3b",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 待打印出库单",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"待打印出库单.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"45466d59a9e24639836c3ba71c0a2d27",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 待发货出库单",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"待发货出库单.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"f0082e635c8d4cc4b226a6988a121361",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 出库单校验称重",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"出库单校验称重.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"209374cab0ce4c4f9fd6935e83f4d43e",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 已发货出库单",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"已发货出库单.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"7624bc22a7674cfdb6832edc07c7892e",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 货到付款出库单",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"货到付款出库单.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true}]}],
+              "images":{
+                "normal~":"images/erp原型说明/u47.png"}},
+{
+              "id":"5389912f72134ea1a3d7b73333765bd6",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "location":{
+                  "x":680,
+                  "y":1465},
+                "size":{
+                  "width":100,
+                  "height":260}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"b0a117897900453283999f5b99adcdee",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "location":{
+                      "x":680,
+                      "y":1465},
+                    "size":{
+                      "width":100,
+                      "height":260}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u43.png"}},
+{
+              "id":"698206d350ac41beafdaad85041ea2d5",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFFFF0000,
+                  "opacity":1},
+                "location":{
+                  "x":780,
+                  "y":1465},
+                "size":{
+                  "width":200,
+                  "height":260}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"72327e2a082f49ac920fc9449184cd0c",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFFFF0000,
+                      "opacity":1},
+                    "location":{
+                      "x":780,
+                      "y":1465},
+                    "size":{
+                      "width":200,
+                      "height":260}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u59.png"}},
+{
+              "id":"a3b45bda14ef4659b79a5979726a5a9a",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "location":{
+                  "x":0,
+                  "y":1255},
+                "size":{
+                  "width":100,
+                  "height":210}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"00b81b3811ac4041889146e9860db997",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "location":{
+                      "x":0,
+                      "y":1255},
+                    "size":{
+                      "width":100,
+                      "height":210}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u127.png"}},
+{
+              "id":"c36fb08f5ffd434a861ed7604172e960",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "location":{
+                  "x":100,
+                  "y":1255},
+                "size":{
+                  "width":80,
+                  "height":210}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"71c8713e8ffc4749933617b36de35cfd",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "location":{
+                      "x":100,
+                      "y":1255},
+                    "size":{
+                      "width":80,
+                      "height":210}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u129.png"}},
+{
+              "id":"3b678a00e68b4ad4ac2b7d86301bb5c8",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Bold', '宋体'",
+                "fontSize":"14px",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "lineSpacing":"25px",
+                "paddingTop":"5",
+                "paddingBottom":"5",
+                "location":{
+                  "x":180,
+                  "y":1255},
+                "size":{
+                  "width":500,
+                  "height":210}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"c8db8105652349cf8b01fad586fc55bc",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Bold', '宋体'",
+                    "fontSize":"14px",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "lineSpacing":"25px",
+                    "paddingTop":"5",
+                    "paddingBottom":"5",
+                    "location":{
+                      "x":180,
+                      "y":1255},
+                    "size":{
+                      "width":500,
+                      "height":210}},
+                  "adaptiveStyles":{
+},
+                  "objects":[{
+                      "id":"f9d7a2c90df248afb488817d3e5cf173",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 售后列表",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"售后列表.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"496205b9e9a14352bcc47228a6b432da",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 添加售后",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"添加售后.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"6942c93dc343428991852f3af77d0f65",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 售后详情（仅退款）",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"售后详情（仅退款）.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"3336ea96058d4dafa6174782a1698b13",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 售后详情（退货退款）",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"售后详情（退货退款）.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"fdb30805e135466d819181b795098677",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 售后原因",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"售后原因.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"91a7fc4a016f437cab1606e9f4f36849",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 售后列表",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"售后列表_1.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true}]}],
+              "images":{
+                "normal~":"images/erp原型说明/u131.png"}},
+{
+              "id":"e22392039cf64703b69db09d03d81d9b",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "location":{
+                  "x":680,
+                  "y":1255},
+                "size":{
+                  "width":100,
+                  "height":210}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"ba936b099e834e468853a774d99344aa",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "location":{
+                      "x":680,
+                      "y":1255},
+                    "size":{
+                      "width":100,
+                      "height":210}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u127.png"}},
+{
+              "id":"f0da450ae5d440859e519e89723322e8",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFFFF0000,
+                  "opacity":1},
+                "location":{
+                  "x":780,
+                  "y":1255},
+                "size":{
+                  "width":200,
+                  "height":210}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"39d18f82d91a46dd8d118608595db624",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFFFF0000,
+                      "opacity":1},
+                    "location":{
+                      "x":780,
+                      "y":1255},
+                    "size":{
+                      "width":200,
+                      "height":210}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u141.png"}},
+{
+              "id":"42ff4ba0ea294c7d903fc8b9444c3032",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "location":{
+                  "x":0,
+                  "y":1020},
+                "size":{
+                  "width":100,
+                  "height":235}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"807e608b4a834d7d84b01d5949d58b18",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "location":{
+                      "x":0,
+                      "y":1020},
+                    "size":{
+                      "width":100,
+                      "height":235}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u109.png"}},
+{
+              "id":"b21a42031a6f4745be7f1dff2fdfdfcd",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "location":{
+                  "x":100,
+                  "y":1020},
+                "size":{
+                  "width":80,
+                  "height":235}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"62f0e925d2b14603bdd964d4dffef07b",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "location":{
+                      "x":100,
+                      "y":1020},
+                    "size":{
+                      "width":80,
+                      "height":235}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u111.png"}},
+{
+              "id":"b69d836d4abc441f9f8f604c8471f5b3",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Bold', '宋体'",
+                "fontSize":"14px",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "lineSpacing":"25px",
+                "paddingTop":"5",
+                "paddingBottom":"5",
+                "location":{
+                  "x":180,
+                  "y":1020},
+                "size":{
+                  "width":500,
+                  "height":235}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"a6999e99dbb041b38c43a7053bc6a4e3",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Bold', '宋体'",
+                    "fontSize":"14px",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "lineSpacing":"25px",
+                    "paddingTop":"5",
+                    "paddingBottom":"5",
+                    "location":{
+                      "x":180,
+                      "y":1020},
+                    "size":{
+                      "width":500,
+                      "height":235}},
+                  "adaptiveStyles":{
+},
+                  "objects":[{
+                      "id":"235eb40d70254b77b5f2d0f4454b2e42",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 销售明细",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"销售明细.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"c3ad4b16c8c747219167807297b708c3",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 订单收退款",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"订单收退款.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"f1a9155135ee4c3c859d7c4725efa9b4",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 财务审核",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"财务审核.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"c2546a4cb98548d6a7945b2257ff2b15",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 入库核对",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"入库核对.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"a73387c19bc74fecbbeb2731f7c12024",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 出库核对",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"出库核对.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"181e504d9b30431c9a7d87eefffa3b0d",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 盘点核对",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"盘点核对.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"56916e66c658474dba009b0d4905925c",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 供应商结算",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"供应商结算.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"ea7f1ca971bd40feacacf507f4fa578e",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 快递费用",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"快递费用.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true}]}],
+              "images":{
+                "normal~":"images/erp原型说明/u113.png"}},
+{
+              "id":"66b5b9e68abc453e82ce987d9f114883",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "location":{
+                  "x":680,
+                  "y":1020},
+                "size":{
+                  "width":100,
+                  "height":235}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"ffd693f1fb58425b99a8e35546e87900",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "location":{
+                      "x":680,
+                      "y":1020},
+                    "size":{
+                      "width":100,
+                      "height":235}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u109.png"}},
+{
+              "id":"3e36bfd2e055417a884cfc0bf13256e1",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFFFF0000,
+                  "opacity":1},
+                "location":{
+                  "x":780,
+                  "y":1020},
+                "size":{
+                  "width":200,
+                  "height":235}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"e39b0b02a88849608c29b1f1db951bb3",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFFFF0000,
+                      "opacity":1},
+                    "location":{
+                      "x":780,
+                      "y":1020},
+                    "size":{
+                      "width":200,
+                      "height":235}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u125.png"}},
+{
+              "id":"e8d5e3b77dc54fb8950b7fe535fec0bf",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "location":{
+                  "x":0,
+                  "y":910},
+                "size":{
+                  "width":100,
+                  "height":110}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"06e2c525d07d413191b52c8f4ceeac4b",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "location":{
+                      "x":0,
+                      "y":910},
+                    "size":{
+                      "width":100,
+                      "height":110}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u98.png"}},
+{
+              "id":"b6a3a7c92bc042deabc81d4f9dd20449",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "location":{
+                  "x":100,
+                  "y":910},
+                "size":{
+                  "width":80,
+                  "height":110}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"fdd2d909456a4a03af7abe4fa1ca0dff",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "location":{
+                      "x":100,
+                      "y":910},
+                    "size":{
+                      "width":80,
+                      "height":110}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u100.png"}},
+{
+              "id":"9f3af5b13133474e97611bbbc912b640",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Bold', '宋体'",
+                "fontSize":"14px",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "lineSpacing":"25px",
+                "paddingTop":"5",
+                "paddingBottom":"5",
+                "location":{
+                  "x":180,
+                  "y":910},
+                "size":{
+                  "width":500,
+                  "height":110}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"0e51047bd04c4915a7465b66ebe432f8",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Bold', '宋体'",
+                    "fontSize":"14px",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "lineSpacing":"25px",
+                    "paddingTop":"5",
+                    "paddingBottom":"5",
+                    "location":{
+                      "x":180,
+                      "y":910},
+                    "size":{
+                      "width":500,
+                      "height":110}},
+                  "adaptiveStyles":{
+},
+                  "objects":[{
+                      "id":"d0f9481590134ff9a21ba87ac25b6276",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 盘点商品列表（异常）",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"盘点商品列表（异常）.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true}]}],
+              "images":{
+                "normal~":"images/erp原型说明/u102.png"}},
+{
+              "id":"fb357f4232a6470caa9c2fb5029ae7c3",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "location":{
+                  "x":680,
+                  "y":910},
+                "size":{
+                  "width":100,
+                  "height":110}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"8ac83b18511647c3b1996af056e6669a",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "location":{
+                      "x":680,
+                      "y":910},
+                    "size":{
+                      "width":100,
+                      "height":110}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u98.png"}},
+{
+              "id":"b17dcdec680f4b5c89f759580193e478",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFFFF0000,
+                  "opacity":1},
+                "location":{
+                  "x":780,
+                  "y":910},
+                "size":{
+                  "width":200,
+                  "height":110}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"091831578bfd4b07be1a0523fe83aabf",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFFFF0000,
+                      "opacity":1},
+                    "location":{
+                      "x":780,
+                      "y":910},
+                    "size":{
+                      "width":200,
+                      "height":110}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u107.png"}},
+{
+              "id":"7a0a35a9d3bb4993bf486f300fea5ef2",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "location":{
+                  "x":0,
+                  "y":850},
+                "size":{
+                  "width":100,
+                  "height":60}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"dc3db21b412b4b53bfff83c3d1b84818",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "location":{
+                      "x":0,
+                      "y":850},
+                    "size":{
+                      "width":100,
+                      "height":60}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u13.png"}},
+{
+              "id":"a3d03c34dfef417c9d085e51c71cef72",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "location":{
+                  "x":100,
+                  "y":850},
+                "size":{
+                  "width":80,
+                  "height":60}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"41c51a272ce849d9a3c191784115a0ed",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "location":{
+                      "x":100,
+                      "y":850},
+                    "size":{
+                      "width":80,
+                      "height":60}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u15.png"}},
+{
+              "id":"ea258dff437849739e2affb20611b5a5",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Bold', '宋体'",
+                "fontSize":"14px",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "lineSpacing":"25px",
+                "paddingTop":"5",
+                "paddingBottom":"5",
+                "location":{
+                  "x":180,
+                  "y":850},
+                "size":{
+                  "width":500,
+                  "height":60}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"75449f4f32e24c15b098281ca10bcdf4",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Bold', '宋体'",
+                    "fontSize":"14px",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "lineSpacing":"25px",
+                    "paddingTop":"5",
+                    "paddingBottom":"5",
+                    "location":{
+                      "x":180,
+                      "y":850},
+                    "size":{
+                      "width":500,
+                      "height":60}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u17.png"}},
+{
+              "id":"c7383d52d4444e80bdbb520db8655369",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "location":{
+                  "x":680,
+                  "y":850},
+                "size":{
+                  "width":100,
+                  "height":60}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"195fff08aecd40218613de6ac5400192",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "location":{
+                      "x":680,
+                      "y":850},
+                    "size":{
+                      "width":100,
+                      "height":60}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u13.png"}},
+{
+              "id":"ea472abbcc204c24b2dc94fb74a14c79",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFFFF0000,
+                  "opacity":1},
+                "location":{
+                  "x":780,
+                  "y":850},
+                "size":{
+                  "width":200,
+                  "height":60}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"c569f89e34704a8fa6c1e690de4dacf4",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFFFF0000,
+                      "opacity":1},
+                    "location":{
+                      "x":780,
+                      "y":850},
+                    "size":{
+                      "width":200,
+                      "height":60}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u21.png"}},
+{
+              "id":"158b7fa3cfd6435085819f0a6444ea66",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "location":{
+                  "x":0,
+                  "y":530},
+                "size":{
+                  "width":100,
+                  "height":160}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"cf46155eee5840aeb806ffa25bae5992",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "location":{
+                      "x":0,
+                      "y":530},
+                    "size":{
+                      "width":100,
+                      "height":160}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u61.png"}},
+{
+              "id":"44f78548ee86421484fc810c11f975ec",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "location":{
+                  "x":100,
+                  "y":530},
+                "size":{
+                  "width":80,
+                  "height":160}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"2b88cf1ce9b54f70b5755aa515180978",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "location":{
+                      "x":100,
+                      "y":530},
+                    "size":{
+                      "width":80,
+                      "height":160}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u63.png"}},
+{
+              "id":"55fcfe3e7c8a4ac58e54bc463bfe199b",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Bold', '宋体'",
+                "fontSize":"14px",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "lineSpacing":"25px",
+                "paddingTop":"5",
+                "paddingBottom":"5",
+                "location":{
+                  "x":180,
+                  "y":530},
+                "size":{
+                  "width":500,
+                  "height":160}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"4f360c3261b04d2da1c8814de45cf43d",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Bold', '宋体'",
+                    "fontSize":"14px",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "lineSpacing":"25px",
+                    "paddingTop":"5",
+                    "paddingBottom":"5",
+                    "location":{
+                      "x":180,
+                      "y":530},
+                    "size":{
+                      "width":500,
+                      "height":160}},
+                  "adaptiveStyles":{
+},
+                  "objects":[{
+                      "id":"15c6511e2f294fedb359a007e21b5ac7",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 地址管理",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"地址管理.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"b7b22bf80c904124857c1333acba668b",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 打印模板",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"打印模板.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"ea3780df07bd47b1a691d2cb80fb244a",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 校验称重设置",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"校验称重设置.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true}]}],
+              "images":{
+                "normal~":"images/erp原型说明/u65.png"}},
+{
+              "id":"eeb09de5c0494c25a2db57b3d78469d7",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "location":{
+                  "x":680,
+                  "y":530},
+                "size":{
+                  "width":100,
+                  "height":160}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"196ed495c43748bfb2ef27d773e033d3",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "location":{
+                      "x":680,
+                      "y":530},
+                    "size":{
+                      "width":100,
+                      "height":160}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u61.png"}},
+{
+              "id":"af61e8b2b6df43768b2c6bc8effc7af1",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFFFF0000,
+                  "opacity":1},
+                "location":{
+                  "x":780,
+                  "y":530},
+                "size":{
+                  "width":200,
+                  "height":160}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"51308d37a3da4bcea380055d6dbc6afa",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFFFF0000,
+                      "opacity":1},
+                    "location":{
+                      "x":780,
+                      "y":530},
+                    "size":{
+                      "width":200,
+                      "height":160}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u72.png"}},
+{
+              "id":"56b4a16ce6cf4b73a78c308f108eff4b",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "location":{
+                  "x":0,
+                  "y":690},
+                "size":{
+                  "width":100,
+                  "height":160}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"919229c4ffd3419289a48c17bc455910",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "location":{
+                      "x":0,
+                      "y":690},
+                    "size":{
+                      "width":100,
+                      "height":160}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u61.png"}},
+{
+              "id":"d14e761aacac42c396b902a45537f638",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "location":{
+                  "x":100,
+                  "y":690},
+                "size":{
+                  "width":80,
+                  "height":160}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"e060c46312f242c3a471c0cdae07ccda",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "location":{
+                      "x":100,
+                      "y":690},
+                    "size":{
+                      "width":80,
+                      "height":160}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u63.png"}},
+{
+              "id":"226c7b8b858c4dc287a6a4aed29fdcfa",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Bold', '宋体'",
+                "fontSize":"14px",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "lineSpacing":"25px",
+                "paddingTop":"5",
+                "paddingBottom":"5",
+                "location":{
+                  "x":180,
+                  "y":690},
+                "size":{
+                  "width":500,
+                  "height":160}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"df30b490afc444ea8823cbaab57fca30",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Bold', '宋体'",
+                    "fontSize":"14px",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "lineSpacing":"25px",
+                    "paddingTop":"5",
+                    "paddingBottom":"5",
+                    "location":{
+                      "x":180,
+                      "y":690},
+                    "size":{
+                      "width":500,
+                      "height":160}},
+                  "adaptiveStyles":{
+},
+                  "objects":[{
+                      "id":"998b42b21e1945e6b754e34ea016d9e6",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 物流公司",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"物流公司.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"7daa4865715b4538a1745835a63b9b6c",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 区域管理",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"区域管理.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"b6b8fa98b7a3491f9a794882f74a3088",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 字典管理",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"字典管理.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"657cefaad61f4afbaade8e86501f28f1",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 快递管理",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"快递管理.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true}]}],
+              "images":{
+                "normal~":"images/erp原型说明/u65.png"}},
+{
+              "id":"b2a9987334b84c7a9e41be9b766c916e",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "location":{
+                  "x":680,
+                  "y":690},
+                "size":{
+                  "width":100,
+                  "height":160}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"385a6117857c4de2afc3eb208896f77b",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "location":{
+                      "x":680,
+                      "y":690},
+                    "size":{
+                      "width":100,
+                      "height":160}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u61.png"}},
+{
+              "id":"9554892c216f49d18490d11d92e19f7b",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFFFF0000,
+                  "opacity":1},
+                "location":{
+                  "x":780,
+                  "y":690},
+                "size":{
+                  "width":200,
+                  "height":160}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"3ae64177e9e64cdcae4b41518c934832",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFFFF0000,
+                      "opacity":1},
+                    "location":{
+                      "x":780,
+                      "y":690},
+                    "size":{
+                      "width":200,
+                      "height":160}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u72.png"}},
+{
+              "id":"d357848dd1244541a247ab03672e34ab",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "location":{
+                  "x":0,
+                  "y":270},
+                "size":{
+                  "width":100,
+                  "height":260}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"d621043704ef4253bc0df6c2f564660c",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "location":{
+                      "x":0,
+                      "y":270},
+                    "size":{
+                      "width":100,
+                      "height":260}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u43.png"}},
+{
+              "id":"f0064a65c83544f9ae50e6ea44238ea3",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "location":{
+                  "x":100,
+                  "y":270},
+                "size":{
+                  "width":80,
+                  "height":260}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"bdcb3f2318d34966b565038c7eb2c9bf",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "location":{
+                      "x":100,
+                      "y":270},
+                    "size":{
+                      "width":80,
+                      "height":260}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u45.png"}},
+{
+              "id":"79799940446f4535adf5e73df21d3ccc",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Bold', '宋体'",
+                "fontSize":"14px",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "lineSpacing":"25px",
+                "paddingTop":"5",
+                "paddingBottom":"5",
+                "location":{
+                  "x":180,
+                  "y":270},
+                "size":{
+                  "width":500,
+                  "height":260}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"a374a3b70d454f14abeeb9c91946443a",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Bold', '宋体'",
+                    "fontSize":"14px",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "lineSpacing":"25px",
+                    "paddingTop":"5",
+                    "paddingBottom":"5",
+                    "location":{
+                      "x":180,
+                      "y":270},
+                    "size":{
+                      "width":500,
+                      "height":260}},
+                  "adaptiveStyles":{
+},
+                  "objects":[{
+                      "id":"2213b1a24a7e48ddbad33699b011c8d1",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 个人资料",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"个人资料.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"86127c20138d4eb3b8a3e26cb4d70590",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 用户列表",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"用户列表.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"a1ca09f4aff4437d8ae08d0f91337cf3",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 角色权限",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"角色权限.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"614a5e157def48b895024364aa453188",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 系统日志",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"系统日志.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"08bde299815e429c8af51ee83a9c7097",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 个人资料",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"个人资料_1.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"fc530268e66047d3bf91cbc00d0f5abd",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 用户列表",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"用户列表_1.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"15a533aed60c4bc1b8f7635227118dd8",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 角色权限",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"角色权限_1.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true},
+{
+                      "id":"ac66e9e05c8a48d6845dab941e88d874",
+                      "label":"",
+                      "type":"hyperlink",
+                      "styleType":"hyperlink",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'Arial Normal', 'Arial'",
+                        "fontWeight":"400",
+                        "foreGroundFill":{
+                          "fillType":"solid",
+                          "color":0xFF000000,
+                          "opacity":1}},
+                      "adaptiveStyles":{
+},
+                      "interactionMap":{
+                        "onClick":{
+                          "description":"OnClick",
+                          "cases":[{
+                              "description":"用例 1",
+                              "isNewIfGroup":false,
+                              "actions":[{
+                                  "action":"linkWindow",
+                                  "description":"在 当前窗口 打开 系统日志",
+                                  "target":{
+                                    "targetType":"page",
+                                    "url":"系统日志_1.html",
+                                    "includeVariables":true},
+                                  "linkType":"current"}]}]}},
+                      "tabbable":true}]}],
+              "images":{
+                "normal~":"images/erp原型说明/u47.png"}},
+{
+              "id":"2f176b701ccb4218b954ac58dd9662b0",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "location":{
+                  "x":680,
+                  "y":270},
+                "size":{
+                  "width":100,
+                  "height":260}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"b0f67dea6eb84816b73c5af66e791d8a",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "location":{
+                      "x":680,
+                      "y":270},
+                    "size":{
+                      "width":100,
+                      "height":260}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u43.png"}},
+{
+              "id":"96edf0eb85c747ac96bbbbe8ab65d29b",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFFFF0000,
+                  "opacity":1},
+                "location":{
+                  "x":780,
+                  "y":270},
+                "size":{
+                  "width":200,
+                  "height":260}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"cd264db633cc47079e3f8feebdcbbbcc",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFFFF0000,
+                      "opacity":1},
+                    "location":{
+                      "x":780,
+                      "y":270},
+                    "size":{
+                      "width":200,
+                      "height":260}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u59.png"}},
+{
+              "id":"2d4460a4be0c48c0b0621fa85579b41b",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "location":{
+                  "x":0,
+                  "y":185},
+                "size":{
+                  "width":100,
+                  "height":85}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"68002cf8bf5c43feba6ecdafd502022c",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "location":{
+                      "x":0,
+                      "y":185},
+                    "size":{
+                      "width":100,
+                      "height":85}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u23.png"}},
+{
+              "id":"4854fe14556548fcb85d5ff1411e5478",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "location":{
+                  "x":100,
+                  "y":185},
+                "size":{
+                  "width":80,
+                  "height":85}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"106b9ae84e3b48f3bee078f381162b0e",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "location":{
+                      "x":100,
+                      "y":185},
+                    "size":{
+                      "width":80,
+                      "height":85}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u25.png"}},
+{
+              "id":"6616d2c39f014d7c9bfbaf6c6c9034fa",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Bold', '宋体'",
+                "fontSize":"14px",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "lineSpacing":"25px",
+                "paddingTop":"5",
+                "paddingBottom":"5",
+                "location":{
+                  "x":180,
+                  "y":185},
+                "size":{
+                  "width":500,
+                  "height":85}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"fb41743b94c24de7ad1ad6b487229162",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Bold', '宋体'",
+                    "fontSize":"14px",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "lineSpacing":"25px",
+                    "paddingTop":"5",
+                    "paddingBottom":"5",
+                    "location":{
+                      "x":180,
+                      "y":185},
+                    "size":{
+                      "width":500,
+                      "height":85}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u27.png"}},
+{
+              "id":"b57adc12af3e4744a116aaa4981e1121",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "location":{
+                  "x":680,
+                  "y":185},
+                "size":{
+                  "width":100,
+                  "height":85}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"8046155124c8480a9a8aba2a3a33843b",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "location":{
+                      "x":680,
+                      "y":185},
+                    "size":{
+                      "width":100,
+                      "height":85}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u23.png"}},
+{
+              "id":"8ce6d813ab5b4be48fc8e52db3d3e72c",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFFFF0000,
+                  "opacity":1},
+                "location":{
+                  "x":780,
+                  "y":185},
+                "size":{
+                  "width":200,
+                  "height":85}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"5ced198fa00f47ab9ff70d8e386c6379",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFFFF0000,
+                      "opacity":1},
+                    "location":{
+                      "x":780,
+                      "y":185},
+                    "size":{
+                      "width":200,
+                      "height":85}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u31.png"}},
+{
+              "id":"4ec06e5c69ec46b6ac79a15196750085",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "location":{
+                  "x":0,
+                  "y":100},
+                "size":{
+                  "width":100,
+                  "height":85}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"1a4fad01afba4ee3a89455e0374e0470",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "location":{
+                      "x":0,
+                      "y":100},
+                    "size":{
+                      "width":100,
+                      "height":85}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u23.png"}},
+{
+              "id":"a8cbb01cec2e4759bfceff5e43c02445",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "location":{
+                  "x":100,
+                  "y":100},
+                "size":{
+                  "width":80,
+                  "height":85}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"a18474934a144b08b6668b4e8780be41",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "location":{
+                      "x":100,
+                      "y":100},
+                    "size":{
+                      "width":80,
+                      "height":85}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u25.png"}},
+{
+              "id":"594f65eda55a4d5b8cd05e852a21a79c",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Bold', '宋体'",
+                "fontSize":"14px",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "lineSpacing":"25px",
+                "paddingTop":"5",
+                "paddingBottom":"5",
+                "location":{
+                  "x":180,
+                  "y":100},
+                "size":{
+                  "width":500,
+                  "height":85}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"7830bc8a287b4649a437cdd7dcd4b2d3",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Bold', '宋体'",
+                    "fontSize":"14px",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "lineSpacing":"25px",
+                    "paddingTop":"5",
+                    "paddingBottom":"5",
+                    "location":{
+                      "x":180,
+                      "y":100},
+                    "size":{
+                      "width":500,
+                      "height":85}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u27.png"}},
+{
+              "id":"e3204bc341fb456ab71e05e683f287d0",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "location":{
+                  "x":680,
+                  "y":100},
+                "size":{
+                  "width":100,
+                  "height":85}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"68e1164ae5364b728754f3e7fae42510",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "location":{
+                      "x":680,
+                      "y":100},
+                    "size":{
+                      "width":100,
+                      "height":85}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u23.png"}},
+{
+              "id":"cba5bc94237b498395263ce8779836a1",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFFFF0000,
+                  "opacity":1},
+                "location":{
+                  "x":780,
+                  "y":100},
+                "size":{
+                  "width":200,
+                  "height":85}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"3f8d558a40fa47d4bfe58994413b0858",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFFFF0000,
+                      "opacity":1},
+                    "location":{
+                      "x":780,
+                      "y":100},
+                    "size":{
+                      "width":200,
+                      "height":85}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u31.png"}},
+{
+              "id":"eb3e0d28a2c4498f9b5f643f07a8c46d",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "location":{
+                  "x":0,
+                  "y":40},
+                "size":{
+                  "width":100,
+                  "height":60}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"0072c5b952e54f9ea216a3c8bd3be1b4",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "location":{
+                      "x":0,
+                      "y":40},
+                    "size":{
+                      "width":100,
+                      "height":60}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u13.png"}},
+{
+              "id":"160b461a64bf44a689c239650c776038",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "location":{
+                  "x":100,
+                  "y":40},
+                "size":{
+                  "width":80,
+                  "height":60}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"6ed18c425f244bc0b58dcf48f43a95ad",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "location":{
+                      "x":100,
+                      "y":40},
+                    "size":{
+                      "width":80,
+                      "height":60}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u15.png"}},
+{
+              "id":"6df6d10269a0433eab1444c3937bc851",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Bold', '宋体'",
+                "fontSize":"14px",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "lineSpacing":"25px",
+                "paddingTop":"5",
+                "paddingBottom":"5",
+                "location":{
+                  "x":180,
+                  "y":40},
+                "size":{
+                  "width":500,
+                  "height":60}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"b16c223ad16c46d3ab59a5940a80274a",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Bold', '宋体'",
+                    "fontSize":"14px",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "lineSpacing":"25px",
+                    "paddingTop":"5",
+                    "paddingBottom":"5",
+                    "location":{
+                      "x":180,
+                      "y":40},
+                    "size":{
+                      "width":500,
+                      "height":60}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u17.png"}},
+{
+              "id":"ca97b197257842f28886700de508c5ea",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "location":{
+                  "x":680,
+                  "y":40},
+                "size":{
+                  "width":100,
+                  "height":60}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"0f229bd592f245c5a429aa05665e5f74",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFF000000,
+                      "opacity":1},
+                    "location":{
+                      "x":680,
+                      "y":40},
+                    "size":{
+                      "width":100,
+                      "height":60}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u13.png"}},
+{
+              "id":"7e09822f27224b4fabb9c982e9e13436",
+              "label":"",
+              "type":"tableCell",
+              "styleType":"tableCell",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"14px",
+                "horizontalAlignment":"center",
+                "verticalAlignment":"middle",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFFFF0000,
+                  "opacity":1},
+                "location":{
+                  "x":780,
+                  "y":40},
+                "size":{
+                  "width":200,
+                  "height":60}},
+              "adaptiveStyles":{
+},
+              "objects":[{
+                  "id":"17d909abf632472196acd60ac87e724a",
+                  "label":"",
+                  "isContained":true,
+                  "type":"richTextPanel",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "fontName":"'宋体 Regular', '宋体'",
+                    "fontSize":"14px",
+                    "horizontalAlignment":"center",
+                    "verticalAlignment":"middle",
+                    "foreGroundFill":{
+                      "fillType":"solid",
+                      "color":0xFFFF0000,
+                      "opacity":1},
+                    "location":{
+                      "x":780,
+                      "y":40},
+                    "size":{
+                      "width":200,
+                      "height":60}},
+                  "adaptiveStyles":{
+}}],
+              "images":{
+                "normal~":"images/erp原型说明/u21.png"}}]},
+{
+          "id":"40cfff0ba3604ad089c77d4aa967b059",
+          "label":"",
+          "type":"buttonShape",
+          "styleType":"paragraph",
+          "visible":true,
+          "style":{
+            "fontName":"'宋体 Regular', '宋体'",
+            "fontSize":"16px",
+            "foreGroundFill":{
+              "fillType":"solid",
+              "color":0xFF000000,
+              "opacity":1},
+            "location":{
+              "x":112,
+              "y":254},
+            "size":{
+              "width":65,
+              "height":18}},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"46b8f5ae34b5482ab5d06eb2cfe2bcbc",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "fontName":"'宋体 Regular', '宋体'",
+                "fontSize":"16px",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF000000,
+                  "opacity":1},
+                "location":{
+                  "x":112,
+                  "y":254},
+                "size":{
+                  "width":65,
+                  "height":18}},
+              "adaptiveStyles":{
+}}],
+          "images":{
+            "normal~":"resources/images/transparent.gif"}},
+{
+          "id":"e72c550419d140f59b5efaa5e05d2319",
+          "label":"",
+          "type":"buttonShape",
+          "styleType":"buttonShape",
+          "visible":true,
+          "style":{
+            "fill":{
+              "fillType":"solid",
+              "color":0xFFFFFF},
+            "location":{
+              "x":38,
+              "y":4045},
+            "size":{
+              "width":1089,
+              "height":100},
+            "borderWidth":"-1"},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"364d94cf97a9420bad76b40d0b77cf27",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "fill":{
+                  "fillType":"solid",
+                  "color":0xFFFFFF},
+                "location":{
+                  "x":38,
+                  "y":4045},
+                "size":{
+                  "width":1089,
+                  "height":100},
+                "borderWidth":"-1"},
+              "adaptiveStyles":{
+}}],
+          "images":{
+            "normal~":"resources/images/transparent.gif"}}]}},
+  "masters":{
+},
+  "objectPaths":{
+    "547250abf084480a9e043634373bcf21":{
+      "scriptId":"u0"},
+    "5b0e3a19c8f44a4699ac9af212e91ca2":{
+      "scriptId":"u1"},
+    "0910867fc13640df9442b241376dcc77":{
+      "scriptId":"u2"},
+    "a583a1dd7a1545478e0028d8653e382c":{
+      "scriptId":"u3"},
+    "ca96d597d2354e73b69bea109b197e51":{
+      "scriptId":"u4"},
+    "973c2cfc0475401baa474883bc140469":{
+      "scriptId":"u5"},
+    "29e4a402277840b0bccb731a00f8895c":{
+      "scriptId":"u6"},
+    "32ee6e4ad15547269e7d50ef2da7c24a":{
+      "scriptId":"u7"},
+    "0171073e88b14cffaaa40c90ae267183":{
+      "scriptId":"u8"},
+    "ceb345ebe4c2481bb42867035c63a41f":{
+      "scriptId":"u9"},
+    "703d4f705ecc488eab24d432742bf61c":{
+      "scriptId":"u10"},
+    "f15eae20267f4c3cab16cfadf85e5530":{
+      "scriptId":"u11"},
+    "92b12d781b254fca98b53d85c580a38d":{
+      "scriptId":"u12"},
+    "eb3e0d28a2c4498f9b5f643f07a8c46d":{
+      "scriptId":"u13"},
+    "0072c5b952e54f9ea216a3c8bd3be1b4":{
+      "scriptId":"u14"},
+    "160b461a64bf44a689c239650c776038":{
+      "scriptId":"u15"},
+    "6ed18c425f244bc0b58dcf48f43a95ad":{
+      "scriptId":"u16"},
+    "6df6d10269a0433eab1444c3937bc851":{
+      "scriptId":"u17"},
+    "b16c223ad16c46d3ab59a5940a80274a":{
+      "scriptId":"u18"},
+    "ca97b197257842f28886700de508c5ea":{
+      "scriptId":"u19"},
+    "0f229bd592f245c5a429aa05665e5f74":{
+      "scriptId":"u20"},
+    "7e09822f27224b4fabb9c982e9e13436":{
+      "scriptId":"u21"},
+    "17d909abf632472196acd60ac87e724a":{
+      "scriptId":"u22"},
+    "4ec06e5c69ec46b6ac79a15196750085":{
+      "scriptId":"u23"},
+    "1a4fad01afba4ee3a89455e0374e0470":{
+      "scriptId":"u24"},
+    "a8cbb01cec2e4759bfceff5e43c02445":{
+      "scriptId":"u25"},
+    "a18474934a144b08b6668b4e8780be41":{
+      "scriptId":"u26"},
+    "594f65eda55a4d5b8cd05e852a21a79c":{
+      "scriptId":"u27"},
+    "7830bc8a287b4649a437cdd7dcd4b2d3":{
+      "scriptId":"u28"},
+    "e3204bc341fb456ab71e05e683f287d0":{
+      "scriptId":"u29"},
+    "68e1164ae5364b728754f3e7fae42510":{
+      "scriptId":"u30"},
+    "cba5bc94237b498395263ce8779836a1":{
+      "scriptId":"u31"},
+    "3f8d558a40fa47d4bfe58994413b0858":{
+      "scriptId":"u32"},
+    "2d4460a4be0c48c0b0621fa85579b41b":{
+      "scriptId":"u33"},
+    "68002cf8bf5c43feba6ecdafd502022c":{
+      "scriptId":"u34"},
+    "4854fe14556548fcb85d5ff1411e5478":{
+      "scriptId":"u35"},
+    "106b9ae84e3b48f3bee078f381162b0e":{
+      "scriptId":"u36"},
+    "6616d2c39f014d7c9bfbaf6c6c9034fa":{
+      "scriptId":"u37"},
+    "fb41743b94c24de7ad1ad6b487229162":{
+      "scriptId":"u38"},
+    "b57adc12af3e4744a116aaa4981e1121":{
+      "scriptId":"u39"},
+    "8046155124c8480a9a8aba2a3a33843b":{
+      "scriptId":"u40"},
+    "8ce6d813ab5b4be48fc8e52db3d3e72c":{
+      "scriptId":"u41"},
+    "5ced198fa00f47ab9ff70d8e386c6379":{
+      "scriptId":"u42"},
+    "d357848dd1244541a247ab03672e34ab":{
+      "scriptId":"u43"},
+    "d621043704ef4253bc0df6c2f564660c":{
+      "scriptId":"u44"},
+    "f0064a65c83544f9ae50e6ea44238ea3":{
+      "scriptId":"u45"},
+    "bdcb3f2318d34966b565038c7eb2c9bf":{
+      "scriptId":"u46"},
+    "79799940446f4535adf5e73df21d3ccc":{
+      "scriptId":"u47"},
+    "a374a3b70d454f14abeeb9c91946443a":{
+      "scriptId":"u48"},
+    "2213b1a24a7e48ddbad33699b011c8d1":{
+      "scriptId":"u49"},
+    "86127c20138d4eb3b8a3e26cb4d70590":{
+      "scriptId":"u50"},
+    "a1ca09f4aff4437d8ae08d0f91337cf3":{
+      "scriptId":"u51"},
+    "614a5e157def48b895024364aa453188":{
+      "scriptId":"u52"},
+    "08bde299815e429c8af51ee83a9c7097":{
+      "scriptId":"u53"},
+    "fc530268e66047d3bf91cbc00d0f5abd":{
+      "scriptId":"u54"},
+    "15a533aed60c4bc1b8f7635227118dd8":{
+      "scriptId":"u55"},
+    "ac66e9e05c8a48d6845dab941e88d874":{
+      "scriptId":"u56"},
+    "2f176b701ccb4218b954ac58dd9662b0":{
+      "scriptId":"u57"},
+    "b0f67dea6eb84816b73c5af66e791d8a":{
+      "scriptId":"u58"},
+    "96edf0eb85c747ac96bbbbe8ab65d29b":{
+      "scriptId":"u59"},
+    "cd264db633cc47079e3f8feebdcbbbcc":{
+      "scriptId":"u60"},
+    "158b7fa3cfd6435085819f0a6444ea66":{
+      "scriptId":"u61"},
+    "cf46155eee5840aeb806ffa25bae5992":{
+      "scriptId":"u62"},
+    "44f78548ee86421484fc810c11f975ec":{
+      "scriptId":"u63"},
+    "2b88cf1ce9b54f70b5755aa515180978":{
+      "scriptId":"u64"},
+    "55fcfe3e7c8a4ac58e54bc463bfe199b":{
+      "scriptId":"u65"},
+    "4f360c3261b04d2da1c8814de45cf43d":{
+      "scriptId":"u66"},
+    "15c6511e2f294fedb359a007e21b5ac7":{
+      "scriptId":"u67"},
+    "b7b22bf80c904124857c1333acba668b":{
+      "scriptId":"u68"},
+    "ea3780df07bd47b1a691d2cb80fb244a":{
+      "scriptId":"u69"},
+    "eeb09de5c0494c25a2db57b3d78469d7":{
+      "scriptId":"u70"},
+    "196ed495c43748bfb2ef27d773e033d3":{
+      "scriptId":"u71"},
+    "af61e8b2b6df43768b2c6bc8effc7af1":{
+      "scriptId":"u72"},
+    "51308d37a3da4bcea380055d6dbc6afa":{
+      "scriptId":"u73"},
+    "56b4a16ce6cf4b73a78c308f108eff4b":{
+      "scriptId":"u74"},
+    "919229c4ffd3419289a48c17bc455910":{
+      "scriptId":"u75"},
+    "d14e761aacac42c396b902a45537f638":{
+      "scriptId":"u76"},
+    "e060c46312f242c3a471c0cdae07ccda":{
+      "scriptId":"u77"},
+    "226c7b8b858c4dc287a6a4aed29fdcfa":{
+      "scriptId":"u78"},
+    "df30b490afc444ea8823cbaab57fca30":{
+      "scriptId":"u79"},
+    "998b42b21e1945e6b754e34ea016d9e6":{
+      "scriptId":"u80"},
+    "7daa4865715b4538a1745835a63b9b6c":{
+      "scriptId":"u81"},
+    "b6b8fa98b7a3491f9a794882f74a3088":{
+      "scriptId":"u82"},
+    "657cefaad61f4afbaade8e86501f28f1":{
+      "scriptId":"u83"},
+    "b2a9987334b84c7a9e41be9b766c916e":{
+      "scriptId":"u84"},
+    "385a6117857c4de2afc3eb208896f77b":{
+      "scriptId":"u85"},
+    "9554892c216f49d18490d11d92e19f7b":{
+      "scriptId":"u86"},
+    "3ae64177e9e64cdcae4b41518c934832":{
+      "scriptId":"u87"},
+    "7a0a35a9d3bb4993bf486f300fea5ef2":{
+      "scriptId":"u88"},
+    "dc3db21b412b4b53bfff83c3d1b84818":{
+      "scriptId":"u89"},
+    "a3d03c34dfef417c9d085e51c71cef72":{
+      "scriptId":"u90"},
+    "41c51a272ce849d9a3c191784115a0ed":{
+      "scriptId":"u91"},
+    "ea258dff437849739e2affb20611b5a5":{
+      "scriptId":"u92"},
+    "75449f4f32e24c15b098281ca10bcdf4":{
+      "scriptId":"u93"},
+    "c7383d52d4444e80bdbb520db8655369":{
+      "scriptId":"u94"},
+    "195fff08aecd40218613de6ac5400192":{
+      "scriptId":"u95"},
+    "ea472abbcc204c24b2dc94fb74a14c79":{
+      "scriptId":"u96"},
+    "c569f89e34704a8fa6c1e690de4dacf4":{
+      "scriptId":"u97"},
+    "e8d5e3b77dc54fb8950b7fe535fec0bf":{
+      "scriptId":"u98"},
+    "06e2c525d07d413191b52c8f4ceeac4b":{
+      "scriptId":"u99"},
+    "b6a3a7c92bc042deabc81d4f9dd20449":{
+      "scriptId":"u100"},
+    "fdd2d909456a4a03af7abe4fa1ca0dff":{
+      "scriptId":"u101"},
+    "9f3af5b13133474e97611bbbc912b640":{
+      "scriptId":"u102"},
+    "0e51047bd04c4915a7465b66ebe432f8":{
+      "scriptId":"u103"},
+    "d0f9481590134ff9a21ba87ac25b6276":{
+      "scriptId":"u104"},
+    "fb357f4232a6470caa9c2fb5029ae7c3":{
+      "scriptId":"u105"},
+    "8ac83b18511647c3b1996af056e6669a":{
+      "scriptId":"u106"},
+    "b17dcdec680f4b5c89f759580193e478":{
+      "scriptId":"u107"},
+    "091831578bfd4b07be1a0523fe83aabf":{
+      "scriptId":"u108"},
+    "42ff4ba0ea294c7d903fc8b9444c3032":{
+      "scriptId":"u109"},
+    "807e608b4a834d7d84b01d5949d58b18":{
+      "scriptId":"u110"},
+    "b21a42031a6f4745be7f1dff2fdfdfcd":{
+      "scriptId":"u111"},
+    "62f0e925d2b14603bdd964d4dffef07b":{
+      "scriptId":"u112"},
+    "b69d836d4abc441f9f8f604c8471f5b3":{
+      "scriptId":"u113"},
+    "a6999e99dbb041b38c43a7053bc6a4e3":{
+      "scriptId":"u114"},
+    "235eb40d70254b77b5f2d0f4454b2e42":{
+      "scriptId":"u115"},
+    "c3ad4b16c8c747219167807297b708c3":{
+      "scriptId":"u116"},
+    "f1a9155135ee4c3c859d7c4725efa9b4":{
+      "scriptId":"u117"},
+    "c2546a4cb98548d6a7945b2257ff2b15":{
+      "scriptId":"u118"},
+    "a73387c19bc74fecbbeb2731f7c12024":{
+      "scriptId":"u119"},
+    "181e504d9b30431c9a7d87eefffa3b0d":{
+      "scriptId":"u120"},
+    "56916e66c658474dba009b0d4905925c":{
+      "scriptId":"u121"},
+    "ea7f1ca971bd40feacacf507f4fa578e":{
+      "scriptId":"u122"},
+    "66b5b9e68abc453e82ce987d9f114883":{
+      "scriptId":"u123"},
+    "ffd693f1fb58425b99a8e35546e87900":{
+      "scriptId":"u124"},
+    "3e36bfd2e055417a884cfc0bf13256e1":{
+      "scriptId":"u125"},
+    "e39b0b02a88849608c29b1f1db951bb3":{
+      "scriptId":"u126"},
+    "a3b45bda14ef4659b79a5979726a5a9a":{
+      "scriptId":"u127"},
+    "00b81b3811ac4041889146e9860db997":{
+      "scriptId":"u128"},
+    "c36fb08f5ffd434a861ed7604172e960":{
+      "scriptId":"u129"},
+    "71c8713e8ffc4749933617b36de35cfd":{
+      "scriptId":"u130"},
+    "3b678a00e68b4ad4ac2b7d86301bb5c8":{
+      "scriptId":"u131"},
+    "c8db8105652349cf8b01fad586fc55bc":{
+      "scriptId":"u132"},
+    "f9d7a2c90df248afb488817d3e5cf173":{
+      "scriptId":"u133"},
+    "496205b9e9a14352bcc47228a6b432da":{
+      "scriptId":"u134"},
+    "6942c93dc343428991852f3af77d0f65":{
+      "scriptId":"u135"},
+    "3336ea96058d4dafa6174782a1698b13":{
+      "scriptId":"u136"},
+    "fdb30805e135466d819181b795098677":{
+      "scriptId":"u137"},
+    "91a7fc4a016f437cab1606e9f4f36849":{
+      "scriptId":"u138"},
+    "e22392039cf64703b69db09d03d81d9b":{
+      "scriptId":"u139"},
+    "ba936b099e834e468853a774d99344aa":{
+      "scriptId":"u140"},
+    "f0da450ae5d440859e519e89723322e8":{
+      "scriptId":"u141"},
+    "39d18f82d91a46dd8d118608595db624":{
+      "scriptId":"u142"},
+    "f2ab5d225b504ab5991e8b9109cd2606":{
+      "scriptId":"u143"},
+    "5a3a5bac8f304c929459b729ff2cdc1a":{
+      "scriptId":"u144"},
+    "a90c80d5715d4f059a0d1cadaceed762":{
+      "scriptId":"u145"},
+    "04cff87dd8f942e488bfde0e4fab089c":{
+      "scriptId":"u146"},
+    "b974819447ca4600981e95c10da9373c":{
+      "scriptId":"u147"},
+    "c9408de73da34447816f63d23bf0546f":{
+      "scriptId":"u148"},
+    "fa84fe1232a44b96816e09238e664c17":{
+      "scriptId":"u149"},
+    "445b624302f44f78af45830a951967bd":{
+      "scriptId":"u150"},
+    "4b76a604e7bb4be0a870810081ab8740":{
+      "scriptId":"u151"},
+    "2cd9738445cf4a40b26282be1a865a6c":{
+      "scriptId":"u152"},
+    "49f116f0c39346a4ab0cbad615c51c3b":{
+      "scriptId":"u153"},
+    "45466d59a9e24639836c3ba71c0a2d27":{
+      "scriptId":"u154"},
+    "f0082e635c8d4cc4b226a6988a121361":{
+      "scriptId":"u155"},
+    "209374cab0ce4c4f9fd6935e83f4d43e":{
+      "scriptId":"u156"},
+    "7624bc22a7674cfdb6832edc07c7892e":{
+      "scriptId":"u157"},
+    "5389912f72134ea1a3d7b73333765bd6":{
+      "scriptId":"u158"},
+    "b0a117897900453283999f5b99adcdee":{
+      "scriptId":"u159"},
+    "698206d350ac41beafdaad85041ea2d5":{
+      "scriptId":"u160"},
+    "72327e2a082f49ac920fc9449184cd0c":{
+      "scriptId":"u161"},
+    "092fd93eb5d14073ab0faae2bc50a60f":{
+      "scriptId":"u162"},
+    "de682af0705f458cb0cecfcfd1565290":{
+      "scriptId":"u163"},
+    "a3613b4224124300bf2f62572ec35c90":{
+      "scriptId":"u164"},
+    "267c9b2cf2ec480b8ace4430b68ae99f":{
+      "scriptId":"u165"},
+    "14b5b530df34432394803e55c3e5bcb7":{
+      "scriptId":"u166"},
+    "49614ff908bc4dc0bb9ce8e71a363992":{
+      "scriptId":"u167"},
+    "2b77bc7bc0f44c95bc19140e3652822f":{
+      "scriptId":"u168"},
+    "b521735244d9443fa3cfd8191fa9adef":{
+      "scriptId":"u169"},
+    "581904d25d9b4e4ca0e646c02d69b23c":{
+      "scriptId":"u170"},
+    "02d5980b91f546ef98b3bcc6c7866c1a":{
+      "scriptId":"u171"},
+    "c2df16c1ac924f06abf4dc14b54f74ce":{
+      "scriptId":"u172"},
+    "46e1031f86bf4abc94c6772ad38c2d68":{
+      "scriptId":"u173"},
+    "c9a0840ece3749dbaa333a18f3fc3b28":{
+      "scriptId":"u174"},
+    "b555bfb8eab345ed8e54a66eef3ac1ac":{
+      "scriptId":"u175"},
+    "d43d8231bef74fcd85acde4240aabb4f":{
+      "scriptId":"u176"},
+    "0e6dadc85a6444c4939b2fbdd3732dd9":{
+      "scriptId":"u177"},
+    "75ad11254e3547eb93595309ca0866b3":{
+      "scriptId":"u178"},
+    "a39b49fe0f0b4b1db3c7ce18245c49bd":{
+      "scriptId":"u179"},
+    "9a9f9ef41cc14e2688f8124b8fac2453":{
+      "scriptId":"u180"},
+    "42aae93ac64046d8a621d40e85f0bdee":{
+      "scriptId":"u181"},
+    "9251a9c51d4e4e6cbfd24240890a77f7":{
+      "scriptId":"u182"},
+    "3cd03a4da49c4481ae45424f706f672b":{
+      "scriptId":"u183"},
+    "e670a38079ff43a8ad2cd9eadf688102":{
+      "scriptId":"u184"},
+    "c191b1dd98e94140af072e61d7fa6663":{
+      "scriptId":"u185"},
+    "1a378bc1c3d4481c9e05c650c34a9dee":{
+      "scriptId":"u186"},
+    "0fbde75777374a6a98bb8c67cb4893bf":{
+      "scriptId":"u187"},
+    "6b4af001c6494c2faba7718fe18a3e62":{
+      "scriptId":"u188"},
+    "bca04b19b62b41c591a7ecd92a23cf04":{
+      "scriptId":"u189"},
+    "e695a32554954cf7ba96b7a28667fc82":{
+      "scriptId":"u190"},
+    "569ab7cb4a7b46409e3df140a2128abd":{
+      "scriptId":"u191"},
+    "45b1eef036d548eaa2b7f7d8d609bea8":{
+      "scriptId":"u192"},
+    "0a427ca622964922afb49c1e2d61ed10":{
+      "scriptId":"u193"},
+    "24504cc97ea241e398fe83f506603c17":{
+      "scriptId":"u194"},
+    "de25e7d1eea44e0b9f1100a2e6160c76":{
+      "scriptId":"u195"},
+    "a2636bce0ae046b78127acf84190cbf6":{
+      "scriptId":"u196"},
+    "0159936d3e17469bb1be7648c60fa0f4":{
+      "scriptId":"u197"},
+    "928d2e79c1304ebbb6afe62aa012dce6":{
+      "scriptId":"u198"},
+    "1059e1d1db4e4ef49559224833363038":{
+      "scriptId":"u199"},
+    "59f35ab6285e46ec8e9536ef682f8481":{
+      "scriptId":"u200"},
+    "997d04602a7549419cafedadea850a38":{
+      "scriptId":"u201"},
+    "16197e1f58d54772b0be225dd09263e0":{
+      "scriptId":"u202"},
+    "bafea71b05c0413f9db43977354b840d":{
+      "scriptId":"u203"},
+    "657b4f2350d14958b19a2b33a8c5f2b4":{
+      "scriptId":"u204"},
+    "8282d95b58c644e0a9357da6894ad693":{
+      "scriptId":"u205"},
+    "443e59495d5547d3b2697463ae797c6b":{
+      "scriptId":"u206"},
+    "98e95d8eaa964ad79124522814e74037":{
+      "scriptId":"u207"},
+    "e689a4db1da34c6bbb21b2e215ce752b":{
+      "scriptId":"u208"},
+    "62e7784d02a44c8cb469d53fc5760fba":{
+      "scriptId":"u209"},
+    "1fc258ce32a64f19886e64e683a33c68":{
+      "scriptId":"u210"},
+    "4e525d858b7b450ba501f1baf399515a":{
+      "scriptId":"u211"},
+    "36f5f8dac545473b81b76edd33060f8d":{
+      "scriptId":"u212"},
+    "99fc2ec02d9a400a92b5a532be87689b":{
+      "scriptId":"u213"},
+    "f79dd3391e60462d947f640901da68fb":{
+      "scriptId":"u214"},
+    "b8c5627205db488a8da7d2c9f413de56":{
+      "scriptId":"u215"},
+    "5abff53835bb480cbec1e3a51d474d12":{
+      "scriptId":"u216"},
+    "96501a1e3d504d00969ae1c76a5206eb":{
+      "scriptId":"u217"},
+    "8efb5337e60249c085efaf57493bcdcc":{
+      "scriptId":"u218"},
+    "38e39111a6504a8a9627945e0bc160f6":{
+      "scriptId":"u219"},
+    "c3e41d788f8842769499f145a575ca20":{
+      "scriptId":"u220"},
+    "c89697ead0084ca4bda54f36a18297f4":{
+      "scriptId":"u221"},
+    "1531451b153c4213ba3bc7ae1d538d39":{
+      "scriptId":"u222"},
+    "b736873c3e8a48cea7d3b840c39d5405":{
+      "scriptId":"u223"},
+    "87235bf6c1a94f1481fe4cfaf78f4699":{
+      "scriptId":"u224"},
+    "e04cba45a6b64baf93a9d158cde1f191":{
+      "scriptId":"u225"},
+    "035b8fe2ab04450b97cf687f7e8cc395":{
+      "scriptId":"u226"},
+    "8f44bb8b30e14e4d9d66505a9c2c4f19":{
+      "scriptId":"u227"},
+    "5c2fd41660214809979ff70aa7b6a5c5":{
+      "scriptId":"u228"},
+    "eb7f4602879e4b159cdd6ebe3294d9f2":{
+      "scriptId":"u229"},
+    "4c2d174e238e40b8922010a925db76b6":{
+      "scriptId":"u230"},
+    "103a4ae37a5d436eb61a31380f2c3737":{
+      "scriptId":"u231"},
+    "7fb01f1fe89a464cb5d3875aa047b32b":{
+      "scriptId":"u232"},
+    "f5d4e577abd8413ba9e97a106ad3129f":{
+      "scriptId":"u233"},
+    "f76074231cd74900bed561abfb611f4e":{
+      "scriptId":"u234"},
+    "a74d456c89394e6e9b2fd3e5c86827ce":{
+      "scriptId":"u235"},
+    "ac8f8f1a6fed4188bd8d6f79f5d1ef30":{
+      "scriptId":"u236"},
+    "8728d629001f41b4aee77d915b86edab":{
+      "scriptId":"u237"},
+    "e697fc43573942bdb4091176ded873a9":{
+      "scriptId":"u238"},
+    "bc7160a239c843c59a367a6a315868e3":{
+      "scriptId":"u239"},
+    "be029f76bd4345818942d7e1feae71e0":{
+      "scriptId":"u240"},
+    "749f344ada4f4e0fbce80ed3895b1efa":{
+      "scriptId":"u241"},
+    "640d358f52cb49f2ac21a8213742b6df":{
+      "scriptId":"u242"},
+    "7f89940de1ec429b94498345b2584c65":{
+      "scriptId":"u243"},
+    "eef74ddbfa5442698c038253b13f0a30":{
+      "scriptId":"u244"},
+    "42103eab0f6d4ca3a42238485c32d4c2":{
+      "scriptId":"u245"},
+    "9f845e73b12042dd935f4fd9ee9297ef":{
+      "scriptId":"u246"},
+    "6f67ac42cfa44eb88af3f2c62ef18b54":{
+      "scriptId":"u247"},
+    "0a30e911a3804fec85e6abdb80ad90f6":{
+      "scriptId":"u248"},
+    "ba8644623d2347eaa6f1f5df6800cde4":{
+      "scriptId":"u249"},
+    "519173bbfd1d49e284dbc4c3b80df428":{
+      "scriptId":"u250"},
+    "57ee254d01964fe19e21b23f4e4a14ac":{
+      "scriptId":"u251"},
+    "fb097835fc744719b90a32404b8a0505":{
+      "scriptId":"u252"},
+    "24706b07db0346a18fcf318d53bf2d46":{
+      "scriptId":"u253"},
+    "92599571eaea43b390980ca2ad3ada7c":{
+      "scriptId":"u254"},
+    "e777f7a4d3694425a5f5f58d031121d0":{
+      "scriptId":"u255"},
+    "be064495b2894037bdfe73a2110b0de5":{
+      "scriptId":"u256"},
+    "0410be305bb84d8fa27236db4126bfd9":{
+      "scriptId":"u257"},
+    "552eed53f4b54fa595d113388f7dc9cd":{
+      "scriptId":"u258"},
+    "9d2cab03e14d4cc787e786eadf967a6d":{
+      "scriptId":"u259"},
+    "38fdf48019cf4e85a3aebbc278d61ac6":{
+      "scriptId":"u260"},
+    "1abcc6fa9b9246178a5fd8c3f4e4625d":{
+      "scriptId":"u261"},
+    "67da47f81ce24f4bb3e9e78bb922c006":{
+      "scriptId":"u262"},
+    "f5cf2aa086c045c2b1d16649fe718d8d":{
+      "scriptId":"u263"},
+    "dcdaf95d92da46eeaf66a60f514eb30c":{
+      "scriptId":"u264"},
+    "fb96c3e714184223a7e4309b186ea0d8":{
+      "scriptId":"u265"},
+    "15fe1ac9672845e792eba3cee616db0a":{
+      "scriptId":"u266"},
+    "b3142a58332e4779be24c974fdfdcd45":{
+      "scriptId":"u267"},
+    "ad3366ec6d4a43e7ba888f1a2d6edd0b":{
+      "scriptId":"u268"},
+    "f1d69725f9d34a73ac35e33c8fe3977e":{
+      "scriptId":"u269"},
+    "7470d31a17844fab90e3e9a489a0b048":{
+      "scriptId":"u270"},
+    "dcfd8c1e7e3346e98c6aba779e2c5c47":{
+      "scriptId":"u271"},
+    "8f6e5d96a80e4a05ab782e71a671d3c7":{
+      "scriptId":"u272"},
+    "4c5a0fbedf394b85bedcbefe78daf54d":{
+      "scriptId":"u273"},
+    "816b328198164e518b28077fbaaecb8a":{
+      "scriptId":"u274"},
+    "b2c4becf1a344672989f6b7fefcedc65":{
+      "scriptId":"u275"},
+    "4f4bd3a0e3e44d6a884de797a96866b1":{
+      "scriptId":"u276"},
+    "6897fd52d9864e109373f6c741f9fde2":{
+      "scriptId":"u277"},
+    "585aae68620d44a9bde5bf01c4d7d199":{
+      "scriptId":"u278"},
+    "47f5847862b94fb4a2b525193f762982":{
+      "scriptId":"u279"},
+    "a1b50ef1455641db823cd721496fb116":{
+      "scriptId":"u280"},
+    "4d32acffc1a44793834f2ef4fa7e251a":{
+      "scriptId":"u281"},
+    "d4b37873fff84f6a964fba91e4b47534":{
+      "scriptId":"u282"},
+    "9542198f8df9482fa7ad7a8181a6a6dd":{
+      "scriptId":"u283"},
+    "b8acde6a24274321bdc1723f78b1f5aa":{
+      "scriptId":"u284"},
+    "b990726c374a4f3a804074e20b9cb016":{
+      "scriptId":"u285"},
+    "0a905b2f646c41f8af8102118543e92d":{
+      "scriptId":"u286"},
+    "d7f04a02cf2d44ecac8907e9e2546c60":{
+      "scriptId":"u287"},
+    "79996367fad940a88a20e4ad9d8afb3a":{
+      "scriptId":"u288"},
+    "dceaa22412f54fe8969027b03dcbbb4b":{
+      "scriptId":"u289"},
+    "8fdba39b10b54b86a8cb87aebcf82a73":{
+      "scriptId":"u290"},
+    "018cb1eec042432a87ff71472ef1f350":{
+      "scriptId":"u291"},
+    "0551f733853c40b08dd2972a60ce02a9":{
+      "scriptId":"u292"},
+    "298027e0c1f14c298e7748c08e7721d7":{
+      "scriptId":"u293"},
+    "976fa163640643608d383a7369d96b4f":{
+      "scriptId":"u294"},
+    "e80371ed9a564e6dbef6f8910f89e5a8":{
+      "scriptId":"u295"},
+    "fcc1a5e2627041508c62aa73d60a7072":{
+      "scriptId":"u296"},
+    "eab9a45744d0492db82027e850587c5d":{
+      "scriptId":"u297"},
+    "8e966497a3b2404a93a25e82848acdbe":{
+      "scriptId":"u298"},
+    "e04f2324507844009e24cf00dc0cf176":{
+      "scriptId":"u299"},
+    "5ab18d97cdce49a38533758dbe41b79d":{
+      "scriptId":"u300"},
+    "be451820954d4317bd90443c283da070":{
+      "scriptId":"u301"},
+    "c66bb89eac8142688630e3d53f333367":{
+      "scriptId":"u302"},
+    "77ca7dbd3042453887bc77b200c8645d":{
+      "scriptId":"u303"},
+    "570e64713ce54d3faf34513222d2bb82":{
+      "scriptId":"u304"},
+    "8cffa282c8964cb4a6031d8840ac35c5":{
+      "scriptId":"u305"},
+    "15fab01f35d7414d90e840412ee18d80":{
+      "scriptId":"u306"},
+    "6f3b8f2fb01345d6bbe9afa9f45018d3":{
+      "scriptId":"u307"},
+    "421e4489cdc24fa58df9eb9c0223a7d6":{
+      "scriptId":"u308"},
+    "55d02627760e4eb3920a5c76305c1b26":{
+      "scriptId":"u309"},
+    "7a951c6684214111b19d4fc2856cb1d7":{
+      "scriptId":"u310"},
+    "2a1f371d2e7c4450a6dea1e785dc3fd9":{
+      "scriptId":"u311"},
+    "5efd5f36738548e3b6cb59c2956fd069":{
+      "scriptId":"u312"},
+    "8c545010553c4a518f77f90423201c26":{
+      "scriptId":"u313"},
+    "a3e154eb17fd446fb91abd983d51fa03":{
+      "scriptId":"u314"},
+    "77bb45e8c8ee487c8d054f7f576b7b57":{
+      "scriptId":"u315"},
+    "5f3385d1dd774ecb91e3ba0b9bd75e71":{
+      "scriptId":"u316"},
+    "f61663bde80e4d308772c76aa95db0a4":{
+      "scriptId":"u317"},
+    "c326aef5b5204d588efc2bb17e96166a":{
+      "scriptId":"u318"},
+    "dbf41ce0fde642768dfed46c50c7f68d":{
+      "scriptId":"u319"},
+    "c5fc67c018ff44298354859ea3e3dc66":{
+      "scriptId":"u320"},
+    "48c99306b4c64a13868acced94e7fa97":{
+      "scriptId":"u321"},
+    "40cfff0ba3604ad089c77d4aa967b059":{
+      "scriptId":"u322"},
+    "46b8f5ae34b5482ab5d06eb2cfe2bcbc":{
+      "scriptId":"u323"},
+    "e72c550419d140f59b5efaa5e05d2319":{
+      "scriptId":"u324"},
+    "364d94cf97a9420bad76b40d0b77cf27":{
+      "scriptId":"u325"}}});

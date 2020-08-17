@@ -1,0 +1,76 @@
+﻿@using PaiXie.Data;
+@using PaiXie.Core;
+@{
+    var warehouseExpress = ViewBag.WarehouseExpress as WarehouseExpress;
+    var isPin = warehouseExpress.PrinterType == (int)PrinterType.针式 ? "checked" : "";
+    var isHot = warehouseExpress.PrinterType == (int)PrinterType.热敏 ? "checked" : "";
+    var isEnable = warehouseExpress.IsEnable == 1 ? "checked" : "";
+    ViewBag.Title = "编辑快递";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section head{
+
+}
+<form id="ff" method="post" novalidate>
+    <input type="hidden" id="hdnID" name="ID" value="@warehouseExpress.ID" />
+    <table class="tableinfo" style="margin-top:15px">
+        <tr>
+            <th style="width:100px"><span class="red">*</span>所属物流：</th>
+            <td>
+                <select id="logisticsID" name="logisticsID" class="easyui-combobox" style="width:190px;" data-options="editable:false, height:30"></select>
+            </td>
+        </tr>
+        <tr>
+            <th style="width:120px"><span class="red">*</span>快递名称：</th>
+            <td>
+                <input type="text" id="txtName" name="Name" class="easyui-validatebox" style="width:182px;" data-options="required:true,validType:'length[1,20]'" value="@warehouseExpress.Name">
+                &nbsp;<span id="errorMessage" style="color:red;"></span>
+            </td>
+        </tr>
+        <tr>
+            <th style="width:120px"><span class="red">*</span>打印类型：</th>
+            <td>
+                <input type="radio" id="PrinterType0" name="PrinterType" value="0" @Html.Raw(isPin)><label for="PrinterType0">针式</label>
+                <input type="radio" id="PrinterType1" name="PrinterType" value="1" @Html.Raw(isHot)><label for="PrinterType1">热敏</label>
+            </td>
+        </tr>
+        <tr>
+            <th>&nbsp;</th>
+            <td>
+                <input type="checkbox" id="chkIsEnable" name="IsEnable" value="1" @Html.Raw(isEnable) /><label for="chkIsEnable">启用</label>
+            </td>
+        </tr>
+        <tr>
+            <th>&nbsp;</th>
+            <td>
+                <a href="javascript:void(0);" class="button-oky" id="btnSave" iconcls="icon-ok">保存</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="javascript:void(0);" class="button-cancel" id="btnClose" iconcls="icon-ok">关闭</a>
+            </td>
+
+        </tr>
+    </table>
+</form>
+@section bottom{
+    <script src="~/Areas/Warehouse/ViewJs/EditExpress.js"></script>
+    <script>
+        $(document).ready(function () {
+            //初始化数据
+            BindDictItem("logisticsID", "logistics");
+            //选中特定值
+            $("#logisticsID").combobox({
+                onLoadSuccess: function () {
+                    $("#logisticsID").combobox("select", '@warehouseExpress.LogisticsID');
+                },
+                onChange: function (n, o) { //数据加载完毕事件
+                    if (o != "") {
+                        var expressName = $("#logisticsID").combobox("getText");
+                        if (n == 0) expressName = "";
+                        $("#txtName").val(expressName);
+                    }
+                }
+            });
+        });
+    </script>
+}

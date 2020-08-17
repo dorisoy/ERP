@@ -1,0 +1,64 @@
+﻿
+
+.meihua_anniu
+{
+    width: 159px;
+    height: 47px;
+    float: left;
+    background: url("../../Content/images/xiangcebiaoqian_anniu.gif")0 0 no-repeat;
+}
+.meihua_anniu:hover
+{
+    width: 159px;
+    height: 47px;
+    float: left;
+    background: url("../../Content/images/xiangcebiaoqian_anniu_1.gif")0 0 no-repeat;
+}
+
+.xiangce_biaoqian_right_shangchuanzhaopian
+{
+    width: 375px;
+    margin: 20px auto;
+    min-height: 150px;
+    background-color: #ccc;
+    float: left;
+}
+
+.uploading
+{
+    border: 1px #ccc;
+    border-style: dotted;
+    width: 140px;
+    height: 135px;
+    background: #fff;
+    position: relative;
+    float: left;
+    margin: 10px;
+}
+.uploading_file_name
+{
+    width: 160px;
+    float: left;
+}
+.uploading_schedule
+{
+    position: absolute;
+    left: 50px;
+    top: 50px;
+}
+.uploading img
+{
+    width: 110px;
+    height: 110px;
+    vertical-align: middle;
+    padding: 1px;
+}
+.uploading a
+{
+    position: absolute;
+    left: 130px;
+    top: 10px;
+    color: #444;
+    font-size: 12px;
+    text-decoration: none;
+}

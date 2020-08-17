@@ -1,0 +1,111 @@
+﻿<%@ CodeTemplate Language="C#" TargetLanguage="C#" Src="DataEntity.cst.cs" ResponseEncoding="UTF-8" Inherits="CodeSmith.MyTemplates.TableObjectTemplate" Description="Generate A DataTable Collection and Persis object." %>
+<%@ Assembly Name="SchemaExplorer" %>
+<%@ Assembly Name="SchemaExplorer.SqlSchemaProvider" %>
+<%@ Assembly Name="System.Data" %>
+<%@ Assembly Name="System.Design" %>
+<%@ Import Namespace="System.Collections.Generic" %>
+<%@ Import Namespace="System.Data" %>
+<%@ Import Namespace="System.IO" %>
+<%@ Import Namespace="SchemaExplorer" %>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+namespace <%= Namespace %>
+{
+    /// <summary>
+	/// <%= SourceTable.Description %>
+	/// </summary>
+	[Serializable]
+	public partial class <%= GetClassName(SourceTable, false) %> {
+		public <%= GetClassName(SourceTable, false) %>() { }
+        
+		<% for (int i = 0; i < SourceTable.Columns.Count; i++) { %>
+        
+        private  <%= GetCSharpNullableVariableType(SourceTable.Columns[i]) %> _<%= GetPascalCaseName(SourceTable.Columns[i].Name) %>;
+	    /// <summary>
+	    /// <%= SourceTable.Columns[i].Description %>
+	    /// </summary>
+		public  <%= GetCSharpNullableVariableType(SourceTable.Columns[i]) %> <%= GetPascalCaseName(SourceTable.Columns[i].Name) %> {
+			set { _<%= GetPascalCaseName(SourceTable.Columns[i].Name) %> = value; }
+			get { return _<%= GetPascalCaseName(SourceTable.Columns[i].Name) %>; }
+		}
+
+		<% } %>		
+	}
+}
+
+<script runat="template">
+private string _namespace = "PaiXie.Data";
+[Category("Output")]
+public string Namespace
+{
+	get { return _namespace; }
+	set { _namespace = value; }
+}
+private string _outputDirectory = string.Empty;
+
+[Editor(typeof(System.Windows.Forms.Design.FolderNameEditor), typeof(System.Drawing.Design.UITypeEditor))] 
+[Category("Output")]
+public string OutputDirectory 
+{
+    get
+    {
+		if(string.IsNullOrEmpty(_outputDirectory))
+			_outputDirectory = @"D:\vss_local\Model\" + Namespace;
+        return _outputDirectory;
+    }
+    set
+    {
+        _outputDirectory = value;
+    } 
+}
+
+private TableSchemaCollection _tables;
+[Category("Output")]
+public TableSchemaCollection SourceTables
+{
+	get 
+	{
+		return _tables;
+	}
+	set
+	{
+		_tables = value;
+	}
+}
+private TableSchema SourceTable;
+public override void Render(System.IO.TextWriter writer) 
+{
+	if(!Directory.Exists(OutputDirectory))
+		Directory.CreateDirectory(OutputDirectory);
+    
+    
+
+	foreach(TableSchema sourceTable in SourceTables)
+	{
+		SourceTable = sourceTable;
+		string fileName = System.IO.Path.Combine(OutputDirectory,GetClassName(SourceTable,false)+".cs");
+        
+        if(File.Exists(fileName))
+        {
+            File.Delete(fileName);
+        }
+        
+  		System.IO.StreamWriter fileWriter = null; 
+  		try 
+		{ 
+			fileWriter = new System.IO.StreamWriter(fileName, true); 
+			base.Render(fileWriter); 
+		}
+		catch
+		{
+		}
+		finally 
+		{ 
+			if (fileWriter != null) 
+			fileWriter.Close(); 
+		}
+	}
+} 
+</script>

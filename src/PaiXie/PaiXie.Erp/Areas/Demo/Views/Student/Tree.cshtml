@@ -1,0 +1,112 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Tree</title>
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Content/jquery-easyui/jquery.easyui.min.js"></script>
+    <link href="~/Content/jquery-easyui/themes/gray/easyui.css" rel="stylesheet" />
+    <link href="~/Content/jquery-easyui/themes/icon.css" rel="stylesheet" />
+    <script src="~/Scripts/easyuiExt.js"></script>
+</head>
+
+
+
+    <body class="easyui-layout">
+        <div data-options="region:'west'" style="width: 180px">
+            <div title="字典类别" style="width: 100%;" class="easyui-panel" data-options="title: '字典类别', iconCls: 'icon-node_tree', height: $(window).height() - 4 ">
+                <ul data-bind="easyuiTree:tree" id="tree"></ul>
+            </div>
+
+
+        </div>
+        <div data-options="region:'center'">
+            选择icon图标
+            <br />
+            <div id="iconname" style="width:32px; height:32px;"></div>
+            <input type="hidden" style="width:300px" id="iconid" name="iconid" />
+            <a href="javascript:void(0)" class="easyui-linkbutton" id="btnSelectIcon" iconcls="icon-search">选择图标</a>
+
+
+
+            @*<div id="contents">
+             
+                <a href="javascript:void(0)" class="easyui-linkbutton" onclick="SelectItem(this, 'icon-cancel')" id="a1" data-options="plain:true,iconCls:'icon-cancel',size:'large',toggle:true"> </a>
+                <a href="javascript:void(0)" class="easyui-linkbutton" onclick="SelectItem(this, 'icon-reload')" id="b1" data-options="plain:true,iconCls:'icon-reload',size:'large',toggle:true"> </a>
+                <a href="javascript:void(0)" class="easyui-linkbutton" onclick="SelectItem(this, 'icon-print')" id="c1" data-options="plain:true,iconCls:'icon-print',size:'large',toggle:true"> </a>
+
+            </div>*@
+
+
+
+
+            <table>
+                <tr>
+                    <th>
+                        <label for="Customer_ID">客户名称：</label>
+                    </th>
+                    <td colspan="3">
+                        <input class="easyui-validatebox" style="width:300px;background-color:peachpuff" readonly="readonly" type="text" id="Customer_Name" name="Customer_Name" data-options="required:true,validType:'length[1,50]'" />
+                        <input type="hidden" style="width:300px" id="Customer_ID" name="Customer_ID" />
+                        <a href="javascript:void(0)" class="easyui-linkbutton" id="btnSelectCustomer" iconcls="icon-search">选择客户</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+
+        @*<div id="win"></div>*@
+        <script>
+            //Icon图标列表
+            $("#btnSelectIcon").click(function () {
+                showMyWindow("Icon图标列表", "/common/Index?id=1888", 600, 400, true, false, false);
+            });
+
+
+
+            //初始化
+            $(function () {
+                initTable();
+
+             //   initTable2();
+
+
+            });
+            function initTable2() {
+                var para = window.dialogArguments.value;
+                var roots = $('#tree').tree('getChildren');
+                for (var i = 0; i < roots.length; i++) {
+                    if (para.indexOf(roots[i].attributes.code) >= 0) {
+                        alert(roots[i]);
+                        //这里设置选中，应该怎么写呢
+                        $('#tt2').tree('check', roots[i].target);
+                    }
+                }
+            }
+            function initTable() {
+                $('#tree').tree({
+                    url: '/Demo/Student/JsonTreeTest',
+                    checkbox: false,
+                    onClick: function (node) {
+                        $('#Customer_Name').val(node.text);
+                        alert(node.id); //node.text
+                    }
+
+
+                });
+            }
+
+
+
+            function SelectItem(a,b) {
+                alert(b);
+            }
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,288 @@
+2015/9/21 13:36:49
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='admin' and  Password='81dc9bdb52d04dc20036dbd8313ed055' and IsEnable=1 
+------------------------------------------------------------------
+2015/9/21 13:40:24
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='admin' and  Password='81dc9bdb52d04dc20036dbd8313ed055' and IsEnable=1 
+------------------------------------------------------------------
+2015/9/21 13:40:25
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='admin' and  Password='81dc9bdb52d04dc20036dbd8313ed055' and IsEnable=1 
+------------------------------------------------------------------
+2015/9/21 13:40:26
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='admin' and  Password='81dc9bdb52d04dc20036dbd8313ed055' and IsEnable=1 
+------------------------------------------------------------------
+2015/9/21 13:40:27
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='admin' and  Password='81dc9bdb52d04dc20036dbd8313ed055' and IsEnable=1 
+------------------------------------------------------------------
+2015/9/21 13:40:27
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='admin' and  Password='81dc9bdb52d04dc20036dbd8313ed055' and IsEnable=1 
+------------------------------------------------------------------
+2015/9/21 13:40:27
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='admin' and  Password='81dc9bdb52d04dc20036dbd8313ed055' and IsEnable=1 
+------------------------------------------------------------------
+2015/9/21 13:40:27
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='admin' and  Password='81dc9bdb52d04dc20036dbd8313ed055' and IsEnable=1 
+------------------------------------------------------------------
+2015/9/21 13:40:28
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='admin' and  Password='81dc9bdb52d04dc20036dbd8313ed055' and IsEnable=1 
+------------------------------------------------------------------
+2015/9/21 13:40:28
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='admin' and  Password='81dc9bdb52d04dc20036dbd8313ed055' and IsEnable=1 
+------------------------------------------------------------------
+2015/9/21 13:41:06
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='admin' and  Password='81dc9bdb52d04dc20036dbd8313ed055' and IsEnable=1 
+------------------------------------------------------------------
+2015/9/21 13:41:07
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='admin' and  Password='81dc9bdb52d04dc20036dbd8313ed055' and IsEnable=1 
+------------------------------------------------------------------
+2015/9/21 13:41:07
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='admin' and  Password='81dc9bdb52d04dc20036dbd8313ed055' and IsEnable=1 
+------------------------------------------------------------------
+2015/9/21 13:41:07
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='admin' and  Password='81dc9bdb52d04dc20036dbd8313ed055' and IsEnable=1 
+------------------------------------------------------------------
+2015/9/21 13:41:07
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='admin' and  Password='81dc9bdb52d04dc20036dbd8313ed055' and IsEnable=1 
+------------------------------------------------------------------
+2015/9/21 13:41:07
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='admin' and  Password='81dc9bdb52d04dc20036dbd8313ed055' and IsEnable=1 
+------------------------------------------------------------------
+2015/9/21 13:41:08
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='admin' and  Password='81dc9bdb52d04dc20036dbd8313ed055' and IsEnable=1 
+------------------------------------------------------------------
+2015/9/21 13:41:08
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='admin' and  Password='81dc9bdb52d04dc20036dbd8313ed055' and IsEnable=1 
+------------------------------------------------------------------
+2015/9/21 13:41:08
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='admin' and  Password='81dc9bdb52d04dc20036dbd8313ed055' and IsEnable=1 
+------------------------------------------------------------------
+2015/9/21 13:41:08
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='admin' and  Password='81dc9bdb52d04dc20036dbd8313ed055' and IsEnable=1 
+------------------------------------------------------------------
+2015/9/21 13:41:09
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='admin' and  Password='81dc9bdb52d04dc20036dbd8313ed055' and IsEnable=1 
+------------------------------------------------------------------
+2015/9/21 13:41:09
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='admin' and  Password='81dc9bdb52d04dc20036dbd8313ed055' and IsEnable=1 
+------------------------------------------------------------------
+2015/9/21 13:41:09
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='admin' and  Password='81dc9bdb52d04dc20036dbd8313ed055' and IsEnable=1 
+------------------------------------------------------------------
+2015/9/21 13:41:11
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='admin' and  Password='81dc9bdb52d04dc20036dbd8313ed055' and IsEnable=1 
+------------------------------------------------------------------
+2015/9/21 13:41:12
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='admin' and  Password='81dc9bdb52d04dc20036dbd8313ed055' and IsEnable=1 
+------------------------------------------------------------------
+2015/9/21 13:41:12
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='admin' and  Password='81dc9bdb52d04dc20036dbd8313ed055' and IsEnable=1 
+------------------------------------------------------------------
+2015/9/21 13:41:13
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='admin' and  Password='81dc9bdb52d04dc20036dbd8313ed055' and IsEnable=1 
+------------------------------------------------------------------
+2015/9/21 13:41:13
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='admin' and  Password='81dc9bdb52d04dc20036dbd8313ed055' and IsEnable=1 
+------------------------------------------------------------------
+2015/9/21 13:42:39
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='admin' and  Password='81dc9bdb52d04dc20036dbd8313ed055' and IsEnable=1 
+------------------------------------------------------------------
+2015/9/21 13:42:40
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='admin' and  Password='81dc9bdb52d04dc20036dbd8313ed055' and IsEnable=1 
+------------------------------------------------------------------
+2015/9/21 13:42:40
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='admin' and  Password='81dc9bdb52d04dc20036dbd8313ed055' and IsEnable=1 
+------------------------------------------------------------------
+2015/9/21 13:42:41
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='admin' and  Password='81dc9bdb52d04dc20036dbd8313ed055' and IsEnable=1 
+------------------------------------------------------------------
+2015/9/21 13:42:41
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='admin' and  Password='81dc9bdb52d04dc20036dbd8313ed055' and IsEnable=1 
+------------------------------------------------------------------
+2015/9/21 13:42:42
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='admin' and  Password='81dc9bdb52d04dc20036dbd8313ed055' and IsEnable=1 
+------------------------------------------------------------------
+2015/9/21 13:42:42
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='admin' and  Password='81dc9bdb52d04dc20036dbd8313ed055' and IsEnable=1 
+------------------------------------------------------------------
+2015/9/21 13:42:43
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='admin' and  Password='81dc9bdb52d04dc20036dbd8313ed055' and IsEnable=1 
+------------------------------------------------------------------
+2015/9/21 13:42:43
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='admin' and  Password='81dc9bdb52d04dc20036dbd8313ed055' and IsEnable=1 
+------------------------------------------------------------------
+2015/9/21 13:42:43
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='admin' and  Password='81dc9bdb52d04dc20036dbd8313ed055' and IsEnable=1 
+------------------------------------------------------------------
+2015/9/21 13:42:44
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='admin' and  Password='81dc9bdb52d04dc20036dbd8313ed055' and IsEnable=1 
+------------------------------------------------------------------
+2015/9/21 13:53:50
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='admin' and  Password='81dc9bdb52d04dc20036dbd8313ed055' and IsEnable=1 
+------------------------------------------------------------------
+2015/9/21 13:53:52
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='admin' and  Password='81dc9bdb52d04dc20036dbd8313ed055' and IsEnable=1 
+------------------------------------------------------------------
+2015/9/21 13:53:53
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='admin' and  Password='81dc9bdb52d04dc20036dbd8313ed055' and IsEnable=1 
+------------------------------------------------------------------
+2015/9/21 13:53:53
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='admin' and  Password='81dc9bdb52d04dc20036dbd8313ed055' and IsEnable=1 
+------------------------------------------------------------------
+2015/9/21 13:53:54
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='admin' and  Password='81dc9bdb52d04dc20036dbd8313ed055' and IsEnable=1 
+------------------------------------------------------------------
+2015/9/21 13:53:55
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='admin' and  Password='81dc9bdb52d04dc20036dbd8313ed055' and IsEnable=1 
+------------------------------------------------------------------
+2015/9/21 13:53:55
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='admin' and  Password='81dc9bdb52d04dc20036dbd8313ed055' and IsEnable=1 
+------------------------------------------------------------------
+2015/9/21 13:53:58
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='admin' and  Password='81dc9bdb52d04dc20036dbd8313ed055' and IsEnable=1 
+------------------------------------------------------------------
+2015/9/21 13:54:29
+select  ID, 
+	CODE, Seq, NAME, Description, PASSWORD, RoleName, 
+	OrganizeName, ConfigJSON, IsEnable, LoginCount, LastLoginDate, CreatePerson, CreateDate, UpdatePerson, UpdateDate, ModeType, 
+	WarehouseCode from sys_user where Code='admin' and  Password='81dc9bdb52d04dc20036dbd8313ed055' and IsEnable=1 
+------------------------------------------------------------------

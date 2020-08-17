@@ -1,0 +1,233 @@
+﻿@using PaiXie.Core;
+@using PaiXie.Data;
+@using PaiXie.Api.Bll;
+@{
+    var warehouseExpress = ViewBag.WarehouseExpress as WarehouseExpress;
+    var isPrintPro = warehouseExpress.IsPrintPro == 1 ? "checked" : "";
+    var logisticsCode = ViewBag.LogisticsCode;
+    var logisticsName = ViewBag.LogisticsName;
+    var templateContent = ViewBag.TemplateContent;
+    ViewBag.Title = "设置快递打印模版";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section head{
+    <style>
+        .no {
+            vertical-align: -3px;
+        }
+		.iframe{ position:absolute; top:0px; left:0px; width:100%; height:100%; border:0px; z-index:-1;}
+    </style>
+    <script src="~/Scripts/PrintActivex.js"></script>
+}
+<div class="easyui-layout" data-options="fit:true" style="overflow-y:auto;">
+    <div data-options=" region:'north',height:63" id="topdiv">
+        <div class="toolbar" id="toolbar">
+            <a href="javascript:void(0);" class="back" id="back"><span></span>返回</a>
+            <a href="javascript:void(0);" class="toolbarsave" id="toolbarsave"><span></span>保存模版</a>
+            <a href="javascript:void(0);" class="reset" id="reset"><span></span>恢复默认模版</a>
+        </div>
+    </div>
+    <div data-options="region:'center',border:false" class="p0lr22">
+        <form id="ff" method="post" novalidate>
+            <div style="margin-top: 1px; padding-left: 10px; height: 50px; line-height: 50px; background: #f0f0f0; border: 1px solid #ccc;">
+                <span>快递名称：@(warehouseExpress.Name)</span>
+                <span style="margin-left:100px;">所属物流：@(logisticsName)</span>
+                <span style="margin-left:100px;">类型：@(ExpressManager.GetPrinterTypeName(warehouseExpress.PrinterType))</span>
+            </div>
+            <div style="padding: 10px 0px 10px 10px; margin-top:10px; height: 60px; line-height:30px; border: 1px solid #ccc;">
+                纸张尺寸：宽 <input type="text" id="expressWidth" class="easyui-numberbox" value="@warehouseExpress.Width" style="width:50px;" min="1" max="999.9" missingmessage="只能输入1~999.9之间的数字" data-options="required:true,validType:'number',precision:1,height:30" />mm，
+                高 <input type="text" id="expressHeight" class="easyui-numberbox" value="@warehouseExpress.Height" style="width:50px;" min="1" max="999.9" missingmessage="只能输入1~999.9之间的数字" data-options="required:true,validType:'number',precision:1,height:30" />mm
+                选择默认打印机：<input id="printerName" name="printerName" class="easyui-combobox" style="width: 190px;" data-options="valueField:'value', textField:'text',editable:false, height:30">
+                &nbsp;&nbsp;添加打印项：
+                <select id="fieldList" name="fieldList" class="easyui-combobox" data-options="editable:false,height:30,width:150">
+                    <option value="">—请选择—</option>
+                    <option value="$收件人手机">$收件人手机</option>
+                    <option value="$收件人电话">$收件人电话</option>
+                    <option value="$收件人姓名">$收件人姓名</option>
+                    <option value="$收件人地址">$收件人地址</option>
+                    <option value="$收件人邮编">$收件人邮编</option>
+                    <option value="$收件人地址-省">$收件人地址-省</option>
+                    <option value="$收件人地址-市">$收件人地址-市</option>
+                    <option value="$收件人地址-区">$收件人地址-区</option>
+                    <option value="$寄件人电话">$寄件人电话</option>
+                    <option value="$寄件人姓名">$寄件人姓名</option>
+                    <option value="$寄件人地址">$寄件人地址</option>
+                    <option value="$寄件人邮编">$寄件人邮编</option>
+                    <option value="$寄件人地址-省">$寄件人地址-省</option>
+                    <option value="$寄件人地址-市">$寄件人地址-市</option>
+                    <option value="$寄件人地址-区">$寄件人地址-区</option>
+                    <option value="$买家留言">$买家留言</option>
+                    <option value="$卖家备注">$卖家备注</option>
+                    <option value="$店铺名称">$店铺名称</option>
+                    <option value="$买家会员名">$买家会员名</option>
+                    <option value="$商品明细">$商品明细</option>
+                    <option value="$商品数量">$商品数量</option>
+                    <option value="$商品金额">$商品金额</option>
+                    <option value="$包裹重量">$包裹重量</option>
+                    <option value="$实收运费">$实收运费</option>
+                    <option value="$货到付款金额(小写)">$货到付款金额(小写)</option>
+                    <option value="$货到付款金额(大写)">$货到付款金额(大写)</option>
+                    <option value="$系统订单号">$系统订单号</option>
+                    <option value="$外部订单号">$外部订单号</option>
+                    <option value="$出库单号">$出库单号</option>
+                    <option value="$当前时间">$当前时间</option>
+                    <option value="$寄件日期">$寄件日期</option>
+                </select>
+                &nbsp;<input type="checkbox" id="chkIsPrintPro" class="no" @(isPrintPro) /><label for="chkIsPrintPro">打印商品明细</label>
+                <input type="button" id="btnSetPrintPro" value="设置明细项" style="display:none;" />
+                <div><label style="color:red;">提示：</label>按键盘上的“Ctrl+Delete”可以删除选中内容</div>
+            </div>
+            <div style="padding: 10px 0px 0px 0px;" id="showLODOP">
+                <object id="LODOP_OB" classid="clsid:2105C259-1E0C-4534-8141-A753534CB4CA" width=1174 height=600>
+                    <param name="Caption" value="快递模板设计">
+                    <param name="Border" value="1">
+                    <param name="Color" value="#C0C0C0">
+                    <param name="wmode" value="transparent" />
+                    <embed id="LODOP_EM" wmode="transparent" type="application/x-print-lodop" width=1174 height=600>
+                </object>
+            </div>
+            <input type="hidden" id="hdnPrinterName" value="@warehouseExpress.PrinterName" />
+            <input type="hidden" id="hdnExpressID" value="@warehouseExpress.ID" />
+        </form>
+    </div>
+</div>
+@section bottom{
+    <script type="text/javascript">
+        var LODOP; //声明为全局变量
+        $(document).ready(function () {
+            $("#fieldList").combobox({
+                onChange: function (n, o) {
+                    autoAddText();
+                }
+            });
+            $("#chkIsPrintPro").click(function () {
+                if ($(this).attr("checked")) {
+                    $("#btnSetPrintPro").show();
+                } else {
+                    $("#btnSetPrintPro").hide();
+                }
+            });
+            if ($("#chkIsPrintPro").attr("checked")) {
+                $("#btnSetPrintPro").show();
+            }
+            $("#btnSetPrintPro").click(function () {
+                showLocalWindow("设置明细项", "/Warehouse/Express/SetPrintPro?id=" + $("#hdnExpressID").val(), 480, 350, true, false, false);
+            });
+            //返回
+            $("#back").click(function () {
+                location.href = "/Warehouse/Express/Index";
+            });
+            //保存
+            $("#toolbarsave").click(save);
+            //恢复默认
+            $("#reset").click(resetDefault);
+            //兼容chrome
+            setTimeout(function () { DisplayDesign(); }, 1);
+        });
+        //添加已有字段
+        function autoAddText() {
+            var text = $("#fieldList").combobox('getValue');
+            if (text != "") {
+                LODOP.ADD_PRINT_TEXT("5mm", "5mm", "26mm", "6.6mm", text);
+            }
+        }
+        //保存
+        function save() {
+            var _id = $("#hdnExpressID").val();
+            var _width = $("#expressWidth").numberbox("getValue");
+            if (_width == "") _width = 0;
+            var _height = $("#expressHeight").numberbox("getValue");
+            if (_height == "") _height = 0;
+            var _printerName = $("#printerName").combobox('getValue');
+            var _isPrintPro = $("#chkIsPrintPro").attr("checked") ? 1 : 0;
+            LODOP = getLodop(document.getElementById('LODOP_OB'), document.getElementById('LODOP_EM'), "showLODOP");
+            var _templateContent = LODOP.GET_VALUE("ProgramCodes", 0);
+            _templateContent = encodeURIComponent(_templateContent.replace(/\r\n/g, ""));
+            $.ajax({
+                url: "/Warehouse/Express/SavePrintTemplate?ram=" + Math.random(),
+                type: "POST",
+                data: { id: _id, width: _width, height: _height, templateContent: _templateContent, printerName: _printerName, isPrintPro: _isPrintPro },
+                async: false,
+                cache: false,
+                success: function (r) {
+                    var map = $.parseJSON(r);
+                    if (map.result == 1) {
+                        //$.MsgBox.Alert("提示", "保存成功！", 1000);
+                        alert("保存成功！");
+                    } else {
+                        //$.MsgBox.Alert("提示", map.message);
+                        alert(map.message);
+                    }
+                },
+                error: function () {
+                    //$.MsgBox.Alert("提示", "保存失败！");
+                    alert("保存失败！");
+                }
+            });
+        }
+        //恢复默认设置
+        function resetDefault() {
+            if (confirm("确定要恢复默认设置？")) {
+                $.ajax({
+                    url: "/Warehouse/Express/ResetDefault?id=" + $("#hdnExpressID").val(),
+                    type: "GET",
+                    async: false,
+                    cache: false,
+                    success: function (r) {
+                        var map = $.parseJSON(r);
+                        if (map.result == 1) {
+                            //$.MsgBox.Alert("提示", "恢复成功！", 1000);
+                            alert("恢复成功！");
+                            window.location.reload(true);
+                        } else {
+                            //$.MsgBox.Alert("提示", map.message);
+                            alert(map.message);
+                        }
+                    },
+                    error: function () {
+                        //$.MsgBox.Alert("提示", "操作失败！");
+                        alert("操作失败！");
+                    }
+                });
+            }
+
+        }
+        //显示设计界面
+        function DisplayDesign() {
+            CreatePrintPage();
+            LODOP.SET_SHOW_MODE("DESIGN_IN_BROWSE", 1);
+            LODOP.SET_SHOW_MODE("SETUP_ENABLESS", "11111111000000");//隐藏关闭(叉)按钮
+            LODOP.SET_SHOW_MODE("HIDE_GROUND_LOCK", true);//隐藏纸钉按钮
+            LODOP.PRINT_DESIGN();
+            //加载背景
+            LODOP.ADD_PRINT_SETUP_BKIMG("<img border=\"0\" src=\"../../Content/images/ExpressTemplate/@(logisticsCode + ".jpg")\" />");
+        }
+        function CreatePrintPage() {
+            LODOP = getLodop(document.getElementById('LODOP_OB'), document.getElementById('LODOP_EM'), "showLODOP");
+            //绑定打印机
+            var printerComboboxID = "printerName";
+            var defaultPrinterName = $("#hdnPrinterName").val();
+            bindPrinterName(LODOP, printerComboboxID, defaultPrinterName);
+            @Html.Raw(templateContent)
+        };
+		
+	$(document).ready(function(){
+		$('.combo .combo-arrow').click(function(){
+			$('.combo-p').each(function(index, element) {
+				if ($(element).find('iframe').length==0){
+					$(element).prepend('<iframe class="iframe"></iframe>');
+				}
+				if ($(element).find('div:eq(0)').attr('style')!=''){
+					$(element).find('iframe').attr('style',$(element).find('div:eq(0)').attr('style'));
+				}
+				setTimeout(function(){
+					if ($(element).find('div:eq(0)').attr('style')!=''){
+						$(element).find('iframe').attr('style',$(element).find('div:eq(0)').attr('style'));
+					}
+				},500);
+			});
+		});
+	});
+    </script>
+}

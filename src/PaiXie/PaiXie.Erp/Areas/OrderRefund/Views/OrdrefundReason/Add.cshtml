@@ -1,0 +1,70 @@
+﻿@using PaiXie.Data
+@{
+    var reason = ViewBag.Reason as OrdrefundReason;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+}
+<form id="ff" method="post" novalidate="novalidate">
+    <table class="tableinfo" style=" margin-top:0px">
+        <tr>
+            <td align="right" style="width:100px">
+                售后原因：
+            </td>
+            <td>
+                <input style="width:150px" value="@(reason.OrdrefundValue)" class="easyui-validatebox" type="text" id="txtOrdrefundValue" name="OrdrefundValue" />&nbsp;&nbsp;<span style="color:#aaa">(10个字以内)</span>
+                <input type="hidden" name="ID" value="@(reason.ID)" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align:center; padding-top:10px">
+                <a href="javascript:void(0)" class="button-oky" id="btnSave" iconcls="icon-ok">确定</a>
+                <a href="javascript:void(0)" class="button-cancel" id="btnCancel" iconcls="icon-ok">取消</a>
+            </td>
+        </tr>
+    </table>
+</form>
+@section bottom{
+    <script>
+        $(function () {
+            $("#btnSave").click(function () {
+                btnSave();
+            });
+
+            $("#btnCancel").click(function () {
+                parent.$('#localWin').window('close');
+            });
+        });
+
+        String.prototype.len = function () { return this.replace("[^\x00-\xff]/g", "aa").length; }
+
+        function btnSave() {
+            $('#ff').form('submit', {
+                url: "/OrderRefund/OrdrefundReason/Save",
+                type: "POST",
+                dataType: "json",
+                onSubmit: function () {
+                    if ($("#txtOrdrefundValue").val().len() <= 10) {
+                        return true;
+                    }
+                    else {
+                        $("#txtOrdrefundValue").focus();
+                        return false;
+                    }
+                },
+                success: function (r) {
+                    var map = $.parseJSON(r);
+                    if (map.result == 1) {
+                        parent.window.location.reload();
+                    }
+                    else {
+                        $.MsgBox.Alert("提示", map.message);
+                    }
+                },
+                error: function () {
+                    $.MsgBox.Alert("提示", "添加失败！");
+                }
+            });
+        }
+    </script>
+}

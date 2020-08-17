@@ -1,0 +1,11 @@
+
+
+据库名 就叫 erpnet
+
+存储引擎用innodb，数据集用UTF8 这是基本要求
+   
+
+
+地址 10.0.0.3  3306
+账号 erpnet
+密码 wxd_erpnet
